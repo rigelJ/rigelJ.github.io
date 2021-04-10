@@ -18,4 +18,51 @@
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
   </entry>
+  <entry>
+    <title>Python学习之路</title>
+    <url>/2021/04/10/Python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/</url>
+    <content><![CDATA[<p>this is an example</p>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机考研综述</title>
+    <url>/2021/04/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%80%83%E7%A0%94%E7%BB%BC%E8%BF%B0/</url>
+    <content><![CDATA[<p>this is an example</p>
+]]></content>
+      <categories>
+        <category>考研之路</category>
+      </categories>
+      <tags>
+        <tag>研招信息</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux文件管理与权限控制</title>
+    <url>/2021/04/10/Linux%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E4%B8%8E%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>权限控制</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>世界很大，人心很小</title>
+    <url>/2021/04/10/%E4%B8%96%E7%95%8C%E5%BE%88%E5%A4%A7%EF%BC%8C%E4%BA%BA%E5%BF%83%E5%BE%88%E5%B0%8F/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>沉思录</category>
+      </categories>
+      <tags>
+        <tag>沉思录</tag>
+      </tags>
+  </entry>
 </search>
