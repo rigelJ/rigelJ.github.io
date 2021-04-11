@@ -219,7 +219,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-04-11 10:31:39 / 修改时间：17:07:59" itemprop="dateCreated datePublished" datetime="2021-04-11T10:31:39+08:00">2021-04-11</time>
+              <time title="创建时间：2021-04-11 10:31:39 / 修改时间：17:20:57" itemprop="dateCreated datePublished" datetime="2021-04-11T10:31:39+08:00">2021-04-11</time>
             </span>
 
           <br>
@@ -228,7 +228,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2k</span>
+              <span>1.9k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -256,19 +256,19 @@
 </blockquote>
 <h3 id="使用-和-标记一级和二级标题（部分支持）"><a href="#使用-和-标记一级和二级标题（部分支持）" class="headerlink" title="使用=和-标记一级和二级标题（部分支持）"></a>使用=和-标记一级和二级标题（部分支持）</h3><blockquote>
 <p>一级标题用=======来标注</p>
-<p>二级标题用————来标注</p>
+<p>二级标题用——————来标注</p>
 </blockquote>
 <hr>
 <h2 id="Markdown段落格式"><a href="#Markdown段落格式" class="headerlink" title="Markdown段落格式"></a>Markdown段落格式</h2><h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><blockquote>
-<p><em>斜体</em>   * *</p>
-<p><strong>粗体</strong>  ** **</p>
-<p><em><strong>斜粗体</strong></em>   * * *  * * *</p>
+<p><em>斜体</em>   <em> </em></p>
+<p><strong>粗体</strong>  <strong> </strong></p>
+<p><strong><em>斜粗体</em></strong>   <em> </em> <em>  </em> <em> </em></p>
 </blockquote>
 <h3 id="线条"><a href="#线条" class="headerlink" title="线条"></a>线条</h3><blockquote>
-<p>分割线 *********</p>
+<p>分割线 <strong><strong>*</strong></strong></p>
 <p><del>删除线</del>  ~~ ~~</p>
 <p><u>下划线</u>  <u> </u></p>
-<p>脚注  <a href="%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E8%84%9A%E6%B3%A8">^脚注</a></p>
+<p>脚注  <sup><a href="#fn_脚注" id="reffn_脚注">脚注</a></sup></p>
 </blockquote>
 <hr>
 <h2 id="Markdown列表"><a href="#Markdown列表" class="headerlink" title="Markdown列表"></a>Markdown列表</h2><ul>
@@ -293,8 +293,6 @@
 <p>区块引用符 &gt;</p>
 <blockquote>
 <p>第一层嵌套 &gt;&gt;</p>
-</blockquote>
-<blockquote>
 <blockquote>
 <p>第二层嵌套 &gt;&gt;&gt;</p>
 </blockquote>
@@ -316,12 +314,11 @@
 </ul>
 </blockquote>
 <h3 id="列表中使用区块"><a href="#列表中使用区块" class="headerlink" title="列表中使用区块"></a>列表中使用区块</h3><ul>
-<li> 第一项</li>
-</ul>
+<li><p>第一项</p>
 <blockquote>
 <p>学技术不仅是技术，而是梦想</p>
 </blockquote>
-<ul>
+</li>
 <li><p>第二项 </p>
 <blockquote>
 <p>我们的目标是星辰大海。</p>
@@ -336,15 +333,13 @@
 <blockquote>
 <p><strong>Python实例</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello world!&quot;</span>)</span><br></pre></td></tr></table></figure>
-
 <p><strong>Javascript实例</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">alert(<span class="string">&#x27;RUNO&#x27;</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
 <p><strong>PHP实例</strong></p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">echo</span> <span class="number">1</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 </blockquote>
 <hr>
-<h2 id="Markdown-链接"><a href="#Markdown-链接" class="headerlink" title="Markdown 链接"></a>Markdown 链接</h2><p>链接使用<a target="_blank" rel="noopener" href="http://www.baidu.com/">链接名称</a>建立，格式为<a href=""></a> ，也可以用变量设置来建立一个链接，赋值在文档末尾进行</p>
+<h2 id="Markdown-链接"><a href="#Markdown-链接" class="headerlink" title="Markdown 链接"></a>Markdown 链接</h2><p>链接使用<a target="_blank" rel="noopener" href="http://www.baidu.com">链接名称</a>建立，格式为<a href=""></a> ，也可以用变量设置来建立一个链接，赋值在文档末尾进行</p>
 <blockquote>
 <p>这个链接用 1 作为网址变量 [Google][1]</p>
 </blockquote>
@@ -354,65 +349,76 @@
 <p><img src="" alt="属性文本"></p>
 </blockquote>
 <h3 id="通过Typora直接插入图片-编辑器必须是Typora编辑器"><a href="#通过Typora直接插入图片-编辑器必须是Typora编辑器" class="headerlink" title="通过Typora直接插入图片 (编辑器必须是Typora编辑器)"></a>通过Typora直接插入图片 (编辑器必须是Typora编辑器)</h3><blockquote>
-<p>格式–&gt;图像–&gt;插入图片</p>
+<p>格式—&gt;图像—&gt;插入图片</p>
 </blockquote>
 <hr>
 <h2 id="Markdown-表格"><a href="#Markdown-表格" class="headerlink" title="Markdown 表格"></a>Markdown 表格</h2><p>Markdown表格格式如下：</p>
 <blockquote>
 <p>| |为分割单元格，-表示长度，：：为中央对齐</p>
 </blockquote>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">数据统计表</th>
-<th align="center">A</th>
-<th align="center">B</th>
-<th align="center">C</th>
-<th align="center">D</th>
-<th align="center">E</th>
+<th style="text-align:center">数据统计表</th>
+<th style="text-align:center">A</th>
+<th style="text-align:center">B</th>
+<th style="text-align:center">C</th>
+<th style="text-align:center">D</th>
+<th style="text-align:center">E</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">文字</td>
-<td align="center">1</td>
-<td align="center">4</td>
-<td align="center">5</td>
-<td align="center">8</td>
-<td align="center">9</td>
+<tbody>
+<tr>
+<td style="text-align:center">文字</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">9</td>
 </tr>
 <tr>
-<td align="center">图标</td>
-<td align="center">2</td>
-<td align="center">3</td>
-<td align="center">6</td>
-<td align="center">7</td>
-<td align="center">0</td>
+<td style="text-align:center">图标</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">0</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <hr>
 <h2 id="Markdown-拓展技巧"><a href="#Markdown-拓展技巧" class="headerlink" title="Markdown 拓展技巧"></a>Markdown 拓展技巧</h2><h3 id="HTML元素"><a href="#HTML元素" class="headerlink" title="HTML元素"></a>HTML元素</h3><p>不在 Markdown 涵盖范围之内的标签，都可以直接在文档里面用 HTML 撰写。目前支持的HTML元素有：</p>
 <blockquote>
-<p><kbd>元素：使用<kbd>Shift</kbd> +<kbd>W</kbd> 执行操作</p>
-<p><b>元素：<b>123</b>    </p>
-<p><i>元素：<i>admin</i></p>
-<p><em>元素：<em>admin</em></p>
-<p><sup>元素：A<sup>1</sup></p>
-<p>&lt;br 元素：换行</p>
+<p>\<kbd>元素：使用<kbd>Shift</kbd> +<kbd>W</kbd> 执行操作</p>
+<p>\<b>元素：<b>123</b>    </p>
+<p>\<i>元素：<i>admin</i></p>
+<p>\<em>元素：<em>admin</em></p>
+<p>\<sup>元素：A<sup>1</sup></p>
+<p>\<br> 元素：换行</p>
 </blockquote>
 <h3 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h3><p>Markdown 使用了很多特殊符号来表示特定的意义，如果需要显示特定的符号则需要使用转义字，Markdown 使用反斜杠转义特殊字符：</p>
 <blockquote>
-<blockquote>
-<p>\ * \ * 转义文本加粗</p>
+<p>\ <em> \ </em> 转义文本加粗</p>
 </blockquote>
-</blockquote>
-<h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><p>当你需要在编辑器中插入数学公式时，可以使用两个美元符 $$ 包裹 TeX 或 LaTeX 格式的数学公式来实现。提交后，问答和文章页会根据需要加载 Mathjax 对数学公式进行渲染。如：</p>
+<h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><p>当你需要在编辑器中插入数学公式时，可以使用两个美元符 $$ 包裹 TeX 或 LaTeX 格式的数学公式来实现。提交后，问答和文章页会根据需要加载 Mathjax 对数学公式进行渲染。如输入：</p>
 <blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\mathbf&#123;V&#125;_1 \times \mathbf&#123;V&#125;_2 =  \begin&#123;vmatrix&#125; </span><br><span class="line">\mathbf&#123;i&#125; &amp; \mathbf&#123;j&#125; &amp; \mathbf&#123;k&#125; \\</span><br><span class="line">\frac&#123;\partial X&#125;&#123;\partial u&#125; &amp;  \frac&#123;\partial Y&#125;&#123;\partial u&#125; &amp; 0 \\</span><br><span class="line">\frac&#123;\partial X&#125;&#123;\partial v&#125; &amp;  \frac&#123;\partial Y&#125;&#123;\partial v&#125; &amp; 0 \\</span><br><span class="line">\end&#123;vmatrix&#125;</span><br><span class="line">$&#123;$tep1&#125;&#123;\style&#123;visibility:hidden&#125;&#123;(x+1)(x+1)&#125;&#125;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>$$<br>\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix}<br>\mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \<br>\frac{\partial X}{\partial u} &amp;  \frac{\partial Y}{\partial u} &amp; 0 \<br>\frac{\partial X}{\partial v} &amp;  \frac{\partial Y}{\partial v} &amp; 0 \<br>\end{vmatrix}<br>${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}<br>$$</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a><strong>参考</strong></h2><p>1.菜鸟教程 <u><a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">https://www.runoob.com/markdown/md-tutorial.html</a></u></p>
+<p>会显示如下公式：</p>
+<script type="math/tex; mode=display">
+\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix} 
+\mathbf{i} & \mathbf{j} & \mathbf{k} \\
+\frac{\partial X}{\partial u} &  \frac{\partial Y}{\partial u} & 0 \\
+\frac{\partial X}{\partial v} &  \frac{\partial Y}{\partial v} & 0 \\
+\end{vmatrix}
+${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}</script><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a><strong>参考</strong></h2><p>1.菜鸟教程 <u><a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">https://www.runoob.com/markdown/md-tutorial.html</a></u></p>
 <p>2.知乎专栏 <u><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/67153848">https://zhuanlan.zhihu.com/p/67153848</a></u></p>
-<p>[1] : <a target="_blank" rel="noopener" href="http://www.google.com/">http://www.google.com</a></p>
+<blockquote id="fn_脚注">
+<sup>脚注</sup>. 这是一个脚注<a href="#reffn_脚注" title="Jump back to footnote [脚注] in the text."> &#8617;</a>
+</blockquote>
+<p>[1] : <a target="_blank" rel="noopener" href="http://www.google.com">http://www.google.com</a></p>
 
       
     </div>
@@ -1030,6 +1036,63 @@
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
