@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":"Mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="CS基础课程自学路线与课程推荐简单记录我在自学路上所接触和选择的一些优秀课程，供自己回顾，各位同样奋战在CS自学路上的朋友也可以留作参考 注：本人也在学习中，不是每一门课程都看过，里面每一门课程都需要几个月的时间奋战，我基本都是选择其一学习，不要陷入焦虑，加粗的是我学习的路线。 计算机入门公开课程： 哈佛大学 CS50    斯坦福大学 CS101 麻省理工学院 6.00.1  书籍推荐： 《编码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Donnie&#39;s Blog">
+<meta property="og:url" content="http://example.com/2021/04/13/CS%E8%87%AA%E5%AD%A6%E8%B7%AF%E7%BA%BF%E4%B8%8E%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90/index.html">
+<meta property="og:site_name" content="Donnie&#39;s Blog">
+<meta property="og:description" content="CS基础课程自学路线与课程推荐简单记录我在自学路上所接触和选择的一些优秀课程，供自己回顾，各位同样奋战在CS自学路上的朋友也可以留作参考 注：本人也在学习中，不是每一门课程都看过，里面每一门课程都需要几个月的时间奋战，我基本都是选择其一学习，不要陷入焦虑，加粗的是我学习的路线。 计算机入门公开课程： 哈佛大学 CS50    斯坦福大学 CS101 麻省理工学院 6.00.1  书籍推荐： 《编码">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-04-13T12:30:38.000Z">
+<meta property="article:modified_time" content="2021-04-13T15:16:56.099Z">
+<meta property="article:author" content="Donnie">
+<meta property="article:tag" content="学习路线">
+<meta property="article:tag" content="计算机课程">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2021/04/13/CS%E8%87%AA%E5%AD%A6%E8%B7%AF%E7%BA%BF%E4%B8%8E%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | Donnie's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Donnie's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Donnie's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">少年才背剑，转眼便江湖</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/About/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/RigeJ" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/13/CS%E8%87%AA%E5%AD%A6%E8%B7%AF%E7%BA%BF%E4%B8%8E%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/ava.png">
+      <meta itemprop="name" content="Donnie">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Donnie's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-04-13 20:30:38 / 修改时间：23:16:56" itemprop="dateCreated datePublished" datetime="2021-04-13T20:30:38+08:00">2021-04-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%80%83%E7%A0%94%E4%B9%8B%E8%B7%AF/" itemprop="url" rel="index"><span itemprop="name">考研之路</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="CS基础课程自学路线与课程推荐"><a href="#CS基础课程自学路线与课程推荐" class="headerlink" title="CS基础课程自学路线与课程推荐"></a>CS基础课程自学路线与课程推荐</h1><p>简单记录我在自学路上所接触和选择的一些优秀课程，供自己回顾，各位同样奋战在CS自学路上的朋友也可以留作参考</p>
+<p>注：本人也在学习中，不是每一门课程都看过，里面每一门课程都需要几个月的时间奋战，我基本都是选择其一学习，不要陷入焦虑，加粗的是我学习的路线。</p>
+<h3 id="计算机入门"><a href="#计算机入门" class="headerlink" title="计算机入门"></a>计算机入门</h3><h5 id="公开课程："><a href="#公开课程：" class="headerlink" title="公开课程："></a>公开课程：</h5><ul>
+<li><strong>哈佛大学 CS50</strong>   </li>
+<li>斯坦福大学 CS101</li>
+<li>麻省理工学院 6.00.1</li>
+</ul>
+<h5 id="书籍推荐："><a href="#书籍推荐：" class="headerlink" title="书籍推荐："></a>书籍推荐：</h5><ul>
+<li>《编码》： 一本讲清编码原理的书</li>
+</ul>
+<h3 id="计算机程序结构与抽象"><a href="#计算机程序结构与抽象" class="headerlink" title="计算机程序结构与抽象"></a>计算机程序结构与抽象</h3><h5 id="公开课程：-1"><a href="#公开课程：-1" class="headerlink" title="公开课程："></a>公开课程：</h5><ul>
+<li><p><strong>加州大学伯克利分校  CS61A</strong></p>
+</li>
+<li><p>斯坦福大学 CS106A  [Python]  </p>
+</li>
+<li><p>卡内基梅隆大学 CMU 15-122 </p>
+</li>
+</ul>
+<h5 id="书籍推荐：-1"><a href="#书籍推荐：-1" class="headerlink" title="书籍推荐："></a>书籍推荐：</h5><p>《计算机程序的构造和解释》： SICP 可以教会你编程语言的核心思想，懂得了程序设计和语言构成，你就可以快速掌握一门语言，这对于学习安全或是软件移植都是很关键的。</p>
+<h3 id="计算机系统架构与体系"><a href="#计算机系统架构与体系" class="headerlink" title="计算机系统架构与体系"></a>计算机系统架构与体系</h3><p>对于系统架构读过的不太多，网易云课堂上哈工大的计算机体系结构读了很疲惫，转战Nand2Tetris立马就兴奋了，不得不说有些国内讲的基础课程真的讲的太无聊了，听的都能睡着。</p>
+<h5 id="公开课程：-2"><a href="#公开课程：-2" class="headerlink" title="公开课程："></a>公开课程：</h5><ul>
+<li><strong>计算机系统要素  Nand2Tetris</strong>    </li>
+</ul>
+<blockquote>
+<p>这本书讲的计算机架构自底向上的抽象，从简单的门电路开始讲起，慢慢构造CPU，主存，I/O，最后直接实现了一台基本的计算机硬件部分，这些都是纯靠Nand这个逻辑门硬搭建起来的你敢信，我当时就惊了。后半部分需要一些编程基础，但其实也还好，懂一点python的语法就没什么大问题，后半部分主要讲的是编译器和汇编器的实现，在加上构建了一个简单的操作系统。这门课好好学，真的是神课，学完你买一袋Nand门就能组台电脑（滑稽）。</p>
+</blockquote>
+<h5 id="书籍推荐：-2"><a href="#书籍推荐：-2" class="headerlink" title="书籍推荐："></a>书籍推荐：</h5><ul>
+<li>计算机系统要素  Nand2Tetris的原书</li>
+</ul>
+<h3 id="数据结构与算法"><a href="#数据结构与算法" class="headerlink" title="数据结构与算法"></a>数据结构与算法</h3><p>问我为什么要先学数据结构与算法，很简单，考研啊！408的数据结构与算法占了35%，这个分你拿到了，再加上计网的简单部分有个15%，你就拿了5成的分数了，150分你已经拿到了75。</p>
+<h5 id="公开课程：-3"><a href="#公开课程：-3" class="headerlink" title="公开课程："></a>公开课程：</h5><ul>
+<li><strong>加州大学伯克利分校  CS61B</strong></li>
+</ul>
+<blockquote>
+<p>cs61B也是门好课，虽然达不到神课的地步，但是学完了你应该就能刷leetcode了，这个成就还是很显著的，总比你刷C++ prime舒服多了吧。</p>
+</blockquote>
+<ul>
+<li>斯坦福 CS106B</li>
+<li>卡内基梅隆大学 CMU 15-210</li>
+</ul>
+<h5 id="书籍推荐：-3"><a href="#书籍推荐：-3" class="headerlink" title="书籍推荐："></a>书籍推荐：</h5><ul>
+<li>算法导论  </li>
+</ul>
+<blockquote>
+<p>老牌的算法大全，厚的能砸死人，但是确实看完能封神，一般都是浅浅看一遍。</p>
+</blockquote>
+<ul>
+<li>大话数据结构</li>
+</ul>
+<blockquote>
+<p>深入浅出的讲解数据结构，作为入门当小说看看挺好的。</p>
+</blockquote>
+<ul>
+<li>算法图解</li>
+</ul>
+<blockquote>
+<p>同样是入门书籍，看看培养兴趣挺好的。</p>
+</blockquote>
+<h3 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h3><p>我的计划里是计网放在CSAPP前面的，因为无论是Linux，Github使用，还是环境架设，都对计算机网络的了解程度要求很高，有的时候你不懂计网，很多时候看不清网络拓扑，思路完全是混乱的，比如你要用Python爬虫，或者是Python利用漏洞攻击软件，你连流量通过什么方式传递到另一台主机都不知道，什么是端口，怎么监听，怎么发送流量到端口，怎么转发端口，这些都不知道，那你会完全手足无措。</p>
+<h5 id="公开课程：-4"><a href="#公开课程：-4" class="headerlink" title="公开课程："></a>公开课程：</h5><ul>
+<li>斯坦福大学 CS144</li>
+<li>网易云课堂 《计算机网络》</li>
+</ul>
+<h5 id="书籍推荐：-4"><a href="#书籍推荐：-4" class="headerlink" title="书籍推荐："></a>书籍推荐：</h5><ul>
+<li><strong>计算机网络自顶而下</strong>  </li>
+</ul>
+<blockquote>
+<p>好，又是一本神书，如果说Nand2Tetris在架构层面从下到上剖析的清清楚楚，那这本书就是把网络从上往下一点一点拆开讲的清清楚楚，这本书看完，你基本上可以理解大部分网络的连接过程。</p>
+</blockquote>
+<ul>
+<li>计算机网络(谢希仁版)</li>
+</ul>
+<blockquote>
+<p>这本书是我本科时候唯一一本跟计算机沾点边的书，很无奈，整个本科期间什么计算机的课程都不开，讲了一堆废物课程，到最后同年的战友连C都不会敲，JX文化课程的悲哀和瞎掰，回归正题，那时候边上课边翻觉得太复杂了，完全看不懂，这本书最好还是在看完自顶而下有一个完整的概念之后再去深入理解比较好。</p>
+</blockquote>
+<h3 id="计算机系统与运行"><a href="#计算机系统与运行" class="headerlink" title="计算机系统与运行"></a>计算机系统与运行</h3><p>学完了以上，基本上就在应用层编写代码无障碍了，这个能力很关键，无论是未来搞安全还是搞开发，搞研究，快速把想法实现的能力还是很关键的，再加上SICP的程序结构，掌握新语言已经难度不大了，甚至还可以试着读读编译原理看看能不能自己重写编译器。</p>
+<h5 id="公开课程"><a href="#公开课程" class="headerlink" title="公开课程:"></a>公开课程:</h5><ul>
+<li><strong>卡内基梅隆大学 CSAPP 配套课程  （B站有）</strong></li>
+<li>卡内基梅隆大学 CMU 15-213</li>
+<li>加州大学伯克利大学 CS61C</li>
+<li>斯坦福大学 CS107 </li>
+</ul>
+<h5 id="书籍推荐：-5"><a href="#书籍推荐：-5" class="headerlink" title="书籍推荐："></a>书籍推荐：</h5><ul>
+<li>深入理解计算机系统 CSAPP </li>
+</ul>
+<blockquote>
+<p>计算机领域的圣经级别书籍，北大的计算机系统导论，南大的计算机系统课程都是基于CSAPP的，这本书把操作系统，计算机组成结构和计算机网络都连接起来，还讲了汇编的一些理论，整合了很多零散内容。</p>
+</blockquote>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ol>
+<li>知乎文章《计算机名校路线课程》</li>
+<li>网易云课堂  顶尖大学中文计算机课程</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Donnie
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2021/04/13/CS%E8%87%AA%E5%AD%A6%E8%B7%AF%E7%BA%BF%E4%B8%8E%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90/" title="">http://example.com/2021/04/13/CS自学路线与课程推荐/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/" rel="tag"># 学习路线</a>
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%BE%E7%A8%8B/" rel="tag"># 计算机课程</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/04/11/Markdown%E6%8C%87%E5%8D%97/" rel="prev" title="Markdown使用指南">
+      <i class="fa fa-chevron-left"></i> Markdown使用指南
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CS%E5%9F%BA%E7%A1%80%E8%AF%BE%E7%A8%8B%E8%87%AA%E5%AD%A6%E8%B7%AF%E7%BA%BF%E4%B8%8E%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90"><span class="nav-number">1.</span> <span class="nav-text">CS基础课程自学路线与课程推荐</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%85%A5%E9%97%A8"><span class="nav-number">1.0.1.</span> <span class="nav-text">计算机入门</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%85%AC%E5%BC%80%E8%AF%BE%E7%A8%8B%EF%BC%9A"><span class="nav-number">1.0.1.0.1.</span> <span class="nav-text">公开课程：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B9%A6%E7%B1%8D%E6%8E%A8%E8%8D%90%EF%BC%9A"><span class="nav-number">1.0.1.0.2.</span> <span class="nav-text">书籍推荐：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E4%B8%8E%E6%8A%BD%E8%B1%A1"><span class="nav-number">1.0.2.</span> <span class="nav-text">计算机程序结构与抽象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%85%AC%E5%BC%80%E8%AF%BE%E7%A8%8B%EF%BC%9A-1"><span class="nav-number">1.0.2.0.1.</span> <span class="nav-text">公开课程：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B9%A6%E7%B1%8D%E6%8E%A8%E8%8D%90%EF%BC%9A-1"><span class="nav-number">1.0.2.0.2.</span> <span class="nav-text">书籍推荐：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E4%B8%8E%E4%BD%93%E7%B3%BB"><span class="nav-number">1.0.3.</span> <span class="nav-text">计算机系统架构与体系</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%85%AC%E5%BC%80%E8%AF%BE%E7%A8%8B%EF%BC%9A-2"><span class="nav-number">1.0.3.0.1.</span> <span class="nav-text">公开课程：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B9%A6%E7%B1%8D%E6%8E%A8%E8%8D%90%EF%BC%9A-2"><span class="nav-number">1.0.3.0.2.</span> <span class="nav-text">书籍推荐：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95"><span class="nav-number">1.0.4.</span> <span class="nav-text">数据结构与算法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%85%AC%E5%BC%80%E8%AF%BE%E7%A8%8B%EF%BC%9A-3"><span class="nav-number">1.0.4.0.1.</span> <span class="nav-text">公开课程：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B9%A6%E7%B1%8D%E6%8E%A8%E8%8D%90%EF%BC%9A-3"><span class="nav-number">1.0.4.0.2.</span> <span class="nav-text">书籍推荐：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="nav-number">1.0.5.</span> <span class="nav-text">计算机网络</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%85%AC%E5%BC%80%E8%AF%BE%E7%A8%8B%EF%BC%9A-4"><span class="nav-number">1.0.5.0.1.</span> <span class="nav-text">公开课程：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B9%A6%E7%B1%8D%E6%8E%A8%E8%8D%90%EF%BC%9A-4"><span class="nav-number">1.0.5.0.2.</span> <span class="nav-text">书籍推荐：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E4%B8%8E%E8%BF%90%E8%A1%8C"><span class="nav-number">1.0.6.</span> <span class="nav-text">计算机系统与运行</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%85%AC%E5%BC%80%E8%AF%BE%E7%A8%8B"><span class="nav-number">1.0.6.0.1.</span> <span class="nav-text">公开课程:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B9%A6%E7%B1%8D%E6%8E%A8%E8%8D%90%EF%BC%9A-5"><span class="nav-number">1.0.6.0.2.</span> <span class="nav-text">书籍推荐：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">1.0.7.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Donnie"
+      src="/images/ava.png">
+  <p class="site-author-name" itemprop="name">Donnie</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/rigelJ" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;rigelJ" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/rigelhunting@gmail.com" title="E-Mail → rigelhunting@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Donnie</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">4k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">4 分钟</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
