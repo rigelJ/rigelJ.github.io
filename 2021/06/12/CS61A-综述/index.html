@@ -20,16 +20,22 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":"Mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Donnie&#39;s Blog">
-<meta property="og:url" content="http://example.com/categories/%E6%B2%89%E6%80%9D%E5%BD%95/index.html">
+  <meta name="description" content="CS61A 综述简单过了一遍课程内容，CS61A这门课程的主要目的是教会我们如何去利用抽象的思想构建繁杂的程序，课程按照讲解内容可以分为过程抽象，数据抽象和语言抽象。 首先，课程通过讲解函数式编程引入过程抽象思想，介绍了表达式，变量，函数等概念，又从函数框架的层面讲解了函数作用域的概念，最后对函数式编程的几种主要方式进行了介绍，引入了递归调用的概念。 而后，课程转入数据抽象，数据抽象是课程中最重要">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CS61A 综述">
+<meta property="og:url" content="http://example.com/2021/06/12/CS61A-%E7%BB%BC%E8%BF%B0/index.html">
 <meta property="og:site_name" content="Donnie&#39;s Blog">
+<meta property="og:description" content="CS61A 综述简单过了一遍课程内容，CS61A这门课程的主要目的是教会我们如何去利用抽象的思想构建繁杂的程序，课程按照讲解内容可以分为过程抽象，数据抽象和语言抽象。 首先，课程通过讲解函数式编程引入过程抽象思想，介绍了表达式，变量，函数等概念，又从函数框架的层面讲解了函数作用域的概念，最后对函数式编程的几种主要方式进行了介绍，引入了递归调用的概念。 而后，课程转入数据抽象，数据抽象是课程中最重要">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-06-12T07:04:18.000Z">
+<meta property="article:modified_time" content="2021-06-14T14:34:10.042Z">
 <meta property="article:author" content="Donnie">
-<meta property="article:tag" content="Python,GO，C++，爬虫，软件安全，漏洞分析">
+<meta property="article:tag" content="程序结构">
+<meta property="article:tag" content="CS61">
+<meta property="article:tag" content="CS61A">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/categories/%E6%B2%89%E6%80%9D%E5%BD%95/">
+<link rel="canonical" href="http://example.com/2021/06/12/CS61A-%E7%BB%BC%E8%BF%B0/">
 
 
 <script id="page-configurations">
@@ -37,12 +43,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>分类: 沉思录 | Donnie's Blog</title>
+  <title>CS61A 综述 | Donnie's Blog</title>
   
 
 
@@ -188,71 +194,138 @@
         <div class="content-wrap">
           
 
-          <div class="content category">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">沉思录
-          <small>分类</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/12/CS61A-%E7%BB%BC%E8%BF%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/ava.png">
+      <meta itemprop="name" content="Donnie">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Donnie's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CS61A 综述
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-06-12 15:04:18" itemprop="dateCreated datePublished" datetime="2021-06-12T15:04:18+08:00">2021-06-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-06-14 22:34:10" itemprop="dateModified" datetime="2021-06-14T22:34:10+08:00">2021-06-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS61x/" itemprop="url" rel="index"><span itemprop="name">CS61x</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>946</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-04-16T12:15:52+08:00"
-              content="2021-04-16">
-          04-16
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/04/16/%E6%88%91%E8%B5%B0%E7%9A%84%E8%B7%AF%E5%92%8C%E9%AB%98%E5%B1%B1%E7%9A%84%E9%9B%AA/" itemprop="url">
-            <span itemprop="name">我走的路和高山的雪</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-04-10T08:42:43+08:00"
-              content="2021-04-10">
-          04-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/04/10/%E4%B8%96%E7%95%8C%E5%BE%88%E5%A4%A7%EF%BC%8C%E4%BA%BA%E5%BF%83%E5%BE%88%E5%B0%8F/" itemprop="url">
-            <span itemprop="name">世界很大，人心很小</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
+        <h2 id="CS61A-综述"><a href="#CS61A-综述" class="headerlink" title="CS61A 综述"></a>CS61A 综述</h2><p>简单过了一遍课程内容，CS61A这门课程的主要目的是教会我们如何去利用抽象的思想构建繁杂的程序，课程按照讲解内容可以分为过程抽象，数据抽象和语言抽象。</p>
+<p>首先，课程通过讲解函数式编程引入过程抽象思想，介绍了表达式，变量，函数等概念，又从函数框架的层面讲解了函数作用域的概念，最后对函数式编程的几种主要方式进行了介绍，引入了递归调用的概念。</p>
+<p>而后，课程转入数据抽象，数据抽象是课程中最重要的部分，其直接的表现形式就是面向对象编程，把一组过程抽象（函数）作为类的方法集中考虑，并加入内部状态（类的变量），就是一个数据抽象，每个数据抽象对外通过一组接口进行调用，这样在调用时就不需要考虑函数内部情况，只需要知道函数实现的功能并进行合理调用即可。</p>
+<p>最后，课程讲述了语言抽象的过程，主要是讲解如何从零开始构建一门语言，定义这门语言的语法，并实现该语言的解释器或编译器，这一部分涉及编译原理，可能需要对编译原理进行拓展阅读。</p>
+<p>本书所使用的教材是经典的SICP，即计算机程序的构造与解释，原书所使用的语言是Lisp，而课程使用了更加广泛应用的python，降低了学习的门槛。</p>
+<p>但是 ，程序设计的思想是通用的，我们要学习的不仅仅只是python语言中程序的构建模式，更要学习程序设计的通用模式，拿到一门语言后如何快速掌握其要点，并利用这门语言进行程序设计，这才是这门课程真正想教给大家的。</p>
+<p>从讲述结构来看，我很明显感觉CS61A更注重的是Python语法的讲解，而SICP更多讲的是一种通用的程序设计模式，所以我会在后面将Python语法作为SICP模式讲解中的一个范例进行阐述，而不是直接讲python语法，毕竟我学61A的初衷不只是学会python，而是掌握程序设计的模式。</p>
+<p>从20年接触计算机开始到现在，我开始慢慢感觉到整个计算机科学的构建就是不断的抽象和封装，尤其在读了Nand2Teris后，这种感受更加深刻了，Nand门的相互组合构建了16门，而16门的相互组合构建起了ROM，RAM和ALU，PC，再通过封装将这些模块组合起来，就构建成了计算机的硬件部分。软件也是一样，具体数值抽象成了变量，变量与数据结构共同作用构成了函数，函数与变量共同作用构成了类与对象。在不同类之间游走，就构建了计算机程序。</p>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Donnie
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2021/06/12/CS61A-%E7%BB%BC%E8%BF%B0/" title="CS61A 综述">http://example.com/2021/06/12/CS61A-综述/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84/" rel="tag"># 程序结构</a>
+              <a href="/tags/CS61/" rel="tag"># CS61</a>
+              <a href="/tags/CS61A/" rel="tag"># CS61A</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/05/27/%E7%AE%80%E6%98%8EGit%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" rel="prev" title="简明Git使用方法">
+      <i class="fa fa-chevron-left"></i> 简明Git使用方法
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/06/12/CS61A-%E8%BF%87%E7%A8%8B%E6%8A%BD%E8%B1%A1/" rel="next" title="CS61A-过程抽象">
+      CS61A-过程抽象 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
@@ -305,6 +378,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CS61A-%E7%BB%BC%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">CS61A 综述</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
