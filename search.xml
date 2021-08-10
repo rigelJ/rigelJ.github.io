@@ -982,12 +982,166 @@
   <entry>
     <title>CS61A-元语言抽象</title>
     <url>/2021/08/08/CS61A-%E5%85%83%E8%AF%AD%E8%A8%80%E6%8A%BD%E8%B1%A1/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>CS61A-流与声明式编程</title>
-    <url>/2021/08/08/CS61A-%E6%B5%81%E4%B8%8E%E5%A3%B0%E6%98%8E%E5%BC%8F%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h2 id="CS61A-元语言抽象"><a href="#CS61A-元语言抽象" class="headerlink" title="CS61A 元语言抽象"></a>CS61A 元语言抽象</h2><h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><blockquote>
+<p>Scheme语言</p>
+<ul>
+<li>表达式</li>
+<li>控制结构与列表</li>
+<li>定义变量与函数</li>
+<li>匿名过程</li>
+</ul>
+<p>Scheme语言特性</p>
+<ul>
+<li>宏</li>
+<li>流</li>
+</ul>
+<p>抽象语言的解释器</p>
+<ul>
+<li>解释器的实现</li>
+<li>读取过程</li>
+<li>评估过程</li>
+<li>输出过程</li>
+</ul>
+</blockquote>
+<p>在之前的章节中，我们都是基于一门语言去研究程序的抽象形式，而本 书的最后一个部分直接跳出了语言，讲解一门语言是怎么样抽象的，也就是说，这一章，是在教你如何实现一门语言，我们这里所说的语言是脚本语言，接下来，我们就要以Scheme语言为例，讲解Scheme语言是怎么样一步一步构造出来的。</p>
+<h3 id="Scheme语言"><a href="#Scheme语言" class="headerlink" title="Scheme语言"></a>Scheme语言</h3><p>首先我们从使用者的角度了解一下Scheme的语法。</p>
+<h4 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h4><p>最基础的表达式可以是数字，布尔值或者符号，这里的符号是我们在Python语言中唯一没有遇到的类型，具体来说，Scheme中的符号也是一种值。</p>
+<h5 id="原子表达式"><a href="#原子表达式" class="headerlink" title="原子表达式"></a>原子表达式</h5><figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">scm&gt; 1234    ; integer</span><br><span class="line"><span class="number">1234</span></span><br><span class="line">scm&gt; 123.4   ; real number</span><br><span class="line"><span class="number">123.4</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="布尔值"><a href="#布尔值" class="headerlink" title="布尔值"></a>布尔值</h5><figure class="highlight"><table><tr><td class="code"><pre><span class="line">scm&gt; #t</span><br><span class="line">#t</span><br><span class="line">scm&gt; #f</span><br><span class="line">#f</span><br></pre></td></tr></table></figure>
+
+<p>在 Scheme 中，除了特殊的布尔值#f之外的所有值都被解释为真值（与 Python 不同，Python 中有一些像0那样的假值）</p>
+<h5 id="符号"><a href="#符号" class="headerlink" title="符号"></a>符号</h5><p>其中，符号类型是我们在 Python 中唯一没有遇到的类型。一个 符号的作用很像一个Python的名字，但不完全是。具体来说，Scheme 中的符号也是一种值。在 Python 中，名称仅用作表达式；Python 表达式永远不能计算为名称。</p>
+<p>这个过程具体是怎么实现的，我们后面再讲。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">scm&gt; quotient      ; A name bound to a built-in procedure</span><br><span class="line">#[quotient]</span><br><span class="line">scm&gt; &#x27;quotient     ; An expression that evaluates to a symbol</span><br><span class="line">quotient</span><br><span class="line">scm&gt; &#x27;hello-world!</span><br><span class="line">hello-world!</span><br></pre></td></tr></table></figure>
+
+<h4 id="调用表达式"><a href="#调用表达式" class="headerlink" title="调用表达式"></a>调用表达式</h4><p>与 Python 一样，Scheme 调用表达式中的运算符位于所有操作数之前。与 Python 不同的是，运算符包含在括号内，并且操作数由空格而不是逗号分隔。然而，Scheme 调用表达式的计算遵循与 Python 完全相同的规则：</p>
+<p>1.评估操作符，应该评估为一个过程</p>
+<p>2.从左到右评估操作数</p>
+<p>3.操作数应用于过程</p>
+<p>以下是一些使用内置过程的示例：</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">scm&gt; (+ 1 2)</span><br><span class="line"><span class="number">3</span></span><br><span class="line">scm&gt; (- 10 (/ 6 2))</span><br><span class="line"><span class="number">7</span></span><br><span class="line">scm&gt; (modulo 35 4)</span><br><span class="line"><span class="number">3</span></span><br><span class="line">scm&gt; (even? (quotient 45 2))</span><br><span class="line">#t</span><br></pre></td></tr></table></figure>
+
+<h4 id="控制结构与列表"><a href="#控制结构与列表" class="headerlink" title="控制结构与列表"></a>控制结构与列表</h4><h5 id="if表达式"><a href="#if表达式" class="headerlink" title="if表达式"></a>if表达式</h5><p>该if特殊形式使我们能够评估基于谓词两个表达式之一。它接受两个必需的参数和一个可选的第三个参数：</p>
+<blockquote>
+<p>(if <predicate> <if-true> [if-false])</p>
+</blockquote>
+<p>第一个操作数是Scheme 中所谓的谓词表达式，该表达式的值被解释为#tor 或#f。</p>
+<p>计算if特殊形式表达式的规则如下：</p>
+<p>1.评估<predicate>。<br>2.如果<predicate>评估为真值，则评估并返回该值，如果表达式<if-true>. 否则，[if-false]如果提供，则评估并返回值 。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">scm&gt; (if (&gt; x 3)</span><br><span class="line">         <span class="number">1</span></span><br><span class="line">         2)</span><br></pre></td></tr></table></figure>
+
+<p>在 Scheme 中，您不能编写elif案例。如果要使用if表达式有多个案例，则需要多个分支if表达式：</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">scm&gt; (if (&lt; x 0)</span><br><span class="line">         <span class="symbol">&#x27;negative</span></span><br><span class="line">         (<span class="name"><span class="builtin-name">if</span></span> (<span class="name"><span class="builtin-name">=</span></span> x <span class="number">0</span>)</span><br><span class="line">             <span class="symbol">&#x27;zero</span></span><br><span class="line">             <span class="symbol">&#x27;positive</span></span><br><span class="line">         )</span><br><span class="line"> )</span><br></pre></td></tr></table></figure>
+
+<h5 id="cond表达式"><a href="#cond表达式" class="headerlink" title="cond表达式"></a>cond表达式</h5><p>使用嵌套if表达式似乎不是处理多种情况的非常实用的方法。相反，我们可以使用cond特殊形式，一种类似于 Python 中的多子句 if/elif/else 条件表达式的通用条件表达式。</p>
+<figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">cond</span></span></span><br><span class="line">    (<span class="name">&lt;p1&gt;</span> &lt;e1&gt;)</span><br><span class="line">    (<span class="name">&lt;p2&gt;</span> &lt;e2&gt;)</span><br><span class="line">    ...</span><br><span class="line">    (<span class="name">&lt;pn&gt;</span> &lt;en&gt;)</span><br><span class="line">    [(<span class="name"><span class="builtin-name">else</span></span> &lt;else-expression&gt;)])</span><br></pre></td></tr></table></figure>
+
+<p>评价规则如下：</p>
+<p>1.对谓词<p1>, <p2>, …,<pn>进行求值，直到达到求值为真 y 值的谓词为止。<br>2.如果您到达一个计算结果为真值的谓词，请计算并返回子句中的相应表达式。<br>3.如果没有一个谓词是真y并且有一个else子句，则评估并返回<else-expression>。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">scm&gt; (cond</span><br><span class="line">        ((<span class="name"><span class="builtin-name">&gt;</span></span> x <span class="number">0</span>) <span class="symbol">&#x27;positive</span>)</span><br><span class="line">        ((<span class="name"><span class="builtin-name">&lt;</span></span> x <span class="number">0</span>) <span class="symbol">&#x27;negative</span>)</span><br><span class="line">        (else &#x27;zero))</span><br></pre></td></tr></table></figure>
+
+<h5 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h5><h6 id="cons"><a href="#cons" class="headerlink" title="cons"></a>cons</h6><p>Scheme 列表与我们在 Python 中使用的链表非常相似。就像链表是由一系列Link 对象构建的一样，Scheme 列表是由一系列对构建的，这些对是由构造函数创建的cons，是一种可递归对象。</p>
+<p>Scheme列表要cdr是另一个列表或nil空列表。列表在解释器中显示为值序列（类似于对象的 __str__表示Link）。</p>
+<figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">scm&gt; (cons 1 (cons 2 (cons 3 nil)))</span><br><span class="line">(<span class="name">1</span> <span class="number">2</span> <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<p>具体的实现方式用图像来表示就是</p>
+<p><img src="https://i.loli.net/2021/08/10/Le2kpYIwaAgWN8E.png" alt="image-20210810094539083"></p>
+<p>我们可以使用car和cdr从我们的列表中检索值，现在它的工作方式类似于 PythonLink的first和rest属性。</p>
+<figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">scm&gt; (define a (cons 1 (cons 2 (cons 3 nil))))  ; Assign the list to the name a</span><br><span class="line">scm&gt; a</span><br><span class="line">(<span class="name">1</span> <span class="number">2</span> <span class="number">3</span>)</span><br><span class="line">scm&gt; (car a)</span><br><span class="line"><span class="number">1</span></span><br><span class="line">scm&gt; (cdr a)</span><br><span class="line">(<span class="name">2</span> <span class="number">3</span>)</span><br><span class="line">scm&gt; (car (cdr (cdr a)))</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<p>如果您没有将 pair 或 nil 作为第二个参数传递给cons，则会出错：</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">scm&gt; (cons 1 2)</span><br><span class="line">Error</span><br></pre></td></tr></table></figure>
+
+<h6 id="List"><a href="#List" class="headerlink" title="List"></a>List</h6><p>另一种创建列表的方式是利用list，该list过程接受任意数量的参数并使用这些参数的值构造一个列表</p>
+<figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">scm&gt; (list 1 2 3)</span><br><span class="line">(<span class="name">1</span> <span class="number">2</span> <span class="number">3</span>)</span><br><span class="line">scm&gt; (list 1 (list 2 3) 4)</span><br><span class="line">(<span class="name">1</span> (<span class="name">2</span> <span class="number">3</span>) <span class="number">4</span>)</span><br><span class="line">scm&gt; (list (cons 1 (cons 2 nil)) 3 4)</span><br><span class="line">((<span class="name">1</span> <span class="number">2</span>) <span class="number">3</span> <span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+
+<p>请注意，此表达式中的所有操作数在放入结果列表之前都会进行评估。</p>
+<h6 id="Quote"><a href="#Quote" class="headerlink" title="Quote"></a>Quote</h6><p>我们还可以使用引用形式来创建一个列表，通过引用形式创建的列表不进评估</p>
+<figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">scm&gt; &#x27;(1 2 3)</span><br><span class="line">(<span class="name">1</span> <span class="number">2</span> <span class="number">3</span>)</span><br><span class="line">scm&gt; &#x27;(cons 1 2)           ; Argument to quote is not evaluated</span><br><span class="line">(<span class="name"><span class="builtin-name">cons</span></span> <span class="number">1</span> <span class="number">2</span>)</span><br><span class="line">scm&gt; &#x27;(1 (2 3 4))</span><br><span class="line">(<span class="name">1</span> (<span class="name">2</span> <span class="number">3</span> <span class="number">4</span>))</span><br></pre></td></tr></table></figure>
+
+<h4 id="定义变量与函数"><a href="#定义变量与函数" class="headerlink" title="定义变量与函数"></a>定义变量与函数</h4><p>在Python中定义变量使用=号进行，而定义变量使用def进行，而在Scheme中定义变量和过程都使用define语法，这个在后期解释器的构造中我也会着重细讲。</p>
+<p>定义变量，我们使用语法</p>
+<figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define</span></span> &lt;name&gt; &lt;expression&gt;)</span><br></pre></td></tr></table></figure>
+
+<p>评估这个表达式的规则是</p>
+<p>1.评估<expression>.<br>2.将其值绑定到<name>当前Frame中。<br>3.返回<name>。</p>
+<p>定义过程，我们使用语法</p>
+<figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">&lt;name&gt;</span> &lt;param1&gt; &lt;param2&gt; ...) &lt;body&gt; )</span><br></pre></td></tr></table></figure>
+
+<p>要评估此表达式：</p>
+<p>1.使用给定的参数和 来创建一个 lambda 过程<body>。<br>2.将过程绑定到<name>当前帧中的 。<br>3.返回<name>。</p>
+<p>以下两个表达式是等价的：</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">scm&gt; (define foo (lambda (x y) (+ x y)))</span><br><span class="line">foo</span><br><span class="line">scm&gt; (define (foo x y) (+ x y))</span><br><span class="line">foo</span><br></pre></td></tr></table></figure>
+
+<h4 id="匿名过程"><a href="#匿名过程" class="headerlink" title="匿名过程"></a>匿名过程</h4><p>所有 Scheme 过程都是 lambda 过程。要创建 lambda 过程，我们可以使用lambda特殊形式</p>
+<figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">lambda</span></span> (&lt;param1&gt; &lt;param2&gt; ...) &lt;body&gt;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">scm&gt; (lambda (x y) (+ x y))        ; Returns a lambda function, but doesn&#x27;t assign it to a name</span><br><span class="line">(<span class="name"><span class="builtin-name">lambda</span></span> (x y) (<span class="name"><span class="builtin-name">+</span></span> x y))</span><br><span class="line">scm&gt; ((lambda (x y) (+ x y)) 3 4)  ; Create and call a lambda function in one line</span><br><span class="line"><span class="number">7</span></span><br></pre></td></tr></table></figure>
+
+<p>一个过程可以接受任意数量的参数。该<body>可以包含多个表达式。return Scheme 中没有 Python语句的等效版本。该函数将简单地返回正文中最后一个表达式的值。</p>
+<h3 id="Scheme语言特性"><a href="#Scheme语言特性" class="headerlink" title="Scheme语言特性"></a>Scheme语言特性</h3><h4 id="宏"><a href="#宏" class="headerlink" title="宏"></a>宏</h4><h5 id="Define-macro"><a href="#Define-macro" class="headerlink" title="Define-macro"></a>Define-macro</h5><p>宏是一个不好理解的概念，但是却是一个非常重要的概念，我们刚才已经介绍了define的用法，下面我们使用define来定义一个过程</p>
+<figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define</span></span> twice(<span class="name">f</span>)</span><br><span class="line">  (<span class="name"><span class="builtin-name">begin</span></span> f f))</span><br></pre></td></tr></table></figure>
+
+<p>当我们输入<code>（twice （print &#39;woof））</code>我们希望能输出两次woof，然而</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">scm&gt; (twice (print &#x27;woof))</span><br><span class="line">woof</span><br></pre></td></tr></table></figure>
+
+<p>这是怎么回事呢？</p>
+<p>我们一步一步来，首先我们对操作符twice进行评估，返回我们定义的twice过程，而后我们对<code>(print &#39;woof)</code>进行评估，打印woof，而后将返回的undefined值绑定到f，而后将操作数字应用于操作符，得到表达式<code>（begin undefined undefined）</code>对该表达式进行评估，无返回值</p>
+<p>那么我们该怎么样修改才能得到正确输出呢？</p>
+<p>我们想要最终评估的表达式是这样的，<code>begin （print &#39;woof）(print &#39;woof)</code> ，因此，我们想到一种办法</p>
+<figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">twice</span> f)</span><br><span class="line">  (<span class="name"><span class="builtin-name">eval</span></span> (<span class="name"><span class="builtin-name">list</span></span> <span class="symbol">&#x27;begin</span> f f))</span><br></pre></td></tr></table></figure>
+
+<p>为了保证最终评估的表达式是<code>begin （print &#39;woof）(print &#39;woof)</code> ，我们稍微改变了一下输入的值</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">scm&gt; (twice &#x27;(print &#x27;woof))</span><br><span class="line">woof</span><br><span class="line">woof</span><br></pre></td></tr></table></figure>
+
+<p>这样我们就通过eval list返回的列表，完成了正确输出。</p>
+<p>但是肯定有人会想，为什么要这么麻烦，在进入函数的时候用‘防止被eval，结果在出来的时候又得加个eval，那索性就直接让操作数不评估不就行了。</p>
+<p>诶，没错，这个问题，前人已经考虑到了，而且他们还设计了一种语法来解决这个问题，这种语法被叫做macro，宏。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">scm&gt; (define-macro (twice f) (list &#x27;begin f f))</span><br><span class="line">twice</span><br><span class="line">scm&gt; (twice (print &#x27;woof))</span><br><span class="line">woof</span><br><span class="line">woof</span><br></pre></td></tr></table></figure>
+
+<p>define-macro允许我们定义macro，这是我们将未计算的输入表达式组合到另一个表达式中的一种方式。当我们调用宏时，操作数不会被评估，而是被视为 Scheme 数据。这意味着任何作为调用表达式或特殊形式表达式的操作数都被视为列表。</p>
+<p>在我们的例子中，我们需要一个如下所示的begin 表达式</p>
+<figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">begin</span></span> (<span class="name">print</span> <span class="symbol">&#x27;woof</span>) (<span class="name">print</span> <span class="symbol">&#x27;woof</span>))</span><br></pre></td></tr></table></figure>
+
+<p>作为 Scheme 数据，这个表达式实际上只是一个包含三个元素的列表：begin和(print ‘woof)两次，这正是(list ‘begin f f)返回的内容。现在，当我们调用 时twice，这个列表被评估为一个表达式并被(print ‘woof)评估两次。</p>
+<p>回顾一下，宏的调用方式与常规过程类似，但评估它们的规则不同。我们通过以下方式评估了 lambda 过程：</p>
+<blockquote>
+<p>1.评估运算符<br>2.评估操作数<br>3.将运算符应用于操作数，评估过程的主体</p>
+</blockquote>
+<p>但是，评估对宏过程调用的规则是：</p>
+<blockquote>
+<p>1.评估运算符<br>2.将运算符应用于未计算的操作数<br>3.评估宏在调用它的框架中返回的表达式。</p>
+</blockquote>
+<p>这种特性使得scheme语言具有很强的扩展性，可以随意设计各种不同的语法来进行运算，举个例子，如果我们想把Scheme的定义语法用Python的风格写出来，该怎么做呢？</p>
+<p>这时候我们就可以利用宏来实现。</p>
+<figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">(<span class="name">define-macro</span> (<span class="name">def</span> func bindings body)</span><br><span class="line">    (<span class="name"><span class="builtin-name">list</span></span> <span class="symbol">&#x27;define</span> (<span class="name"><span class="builtin-name">cons</span></span> func bindings) body))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">scm&lt; (def f(x y) (+ x y))</span><br><span class="line">f</span><br></pre></td></tr></table></figure>
+
+<p>这样我们就可以使用具有Python风格的语法来定义scheme函数了。</p>
+<h5 id="Quasiquote"><a href="#Quasiquote" class="headerlink" title="Quasiquote"></a>Quasiquote</h5><p>回想一下，quote特殊形式会阻止 Scheme 解释器执行表达式,如果我们试图构建具有许多嵌套列表的复杂 Scheme 表达式，这种形式似乎会派上用场。</p>
+<p>考虑我们将twice宏重写如下</p>
+<figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">(<span class="name">define-macro</span> (<span class="name">twice</span> f)</span><br><span class="line">  &#x27;(begin f f))</span><br></pre></td></tr></table></figure>
+
+<p>这似乎会产生相同的效果，但由于quote 表单阻止了任何评估，我们创建的结果表达式实际上是<code>(begin f f)</code>，这不是我们想要的。</p>
+<p>乍一看，quasiquote（可以用反引号`或quasiquote特殊形式调用）与quote的行为完全相同。但是，使用quasiquote可以使用逗号，从引用的上下文中删除一个表达式，对其进行评估，然后将其放回原处。</p>
+<p>下面是我们如何使用 quasiquote 来重写我们之前的示例：</p>
+<figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">(<span class="name">define-macro</span> (<span class="name">twice</span> f)</span><br><span class="line">  `(begin ,f ,f))</span><br></pre></td></tr></table></figure>
+
+<p>同样我们重写def实例：</p>
+<figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">(<span class="name">define-macro</span> (<span class="name">def</span> func bindings body)</span><br><span class="line">    `(define ,(cons func bindings) ,body))</span><br></pre></td></tr></table></figure>
+
+<p>其执行结果不变。</p>
+]]></content>
+      <categories>
+        <category>CS61A</category>
+      </categories>
+      <tags>
+        <tag>程序结构</tag>
+        <tag>CS61</tag>
+        <tag>CS61A</tag>
+      </tags>
   </entry>
   <entry>
     <title>CS61A-对象抽象</title>
