@@ -1132,7 +1132,7 @@
 <p>同样我们重写def实例：</p>
 <figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">(<span class="name">define-macro</span> (<span class="name">def</span> func bindings body)</span><br><span class="line">    `(define ,(cons func bindings) ,body))</span><br></pre></td></tr></table></figure>
 
-<p>其执行结果不变。</p>
+<p>其执行结果不变</p>
 ]]></content>
       <categories>
         <category>CS61A</category>
