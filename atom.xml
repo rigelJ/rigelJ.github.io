@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-08-09T07:42:49.919Z</updated>
+  <updated>2021-09-03T04:42:58.106Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>My year 2021</title>
+    <link href="http://example.com/2021/09/03/My-year-2021/"/>
+    <id>http://example.com/2021/09/03/My-year-2021/</id>
+    <published>2021-09-03T04:40:02.000Z</published>
+    <updated>2021-09-03T04:42:58.106Z</updated>
+    
+    
+    
+    
+    <category term="My year" scheme="http://example.com/categories/My-year/"/>
+    
+    
+    <category term="Years" scheme="http://example.com/tags/Years/"/>
+    
+  </entry>
   
   <entry>
     <title>CS61A-对象抽象</title>
@@ -208,31 +225,6 @@
   </entry>
   
   <entry>
-    <title>我走的路和高山的雪</title>
-    <link href="http://example.com/2021/04/16/%E6%88%91%E8%B5%B0%E7%9A%84%E8%B7%AF%E5%92%8C%E9%AB%98%E5%B1%B1%E7%9A%84%E9%9B%AA/"/>
-    <id>http://example.com/2021/04/16/%E6%88%91%E8%B5%B0%E7%9A%84%E8%B7%AF%E5%92%8C%E9%AB%98%E5%B1%B1%E7%9A%84%E9%9B%AA/</id>
-    <published>2021-04-16T04:15:52.000Z</published>
-    <updated>2021-04-16T06:55:54.277Z</updated>
-    
-    <content type="html"><![CDATA[<p>劫后余生，才知命运无常。</p><p>三场大火，烧光了所有希望，我站在熊熊烈焰面前，只一步就万劫不复，人类的悲欢从不相通，我只觉得他们吵闹，他们呼喊着，投来同情的目光，却只能远远的望着。这一刻我才发现，很多事情，除了自己咬着牙硬抗，没人能帮的了你。不怪朋友袖手旁观，也不怪父母相对无言，有些事情，你懂，他们未必也明白。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;劫后余生，才知命运无常。&lt;/p&gt;
-&lt;p&gt;三场大火，烧光了所有希望，我站在熊熊烈焰面前，只一步就万劫不复，人类的悲欢从不相通，我只觉得他们吵闹，他们呼喊着，投来同情的目光，却只能远远的望着。这一刻我才发现，很多事情，除了自己咬着牙硬抗，没人能帮的了你。不怪朋友袖手旁观，也不怪</summary>
-      
-    
-    
-    
-    <category term="沉思录" scheme="http://example.com/categories/%E6%B2%89%E6%80%9D%E5%BD%95/"/>
-    
-    
-    <category term="人生" scheme="http://example.com/tags/%E4%BA%BA%E7%94%9F/"/>
-    
-  </entry>
-  
-  <entry>
     <title>CS自学路线与课程推荐</title>
     <link href="http://example.com/2021/04/13/CS%E8%87%AA%E5%AD%A6%E8%B7%AF%E7%BA%BF%E4%B8%8E%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90/"/>
     <id>http://example.com/2021/04/13/CS%E8%87%AA%E5%AD%A6%E8%B7%AF%E7%BA%BF%E4%B8%8E%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90/</id>
@@ -280,23 +272,6 @@
     
     
     <category term="Markdown" scheme="http://example.com/tags/Markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>世界很大，人心很小</title>
-    <link href="http://example.com/2021/04/10/%E4%B8%96%E7%95%8C%E5%BE%88%E5%A4%A7%EF%BC%8C%E4%BA%BA%E5%BF%83%E5%BE%88%E5%B0%8F/"/>
-    <id>http://example.com/2021/04/10/%E4%B8%96%E7%95%8C%E5%BE%88%E5%A4%A7%EF%BC%8C%E4%BA%BA%E5%BF%83%E5%BE%88%E5%B0%8F/</id>
-    <published>2021-04-10T00:42:43.000Z</published>
-    <updated>2021-04-10T00:43:43.602Z</updated>
-    
-    
-    
-    
-    <category term="沉思录" scheme="http://example.com/categories/%E6%B2%89%E6%80%9D%E5%BD%95/"/>
-    
-    
-    <category term="沉思录" scheme="http://example.com/tags/%E6%B2%89%E6%80%9D%E5%BD%95/"/>
     
   </entry>
   
