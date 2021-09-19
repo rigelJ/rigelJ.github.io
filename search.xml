@@ -1332,4 +1332,189 @@
         <tag>Years</tag>
       </tags>
   </entry>
+  <entry>
+    <title>CS61B-Java</title>
+    <url>/2021/09/04/CS61B-Java/</url>
+    <content><![CDATA[<h2 id="CS61B-Java"><a href="#CS61B-Java" class="headerlink" title="CS61B Java"></a>CS61B Java</h2><h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><blockquote>
+<p>Java基础</p>
+<ul>
+<li><p>Hello world</p>
+</li>
+<li><p>类与实例</p>
+</li>
+<li><p>方法与域</p>
+</li>
+<li><p>静态static</p>
+</li>
+<li><p>作用范围</p>
+</li>
+<li><p>内存里的数据表示</p>
+</li>
+<li><p>流程控制</p>
+</li>
+<li><p>构造方法与方法重载</p>
+</li>
+</ul>
+<p>Java高级语法</p>
+<ul>
+<li>继承与多态</li>
+<li>抽象类与接口</li>
+<li>Java核心类</li>
+<li>泛型与反射</li>
+</ul>
+<p>Java链表</p>
+<ul>
+<li>List（IntList 最直白的链表）</li>
+<li>SLList（单向链表  哨兵节点）</li>
+<li>DLList（循环链表 双哨兵节点）</li>
+<li>Arrays（数组）</li>
+<li>AList（数组链表）</li>
+</ul>
+</blockquote>
+<p>在61B课程的第一部分，讲解了Java语言的基础用法，主要从面向对象的角度全面讲解Java语法特性。</p>
+<h3 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h3><h4 id="HelloWorld"><a href="#HelloWorld" class="headerlink" title="HelloWorld"></a>HelloWorld</h4><p>学任何一门语言都要从如何运行开始，关于如何配置Java环境在这就不赘述了，首先我们来看一个简单的Java程序</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello world!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们在Python语言中学过面向对象的编程方式，在Python中，面向对象只是编程的一种方式，而相比于python语言，java的所有代码都运行在一个类中，执行 Java 程序有两个步骤，一是对java程序进行编译，二是运行编译后的java程序，具体我们使用以下代码运行。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">$ javac HelloWorld.java</span><br><span class="line">$ java HelloWorld</span><br><span class="line">Hello World! </span><br></pre></td></tr></table></figure>
+
+<p>这样我们就运行了一段java代码。</p>
+<h4 id="类与实例"><a href="#类与实例" class="headerlink" title="类与实例"></a>类与实例</h4><p>我们在CS61A当中学过，类只有被实例化之后才能作为一个独立的对象进行操作，在java中，对象的实例化使用new进行创建</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 可以用来自动创建文档的注释</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> num;</span><br><span class="line">    </span><br><span class="line">    &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Hello</span><span class="params">(String name,<span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        num++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 向屏幕输出文本:</span></span><br><span class="line">        System.out.println(<span class="string">&quot;Hello, world!&quot;</span>);&#125;</span><br><span class="line">        <span class="comment">/* 多行注释开始</span></span><br><span class="line"><span class="comment">        注释内容</span></span><br><span class="line"><span class="comment">        注释结束 */</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.age;</span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getNum</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">&#125; <span class="comment">// class</span></span><br></pre></td></tr></table></figure>
+
+<p>不带返回参数类型的方法在Java类中用作构造方法，构造方法的名称必须和类名相同，这里的<code>public Hello</code>方法就是<code>Hello</code>类的构造方法，而后我们采用new创建Hello类的实例nh。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt; Hello nh = <span class="keyword">new</span> Hello(<span class="string">&quot;David&quot;</span>,<span class="number">15</span>);</span><br><span class="line">&gt;&gt;&gt; nh.getName()</span><br><span class="line">David</span><br></pre></td></tr></table></figure>
+
+<p>Java调用方法的方式与Python相同。</p>
+<h4 id="方法与域"><a href="#方法与域" class="headerlink" title="方法与域"></a>方法与域</h4><p>一个Java类中有方法和域，例如有一个类Student</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> String name;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> grade;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name,<span class="keyword">int</span> age,<span class="keyword">int</span> grade)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        <span class="keyword">this</span>.grade = grade;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.age;</span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getGrade</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.grade;</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们看到在这个类当中有<code>name</code>，<code>age</code>，<code>grade</code>三个域和<code>getName</code>，<code>getAge</code>和<code>getGrade</code>三个方法。</p>
+<p>域是对象的属性，方法是对象的操作手段。</p>
+<p>比如Student这个类就有名称，年龄和年级三个属性，实例化的每个对象都有自己不同的属性值，而他们都可以调用<code>getName</code>，<code>getAge</code>等方法。</p>
+<h4 id="静态static"><a href="#静态static" class="headerlink" title="静态static"></a>静态static</h4><p>如果我们想给所有的学生增加school这个域，并且令所有学生的School域都为“MingHai”，那么我们该怎么办呢？</p>
+<p>最常规的做法是增加一个域。并且在创建的时候给域赋值。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> String name;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">int</span> age;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">int</span> grade;</span><br><span class="line"><span class="keyword">public</span> String school    </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name,<span class="keyword">int</span> age,<span class="keyword">int</span> grade，String school)</span></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.grade = grade;</span><br><span class="line">    <span class="keyword">this</span>.school = school;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>于是我们在创建每个对象的时候引入school域的值。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Student David = <span class="keyword">new</span> Student(<span class="string">&quot;David&quot;</span>,<span class="number">15</span>,<span class="number">3</span>,<span class="string">&quot;MingHai&quot;</span>);</span><br><span class="line">Student Lee = <span class="keyword">new</span> Student(<span class="string">&quot;Lee&quot;</span>,<span class="number">15</span>,<span class="number">3</span>,<span class="string">&quot;MingHai&quot;</span>);</span><br><span class="line">Student Jane = <span class="keyword">new</span> Student(<span class="string">&quot;Jane&quot;</span>,<span class="number">15</span>,<span class="number">3</span>,<span class="string">&quot;MingHai&quot;</span>);</span><br><span class="line">Student Bob = <span class="keyword">new</span> Student(<span class="string">&quot;Bob&quot;</span>,<span class="number">15</span>,<span class="number">3</span>,<span class="string">&quot;MingHai&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>我们会发现这样定义真的很麻烦….</p>
+<p>于是我们就有了另一种方式，那就是利用static创建一个静态域。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> String name;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> grade;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String school=<span class="string">&quot;MingHai&quot;</span>;    </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name,<span class="keyword">int</span> age,<span class="keyword">int</span> grade)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        <span class="keyword">this</span>.grade = grade;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们将被static修饰的域称作静态域，没有static修饰的称作实例域，静态域在所有实例化的对象中都具有相同值，当在其中一个实例中修改静态域后，所有实例中的静态域都会发生改变，我们常常利用这个特性来进行计数。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> String name;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> grade;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String school=<span class="string">&quot;MingHai&quot;</span>;    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> num=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name,<span class="keyword">int</span> age,<span class="keyword">int</span> grade)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        <span class="keyword">this</span>.grade = grade;</span><br><span class="line">        num++;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>static静态除了可以用来修饰域，还可以用来修饰方法，被static修饰的方法只能由类进行调用，实例不可调用静态方法。</p>
+<p>我们给Student增加一个可以获取<code>num</code>域的静态方法。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getNum</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样我们就可以通过类来调用getNum方法了</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt; Student.getNum();</span><br><span class="line">xx</span><br></pre></td></tr></table></figure>
+
+<p>此外，static还可以修饰类，被static所修饰的类称为静态类，如果一个类要声明为静态类，只有一种情况，那就是静态内部类，如果在外部声明为静态类，无法通过编译。</p>
+<p>静态内部类的相关知识，有看到再补充。</p>
+<h4 id="作用范围"><a href="#作用范围" class="headerlink" title="作用范围"></a>作用范围</h4><p>Java的作用范围主要有public，private和protected三种，延伸的还有pakage等，暂且不介绍。</p>
+<p>作用范围修饰可以用于域，方法和类。</p>
+<p>public所修饰的域，方法可以在类外被调用。</p>
+<p>private所修饰的域，方法只能在类内部被调用。</p>
+<p>protected所修饰的域，方法只能在继承类被调用。</p>
+<h5 id="关于域"><a href="#关于域" class="headerlink" title="关于域"></a>关于域</h5><p>为了确保安全，我们一般将关键域设置为private，然后利用JavaBean的方式创建getXX和setXX进行设置和访问，基于这个思想我们对Student类进行修改。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> grade;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name,<span class="keyword">int</span> age,<span class="keyword">int</span> grade)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        <span class="keyword">this</span>.grade = grade;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.age;</span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getGrade</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.grade;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> aAge)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(age&gt;<span class="number">15</span>)</span><br><span class="line">        &#123;</span><br><span class="line">           <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">this</span>.age = aAge;</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们可以看到利用JavaBean的方式，可以在设置的时候对用户输入进行过滤，防止用户输入恶意代码对数据进行篡改。</p>
+<p>protected一般用作修饰被继承类的域，这样就可以继承类中调用被继承类的域。</p>
+<h5 id="关于方法"><a href="#关于方法" class="headerlink" title="关于方法"></a>关于方法</h5><p>private修饰的方法一般是方法中的方法，该方法不能被外部调用篡改，只能在内部使用，比如</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> String InitOut = <span class="string">&quot;Hello&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> InitName(<span class="string">&quot;Hi,&quot;</span>) + name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> String <span class="title">InitName</span><span class="params">(String a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    InitOut = a;</span><br><span class="line">    <span class="keyword">return</span> InitName;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们需要得到用户的名字，并输出<code>Hello，xx</code>，如果将InitName设置为public，那么用户就可以修改InitName,造成安全隐患。</p>
+<h4 id="数据在内存中表示"><a href="#数据在内存中表示" class="headerlink" title="数据在内存中表示"></a>数据在内存中表示</h4><p>Java的数据类型分为基本类型和引用类型两种。</p>
+<p>基本数据类型是CPU可以直接进行运算的类型。Java定义了以下几种基本数据类型：</p>
+<p>整数类型：byte，short，int，long</p>
+<p>浮点数类型：float，double</p>
+<p>字符类型：char</p>
+<p>布尔类型：boolean</p>
+<p>除了上述基本类型的变量，剩下的都是引用类型。例如，引用类型最常用的就是String字符串。</p>
+<p>我们重点来讲解一下基本类型和引用类型分别是怎么储存在内存中的。</p>
+<p>计算机包含大量存储信息的内存位，每个存储位都有一个唯一的地址。现代计算机可以使用数十亿个这样的位。</p>
+<p>当声明某一类型的变量时，Java 会发现一个连续的方块，其位足以容纳该类型的位。例如，如果声明了 int，则会获得 32 位的块。Java 中的每个数据类型都具有不同数量的位。</p>
+<p>为了有一个方便的比喻，我们将这些块之一称为位的”盒子”。</p>
+<p>除了留出内存外，Java 编译器还在内部表中创建一个条目，将每个可变名称映射到框中第一位的位置。</p>
+<p>例如，如果声明int x和double y，则 Java 可能会决定使用计算机内存中的位 352 到 384 来存储 x，而位 20800 到 20864 来存储 y。然后，翻译将记录 int x 从位 352 开始，y 从位 20800 开始</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> x;</span><br><span class="line"><span class="keyword">double</span> y;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2021/09/19/z2B1FAb5WISrvup.png" alt="image-20210919112956870"></p>
+]]></content>
+      <categories>
+        <category>CS61B</category>
+      </categories>
+      <tags>
+        <tag>CS61</tag>
+        <tag>Java</tag>
+        <tag>CS61B</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CS61B-数据结构</title>
+    <url>/2021/09/04/CS61B-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>CS61B-算法</title>
+    <url>/2021/09/04/CS61B-%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>CS61B-综述</title>
+    <url>/2021/09/04/CS61B-%E7%BB%BC%E8%BF%B0/</url>
+    <content><![CDATA[<h2 id="CS61B-综述"><a href="#CS61B-综述" class="headerlink" title="CS61B 综述"></a>CS61B 综述</h2><h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><h5 id="CS61B-Java"><a href="#CS61B-Java" class="headerlink" title="CS61B-Java"></a>CS61B-Java</h5><blockquote>
+<p>Java基础</p>
+<ul>
+<li>Hello world（java语法风格）</li>
+<li>变量与函数（变量与函数的定义方式）</li>
+<li>数据类型（八大基本数据类型和对象引用类型）</li>
+<li>内存中的数据（基本类型和引用类型是怎么储存的）</li>
+<li>流程控制（if/while/for/for each）</li>
+<li>数组与类（数组的类型  = 基本数据数组 +对象数组  /类与数组的创建方式/异同）</li>
+<li>测试（junit测试  时序测试  随机测试 ）</li>
+</ul>
+<p>Java面向对象</p>
+<ul>
+<li><p>类与对象（对象实例化）</p>
+</li>
+<li><p>静态（类方法与实例方法，静态域与实例域，局部变量）</p>
+</li>
+<li><p>构造方法（构造方法，不同参数的构造方法）</p>
+</li>
+<li><p>作用域（public  private  protected）</p>
+</li>
+</ul>
+<p>Java列表与数组</p>
+<ul>
+<li>List（IntList 最直白的链表）</li>
+<li>SLList（单向链表  哨兵节点）</li>
+<li>DLList（循环链表 双哨兵节点）</li>
+<li>Arrays（数组）</li>
+<li>AList（数组链表）</li>
+</ul>
+<p>Java继承与多态</p>
+<ul>
+<li>接口与继承（Comparator）</li>
+<li>扩展与转换</li>
+<li>多态</li>
+</ul>
+<p>Java异常处理</p>
+<p>Java高性能编程</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>CS61B</category>
+      </categories>
+      <tags>
+        <tag>程序结构</tag>
+        <tag>CS61</tag>
+        <tag>CS61B</tag>
+      </tags>
+  </entry>
 </search>
