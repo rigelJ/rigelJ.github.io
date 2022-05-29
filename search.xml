@@ -1360,7 +1360,6 @@
 <li>继承与多态</li>
 <li>抽象类与接口</li>
 <li>Java核心类</li>
-<li>泛型与反射</li>
 </ul>
 <p>Java链表</p>
 <ul>
@@ -1417,9 +1416,11 @@
 <p>静态内部类的相关知识，有看到再补充。</p>
 <h4 id="作用范围"><a href="#作用范围" class="headerlink" title="作用范围"></a>作用范围</h4><p>Java的作用范围主要有public，private和protected三种，延伸的还有pakage等，暂且不介绍。</p>
 <p>作用范围修饰可以用于域，方法和类。</p>
+<blockquote>
 <p>public所修饰的域，方法可以在类外被调用。</p>
 <p>private所修饰的域，方法只能在类内部被调用。</p>
 <p>protected所修饰的域，方法只能在继承类被调用。</p>
+</blockquote>
 <h5 id="关于域"><a href="#关于域" class="headerlink" title="关于域"></a>关于域</h5><p>为了确保安全，我们一般将关键域设置为private，然后利用JavaBean的方式创建getXX和setXX进行设置和访问，基于这个思想我们对Student类进行修改。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> grade;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name,<span class="keyword">int</span> age,<span class="keyword">int</span> grade)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        <span class="keyword">this</span>.grade = grade;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.age;</span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getGrade</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.grade;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> aAge)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(age&gt;<span class="number">15</span>)</span><br><span class="line">        &#123;</span><br><span class="line">           <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">this</span>.age = aAge;</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -1431,21 +1432,155 @@
 <p>我们需要得到用户的名字，并输出<code>Hello，xx</code>，如果将InitName设置为public，那么用户就可以修改InitName,造成安全隐患。</p>
 <h4 id="数据在内存中表示"><a href="#数据在内存中表示" class="headerlink" title="数据在内存中表示"></a>数据在内存中表示</h4><p>Java的数据类型分为基本类型和引用类型两种。</p>
 <p>基本数据类型是CPU可以直接进行运算的类型。Java定义了以下几种基本数据类型：</p>
+<blockquote>
 <p>整数类型：byte，short，int，long</p>
 <p>浮点数类型：float，double</p>
 <p>字符类型：char</p>
 <p>布尔类型：boolean</p>
-<p>除了上述基本类型的变量，剩下的都是引用类型。例如，引用类型最常用的就是String字符串。</p>
-<p>我们重点来讲解一下基本类型和引用类型分别是怎么储存在内存中的。</p>
-<p>计算机包含大量存储信息的内存位，每个存储位都有一个唯一的地址。现代计算机可以使用数十亿个这样的位。</p>
-<p>当声明某一类型的变量时，Java 会发现一个连续的方块，其位足以容纳该类型的位。例如，如果声明了 int，则会获得 32 位的块。Java 中的每个数据类型都具有不同数量的位。</p>
-<p>为了有一个方便的比喻，我们将这些块之一称为位的”盒子”。</p>
-<p>除了留出内存外，Java 编译器还在内部表中创建一个条目，将每个可变名称映射到框中第一位的位置。</p>
-<p>例如，如果声明int x和double y，则 Java 可能会决定使用计算机内存中的位 352 到 384 来存储 x，而位 20800 到 20864 来存储 y。然后，翻译将记录 int x 从位 352 开始，y 从位 20800 开始</p>
+</blockquote>
+<p>对于基本类型，计算机会直接开辟相应的区域供基本类型存储。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> x;</span><br><span class="line"><span class="keyword">double</span> y;</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://i.loli.net/2021/09/19/z2B1FAb5WISrvup.png" alt="image-20210919112956870"></p>
-<p><img src="../../../../.config/Typora/typora-user-images/image-20210919153032831.png" alt="image-20210919153032831"></p>
+<p>其在 内存中的表示如图所示：</p>
+<p><img src="https://i.loli.net/2021/09/19/ukH3RUtGZOBLNb7.png" alt="image-20210919153239683"></p>
+<p>而对于引用类型，计算机会开辟一块区域来存储首地址，什么意思呢。我们以一个类为例，来看一看引用类型在内存中的存储。</p>
+<p>当我们使用new（如狗、海象、行星）对对象进行实例化时，Java 首先为该类的每个实例变量分配一个框，并用默认值填充它们。然后，构造器通常用其他值填充每个框。</p>
+<p>假设我们有一个Walrus类</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Walrus</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> weight;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">double</span> tuskSize;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Walrus</span><span class="params">(<span class="keyword">int</span> w, <span class="keyword">double</span> ts)</span> </span>&#123;</span><br><span class="line">          weight = w;</span><br><span class="line">          tuskSize = ts;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们实例化一个对象</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">new Walrus(1000, 8.3);</span><br></pre></td></tr></table></figure>
+
+<p>我们来看看这个实例化后的对象在内存中是什么样的。</p>
+<p><img src="https://i.loli.net/2021/09/19/X6tWORdAGxfCsj7.png" alt="image-20210919154637430"></p>
+<p>我们发现，实例化后的对象占据了内存中的一块区域，那么我们该怎么确定对象在内存中的位置呢？</p>
+<p>当我们声明任何参考类型的变量（海象、狗、行星、阵列等）时，Java 会分配一个 64 位的框，无论对象类型如何。乍一看，这似乎会导致悖论，因为仅仅weight这一个数据就占据了64位的区域，然而有一种办法可以解决这个问题，那就是将实例对象存放的首地址赋给变量。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Walrus wl = <span class="keyword">new</span> Walrus(<span class="number">100</span>,<span class="number">8.3</span>);</span><br></pre></td></tr></table></figure>
+
+<p>具体表示如下</p>
+<p><img src="https://i.loli.net/2021/09/19/FOpgal2w3i6MhNQ.png" alt="image-20210919155302354"></p>
+<p><img src="https://i.loli.net/2021/09/19/TuXL1AKhSRvkjVm.png" alt="image-20210919155229244"></p>
+<p>我们将walrus实例在内存中的首地址赋给引用类型的变量wl，这样就可以通过首地址来查找到实例的位置。</p>
+<p>我们用箭头简化表示这个过程</p>
+<p><img src="https://i.loli.net/2021/09/19/dQtsVjSJzpAflOK.png" alt="image-20210919155602729"></p>
+<p>接下来我们通过一个例子来巩固一下这个概念。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Walrus a = <span class="keyword">new</span> Walrus(<span class="number">1000</span>, <span class="number">8.3</span>);</span><br><span class="line">Walrus b;</span><br><span class="line">b = a;</span><br></pre></td></tr></table></figure>
+
+<p>执行第一行后，我们有：</p>
+<p><img src="https://i.loli.net/2021/09/19/2ZtFUu83IJHySiQ.png" alt="image-20210919155843381"></p>
+<p>执行第二行后，我们有：</p>
+<p><img src="https://i.loli.net/2021/09/19/DdIbyVSieUYLAl2.png" alt="image-20210919155857043"></p>
+<p>请注意，上面 b 是未定义的，不是空的。</p>
+<p>最后a行只需将盒子中的位复制到b框中。或者就我们的视觉隐喻而言，这意味着 b 将完全复制箭头，现在显示指向同一对象的箭头。</p>
+<p><img src="https://i.loli.net/2021/09/19/z517cWYAl3OQM6a.png" alt="image-20210919155945022"></p>
+<p>这就是对象引用的方法。</p>
+<h5 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h5><p>引用类型和基本类型在内存中的这种表示，影响最大的就是参数的传递，在Java中，所有的参数传递都是复制位，而非引用地址，我们把这种传参方式称作按值引用。</p>
+<p>例如，请考虑以下功能：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">average</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (a + b) / <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>假设我们调用此函数（如下图所示）</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> x = <span class="number">5.5</span>;</span><br><span class="line">    <span class="keyword">double</span> y = <span class="number">10.5</span>;</span><br><span class="line">    <span class="keyword">double</span> avg = average(x, y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行此功能的前两行后，主要方法将具有两个标记为x和y的框，其中包含以下值：</p>
+<p><img src="https://i.loli.net/2021/09/19/CjOWkQte3hKn64F.png" alt="image-20210919160930033"></p>
+<p>调用该函数时，average函数具有自己的范围，其中两个新框标记为a和b并且位只是复制。当我们说”按值传递”时，我们指的是这些位的复制。</p>
+<p><img src="https://i.loli.net/2021/09/19/MTF9gI8XYAyJ2ah.png" alt="image-20210919160943966"></p>
+<p>如果average函数要更改a，x将会保持不变。</p>
+<p>那么。如果将传入的参数改为引用类型呢？</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PassByValueFigure</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">           Walrus walrus = <span class="keyword">new</span> Walrus(<span class="number">3500</span>, <span class="number">10.5</span>);</span><br><span class="line">           <span class="keyword">int</span> x = <span class="number">9</span>;</span><br><span class="line"></span><br><span class="line">           doStuff(walrus, x);</span><br><span class="line">           System.out.println(walrus);</span><br><span class="line">           System.out.println(x);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">doStuff</span><span class="params">(Walrus W, <span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">           W.weight = W.weight - <span class="number">100</span>;</span><br><span class="line">           x = x - <span class="number">5</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们会发现，调用doStuff方法，weight被更改了，而x却没有变化，因为我们传入引用类型的参数，是将首地址复制给另一个引用类型的变量W，无论是walrus.weight还是W.weight指向的都是同一块内存区域。</p>
+<h4 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h4><p>Java的流程控制和Python没什么区别，if，else，for，while，for each.</p>
+<p>唯一有些变化的就是for each循环</p>
+<p>for循环经常用来遍历数组，因为通过计数器可以根据索引来访问数组的每个元素：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] ns = &#123; <span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span> &#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;ns.length; i++) &#123;</span><br><span class="line">    System.out.println(ns[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>但是，很多时候，我们实际上真正想要访问的是数组每个元素的值。Java还提供了另一种for each循环，它可以更简单地遍历数组：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] ns = &#123; <span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span> &#125;;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> n : ns) &#123;</span><br><span class="line">            System.out.println(n);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>和for循环相比，for each循环的变量n不再是计数器，而是直接对应到数组的每个元素。for each循环的写法也更简洁。但是，for each循环无法指定遍历顺序，也无法获取数组的索引。</p>
+<p>除了数组外，for each循环能够遍历所有“可迭代”的数据类型，包括后面会介绍的List、Map等。</p>
+<h4 id="构造方法与方法重载"><a href="#构造方法与方法重载" class="headerlink" title="构造方法与方法重载"></a>构造方法与方法重载</h4><p>创建实例的时候，我们经常需要同时初始化这个实例的字段，例如：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Person ming = <span class="keyword">new</span> Person();</span><br><span class="line">ming.setName(<span class="string">&quot;小明&quot;</span>);</span><br><span class="line">ming.setAge(<span class="number">12</span>);</span><br></pre></td></tr></table></figure>
+
+<p>初始化对象实例需要3行代码，而且，如果忘了调用setName()或者setAge()，这个实例内部的状态就是不正确的。</p>
+<p>能否在创建对象实例时就把内部字段全部初始化为合适的值？</p>
+<p>完全可以。</p>
+<p>这时，我们就需要构造方法。</p>
+<p>创建实例的时候，实际上是通过构造方法来初始化实例的。我们先来定义一个构造方法，能在创建Person实例的时候，一次性传入name和age，完成初始化：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.name = name;</span><br><span class="line">       <span class="keyword">this</span>.age = age;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">this</span>.age;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">由于构造方法是如此特殊，所以构造方法的名称就是类名。构造方法的参数没有限制，在方法内部，也可以编写任意语句。但是，和普通方法相比，构造方法没有返回值（也没有<span class="keyword">void</span>），调用构造方法，必须用<span class="keyword">new</span>操作符。</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="默认构造方法"><a href="#默认构造方法" class="headerlink" title="默认构造方法"></a>默认构造方法</h5><p>是不是任何class都有构造方法？是的。</p>
+<p>那前面我们并没有为Person类编写构造方法，为什么可以调用new Person()？</p>
+<p>原因是如果一个类没有定义构造方法，编译器会自动为我们生成一个默认构造方法，它没有参数，也没有执行语句，类似这样：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>要特别注意的是，如果我们自定义了一个构造方法，那么，编译器就不再自动创建默认构造方法：</p>
+<p>如果既要能使用带参数的构造方法，又想保留不带参数的构造方法，那么只能把两个构造方法都定义出来：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.name = name;</span><br><span class="line">       <span class="keyword">this</span>.age = age;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">this</span>.age;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在Java中，创建对象实例的时候，按照如下顺序进行初始化：</p>
+<p>先初始化字段，例如，int age = 10;表示字段初始化为10，double salary;表示字段默认初始化为0，String name;表示引用类型字段默认初始化为null；</p>
+<p>执行构造方法的代码进行初始化。</p>
+<p>因此，构造方法的代码由于后运行，所以，new Person(“Xiao Ming”, 12)的字段值最终由构造方法的代码确定。</p>
+<h5 id="多构造方法"><a href="#多构造方法" class="headerlink" title="多构造方法"></a>多构造方法</h5><p>可以定义多个构造方法，在通过new操作符调用的时候，编译器通过构造方法的参数数量、位置和类型自动区分：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.name = name;</span><br><span class="line">       <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">          <span class="keyword">this</span>.name = name;</span><br><span class="line">          <span class="keyword">this</span>.age = <span class="number">12</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果调用new Person(“Xiao Ming”, 20);，会自动匹配到构造方法public Person(String, int)。</p>
+<p>如果调用new Person(“Xiao Ming”);，会自动匹配到构造方法public Person(String)。</p>
+<p>如果调用new Person();，会自动匹配到构造方法public Person()。</p>
+</blockquote>
+<p>一个构造方法可以调用其他构造方法，这样做的目的是便于代码复用。调用其他构造方法的语法是this(…)：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.name = name;</span><br><span class="line">      <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>(name, <span class="number">18</span>); <span class="comment">// 调用另一个构造方法Person(String, int)</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>(<span class="string">&quot;Unnamed&quot;</span>); <span class="comment">// 调用另一个构造方法Person(String)</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="方法重载"><a href="#方法重载" class="headerlink" title="方法重载"></a>方法重载</h5><p>上文我们说到，可以通过定义不同的构造方法来实现不同传入参数的对象构造，那么普通方法是否也可以传入不同参数呢？</p>
+<p>当然可以，这就是方法重载。</p>
+<p>在一个类中，我们可以定义多个方法。如果有一系列方法，它们的功能都是类似的，只有参数有所不同，那么，可以把这一组方法名做成同名方法。例如，在Hello类中，定义多个hello()方法：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Hello</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello, world!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hello</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello, &quot;</span> + name + <span class="string">&quot;!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hello</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (age &lt; <span class="number">18</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Hi, &quot;</span> + name + <span class="string">&quot;!&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Hello, &quot;</span> + name + <span class="string">&quot;!&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这种方法名相同，但各自的参数不同，称为方法重载（Overload）。</p>
+<p>注意：方法重载的返回值类型通常都是相同的。</p>
+<h3 id="Java高级语法"><a href="#Java高级语法" class="headerlink" title="Java高级语法"></a>Java高级语法</h3><h4 id="继承与多态"><a href="#继承与多态" class="headerlink" title="继承与多态"></a>继承与多态</h4><p>在之前我们已经定义了Student类，现在我们想要定义一个HighStudent来表示大学生，添加其所选择的课程，我们可以选择这样定义</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HighStudent</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> grade;</span><br><span class="line">    <span class="keyword">private</span> String[] subject;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name,<span class="keyword">int</span> age,<span class="keyword">int</span> grade)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        <span class="keyword">this</span>.grade = grade;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.age;</span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getGrade</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.grade;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> aAge)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(age&gt;<span class="number">15</span>)</span><br><span class="line">        &#123;</span><br><span class="line">           <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">this</span>.age = aAge;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;   </span><br></pre></td></tr></table></figure>
+
+<p>我们发现Student类和HighStudent类几乎完全一样，除了增加了一个新域，于是我们考虑简化代码。</p>
+<p>我们使用继承语法来简化代码，简化后的代码如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HighStudent</span> <span class="keyword">extends</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> String[] subject=&#123;&#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> HighStudent &#123;</span><br><span class="line">        <span class="keyword">super</span>(String name,<span class="keyword">int</span> age,<span class="keyword">int</span> grade);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在Java中，我们使用extends表示继承，继承的类会继承父类的所有方法，并且通过super语法可以继承父类的构造方法。</p>
+<p>在OOP的术语中，我们把Student称为超类（super class），父类（parent class），基类（base class），把HighStudent称为子类（subclass），扩展类（extended class）。</p>
+<h5 id="protected"><a href="#protected" class="headerlink" title="protected"></a>protected</h5><p>继承有个特点，就是子类无法访问父类的private字段或者private方法。例如，Student类就无法访问Person类的name和age字段，因此我们要在父类中把private修饰的域改为protected修饰。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">protected</span> String name;</span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">int</span> age;</span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">int</span> grade;</span><br></pre></td></tr></table></figure>
+
+<h5 id="super"><a href="#super" class="headerlink" title="super"></a>super</h5><p>我们通过super来引用父类的方法和域，刚才我们在讲解继承的时候已经使用super引用 了父类的构造方法，正常来说，子类会自动继承父类的所有方法，但是有一个例外，子类可能对父类的方法进行重写</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public int getAge()&#123;</span><br><span class="line">        return this.age + 1;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果我们在HighStudent中改写了getAge方法，而我们需要调用父类原有的方法，就需要使用super</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">HighStudent hs &#x3D; new HighStudent(&quot;David&quot;,18,2);</span><br><span class="line">hs.super.getAge();</span><br></pre></td></tr></table></figure>
+
+<p>这个功能更多运用在子类方法重写。</p>
+<h5 id="阻止与限制继承"><a href="#阻止与限制继承" class="headerlink" title="阻止与限制继承"></a>阻止与限制继承</h5><p>在Java中，我们使用permit限制继承，如果我们要限制一个类的继承</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> sealed <span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="title">permits</span> <span class="title">HighStudent</span>,<span class="title">PrimStudent</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样我们就限制了只有两个类能够继承Student类</p>
+<p>如果我们要阻止该类的所有继承，我们使用final修饰该类</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="转型"><a href="#转型" class="headerlink" title="转型"></a>转型</h5><p>如果一个引用变量的类型是HighStudent，那么它可以指向一个HighStudent类型的实例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">HighStudent s = <span class="keyword">new</span> HighStudent();</span><br></pre></td></tr></table></figure>
+
+<p>如果一个引用类型的变量是Student，那么它可以指向一个Student类型的实例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Student p = <span class="keyword">new</span> Student();</span><br></pre></td></tr></table></figure>
+
+<p>现在问题来了：如果HighStudent是从Student继承下来的，那么，一个引用类型为Student的变量，能否指向HighStudent类型的实例？</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Student p = <span class="keyword">new</span> HighStudent(); 测试一下就可以发现，这种指向是允许的。</span><br></pre></td></tr></table></figure>
+
+<p>这是因为HighStudent继承自Student，因此，它拥有Student的全部功能。Student类型的变量，如果指向HighStudent类型的实例，对它进行操作，是没有问题的！</p>
+<p>这种把一个子类类型安全地变为父类类型的赋值，被称为向上转型（upcasting）。</p>
+<p>向上转型实际上是把一个子类型安全地变为更加抽象的父类型。</p>
 ]]></content>
       <categories>
         <category>CS61B</category>
