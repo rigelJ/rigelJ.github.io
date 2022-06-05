@@ -1,1625 +1,282 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":"Mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
-
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Voyage">
-<meta property="og:url" content="http://example.com/page/2/index.html">
-<meta property="og:site_name" content="Voyage">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Life is a voyage - 剃刀锋利，越之不易，智者有云，得道弥艰。</title><meta name="keywords" content="Python,GOLang，C++，爬虫，软件安全"><meta name="author" content="清川"><meta name="copyright" content="清川"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="Life is a voyage">
+<meta property="og:url" content="http://rigelj.github.io/page/2/index.html">
+<meta property="og:site_name" content="Life is a voyage">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://rigelj.github.io/img/ava.png">
 <meta property="article:author" content="清川">
-<meta property="article:tag" content="Python,GOLang，C++，爬虫，软件安全，漏洞分析">
+<meta property="article:tag" content="Python,GOLang，C++，爬虫，软件安全">
 <meta name="twitter:card" content="summary">
-
-<link rel="canonical" href="http://example.com/page/2/">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : true,
-    isPost : false,
-    lang   : 'zh-CN'
-  };
-</script>
-
-  <title>Voyage</title>
-  
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
+<meta name="twitter:image" content="http://rigelj.github.io/img/ava.png"><link rel="shortcut icon" href="/img/ava.png"><link rel="canonical" href="http://rigelj.github.io/page/2/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Life is a voyage',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-06-05 15:53:44'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
-<link rel="alternate" href="/atom.xml" title="Voyage" type="application/atom+xml">
-</head>
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Voyage</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-      <p class="site-subtitle" itemprop="description">剃刀锋利，越之不易，智者有云，得道弥艰。</p>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/About/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
-
-  </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
-      </li>
-  </ul>
-</nav>
-
-
-
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
-           placeholder="搜索..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-  </div>
-</div>
-
-    </div>
-  </div>
-
-</div>
-    </header>
-
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Life is a voyage" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/ava.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/About/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/wallpaper.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Life is a voyage</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/About/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Life is a voyage</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/rigelJ" target="_blank" title=""><i class="fab fa-github"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2021/04/13/CS%E8%87%AA%E5%AD%A6%E8%B7%AF%E7%BA%BF%E4%B8%8E%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90/" title="CS自学路线与课程推荐"><img class="post_bg" src="/img/cslearn_cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CS自学路线与课程推荐"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/04/13/CS%E8%87%AA%E5%AD%A6%E8%B7%AF%E7%BA%BF%E4%B8%8E%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90/" title="CS自学路线与课程推荐">CS自学路线与课程推荐</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-04-13T12:30:38.000Z" title="发表于 2021-04-13 20:30:38">2021-04-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%80%83%E7%A0%94%E4%B9%8B%E8%B7%AF/">考研之路</a></span></div><div class="content">CS基础课程自学路线与课程推荐简单记录我在自学路上所接触和选择的一些优秀课程，供自己回顾，各位同样奋战在CS自学路上的朋友也可以留作参考
+注：本人也在学习中，不是每一门课程都看过，里面每一门课程都需要几个月的时间奋战，我基本都是选择其一学习，不要陷入焦虑，加粗的是我学习的路线。
 
-  <a href="https://github.com/RigeJ" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+计算机入门公开课程：
+哈佛大学 CS50   
+斯坦福大学 CS101
+麻省理工学院 6.00.1
+
+书籍推荐：
+《编码》： 一本讲清编码原理的书
 
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
+计算机程序结构与抽象公开课程：
+加州大学伯克利分校  CS61A
 
-          <div class="content index posts-expand">
+斯坦福大学 CS106A  [Python]  
+
+卡内基梅隆大学 CMU 15-122 
+
+书籍推荐：《计算机程序的构造和解释》
+
+SICP 可以教会你编程语言的核心思想，懂得了程序设计和语言构成，你就可以快速掌握一门语言，这对于学习安全或是软件移植都是很关键的。
+
+
+计算机系统架构与体系对于系统架构读过的不太多，网易云课堂上哈工大的计算机体系结构读了很疲惫，转战Nand2Tetris立马就兴奋了，不得不说有些国内讲的基础课程真的讲的太无聊了，听的都能睡着。
+公开课程：
+计算机系统要素  N ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2021/04/11/Markdown%E6%8C%87%E5%8D%97/" title="Markdown使用指南"><img class="post_bg" src="/img/markdown_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Markdown使用指南"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/04/11/Markdown%E6%8C%87%E5%8D%97/" title="Markdown使用指南">Markdown使用指南</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-04-11T02:31:39.000Z" title="发表于 2021-04-11 10:31:39">2021-04-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%BD%AF%E4%BB%B6%E6%96%87%E6%A1%A3/">软件文档</a></span></div><div class="content">Markdown使用 指南
+Markdown 标题
+使用#标记多级标题
+一级标题用#号来标记
+二级标题用##号来标记
+….. 依次类推
+
+使用=和-标记一级和二级标题（部分支持）
+一级标题用=======来标注
+二级标题用——————来标注
+
+
+Markdown段落格式字体
+斜体    
+粗体   
+斜粗体         
+
+线条
+分割线 *
+删除线  ~~ ~~
+下划线   
+脚注  脚注
+
+
+Markdown列表
+第一项
+
+第一个元素
+
+第二个元素
+
+
+
+
+第二项
+
+第一个元素
+第二个元素 
+
+
+
+
+Markdown 区块区块嵌套
+区块引用符 &gt;
+
+第一层嵌套 &gt;&gt;
+
+第二层嵌套 &gt;&gt;&gt;
+
+
+
+区块中使用列表
+
+第一项
+1.1
+1.2
+
+
+第二项
+2.1
+2.2
+
+
+第三项
+
+
+列表中使用区块
+第一项
+
+学技术不仅是技术，而是梦想
+
+
+第二项 
+
+我们的目标是星辰大海。
+
+
+
+
+Markdown 代码单个片段代码
+printf()函数
+
+代码区块代码块使用三个反引号建立，以下是部分语言的实例代码：
+
+Python实例
+123import osi ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/ava.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">清川</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/rigelJ" target="_blank" title=""><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/06/05/%E5%90%8E%E6%9D%A5%E7%9A%84%E6%88%91%E4%BB%AC/" title="后来的我们"><img src="/img/%E5%90%8E%E6%9D%A5%E7%9A%84%E6%88%91%E4%BB%AC_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="后来的我们"/></a><div class="content"><a class="title" href="/2022/06/05/%E5%90%8E%E6%9D%A5%E7%9A%84%E6%88%91%E4%BB%AC/" title="后来的我们">后来的我们</a><time datetime="2022-06-05T03:33:34.000Z" title="发表于 2022-06-05 11:33:34">2022-06-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/09/04/CS61B-Java/" title="CS61B-Java"><img src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CS61B-Java"/></a><div class="content"><a class="title" href="/2021/09/04/CS61B-Java/" title="CS61B-Java">CS61B-Java</a><time datetime="2021-09-04T04:48:15.000Z" title="发表于 2021-09-04 12:48:15">2021-09-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/09/04/CS61B-%E7%BB%BC%E8%BF%B0/" title="CS61B-综述"><img src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CS61B-综述"/></a><div class="content"><a class="title" href="/2021/09/04/CS61B-%E7%BB%BC%E8%BF%B0/" title="CS61B-综述">CS61B-综述</a><time datetime="2021-09-04T03:49:09.000Z" title="发表于 2021-09-04 11:49:09">2021-09-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/09/03/My-year-2022/" title="My year 2022"><img src="/img/My_Year_2022_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="My year 2022"/></a><div class="content"><a class="title" href="/2021/09/03/My-year-2022/" title="My year 2022">My year 2022</a><time datetime="2021-09-03T04:40:02.000Z" title="发表于 2021-09-03 12:40:02">2021-09-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/08/CS61A-%E5%85%83%E8%AF%AD%E8%A8%80%E6%8A%BD%E8%B1%A1/" title="CS61A-元语言抽象"><img src="/img/cs61a_language_cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CS61A-元语言抽象"/></a><div class="content"><a class="title" href="/2021/08/08/CS61A-%E5%85%83%E8%AF%AD%E8%A8%80%E6%8A%BD%E8%B1%A1/" title="CS61A-元语言抽象">CS61A-元语言抽象</a><time datetime="2021-08-08T07:56:30.000Z" title="发表于 2021-08-08 15:56:30">2021-08-08</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
             
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/27/%E7%AE%80%E6%98%8EGit%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ava.png">
-      <meta itemprop="name" content="清川">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Voyage">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/27/%E7%AE%80%E6%98%8EGit%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">简明Git使用方法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-27 15:37:40" itemprop="dateCreated datePublished" datetime="2021-05-27T15:37:40+08:00">2021-05-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-05-28 16:56:36" itemprop="dateModified" datetime="2021-05-28T16:56:36+08:00">2021-05-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%BD%AF%E4%BB%B6%E6%96%87%E6%A1%A3/" itemprop="url" rel="index"><span itemprop="name">软件文档</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>9.4k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>9 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>近期做项目用Github比较频繁，简单记录一下Git的主要操作方式，比较复杂的部分就略过了，主要是以使用为目的</p>
-<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><blockquote>
-<p>版本库的创建</p>
-<ul>
-<li> Git的安装</li>
-<li> 版本库的创建</li>
-</ul>
-<p>版本库的操作</p>
-<ul>
-<li> 文件操作</li>
-<li> 版本回退</li>
-<li> 修改撤销 </li>
-</ul>
-<p>远程库连接</p>
-<ul>
-<li>远程库添加与解除</li>
-<li>从远程库克隆</li>
-</ul>
-<p>分支管理</p>
-<ul>
-<li>创建与合并分支</li>
-<li>多人协作</li>
-</ul>
-<p>标签管理</p>
-<ul>
-<li>创建标签</li>
-<li>操作标签</li>
-</ul>
-</blockquote>
-<h2 id="版本库的创建"><a href="#版本库的创建" class="headerlink" title="版本库的创建"></a>版本库的创建</h2><hr>
-<h3 id="Git的安装"><a href="#Git的安装" class="headerlink" title="Git的安装"></a>Git的安装</h3><p>在Ubuntu Linux上使用apt软件包管理工具进行安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git</span><br></pre></td></tr></table></figure>
-
-<p>在windows上直接进入<a target="_blank" rel="noopener" href="https://git-scm.com/downloads">Git官网</a>下载安装程序，而后按照默认选项安装即可</p>
-<h3 id="版本库的创建-1"><a href="#版本库的创建-1" class="headerlink" title="版本库的创建"></a>版本库的创建</h3><p>选择一个合适的位置利用mkdir指令创建一个空目录，而后进入后输入指令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
-
-<p>于是该目录就变成了Git可以管理的仓库，细心的读者可以发现当前目录下多了一个<code>.git</code>的目录，这个目录是Git来跟踪管理版本库的，没事千万不要手动修改这个目录里面的文件，不然改乱了，就把Git仓库给破坏了。</p>
-<h2 id="版本库的操作"><a href="#版本库的操作" class="headerlink" title="版本库的操作"></a>版本库的操作</h2><hr>
-<h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><p>在文件操作之前首先明确几个概念</p>
-<p><strong>工作区</strong></p>
-<p>就是电脑中能直接看见的目录</p>
-<p><img src="https://i.loli.net/2021/05/28/Vc1mn4w6MZIaRSB.png" alt="working-dir"></p>
-<p><strong>版本库</strong></p>
-<p>工作区目录中有一个隐藏目录.git。这个是Git的版本库，版本库主要由两个部分组成，stage暂存区和分支区。</p>
-<p><img src="https://i.loli.net/2021/05/28/nzqcBheNH58kMAG.jpg" alt="git-repo"></p>
-<p> <strong>将文件添加至Git版本库中时，有三个步骤：</strong></p>
-<p><strong>首先</strong>在工作区创建一个文件Read.txt</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim/typora Read.txt</span><br></pre></td></tr></table></figure>
-
-<p>将文件修改添加至暂存区，在添加至暂存区前，我们首先看一下git的状态</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">~/CS61A$ git status</span><br><span class="line">On branch master</span><br><span class="line">Your branch is ahead of <span class="string">&#x27;origin/master&#x27;</span> by 1 commit.</span><br><span class="line">  (use <span class="string">&quot;git push&quot;</span> to publish your <span class="built_in">local</span> commits)</span><br><span class="line"></span><br><span class="line">Untracked files:</span><br><span class="line">  (use <span class="string">&quot;git add &lt;file&gt;...&quot;</span> to include <span class="keyword">in</span> what will be committed)</span><br><span class="line">	Read.txt</span><br><span class="line"></span><br><span class="line">nothing added to commit but untracked files present (use <span class="string">&quot;git add&quot;</span> to track)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>Git清楚的告诉我们，有一个文件出现了，而<code>Read.txt</code>还从来没有被添加过，所以它的状态是<code>Untracked</code>。</p>
-<p><strong>而后</strong>我们创建文件这次操作添加至暂存区</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add Read.txt</span><br></pre></td></tr></table></figure>
-
-<p><em>如果添加的是文件夹可以使用</em></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add vs/*</span><br></pre></td></tr></table></figure>
-
-<p>如果想删除文件可以用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm Read.txt</span><br></pre></td></tr></table></figure>
-
-<p>再次查看git的状态</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">~/CS61A$ git status</span><br><span class="line">On branch master</span><br><span class="line">Your branch is ahead of <span class="string">&#x27;origin/master&#x27;</span> by 1 commit.</span><br><span class="line">  (use <span class="string">&quot;git push&quot;</span> to publish your <span class="built_in">local</span> commits)</span><br><span class="line"></span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use <span class="string">&quot;git restore --staged &lt;file&gt;...&quot;</span> to unstage)</span><br><span class="line">	new file:   Read.txt</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><code>Changes to be committed</code>我们发现git已经识别了这个文件，可见这个文件已经被添加到了暂存区。</p>
-<p><strong>最后</strong>我们将文件创建这次操作提交至仓库的master分支（分支的概念后面会讲到）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit Read.txt -m <span class="string">&quot;commit&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p><em>如果想提交全部文件的操作可以用</em></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;commit&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>这里的-m参数是对这次提交进行文字说明</p>
-<p>再次查看git的状态</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">~/CS61A$ git status</span><br><span class="line">On branch master</span><br><span class="line">Your branch is ahead of <span class="string">&#x27;origin/master&#x27;</span> by 2 commits.</span><br><span class="line">  (use <span class="string">&quot;git push&quot;</span> to publish your <span class="built_in">local</span> commits)</span><br><span class="line"></span><br><span class="line">nothing to commit, working tree clean</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>可见此时暂存区为空，修改已提交至仓库</p>
-<p>我们可以将创建文件并提交至仓库的过程用流程图表示</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A[在工作区创建文件]&#x3D;&#x3D;&#x3D;&gt;B[将修改&#x2F;创建&#x2F;删除操作添加至暂存区]&#x3D;&#x3D;&#x3D;&#x3D;&gt;C[将操作提交至仓库]</span><br></pre></td></tr></table></figure>
-
-<p>估计很多人都有疑问，为什么这里写的是操作，而不是将文件添加至暂存区，因为Git管理的是修改而不是文件，我们用一个例子来说明这个问题。</p>
-<p>首先，我们在Read.txt中添加一段文字<code>hello me</code>，而后将这次操作添加到暂存区，我们查看此时的状态</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">it status</span><br><span class="line">On branch master</span><br><span class="line">Your branch is ahead of <span class="string">&#x27;origin/master&#x27;</span> by 2 commits.</span><br><span class="line">  (use <span class="string">&quot;git push&quot;</span> to publish your <span class="built_in">local</span> commits)</span><br><span class="line"></span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use <span class="string">&quot;git restore --staged &lt;file&gt;...&quot;</span> to unstage)</span><br><span class="line">	modified:   Read.txt</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>可见此次修改已经添加到了暂存区，而后我们再对文件进行修改，增加一行<code>hello you</code>，不将此次修改添加至暂存区。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br><span class="line">On branch master</span><br><span class="line">Your branch is ahead of <span class="string">&#x27;origin/master&#x27;</span> by 2 commits.</span><br><span class="line">  (use <span class="string">&quot;git push&quot;</span> to publish your <span class="built_in">local</span> commits)</span><br><span class="line"></span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use <span class="string">&quot;git restore --staged &lt;file&gt;...&quot;</span> to unstage)</span><br><span class="line">	modified:   Read.txt</span><br><span class="line"></span><br><span class="line">Changes not staged <span class="keyword">for</span> commit:</span><br><span class="line">  (use <span class="string">&quot;git add &lt;file&gt;...&quot;</span> to update what will be committed)</span><br><span class="line">  (use <span class="string">&quot;git restore &lt;file&gt;...&quot;</span> to discard changes <span class="keyword">in</span> working directory)</span><br><span class="line">	modified:   Read.txt</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>我们执行提交指令将修改提交至仓库，而后查看git状态</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br><span class="line">On branch master</span><br><span class="line">Your branch is ahead of <span class="string">&#x27;origin/master&#x27;</span> by 8 commits.</span><br><span class="line">  (use <span class="string">&quot;git push&quot;</span> to publish your <span class="built_in">local</span> commits)</span><br><span class="line"></span><br><span class="line">Changes not staged <span class="keyword">for</span> commit:</span><br><span class="line">  (use <span class="string">&quot;git add &lt;file&gt;...&quot;</span> to update what will be committed)</span><br><span class="line">  (use <span class="string">&quot;git restore &lt;file&gt;...&quot;</span> to discard changes <span class="keyword">in</span> working directory)</span><br><span class="line">	modified:   Read.txt</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>我们发现，未添加至暂存区的修改并未提交至仓库，我们查看一下工作区和最新版本库的区别</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">~/CS61A$ git diff -- Read.txt</span><br><span class="line">diff --git a/Read.txt b/Read.txt</span><br><span class="line">index 1f8eec4..12ee40e 100644</span><br><span class="line">--- a/Read.txt</span><br><span class="line">+++ b/Read.txt</span><br><span class="line">@@ -1,2 +1,3 @@</span><br><span class="line"> hello world</span><br><span class="line"> hello me</span><br><span class="line">+hello you</span><br></pre></td></tr></table></figure>
-
-<p>如果Git管理的是文件本身，那么文件在提交时是什么样，提交的文件就是什么样，然而经过对比发现，版本库的文件和工作区的文件是不一样，我们每次添加到暂存区的是对文件的操作步骤，比如创建删除文件，添加几行，删除几行，由于刚才添加<code>hello you</code>这一行文字的修改操作并未添加至暂存区，提交时只提交暂存区有的操作，因此该操作未提交至仓库。</p>
-<h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3><p>上面i讲到，Git管理的是修改，如果我们在进行修改提交的过程中，不小心删除了最后一行<code>hello me</code> ，而我们又需要这行文字该怎么办呢？</p>
-<p>这时候就需要利用版本回退的功能了。</p>
-<p>在Git中，我们可以查看每次操作的记录</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">~/CS61A$ git <span class="built_in">log</span> --pretty=oneline</span><br><span class="line">aa03a474011bcb97e9f596d3b5c9a1b517726d05 (HEAD -&gt; master) delete a line</span><br><span class="line">05491fda20edff579daf14f24b7afed61d591842 add a line</span><br><span class="line">a58d42838b1284034c4a9d52f0d2780ad251bda2 a</span><br><span class="line">f67db85d1deeb3d7ca0020a332ac4e07bccf12b0 all</span><br><span class="line">b96112ab41f972a9949e213347d7403dd2f8a03b 1</span><br></pre></td></tr></table></figure>
-
-<p>我们要将版本回退到<code>delete a line</code>操作前，因此我们使用<code>reset</code>指令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~/CS61A$ git reset --hard HEAD^</span><br><span class="line">HEAD is now at 05491fd add a line</span><br></pre></td></tr></table></figure>
-
-<p>这里的HEAD^表示上一个版本，如果上两个版本则为^^,以此类推。</p>
-<p>但是问题来了，如果我们现在又想回到<code>delete a line</code>版本该怎么办呢？版本已经回退了。</p>
-<p>git有一个命令记录了你的每次命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">~/CS61A$ git reflog</span><br><span class="line">05491fd (HEAD -&gt; master) HEAD@&#123;0&#125;: reset: moving to HEAD^</span><br><span class="line">aa03a47 HEAD@&#123;1&#125;: commit: delete a line</span><br><span class="line">05491fd (HEAD -&gt; master) HEAD@&#123;2&#125;: commit: add a line</span><br></pre></td></tr></table></figure>
-
-<p>于是我们就可以利用<code>aa03a47</code>这个id来回到原来版本。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard aa03a47</span><br><span class="line">HEAD is now at aa03a47 delete a line</span><br></pre></td></tr></table></figure>
-
-<p>于是，版本又回来了。</p>
-<h3 id="修改撤销"><a href="#修改撤销" class="headerlink" title="修改撤销"></a>修改撤销</h3><p>有的时候我们会因为手抖写错代码，比如我们在Read.txt（.sh）文件中添加一行‘rm -rf’，懂点Linux都知道这是个致命操作。</p>
-<p><strong>如果你还没有将这次文件修改提交到暂存区</strong>，那么很简单，直接修改就好了，或者也可以使用指令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- Read.txt</span><br></pre></td></tr></table></figure>
-
-<p>工作区的修改就被丢弃了，工作区文件的内容和版本库文件的内容相同。</p>
-<p><strong>如果你已经将文件修改添加到了暂存区</strong>，那么我们需要使用另一个指令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD Read.txt</span><br></pre></td></tr></table></figure>
-
-<p>reset指令不仅可以回退版本，当HEAD不^时，reset指令也可以将暂存区的修改操作移除，而后再利用<code>checkout</code>指令同步版本库和工作区内容。</p>
-<p><strong>如果你已经将修改提交到了版本库</strong>，那么按照版本回退的方式进行即可</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^</span><br></pre></td></tr></table></figure>
-
-<p>如果你已经将版本库内的内容推送到远程库，比如Github，那就只能听天由命了，谁运行，谁遭殃。</p>
-<h2 id="远程库连接"><a href="#远程库连接" class="headerlink" title="远程库连接"></a>远程库连接</h2><hr>
-<h3 id="远程库添加-解除"><a href="#远程库添加-解除" class="headerlink" title="远程库添加/解除"></a>远程库添加/解除</h3><p>首先，登陆GitHub，然后，在右上角找到“Create a new repo”按钮，创建一个新的仓库</p>
-<p>（图借的廖雪峰大L的）：</p>
-<p><img src="https://i.loli.net/2021/05/28/HYRADbO3nfjtW9T.png" alt="github-create-repo-1"></p>
-<p>在Repository name填入<code>Read</code>，其他保持默认设置，点击“Create repository”按钮，就成功地创建了一个新的Git仓库：</p>
-<p><img src="https://i.loli.net/2021/05/28/P62pheNWtkZSVcB.png" alt="github-create-repo-2"></p>
-<p>而后，我们在本地运行命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github.com:xxxx/Read.git</span><br></pre></td></tr></table></figure>
-
-<p>xxx处为你自己的Github账户名，就可以将本地的版本库和远程的库连接起来了。</p>
-<p>将本地库所有内容推送至Github远程库的master分支。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push （-u） origin master</span><br></pre></td></tr></table></figure>
-
-<p>加上了<code>-u</code>参数，Git不但会把本地的<code>master</code>分支内容推送的远程新的<code>master</code>分支，还会把本地的<code>master</code>分支和远程的<code>master</code>分支关联起来，在以后的推送或者拉取时就可以简化命令，不许需要加入-u参数。</p>
-<p><strong>SSH警告</strong></p>
-<p>当你第一次使用Git的<code>clone</code>或者<code>push</code>命令连接GitHub时，会得到一个警告：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host &#39;github.com (xx.xx.xx.xx)&#39; can&#39;t be established.</span><br><span class="line">RSA key fingerprint is xx.xx.xx.xx.xx.</span><br><span class="line">Are you sure you want to continue connecting (yes&#x2F;no)?</span><br></pre></td></tr></table></figure>
-
-<p>这是因为Git使用SSH连接，而SSH连接在第一次验证GitHub服务器的Key时，需要你确认GitHub的Key的指纹信息是否真的来自GitHub的服务器，输入<code>yes</code>回车即可。</p>
-<p>Git会输出一个警告，告诉你已经把GitHub的Key添加到本机的一个信任列表里了：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Warning: Permanently added &#39;github.com&#39; (RSA) to the list of known hosts.</span><br></pre></td></tr></table></figure>
-
-<p>这个警告只会出现一次，后面的操作就不会有任何警告了。</p>
-<p>如果你实在担心有人冒充GitHub服务器，输入<code>yes</code>前可以对照<a target="_blank" rel="noopener" href="https://help.github.com/articles/what-are-github-s-ssh-key-fingerprints/">GitHub的RSA Key的指纹信息</a>是否与SSH连接给出的一致。</p>
-<p><strong>解除远程库与本地库的关联关系</strong></p>
-<p>如果我们需要解除本地库与远程库的关联关系，可以使用命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote rm origin</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="远程库克隆"><a href="#远程库克隆" class="headerlink" title="远程库克隆"></a>远程库克隆</h3><p>我们有时需要把远程库从Github克隆下来，为了借鉴代码或是进行分布式工作，使用以下指令将远程库克隆至本地</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github.com:xxx/Read.git</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><hr>
-<h3 id="创建与合并分支"><a href="#创建与合并分支" class="headerlink" title="创建与合并分支"></a>创建与合并分支</h3><p>在<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600/897013573512192">版本回退</a>里，你已经知道，每次提交，Git都把它们串成一条时间线，这条时间线就是一个分支。截止到目前，只有一条时间线，在Git里，这个分支叫主分支，即<code>master</code>分支。<code>HEAD</code>严格来说不是指向提交，而是指向<code>master</code>，<code>master</code>才是指向提交的，所以，<code>HEAD</code>指向的就是当前分支。</p>
-<p><img src="https://i.loli.net/2021/05/28/X69umbEgxRBfh3w.png" alt="git-br-initial"></p>
-<p>当我们创建新的分支，例如<code>dev</code>时，Git新建了一个指针叫<code>dev</code>，指向<code>master</code>相同的提交，再把<code>HEAD</code>指向<code>dev</code>，就表示当前分支在<code>dev</code>上</p>
-<p><img src="https://i.loli.net/2021/05/28/EXNTRAfMmV2B63a.png" alt="git-br-create"></p>
-<p>我们建立一个新分支<code>dev</code>并切换至新分支</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b dev    /   git switch -c dev</span><br></pre></td></tr></table></figure>
-
-<p><em>如果切换至已有分支则</em></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout dev    /    git switch dev</span><br></pre></td></tr></table></figure>
-
-<p>如果只是创建分支</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch dev</span><br></pre></td></tr></table></figure>
-
-<p>从现在开始，对工作区的修改和提交就是针对<code>dev</code>分支了，比如新提交一次后，<code>dev</code>指针往前移动一步，而<code>master</code>指针不变：</p>
-<p><img src="https://www.liaoxuefeng.com/files/attachments/919022387118368/l" alt="git-br-dev-fd"></p>
-<p>假如我们在<code>dev</code>上的工作完成了，就可以把<code>dev</code>合并到<code>master</code>上。Git怎么合并呢？最简单的方法，就是直接把<code>master</code>指向<code>dev</code>的当前提交，就完成了合并：</p>
-<p><img src="https://i.loli.net/2021/05/28/dQuX31cxi6RTeDO.png" alt="git-br-ff-merge"></p>
-<p>我们切换至主分支，而后将dev分支合并至主分支master</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git merge dev</span><br></pre></td></tr></table></figure>
-
-<p>而后我们可以保留分支，也可以删除分支，如果删除分支</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d dev</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="多人协作"><a href="#多人协作" class="headerlink" title="多人协作"></a>多人协作</h3><p>在实际开发中，我们应该按照几个基本原则进行分支管理：</p>
-<p>首先，<code>master</code>分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活；</p>
-<p>那在哪干活呢？干活都在<code>dev</code>分支上，也就是说，<code>dev</code>分支是不稳定的，到某个时候，比如1.0版本发布时，再把<code>dev</code>分支合并到<code>master</code>上，在<code>master</code>分支发布1.0版本；</p>
-<p>你和你的小伙伴们每个人都在<code>dev</code>分支上干活，每个人都有自己的分支，时不时地往<code>dev</code>分支上合并就可以了。</p>
-<p>所以，团队合作的分支看起来就像这样：</p>
-<p><img src="https://i.loli.net/2021/05/28/tWO9ydfr5miY3EP.png" alt="git-br-policy"></p>
-<p><strong>远程库克隆</strong></p>
-<p>团队合作的过程中首先要将远程库克隆至本地，具体方式见前文远程库克隆一节</p>
-<p>完成克隆后，Git自动把本地的master分支和远程的master分支对应起来了，默认远程仓库的名称为origin</p>
-<p>查看远程库的信息</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">~/CS61A$ git remote -v</span><br><span class="line">origin	git@github.com:x/CS61A.git (fetch)</span><br><span class="line">origin	git@github.com:x/CS61A.git (push)</span><br></pre></td></tr></table></figure>
-
-<p>上面显示了可以抓取和推送的<code>origin</code>的地址。如果没有推送权限，就看不到push的地址。</p>
-<p><strong>分支的推送</strong></p>
-<p>分支的推送有很多种模式，这里只介绍最简单的模式，假设，我们已经将远程库的master分支克隆到了本地，而后我们创建了一个新的分支dev，在新的分支进行工作，工作完毕后我们将dev分支合并至master分支，而后使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
-
-<p>就将该分支推送到了远程库</p>
-<p><strong>分支的抓取</strong></p>
-<p>在多人协作时可能会出现一些问题，比如有一天，你的小伙伴已经向origin/master分支推送了他的提交，而你碰巧也对同样的文件进行了修改，并试图推送，这时候你会发现，git提示推送失败，因为你的小伙伴的最新提交和你的提交有冲突。</p>
-<p>因此我们要在推送前先将master最新情况从远程抓下来，然后在本地进行合并和解决冲突。</p>
-<p>解决冲突的方法如下</p>
-<p>我们知道当我们把远程的master分支抓取下来后，我们本地的dev分支和远程pull下来的master分支存在冲突</p>
-<p><img src="https://i.loli.net/2021/05/28/ve3HlyfWtqB7bYN.png" alt="git-br-feature1"></p>
-<p>这种情况下，Git无法执行“快速合并”，只能试图把各自的修改合并起来，但这种合并会有冲突，我们查看 一下git的状态</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">Your branch is ahead of <span class="string">&#x27;origin/master&#x27;</span> by 2 commits.</span><br><span class="line">  (use <span class="string">&quot;git push&quot;</span> to publish your <span class="built_in">local</span> commits)</span><br><span class="line"></span><br><span class="line">You have unmerged paths.</span><br><span class="line">  (fix conflicts and run <span class="string">&quot;git commit&quot;</span>)</span><br><span class="line">  (use <span class="string">&quot;git merge --abort&quot;</span> to abort the merge)</span><br><span class="line"></span><br><span class="line">Unmerged paths:</span><br><span class="line">  (use <span class="string">&quot;git add &lt;file&gt;...&quot;</span> to mark resolution)</span><br><span class="line"></span><br><span class="line">	both modified:   Read.txt</span><br><span class="line"></span><br><span class="line">no changes added to commit (use <span class="string">&quot;git add&quot;</span> and/or <span class="string">&quot;git commit -a&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>Git告诉我们，Read.txt文件存在冲突，我们可以直接查看文件内容</p>
-<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Git is a distributed version control system.</span><br><span class="line">Git is free software distributed under the GPL.</span><br><span class="line">Git has a mutable index called stage.</span><br><span class="line">Git tracks changes of files.</span><br><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span><br><span class="line">Creating a new branch is quick &amp; simple.</span><br><span class="line">=======</span><br><span class="line">Creating a new branch is quick AND simple.</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; dev</span><br></pre></td></tr></table></figure>
-
-<p>Git用<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>，<code>=======</code>，<code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>标记出不同分支的内容，我们修改如下后保存：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Creating a new branch is quick and simple.</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Creating a new branch is quick and simple.</span><br></pre></td></tr></table></figure>
-
-<p>再提交修改给master分支</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add readme.txt </span><br><span class="line">$ git commit -m <span class="string">&quot;conflict fixed&quot;</span></span><br><span class="line">[master cf810e4] conflict fixed</span><br></pre></td></tr></table></figure>
-
-<p>Git告诉我们冲突被解决了，于是我们将dev分支合并至master，而后执行push</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br><span class="line">Counting objects: 6, <span class="keyword">done</span>.</span><br><span class="line">Delta compression using up to 4 threads.</span><br><span class="line">Compressing objects: 100% (4/4), <span class="keyword">done</span>.</span><br><span class="line">Writing objects: 100% (6/6), 621 bytes | 621.00 KiB/s, <span class="keyword">done</span>.</span><br><span class="line">Total 6 (delta 0), reused 0 (delta 0)</span><br><span class="line">To github.com:x/Read.git</span><br><span class="line">   7a5e5dd..57c53ab  master -&gt; master</span><br></pre></td></tr></table></figure>
-
-<p>成功。</p>
-<h2 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h2><p>为什么需要标签？</p>
-<p>Git有commit，为什么还要引入tag？</p>
-<p>“请把上周一的那个版本打包发布，commit号是6a5819e…”</p>
-<p>“一串乱七八糟的数字不好找！”</p>
-<p>如果换一个办法：</p>
-<p>“请把上周一的那个版本打包发布，版本号是v1.2”</p>
-<p>“好的，按照tag v1.2查找commit就行！”</p>
-<p>所以，tag就是一个让人容易记住的有意义的名字，它跟某个commit绑在一起。</p>
-<h3 id="创建标签"><a href="#创建标签" class="headerlink" title="创建标签"></a>创建标签</h3><p>在Git中打标签非常简单，首先，切换到需要打标签的分支上，而后敲击tag就可以打一个标签</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag v1.0</span><br></pre></td></tr></table></figure>
-
-<p>利用<code>git tag</code>查看所有标签</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git tag</span><br><span class="line">v1.0</span><br><span class="line">v2.0</span><br><span class="line">v2.1</span><br></pre></td></tr></table></figure>
-
-<p>如果要对历史commit打标签，那就通过git log找到commit号</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag v0.9 f287d34</span><br></pre></td></tr></table></figure>
-
-<p>查看每个标签的信息</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ git show v0.9</span><br><span class="line">commit f52c63349bc3c1593499807e5c8e972b82c8f286 (tag: v0.9)</span><br><span class="line">Author: Michael Liao &lt;askxuefeng@gmail.com&gt;</span><br><span class="line">Date:   Fri May 18 21:56:54 2018 +0800</span><br><span class="line"></span><br><span class="line">    add merge</span><br><span class="line"></span><br><span class="line">diff --git a/readme.txt b/readme.txt</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-
-<p>然后按照版本回退一节的方法使用<code>reset</code>指令回退至对应版本打包即可。</p>
-<p>注意，标签总是和某个commit挂钩。如果这个commit既出现在master分支，又出现在dev分支，那么在这两个分支上都可以看到这个标签。</p>
-<h3 id="操作标签"><a href="#操作标签" class="headerlink" title="操作标签"></a>操作标签</h3><p>如果标签打错了，也可以删除：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git tag -d v0.1</span><br><span class="line">Deleted tag <span class="string">&#x27;v0.1&#x27;</span> (was f15b0dd)</span><br></pre></td></tr></table></figure>
-
-<p>因为创建的标签都只存储在本地，不会自动推送到远程。所以，打错的标签可以在本地安全删除。如果要推送某个标签到远程，使用命令<code>git push origin &lt;tagname&gt;</code>，或使用<code>git push origin --tags</code>推送所有标签。</p>
-<p>如果要删除远程标签则先从本地删除标签，而后向远程同步删除指令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin :refs/tags/v0.9</span><br><span class="line">To github.com:x/Read.gi0t</span><br><span class="line"> - [deleted]         v0.9</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>1.<a target="_blank" rel="noopener" href="https://www.runoob.com/git/git-tutorial.html">菜鸟教程Git</a></p>
-<p>2.<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600">廖雪峰的Git教程</a></p>
-<p>3.<a target="_blank" rel="noopener" href="https://git-scm.com/">Git官方网站</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/24/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E7%B2%BE%E8%A6%81/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ava.png">
-      <meta itemprop="name" content="清川">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Voyage">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/24/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E7%B2%BE%E8%A6%81/" class="post-title-link" itemprop="url">Python数据分析精要</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-24 18:53:01" itemprop="dateCreated datePublished" datetime="2021-05-24T18:53:01+08:00">2021-05-24</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>0</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/24/Python%E7%88%AC%E8%99%AB%E7%B2%BE%E8%A6%81/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ava.png">
-      <meta itemprop="name" content="清川">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Voyage">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/24/Python%E7%88%AC%E8%99%AB%E7%B2%BE%E8%A6%81/" class="post-title-link" itemprop="url">Python爬虫精要</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-24 18:52:26" itemprop="dateCreated datePublished" datetime="2021-05-24T18:52:26+08:00">2021-05-24</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>0</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/13/CS%E8%87%AA%E5%AD%A6%E8%B7%AF%E7%BA%BF%E4%B8%8E%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ava.png">
-      <meta itemprop="name" content="清川">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Voyage">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/13/CS%E8%87%AA%E5%AD%A6%E8%B7%AF%E7%BA%BF%E4%B8%8E%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90/" class="post-title-link" itemprop="url">CS自学路线与课程推荐</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-04-13 20:30:38 / 修改时间：23:33:43" itemprop="dateCreated datePublished" datetime="2021-04-13T20:30:38+08:00">2021-04-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%80%83%E7%A0%94%E4%B9%8B%E8%B7%AF/" itemprop="url" rel="index"><span itemprop="name">考研之路</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.8k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="CS基础课程自学路线与课程推荐"><a href="#CS基础课程自学路线与课程推荐" class="headerlink" title="CS基础课程自学路线与课程推荐"></a>CS基础课程自学路线与课程推荐</h1><p>简单记录我在自学路上所接触和选择的一些优秀课程，供自己回顾，各位同样奋战在CS自学路上的朋友也可以留作参考</p>
-<p>注：本人也在学习中，不是每一门课程都看过，里面每一门课程都需要几个月的时间奋战，我基本都是选择其一学习，不要陷入焦虑，加粗的是我学习的路线。</p>
-<hr>
-<h3 id="计算机入门"><a href="#计算机入门" class="headerlink" title="计算机入门"></a>计算机入门</h3><h5 id="公开课程："><a href="#公开课程：" class="headerlink" title="公开课程："></a>公开课程：</h5><ul>
-<li><strong>哈佛大学 CS50</strong>   </li>
-<li>斯坦福大学 CS101</li>
-<li>麻省理工学院 6.00.1</li>
-</ul>
-<h5 id="书籍推荐："><a href="#书籍推荐：" class="headerlink" title="书籍推荐："></a>书籍推荐：</h5><ul>
-<li>《编码》： 一本讲清编码原理的书</li>
-</ul>
-<hr>
-<h3 id="计算机程序结构与抽象"><a href="#计算机程序结构与抽象" class="headerlink" title="计算机程序结构与抽象"></a>计算机程序结构与抽象</h3><h5 id="公开课程：-1"><a href="#公开课程：-1" class="headerlink" title="公开课程："></a>公开课程：</h5><ul>
-<li><p><strong>加州大学伯克利分校  CS61A</strong></p>
-</li>
-<li><p>斯坦福大学 CS106A  [Python]  </p>
-</li>
-<li><p>卡内基梅隆大学 CMU 15-122 </p>
-</li>
-</ul>
-<h5 id="书籍推荐：-1"><a href="#书籍推荐：-1" class="headerlink" title="书籍推荐："></a>书籍推荐：</h5><p>《计算机程序的构造和解释》</p>
-<blockquote>
-<p>SICP 可以教会你编程语言的核心思想，懂得了程序设计和语言构成，你就可以快速掌握一门语言，这对于学习安全或是软件移植都是很关键的。</p>
-</blockquote>
-<hr>
-<h3 id="计算机系统架构与体系"><a href="#计算机系统架构与体系" class="headerlink" title="计算机系统架构与体系"></a>计算机系统架构与体系</h3><p>对于系统架构读过的不太多，网易云课堂上哈工大的计算机体系结构读了很疲惫，转战Nand2Tetris立马就兴奋了，不得不说有些国内讲的基础课程真的讲的太无聊了，听的都能睡着。</p>
-<h5 id="公开课程：-2"><a href="#公开课程：-2" class="headerlink" title="公开课程："></a>公开课程：</h5><ul>
-<li><strong>计算机系统要素  Nand2Tetris</strong>    </li>
-</ul>
-<blockquote>
-<p>这本书讲的计算机架构自底向上的抽象，从简单的门电路开始讲起，慢慢构造CPU，主存，I/O，最后直接实现了一台基本的计算机硬件部分，这些都是纯靠Nand这个逻辑门硬搭建起来的你敢信，我当时就惊了。后半部分需要一些编程基础，但其实也还好，懂一点python的语法就没什么大问题，后半部分主要讲的是编译器和汇编器的实现，在加上构建了一个简单的操作系统。这门课好好学，真的是神课，学完你买一袋Nand门就能组台电脑（滑稽）。</p>
-</blockquote>
-<h5 id="书籍推荐：-2"><a href="#书籍推荐：-2" class="headerlink" title="书籍推荐："></a>书籍推荐：</h5><ul>
-<li>计算机系统要素  Nand2Tetris的原书</li>
-</ul>
-<hr>
-<h3 id="数据结构与算法"><a href="#数据结构与算法" class="headerlink" title="数据结构与算法"></a>数据结构与算法</h3><p>问我为什么要先学数据结构与算法，很简单，考研啊！408的数据结构与算法占了35%，这个分你拿到了，再加上计网的简单部分有个15%，你就拿了5成的分数了，150分你已经拿到了75。</p>
-<h5 id="公开课程：-3"><a href="#公开课程：-3" class="headerlink" title="公开课程："></a>公开课程：</h5><ul>
-<li><strong>加州大学伯克利分校  CS61B</strong></li>
-</ul>
-<blockquote>
-<p>cs61B也是门好课，虽然达不到神课的地步，但是学完了你应该就能刷leetcode了，这个成就还是很显著的，总比你刷C++ prime舒服多了吧。</p>
-</blockquote>
-<ul>
-<li>斯坦福 CS106B</li>
-<li>卡内基梅隆大学 CMU 15-210</li>
-</ul>
-<h5 id="书籍推荐：-3"><a href="#书籍推荐：-3" class="headerlink" title="书籍推荐："></a>书籍推荐：</h5><ul>
-<li>算法导论  </li>
-</ul>
-<blockquote>
-<p>老牌的算法大全，厚的能砸死人，但是确实看完能封神，一般都是浅浅看一遍。</p>
-</blockquote>
-<ul>
-<li>大话数据结构</li>
-</ul>
-<blockquote>
-<p>深入浅出的讲解数据结构，作为入门当小说看看挺好的。</p>
-</blockquote>
-<ul>
-<li>算法图解</li>
-</ul>
-<blockquote>
-<p>同样是入门书籍，看看培养兴趣挺好的。</p>
-</blockquote>
-<hr>
-<h3 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h3><p>我的计划里是计网放在CSAPP前面的，因为无论是Linux，Github使用，还是环境架设，都对计算机网络的了解程度要求很高，有的时候你不懂计网，很多时候看不清网络拓扑，思路完全是混乱的，比如你要用Python爬虫，或者是Python利用漏洞攻击软件，你连流量通过什么方式传递到另一台主机都不知道，什么是端口，怎么监听，怎么发送流量到端口，怎么转发端口，这些都不知道，那你会完全手足无措。</p>
-<h5 id="公开课程：-4"><a href="#公开课程：-4" class="headerlink" title="公开课程："></a>公开课程：</h5><ul>
-<li>斯坦福大学 CS144</li>
-<li>网易云课堂 《计算机网络》</li>
-</ul>
-<h5 id="书籍推荐：-4"><a href="#书籍推荐：-4" class="headerlink" title="书籍推荐："></a>书籍推荐：</h5><ul>
-<li><strong>计算机网络自顶而下</strong>  </li>
-</ul>
-<blockquote>
-<p>好，又是一本神书，如果说Nand2Tetris在架构层面从下到上剖析的清清楚楚，那这本书就是把网络从上往下一点一点拆开讲的清清楚楚，这本书看完，你基本上可以理解大部分网络的连接过程。</p>
-</blockquote>
-<ul>
-<li>计算机网络(谢希仁版)</li>
-</ul>
-<blockquote>
-<p>这本书是我本科时候唯一一本跟计算机沾点边的书，很无奈，整个本科期间什么计算机的课程都不开，讲了一堆废物课程，到最后同年的战友连C都不会敲，JX文化课程的悲哀和瞎掰，回归正题，那时候边上课边翻觉得太复杂了，完全看不懂，这本书最好还是在看完自顶而下有一个完整的概念之后再去深入理解比较好。</p>
-</blockquote>
-<hr>
-<h3 id="计算机系统与运行"><a href="#计算机系统与运行" class="headerlink" title="计算机系统与运行"></a>计算机系统与运行</h3><p>学完了以上，基本上就在应用层编写代码无障碍了，这个能力很关键，无论是未来搞安全还是搞开发，搞研究，快速把想法实现的能力还是很关键的，再加上SICP的程序结构，掌握新语言已经难度不大了，甚至还可以试着读读编译原理看看能不能自己重写编译器。</p>
-<h5 id="公开课程"><a href="#公开课程" class="headerlink" title="公开课程:"></a>公开课程:</h5><ul>
-<li><strong>卡内基梅隆大学 CSAPP 配套课程  （B站有）</strong></li>
-<li>卡内基梅隆大学 CMU 15-213</li>
-<li>加州大学伯克利大学 CS61C</li>
-<li>斯坦福大学 CS107 </li>
-</ul>
-<h5 id="书籍推荐：-5"><a href="#书籍推荐：-5" class="headerlink" title="书籍推荐："></a>书籍推荐：</h5><ul>
-<li>深入理解计算机系统 CSAPP </li>
-</ul>
-<blockquote>
-<p>计算机领域的圣经级别书籍，北大的计算机系统导论，南大的计算机系统课程都是基于CSAPP的，这本书把操作系统，计算机组成结构和计算机网络都连接起来，还讲了汇编的一些理论，整合了很多零散内容。</p>
-</blockquote>
-<hr>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ol>
-<li>知乎文章《计算机名校路线课程》</li>
-<li>网易云课堂  顶尖大学中文计算机课程</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/11/Markdown%E6%8C%87%E5%8D%97/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ava.png">
-      <meta itemprop="name" content="清川">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Voyage">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/11/Markdown%E6%8C%87%E5%8D%97/" class="post-title-link" itemprop="url">Markdown使用指南</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-04-11 10:31:39 / 修改时间：21:26:53" itemprop="dateCreated datePublished" datetime="2021-04-11T10:31:39+08:00">2021-04-11</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%BD%AF%E4%BB%B6%E6%96%87%E6%A1%A3/" itemprop="url" rel="index"><span itemprop="name">软件文档</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Markdown使用-指南"><a href="#Markdown使用-指南" class="headerlink" title="Markdown使用 指南"></a><strong>Markdown使用 指南</strong></h1><hr>
-<h2 id="Markdown-标题"><a href="#Markdown-标题" class="headerlink" title="Markdown 标题"></a>Markdown 标题</h2><hr>
-<h3 id="使用-标记多级标题"><a href="#使用-标记多级标题" class="headerlink" title="使用#标记多级标题"></a>使用#标记多级标题</h3><blockquote>
-<p>一级标题用#号来标记</p>
-<p>二级标题用##号来标记</p>
-<p>….. 依次类推</p>
-</blockquote>
-<h3 id="使用-和-标记一级和二级标题（部分支持）"><a href="#使用-和-标记一级和二级标题（部分支持）" class="headerlink" title="使用=和-标记一级和二级标题（部分支持）"></a>使用=和-标记一级和二级标题（部分支持）</h3><blockquote>
-<p>一级标题用=======来标注</p>
-<p>二级标题用————来标注</p>
-</blockquote>
-<hr>
-<h2 id="Markdown段落格式"><a href="#Markdown段落格式" class="headerlink" title="Markdown段落格式"></a>Markdown段落格式</h2><h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><blockquote>
-<p><em>斜体</em>   * *</p>
-<p><strong>粗体</strong>  ** **</p>
-<p><em><strong>斜粗体</strong></em>   * * *  * * *</p>
-</blockquote>
-<h3 id="线条"><a href="#线条" class="headerlink" title="线条"></a>线条</h3><blockquote>
-<p>分割线 *********</p>
-<p><del>删除线</del>  ~~ ~~</p>
-<p><u>下划线</u>  <u> </u></p>
-<p>脚注  <a href="%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E8%84%9A%E6%B3%A8">^脚注</a></p>
-</blockquote>
-<hr>
-<h2 id="Markdown列表"><a href="#Markdown列表" class="headerlink" title="Markdown列表"></a>Markdown列表</h2><ul>
-<li><p>第一项</p>
-<ul>
-<li><p>第一个元素</p>
-<ul>
-<li>第二个元素</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>第二项</p>
-<ul>
-<li>第一个元素</li>
-<li>第二个元素 </li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="Markdown-区块"><a href="#Markdown-区块" class="headerlink" title="Markdown 区块"></a>Markdown 区块</h2><h3 id="区块嵌套"><a href="#区块嵌套" class="headerlink" title="区块嵌套"></a>区块嵌套</h3><blockquote>
-<p>区块引用符 &gt;</p>
-<blockquote>
-<p>第一层嵌套 &gt;&gt;</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>第二层嵌套 &gt;&gt;&gt;</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h3 id="区块中使用列表"><a href="#区块中使用列表" class="headerlink" title="区块中使用列表"></a>区块中使用列表</h3><blockquote>
-<ul>
-<li>第一项<ul>
-<li>1.1</li>
-<li>1.2</li>
-</ul>
-</li>
-<li>第二项<ul>
-<li>2.1</li>
-<li>2.2</li>
-</ul>
-</li>
-<li>第三项</li>
-</ul>
-</blockquote>
-<h3 id="列表中使用区块"><a href="#列表中使用区块" class="headerlink" title="列表中使用区块"></a>列表中使用区块</h3><ul>
-<li><p>第一项</p>
-<blockquote>
-<p>学技术不仅是技术，而是梦想</p>
-</blockquote>
-</li>
-<li><p>第二项 </p>
-<blockquote>
-<p>我们的目标是星辰大海。</p>
-</blockquote>
-</li>
-</ul>
-<hr>
-<h2 id="Markdown-代码"><a href="#Markdown-代码" class="headerlink" title="Markdown 代码"></a>Markdown 代码</h2><h3 id="单个片段代码"><a href="#单个片段代码" class="headerlink" title="单个片段代码"></a>单个片段代码</h3><blockquote>
-<p><code>printf()</code>函数</p>
-</blockquote>
-<h3 id="代码区块"><a href="#代码区块" class="headerlink" title="代码区块"></a>代码区块</h3><p>代码块使用三个反引号建立，以下是部分语言的实例代码：</p>
-<blockquote>
-<p><strong>Python实例</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello world!&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<p><strong>Javascript实例</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">alert(<span class="string">&#x27;RUNO&#x27;</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p><strong>PHP实例</strong></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">echo</span> <span class="number">1</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-</blockquote>
-<hr>
-<h2 id="Markdown-链接"><a href="#Markdown-链接" class="headerlink" title="Markdown 链接"></a>Markdown 链接</h2><p>链接使用<a target="_blank" rel="noopener" href="http://www.baidu.com/">链接名称</a>建立，格式为<a href=""></a> ，也可以用变量设置来建立一个链接，赋值在文档末尾进行</p>
-<blockquote>
-<p>这个链接用 1 作为网址变量 [Google][1]</p>
-</blockquote>
-<hr>
-<h2 id="Markdown-图片"><a href="#Markdown-图片" class="headerlink" title="Markdown 图片"></a>Markdown 图片</h2><h3 id="通过markdown语法插入图片"><a href="#通过markdown语法插入图片" class="headerlink" title="通过markdown语法插入图片"></a>通过markdown语法插入图片</h3><p>Markdown 插入图片的语法格式如下：</p>
-<blockquote>
-<p><img src="" alt="属性文本"></p>
-</blockquote>
-<h3 id="通过Typora直接插入图片-编辑器必须是Typora编辑器"><a href="#通过Typora直接插入图片-编辑器必须是Typora编辑器" class="headerlink" title="通过Typora直接插入图片 (编辑器必须是Typora编辑器)"></a>通过Typora直接插入图片 (编辑器必须是Typora编辑器)</h3><blockquote>
-<p>格式–&gt;图像–&gt;插入图片</p>
-</blockquote>
-<hr>
-<h2 id="Markdown-表格"><a href="#Markdown-表格" class="headerlink" title="Markdown 表格"></a>Markdown 表格</h2><p>Markdown表格格式如下：</p>
-<blockquote>
-<p>| |为分割单元格，-表示长度，：：为中央对齐</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th align="center">数据统计表</th>
-<th align="center">A</th>
-<th align="center">B</th>
-<th align="center">C</th>
-<th align="center">D</th>
-<th align="center">E</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">文字</td>
-<td align="center">1</td>
-<td align="center">4</td>
-<td align="center">5</td>
-<td align="center">8</td>
-<td align="center">9</td>
-</tr>
-<tr>
-<td align="center">图标</td>
-<td align="center">2</td>
-<td align="center">3</td>
-<td align="center">6</td>
-<td align="center">7</td>
-<td align="center">0</td>
-</tr>
-</tbody></table>
-<hr>
-<h2 id="Markdown-拓展技巧"><a href="#Markdown-拓展技巧" class="headerlink" title="Markdown 拓展技巧"></a>Markdown 拓展技巧</h2><h3 id="HTML元素"><a href="#HTML元素" class="headerlink" title="HTML元素"></a>HTML元素</h3><p>不在 Markdown 涵盖范围之内的标签，都可以直接在文档里面用 HTML 撰写。目前支持的HTML元素有：</p>
-<blockquote>
-<p>&lt;kbd&gt;元素：使用<kbd>Shift</kbd> +<kbd>W</kbd> 执行操作</p>
-<p>&lt;b&gt;元素：<b>123</b>    </p>
-<p>&lt;i&gt;元素：<i>admin</i></p>
-<p>&lt;em&gt;元素：<em>admin</em></p>
-<p>&lt;sup&gt;元素：A<sup>1</sup></p>
-<p>&lt;br&gt; 元素：换行</p>
-</blockquote>
-<h3 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h3><p>Markdown 使用了很多特殊符号来表示特定的意义，如果需要显示特定的符号则需要使用转义字，Markdown 使用反斜杠转义特殊字符：</p>
-<blockquote>
-<p>\ * \ * 转义文本加粗</p>
-</blockquote>
-<h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><p>当你需要在编辑器中插入数学公式时，可以使用两个美元符 $$ 包裹 TeX 或 LaTeX 格式的数学公式来实现。提交后，问答和文章页会根据需要加载 Mathjax 对数学公式进行渲染。如输入：</p>
-<blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\mathbf&#123;V&#125;_1 \times \mathbf&#123;V&#125;_2 =  \begin&#123;vmatrix&#125; </span><br><span class="line">\mathbf&#123;i&#125; &amp; \mathbf&#123;j&#125; &amp; \mathbf&#123;k&#125; \\</span><br><span class="line">\frac&#123;\partial X&#125;&#123;\partial u&#125; &amp;  \frac&#123;\partial Y&#125;&#123;\partial u&#125; &amp; 0 \\</span><br><span class="line">\frac&#123;\partial X&#125;&#123;\partial v&#125; &amp;  \frac&#123;\partial Y&#125;&#123;\partial v&#125; &amp; 0 \\</span><br><span class="line">\end&#123;vmatrix&#125;</span><br><span class="line">$&#123;$tep1&#125;&#123;\style&#123;visibility:hidden&#125;&#123;(x+1)(x+1)&#125;&#125;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>会显示如下公式：</p>
-<p>$$<br>\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix}<br>\mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \<br>\frac{\partial X}{\partial u} &amp;  \frac{\partial Y}{\partial u} &amp; 0 \<br>\frac{\partial X}{\partial v} &amp;  \frac{\partial Y}{\partial v} &amp; 0 \<br>\end{vmatrix}<br>${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}<br>$$</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a><strong>参考</strong></h2><p>1.菜鸟教程 <u><a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">https://www.runoob.com/markdown/md-tutorial.html</a></u></p>
-<p>2.知乎专栏 <u><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/67153848">https://zhuanlan.zhihu.com/p/67153848</a></u></p>
-<p>[1] : <a target="_blank" rel="noopener" href="http://www.google.com/">http://www.google.com</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/10/Linux%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E4%B8%8E%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ava.png">
-      <meta itemprop="name" content="清川">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Voyage">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/10/Linux%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E4%B8%8E%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/" class="post-title-link" itemprop="url">Linux文件管理与权限控制</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-04-10 08:23:09" itemprop="dateCreated datePublished" datetime="2021-04-10T08:23:09+08:00">2021-04-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-04-11 21:27:10" itemprop="dateModified" datetime="2021-04-11T21:27:10+08:00">2021-04-11</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>0</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%80%83%E7%A0%94%E7%BB%BC%E8%BF%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ava.png">
-      <meta itemprop="name" content="清川">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Voyage">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%80%83%E7%A0%94%E7%BB%BC%E8%BF%B0/" class="post-title-link" itemprop="url">计算机考研综述</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-04-10 08:17:36 / 修改时间：08:21:25" itemprop="dateCreated datePublished" datetime="2021-04-10T08:17:36+08:00">2021-04-10</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%80%83%E7%A0%94%E4%B9%8B%E8%B7%AF/" itemprop="url" rel="index"><span itemprop="name">考研之路</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>15</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>this is an example</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/10/Python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ava.png">
-      <meta itemprop="name" content="清川">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Voyage">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/10/Python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" class="post-title-link" itemprop="url">Python学习之路</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-04-10 08:17:36" itemprop="dateCreated datePublished" datetime="2021-04-10T08:17:36+08:00">2021-04-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-05-03 19:22:50" itemprop="dateModified" datetime="2021-05-03T19:22:50+08:00">2021-05-03</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>15</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>this is an example</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
-
-
-
-          </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="清川"
-      src="/images/ava.png">
-  <p class="site-author-name" itemprop="name">清川</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">18</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-          
-        <span class="site-state-item-count">7</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">14</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/rigelJ" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;rigelJ" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="/rigelhunting@gmail.com" title="E-Mail → rigelhunting@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
-      </span>
-  </div>
-  <div class="cc-license motion-element" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
-  </div>
-
-
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2022</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">清川</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-area"></i>
-    </span>
-      <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">85k</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:17</span>
-</div>
-
-        
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
-
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-<script src="/js/bookmark.js"></script>
-
-
-
-
-  
-
-
-
-
-  
-<script src="/js/local-search.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-      
-
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-          load: ['[tex]/mhchem'],
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-          packages: {'[+]': ['mhchem']},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CS61/"><span class="card-category-list-name">CS61</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/My-year/"><span class="card-category-list-name">My year</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%B2%A7%E6%B5%B7%E5%B7%AB%E5%B1%B1/"><span class="card-category-list-name">沧海巫山</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%80%83%E7%A0%94%E4%B9%8B%E8%B7%AF/"><span class="card-category-list-name">考研之路</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E6%96%87%E6%A1%A3/"><span class="card-category-list-name">软件文档</span><span class="card-category-list-count">2</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/CS61/" style="font-size: 1.5em; color: #99a9bf">CS61</a> <a href="/tags/CS61A/" style="font-size: 1.3em; color: #99a1ac">CS61A</a> <a href="/tags/CS61B/" style="font-size: 1.2em; color: #999da3">CS61B</a> <a href="/tags/Git/" style="font-size: 1.1em; color: #999">Git</a> <a href="/tags/Java/" style="font-size: 1.1em; color: #999">Java</a> <a href="/tags/Markdown/" style="font-size: 1.1em; color: #999">Markdown</a> <a href="/tags/Years/" style="font-size: 1.1em; color: #999">Years</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/" style="font-size: 1.1em; color: #999">学习路线</a> <a href="/tags/%E6%95%85%E4%BA%8B/" style="font-size: 1.1em; color: #999">故事</a> <a href="/tags/%E6%96%87%E7%AB%A0/" style="font-size: 1.1em; color: #999">文章</a> <a href="/tags/%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84/" style="font-size: 1.4em; color: #99a5b6">程序结构</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%BE%E7%A8%8B/" style="font-size: 1.1em; color: #999">计算机课程</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/06/"><span class="card-archive-list-date">六月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/09/"><span class="card-archive-list-date">九月 2021</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/08/"><span class="card-archive-list-date">八月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/06/"><span class="card-archive-list-date">六月 2021</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/05/"><span class="card-archive-list-date">五月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/04/"><span class="card-archive-list-date">四月 2021</span><span class="card-archive-list-count">2</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">12</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-06-05T07:53:44.630Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 清川</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"><script>function subtitleType () {
+  if (true) { 
+    window.typed = new Typed("#subtitle", {
+      strings: ["剃刀锋利，越之不易，智者有云，得道弥艰。"],
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: false,
+      backSpeed: 50
+    })
   } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
+    document.getElementById("subtitle").innerHTML = '剃刀锋利，越之不易，智者有云，得道弥艰。'
   }
-</script>
+}
 
-    
-
-  
-
-</body>
-</html>
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
