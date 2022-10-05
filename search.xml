@@ -789,7 +789,7 @@
 <p>这个结构的原理是这样的，fact(3)首先等于<code>(lambda f:f(3,f))</code>，然而由于后i面还有一个<code>(lambda n,f:1 if n==1 else n*f(n-1,f))</code>因此f函数的值被填充为匿名函数，成为f(3,f) 其中 <code>f(n,f)=(lambda n,f:1 if n==1 else n*f(n-1,f))</code>。</p>
 ]]></content>
       <categories>
-        <category>程序结构</category>
+        <category>学习路线</category>
       </categories>
       <tags>
         <tag>程序结构</tag>
@@ -810,7 +810,7 @@
 <p>从20年接触计算机开始到现在，我开始慢慢感觉到整个计算机科学的构建就是不断的抽象和封装，尤其在读了Nand2Teris后，这种感受更加深刻了，Nand门的相互组合构建了16门，而16门的相互组合构建起了ROM，RAM和ALU，PC，再通过封装将这些模块组合起来，就构建成了计算机的硬件部分。软件也是一样，具体数值抽象成了变量，变量与数据结构共同作用构成了函数，函数与变量共同作用构成了类与对象。在不同类之间游走，就构建了计算机程序。</p>
 ]]></content>
       <categories>
-        <category>程序结构</category>
+        <category>学习路线</category>
       </categories>
       <tags>
         <tag>程序结构</tag>
@@ -972,7 +972,7 @@
 <p>再复杂一点可以这样使用生成器：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">natural</span>():</span></span><br><span class="line">    x=<span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">yield</span> x</span><br><span class="line">        x+<span class="number">1</span></span><br><span class="line">&gt;&gt;&gt;ns1,ns2=natural(),natural()</span><br><span class="line">&gt;&gt;&gt;[<span class="built_in">next</span>(ns1)*<span class="built_in">next</span>(ns2) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>)]</span><br><span class="line">[<span class="number">0</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">16</span>]</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>程序结构</category>
+        <category>学习路线</category>
       </categories>
       <tags>
         <tag>程序结构</tag>
@@ -1255,7 +1255,7 @@
 <p>至此，整个解释器就写完了，再加上内置的自循环函数，一个可以运行Scheme程序的python解释器就大功告成了。在61A 的Scheme项目中，还有如宏和流这种复杂的过程，大家可以自行学习，不过本质还是和内置过程的评估相差不大。学习这个项目的目的不是真的要完成一个解释器，而是要让你学会和理解解释器是如何”翻译“一种语言的，这样你才能更好的去理解各种编程范式，例如函数式编程，面向对象编程.</p>
 ]]></content>
       <categories>
-        <category>程序结构</category>
+        <category>学习路线</category>
       </categories>
       <tags>
         <tag>程序结构</tag>
@@ -1430,7 +1430,7 @@
 <p>总的来说，利用类实现的树ADT具有可变的特点，因此使用起来要比函数式的ADT更加便捷。</p>
 ]]></content>
       <categories>
-        <category>程序结构</category>
+        <category>学习路线</category>
       </categories>
       <tags>
         <tag>程序结构</tag>
@@ -1689,7 +1689,7 @@
 <p>向上转型实际上是把一个子类型安全地变为更加抽象的父类型。</p>
 ]]></content>
       <categories>
-        <category>数据结构与算法</category>
+        <category>学习路线</category>
       </categories>
       <tags>
         <tag>CS61</tag>
@@ -1741,7 +1741,7 @@
 </blockquote>
 ]]></content>
       <categories>
-        <category>数据结构与算法</category>
+        <category>学习路线</category>
       </categories>
       <tags>
         <tag>程序结构</tag>
@@ -1913,10 +1913,5 @@
         <tag>故事</tag>
         <tag>文章</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Missing_Semester-Shell</title>
-    <url>/2022/09/27/Missing-Semester-Shell/</url>
-    <content><![CDATA[]]></content>
   </entry>
 </search>
