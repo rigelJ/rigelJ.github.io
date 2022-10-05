@@ -789,7 +789,7 @@
 <p>这个结构的原理是这样的，fact(3)首先等于<code>(lambda f:f(3,f))</code>，然而由于后i面还有一个<code>(lambda n,f:1 if n==1 else n*f(n-1,f))</code>因此f函数的值被填充为匿名函数，成为f(3,f) 其中 <code>f(n,f)=(lambda n,f:1 if n==1 else n*f(n-1,f))</code>。</p>
 ]]></content>
       <categories>
-        <category>学习路线</category>
+        <category>学习进度</category>
       </categories>
       <tags>
         <tag>程序结构</tag>
@@ -810,7 +810,7 @@
 <p>从20年接触计算机开始到现在，我开始慢慢感觉到整个计算机科学的构建就是不断的抽象和封装，尤其在读了Nand2Teris后，这种感受更加深刻了，Nand门的相互组合构建了16门，而16门的相互组合构建起了ROM，RAM和ALU，PC，再通过封装将这些模块组合起来，就构建成了计算机的硬件部分。软件也是一样，具体数值抽象成了变量，变量与数据结构共同作用构成了函数，函数与变量共同作用构成了类与对象。在不同类之间游走，就构建了计算机程序。</p>
 ]]></content>
       <categories>
-        <category>学习路线</category>
+        <category>学习进度</category>
       </categories>
       <tags>
         <tag>程序结构</tag>
@@ -972,7 +972,7 @@
 <p>再复杂一点可以这样使用生成器：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">natural</span>():</span></span><br><span class="line">    x=<span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">yield</span> x</span><br><span class="line">        x+<span class="number">1</span></span><br><span class="line">&gt;&gt;&gt;ns1,ns2=natural(),natural()</span><br><span class="line">&gt;&gt;&gt;[<span class="built_in">next</span>(ns1)*<span class="built_in">next</span>(ns2) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>)]</span><br><span class="line">[<span class="number">0</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">16</span>]</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>学习路线</category>
+        <category>学习进度</category>
       </categories>
       <tags>
         <tag>程序结构</tag>
@@ -1255,7 +1255,7 @@
 <p>至此，整个解释器就写完了，再加上内置的自循环函数，一个可以运行Scheme程序的python解释器就大功告成了。在61A 的Scheme项目中，还有如宏和流这种复杂的过程，大家可以自行学习，不过本质还是和内置过程的评估相差不大。学习这个项目的目的不是真的要完成一个解释器，而是要让你学会和理解解释器是如何”翻译“一种语言的，这样你才能更好的去理解各种编程范式，例如函数式编程，面向对象编程.</p>
 ]]></content>
       <categories>
-        <category>学习路线</category>
+        <category>学习进度</category>
       </categories>
       <tags>
         <tag>程序结构</tag>
@@ -1430,7 +1430,7 @@
 <p>总的来说，利用类实现的树ADT具有可变的特点，因此使用起来要比函数式的ADT更加便捷。</p>
 ]]></content>
       <categories>
-        <category>学习路线</category>
+        <category>学习进度</category>
       </categories>
       <tags>
         <tag>程序结构</tag>
@@ -1912,6 +1912,176 @@
       <tags>
         <tag>故事</tag>
         <tag>文章</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MSe_Shell-Bsh与命令行编程</title>
+    <url>/2022/10/05/MSe-Shell-Bsh%E4%B8%8E%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>&lt;MSe-Shell&gt;Linux操作系统</title>
+    <url>/2022/10/05/MSe_Shell-Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Missing_Semaster-命令行与脚本</title>
+    <url>/2022/10/05/Missing-Semaster-%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%8E%E8%84%9A%E6%9C%AC/</url>
+    <content><![CDATA[<h2 id="Missing-Semaster-命令行与脚本"><a href="#Missing-Semaster-命令行与脚本" class="headerlink" title="Missing_Semaster-命令行与脚本"></a>Missing_Semaster-命令行与脚本</h2><p>这部分课程内容，介绍了使用 bash 作为脚本语言的一些基础知识，以及许多 shell 工具，这些工具涵盖了您将在命令行中不断执行的几个最常见的任务。</p>
+<p>以下是课程所包含的内容</p>
+<h5 id="理解shell的界面，参数和环境变量-PATH"><a href="#理解shell的界面，参数和环境变量-PATH" class="headerlink" title="理解shell的界面，参数和环境变量$PATH"></a>理解shell的界面，参数和环境变量$PATH</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">missing:~$ </span><br><span class="line">missing:~$ date</span><br><span class="line">Fri 10 Jan 2020 11:49:31 AM EST</span><br><span class="line">missing:~$ </span><br><span class="line">missing:~$ echo hello</span><br><span class="line">hello</span><br><span class="line">missing:~$ echo $PATH</span><br><span class="line">/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin</span><br><span class="line">missing:~$ which echo</span><br><span class="line">/bin/echo</span><br><span class="line">missing:~$ /bin/echo $PATH</span><br><span class="line">/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="使用cd切换路径，使用pwd查看当前路径"><a href="#使用cd切换路径，使用pwd查看当前路径" class="headerlink" title="使用cd切换路径，使用pwd查看当前路径"></a>使用cd切换路径，使用pwd查看当前路径</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">missing:~$ pwd</span><br><span class="line">/home/missing</span><br><span class="line">missing:~$ cd /home</span><br><span class="line">missing:/home$ pwd</span><br><span class="line">/home</span><br><span class="line">missing:/home$ cd ..</span><br><span class="line">missing:/$ pwd</span><br><span class="line">/</span><br><span class="line">missing:/$ cd ./home</span><br><span class="line">missing:/home$ pwd</span><br><span class="line">/home</span><br><span class="line">missing:/home$ cd missing</span><br><span class="line">missing:~$ pwd</span><br><span class="line">/home/missing</span><br><span class="line">missing:~$ ../../bin/echo hello</span><br><span class="line">hello</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="使用ls查看给定目录中的内容，了解附带参数如-l-a-的分别含义"><a href="#使用ls查看给定目录中的内容，了解附带参数如-l-a-的分别含义" class="headerlink" title="使用ls查看给定目录中的内容，了解附带参数如-l,-a 的分别含义"></a>使用ls查看给定目录中的内容，了解附带参数如-l,-a 的分别含义</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">missing:~$ ls</span><br><span class="line">missing:~$ cd ..</span><br><span class="line">missing:/home$ ls</span><br><span class="line">missing</span><br><span class="line">missing:/home$ cd ..</span><br><span class="line">missing:/$ ls</span><br><span class="line">bin</span><br><span class="line">boot</span><br><span class="line">dev</span><br><span class="line">etc</span><br><span class="line">home</span><br><span class="line">...</span><br><span class="line">missing:~$ ls -l /home</span><br><span class="line">drwxr-xr-x 1 missing  users  4096 Jun 15  2019 missing</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="使用echo，cat，tail，head指令对输出进行控制，理解重定向符号-lt-gt-和管道符号-的意义"><a href="#使用echo，cat，tail，head指令对输出进行控制，理解重定向符号-lt-gt-和管道符号-的意义" class="headerlink" title="使用echo，cat，tail，head指令对输出进行控制，理解重定向符号&lt;&gt;和管道符号|的意义"></a>使用echo，cat，tail，head指令对输出进行控制，理解重定向符号&lt;&gt;和管道符号|的意义</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">missing:~$ echo hello &gt; hello.txt</span><br><span class="line">missing:~$ cat hello.txt</span><br><span class="line">hello</span><br><span class="line">missing:~$ cat &lt; hello.txt</span><br><span class="line">hello</span><br><span class="line">missing:~$ cat &lt; hello.txt &gt; hello2.txt</span><br><span class="line">missing:~$ cat hello2.txt</span><br><span class="line">hello</span><br><span class="line">missing:~$ ls -l / | tail -n1</span><br><span class="line">drwxr-xr-x 1 root  root  4096 Jun 20  2019 var</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="了解超级用户root的权限，掌握切换和使用root账户的指令，利用tee指令传递权限"><a href="#了解超级用户root的权限，掌握切换和使用root账户的指令，利用tee指令传递权限" class="headerlink" title="了解超级用户root的权限，掌握切换和使用root账户的指令，利用tee指令传递权限"></a>了解超级用户root的权限，掌握切换和使用root账户的指令，利用tee指令传递权限</h5><blockquote>
+<h6 id="以下是一个tee指令使用的实例"><a href="#以下是一个tee指令使用的实例" class="headerlink" title="以下是一个tee指令使用的实例"></a>以下是一个tee指令使用的实例</h6><p>例如，笔记本电脑屏幕的亮度通过以下调用的文件公开brightness</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;&#x2F;sys&#x2F;class&#x2F;backlight</span><br></pre></td></tr></table></figure>
+
+
+
+<p>通过将值写入该文件，我们可以更改屏幕亮度。你的第一反应可能是做这样的事情：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">$ sudo find -L /sys/class/backlight -maxdepth 2 -name <span class="string">&#x27;*brightness*&#x27;</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">/sys/class/backlight/thinkpad_screen/brightness</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">$ <span class="built_in">cd</span> /sys/class/backlight/thinkpad_screen</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">$ sudo <span class="built_in">echo</span> 3 &gt; brightness</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">An error occurred <span class="keyword">while</span> redirecting file <span class="string">&#x27;brightness&#x27;</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">open: Permission denied</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>在上面的例子中，shell（就像你的用户一样进行身份验证）在将其设置输出之前，会尝试打开亮度文件进行写入，但由于 shell 不以 root 身份运行，因此无法执行此操作。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">$ <span class="built_in">echo</span> 3 | sudo tee brightness</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>由于该程序是打开文件进行写入的程序，并且它以 运行方式运行，因此权限全部解决。</p>
+</blockquote>
+<h5 id="掌握shell中变量赋值的两种形式，了解“”与’‘的区别，掌握其他特殊变量的用法"><a href="#掌握shell中变量赋值的两种形式，了解“”与’‘的区别，掌握其他特殊变量的用法" class="headerlink" title="掌握shell中变量赋值的两种形式，了解“”与’‘的区别，掌握其他特殊变量的用法"></a>掌握shell中变量赋值的两种形式，了解“”与’‘的区别，掌握其他特殊变量的用法</h5><blockquote>
+<h6 id="变量赋值与访问"><a href="#变量赋值与访问" class="headerlink" title="变量赋值与访问"></a>变量赋值与访问</h6><p><strong>普通赋值</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">foo=bar</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$foo</span>&quot;</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># prints bar</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="built_in">echo</span> <span class="string">&#x27;$foo&#x27;</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># prints $foo</span></span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>将指令执行结果赋值给变量</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">foo=$(<span class="built_in">pwd</span>)</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="built_in">echo</span> <span class="variable">$foo</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># /home/donnie</span></span></span><br></pre></td></tr></table></figure>
+
+
+
+<h6 id="特殊变量"><a href="#特殊变量" class="headerlink" title="特殊变量"></a>特殊变量</h6><blockquote>
+<p>$0- 当前脚本名称</p>
+<p>$1 - 到9 当前脚本的第n个参数</p>
+<p>$@ -  当前脚本所有参数的集合 </p>
+<p>$# -  当前脚本参数的数量</p>
+<p>$? -  上一个命令的返回代码</p>
+<p>$$ - 当前脚本的进程标识号 （PID）</p>
+<p>!!  -   上一命令，包括参数。</p>
+</blockquote>
+</blockquote>
+<h5 id="掌握逻辑运算符和通配符以及大括号的使用"><a href="#掌握逻辑运算符和通配符以及大括号的使用" class="headerlink" title="掌握逻辑运算符和通配符以及大括号的使用"></a>掌握逻辑运算符和通配符以及大括号的使用</h5><blockquote>
+<h6 id="逻辑运算符-amp-amp"><a href="#逻辑运算符-amp-amp" class="headerlink" title="逻辑运算符 &amp;&amp; ||  ;"></a>逻辑运算符 &amp;&amp; ||  ;</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="literal">false</span> || <span class="built_in">echo</span> <span class="string">&quot;Oops, fail&quot;</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># Oops, fail</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="literal">true</span> || <span class="built_in">echo</span> <span class="string">&quot;Will not be printed&quot;</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment">#</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="literal">true</span> &amp;&amp; <span class="built_in">echo</span> <span class="string">&quot;Things went well&quot;</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># Things went well</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="literal">false</span> &amp;&amp; <span class="built_in">echo</span> <span class="string">&quot;Will not be printed&quot;</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment">#</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="literal">true</span> ; <span class="built_in">echo</span> <span class="string">&quot;This will always run&quot;</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># This will always run</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="literal">false</span> ; <span class="built_in">echo</span> <span class="string">&quot;This will always run&quot;</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># This will always run</span></span></span><br></pre></td></tr></table></figure>
+
+
+
+<h6 id="通配符-和"><a href="#通配符-和" class="headerlink" title="通配符 * ?  和 { }"></a>通配符 * ?  和 { }</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">convert image.&#123;png,jpg&#125;</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># Will expand to</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">convert image.png image.jpg</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">cp /path/to/project/&#123;foo,bar,baz&#125;.sh /newpath</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># Will expand to</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">cp /path/to/project/foo.sh /path/to/project/bar.sh /path/to/project/baz.sh /newpath</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># Globbing techniques can also be combined</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">mv *&#123;.py,.sh&#125; folder</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># Will move all *.py and *.sh files</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">mkdir foo bar</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># This creates files foo/a, foo/b, ... foo/h, bar/a, bar/b, ... bar/h</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">touch &#123;foo,bar&#125;/&#123;a..h&#125;</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">touch foo/x bar/y</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># Show differences between files in foo and bar</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">diff &lt;(ls foo) &lt;(ls bar)</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># Outputs</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># &lt; x</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># ---</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># &gt; y</span></span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<h5 id="了解shell函数和脚本之间的关系和差异，掌握两者的使用方法"><a href="#了解shell函数和脚本之间的关系和差异，掌握两者的使用方法" class="headerlink" title="了解shell函数和脚本之间的关系和差异，掌握两者的使用方法"></a>了解shell函数和脚本之间的关系和差异，掌握两者的使用方法</h5><blockquote>
+<h6 id="shell函数"><a href="#shell函数" class="headerlink" title="shell函数"></a>shell函数</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt;<span class="comment"># mcd.sh</span></span><br><span class="line"></span><br><span class="line">&gt;<span class="function"><span class="title">mcd</span></span> () &#123;</span><br><span class="line">   mkdir -p <span class="string">&quot;<span class="variable">$1</span>&quot;</span></span><br><span class="line">   <span class="built_in">cd</span> <span class="string">&quot;<span class="variable">$1</span>&quot;</span></span><br><span class="line">&gt;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>将函数载入环境</p>
+<p><code>source mcd.sh</code></p>
+<h6 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h6><h6 id="bash脚本"><a href="#bash脚本" class="headerlink" title="bash脚本"></a><strong>bash脚本</strong></h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="meta">#!/bin/bash</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="built_in">echo</span> <span class="string">&quot;Starting program at <span class="subst">$(date)</span>&quot;</span> <span class="comment"># Date will be substituted</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="built_in">echo</span> <span class="string">&quot;Running program <span class="variable">$0</span> with <span class="variable">$#</span> arguments with pid $$&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="keyword">for</span> file <span class="keyword">in</span> <span class="string">&quot;<span class="variable">$@</span>&quot;</span>; <span class="keyword">do</span></span></span><br><span class="line">   grep foobar &quot;$file&quot; &gt; /dev/null 2&gt; /dev/null</span><br><span class="line"><span class="meta">   #</span><span class="bash"> When pattern is not found, grep has <span class="built_in">exit</span> status 1</span></span><br><span class="line"><span class="meta">   #</span><span class="bash"> We redirect STDOUT and STDERR to a null register since we <span class="keyword">do</span> not care about them</span></span><br><span class="line">   if [[ $? -ne 0 ]]; then</span><br><span class="line">       echo &quot;File $file does not have any foobar, adding one&quot;</span><br><span class="line">       echo &quot;# foobar&quot; &gt;&gt; &quot;$file&quot;</span><br><span class="line">   fi</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="keyword">done</span></span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>python脚本</strong> </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="meta">#!/usr/local/bin/python</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">import sys</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="keyword">for</span> arg <span class="keyword">in</span> reversed(sys.argv[1:]):</span></span><br><span class="line">   print(arg)</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h5 id="掌握find，fd，help和man等文件查找指令，grep，rg等模式匹配指令"><a href="#掌握find，fd，help和man等文件查找指令，grep，rg等模式匹配指令" class="headerlink" title="掌握find，fd，help和man等文件查找指令，grep，rg等模式匹配指令"></a>掌握find，fd，help和man等文件查找指令，grep，rg等模式匹配指令</h5><blockquote>
+<h6 id="find"><a href="#find" class="headerlink" title="find"></a>find</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># Find all directories named src</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">find . -name src -<span class="built_in">type</span> d</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># Find all python files that have a folder named test in their path</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">find . -path <span class="string">&#x27;*/test/*.py&#x27;</span> -<span class="built_in">type</span> f</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># Find all files modified in the last day</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">find . -mtime -1</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># Find all zip files with size in range 500k to 10M</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">find . -size +500k -size -10M -name <span class="string">&#x27;*.tar.gz&#x27;</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="man"><a href="#man" class="headerlink" title="man"></a>man</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">missing:~$ man l</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><strong>以上是所有shell课程中的重点内容，以为到这就结束了？远不止如此。</strong></p>
+<p>以下是我认为课程需要我们额外去学习的内容</p>
+]]></content>
+      <categories>
+        <category>学习进度</category>
+      </categories>
+      <tags>
+        <tag>MIT</tag>
+        <tag>MissingSemaster</tag>
+        <tag>编程素养</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Missing_Semaster-综述</title>
+    <url>/2022/10/05/Missing-Semaster-%E7%BB%BC%E8%BF%B0/</url>
+    <content><![CDATA[<h2 id="MissingSemaster-综述"><a href="#MissingSemaster-综述" class="headerlink" title="MissingSemaster-综述"></a>MissingSemaster-综述</h2><h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><blockquote>
+<ul>
+<li>命令行与脚本</li>
+</ul>
+<blockquote>
+<p><em>使用别名、脚本和生成系统自动执行常见和重复性任务。</em></p>
+</blockquote>
+<ul>
+<li>版本控制</li>
+</ul>
+<blockquote>
+<p><em>正确使用版本控制，并利用它来避免灾难，与他人协作，并快速查找和隔离有问题的更改。</em></p>
+</blockquote>
+<ul>
+<li>文本编辑</li>
+</ul>
+<blockquote>
+<p><em>利用命令行（本地和远程）高效编辑文件，并利用高级编辑器功能。</em></p>
+</blockquote>
+<ul>
+<li>远程登录</li>
+</ul>
+<blockquote>
+<p>使用 SSH 密钥和终端多路复用使用远程计算机。</p>
+</blockquote>
+<ul>
+<li>文件查找与整理</li>
+</ul>
+<blockquote>
+<p>快速找到您要查找的文件,直接从命令行快速轻松地修改、查看、解析、打印和计算数据和文件。</p>
+</blockquote>
+<ul>
+<li>虚拟机隔离</li>
+</ul>
+<blockquote>
+<p>使用虚拟机来试用新的操作系统，隔离不相关的项目，并保持主机干净整洁。</p>
+</blockquote>
+<ul>
+<li>计算机安全</li>
+</ul>
+<blockquote>
+<p>在互联网中漫游时不泄漏自身信息。</p>
+</blockquote>
+</blockquote>
+<p>在传统的计算机科学教育中，大家很可能会参加大量的课程，这些课程教学CS中的高级主题，从操作系统到编程语言再到机器学习。但在许多机构中，有一个基本主题很少被涵盖，而是留给学生自己学习：计算生态系统素养。</p>
+<p>这些主题不是作为大学课程的一部分教授的：学生从未被展示如何使用这些工具，或者至少没有如何有效地使用它们，从而在应该简单的任务上浪费时间和精力。标准的CS课程缺少有关计算生态系统的关键主题，这些主题可以使学生的生活更加轻松。</p>
+<p>MIT的这门课补齐了大学课堂没有教学的东西，例如命令行操作和脚本编程，文本编辑器VIM的使用，ssh远程登录，git版本控制与github的使用。</p>
+<p>非常优秀的一门课。</p>
+<p>当然，光是听课是不够的，课程只能告诉你要学什么，该怎么学，怎么拓展还是看个人，不是说把上课那几个指令用会了就算ok了，而是要举一反三，看出课程究竟要求我们掌握哪些知识，例如，第一课的命令行与脚本，就需要你学习linux基础操作，从常见指令，文件系统结构，到硬盘分区和挂载，甚至是学习如何编译核心，还需要你学习bash脚本编程，利用bash脚本跟踪登录情况，检测日志更新，定时清理磁盘等等一些linux运维的知识。</p>
+<p>但是我不打算把每一步都写的跟视频一样详尽，那这样还不如去看视频，我认为一个优秀的黑客首先需要具备信息搜索的能力。</p>
+<p>我在后面的课程内容中，只会把重点需要掌握的内容记录下来，一来是为了不懂的时候及时翻看和回忆，二来如果有人偶然翻到文章，也可以迅速找到解决问题的方法。</p>
+]]></content>
+      <categories>
+        <category>学习进度</category>
+      </categories>
+      <tags>
+        <tag>MIT</tag>
+        <tag>MissingSemaster</tag>
+        <tag>编程素养</tag>
       </tags>
   </entry>
 </search>
