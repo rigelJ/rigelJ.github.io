@@ -2044,7 +2044,62 @@
   <entry>
     <title>Linux操作与使用</title>
     <url>/2022/10/05/Linux%E6%93%8D%E4%BD%9C%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h2 id="Linux操作与使用"><a href="#Linux操作与使用" class="headerlink" title="Linux操作与使用"></a>Linux操作与使用</h2><h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><blockquote>
+<p>操作系统与硬件</p>
+<p>主机规划与磁盘分区</p>
+<p>登录与在线求助</p>
+<p>文件权限与目录管理</p>
+<p>磁盘与文件系统管理</p>
+<p>系统压缩与备份</p>
+<p>程序编辑器vim</p>
+<p>操作环境bash</p>
+<p>正规表示与文件格式化</p>
+<p>shell脚本撰写与执行</p>
+</blockquote>
+<h3 id="操作系统与硬件"><a href="#操作系统与硬件" class="headerlink" title="操作系统与硬件"></a>操作系统与硬件</h3><h4 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h4><blockquote>
+<p>操作系统主要在管理与驱动硬件，因此必须要能够管理内存、管理装置、负责进程管理以及系统调用等等。因此，只要能够让硬件准备妥当的情况，就是一个合格的操作系统了。</p>
+</blockquote>
+<h4 id="Unix"><a href="#Unix" class="headerlink" title="Unix"></a>Unix</h4><blockquote>
+<p>Unix 的前身是由贝尔实验室(Bell lab.)的Ken Thompson利用汇编语言写成的，后来在 1971-1973年间由Dennis Ritchie以C程序语言进行改写，才称为Unix。</p>
+</blockquote>
+<h4 id="BSD"><a href="#BSD" class="headerlink" title="BSD"></a>BSD</h4><blockquote>
+<p>1977年由Bill Joy释出BSD (Berkeley Software Distribution),这些称为Unix-like的操作系统.</p>
+</blockquote>
+<h4 id="Minix"><a href="#Minix" class="headerlink" title="Minix"></a>Minix</h4><blockquote>
+<p>1984年由Andrew Tanenbaum开始制作Minix操作系统，该系统可以提供原始码以及软件;</p>
+</blockquote>
+<h4 id="GNU计划"><a href="#GNU计划" class="headerlink" title="GNU计划"></a>GNU计划</h4><blockquote>
+<p>1984年由Richard Sallman提倡GNU计划，倡导自由软件(Free software)，强调其软件可以 「自由的取得、复制、修改与再发行」，并规范出GPL授权模式，任何 GPL(General Public License)软件均不可单纯仅贩卖其软件，也不可修改软件授权。</p>
+</blockquote>
+<h4 id="Linux-Kernel"><a href="#Linux-Kernel" class="headerlink" title="Linux Kernel"></a>Linux Kernel</h4><blockquote>
+<p>从Linux kernel 3.0开始，已经舍弃奇数、偶数的核心版本规划，新的规划使用主线版本(MainLine) 为依据，并提供长期支持版本 (longterm)来加强某些功能的持续维护。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>操作系统</tag>
+        <tag>命令行</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux高级操作与管理</title>
+    <url>/2022/10/06/Linux%E9%AB%98%E7%BA%A7%E6%93%8D%E4%BD%9C%E4%B8%8E%E7%AE%A1%E7%90%86/</url>
+    <content><![CDATA[<h2 id="Linux高级操作与管理"><a href="#Linux高级操作与管理" class="headerlink" title="Linux高级操作与管理"></a>Linux高级操作与管理</h2><h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><blockquote>
+<p>帐号管理与ACL权限设定</p>
+<p>磁盘配额与文件系统</p>
+<p>例行与工作任务</p>
+<p>进程管理与SELinux</p>
+<p>系统服务管理</p>
+<p>登录档分析</p>
+<p>模块管理与Loader</p>
+<p>基础设定与备份策略</p>
+<p>软件安装与Talball</p>
+<p>核心编译与管理</p>
+</blockquote>
+]]></content>
       <categories>
         <category>Linux</category>
       </categories>
