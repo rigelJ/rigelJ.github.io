@@ -1,0 +1,214 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Typora+picgo+oss快速搭建hexo博客图床 | 清川的博客</title><meta name="keywords" content="踩过的坑,typora,picgo,oss"><meta name="author" content="清川"><meta name="copyright" content="清川"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Typora+picgo+oss快速搭建hexo博客图床目录 准备工作  Picgo下载 OSS对象储存服务开通  图床配置  Typora配置 Picgo配置  测试上传情况  很长一段时间没有更新博客了，听说Typora收费了，幸好我的版本从来没更新过哈哈哈哈   但是呢，这次又遇到了一个问题，之前搭建的smms图床不能用了，怎么调试都没办法，之前崩了之后只要更新下API  key 就行了，这">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Typora+picgo+oss快速搭建hexo博客图床">
+<meta property="og:url" content="http://rigelj.github.io/2022/10/07/Typora-picgo-oss%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A/index.html">
+<meta property="og:site_name" content="清川的博客">
+<meta property="og:description" content="Typora+picgo+oss快速搭建hexo博客图床目录 准备工作  Picgo下载 OSS对象储存服务开通  图床配置  Typora配置 Picgo配置  测试上传情况  很长一段时间没有更新博客了，听说Typora收费了，幸好我的版本从来没更新过哈哈哈哈   但是呢，这次又遇到了一个问题，之前搭建的smms图床不能用了，怎么调试都没办法，之前崩了之后只要更新下API  key 就行了，这">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://rigelj.github.io/img/cover.jpg">
+<meta property="article:published_time" content="2022-10-07T00:41:43.000Z">
+<meta property="article:modified_time" content="2022-10-07T02:28:50.985Z">
+<meta property="article:author" content="清川">
+<meta property="article:tag" content="踩过的坑">
+<meta property="article:tag" content="typora">
+<meta property="article:tag" content="picgo">
+<meta property="article:tag" content="oss">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://rigelj.github.io/img/cover.jpg"><link rel="shortcut icon" href="/img/ava.png"><link rel="canonical" href="http://rigelj.github.io/2022/10/07/Typora-picgo-oss%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Typora+picgo+oss快速搭建hexo博客图床',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-10-07 10:28:50'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="清川的博客" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/ava.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/About/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/cover.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">清川的博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/About/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Typora+picgo+oss快速搭建hexo博客图床</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-10-07T00:41:43.000Z" title="发表于 2022-10-07 08:41:43">2022-10-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-10-07T02:28:50.985Z" title="更新于 2022-10-07 10:28:50">2022-10-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/hole/">hole</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Typora+picgo+oss快速搭建hexo博客图床"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="Typora-picgo-oss快速搭建hexo博客图床"><a href="#Typora-picgo-oss快速搭建hexo博客图床" class="headerlink" title="Typora+picgo+oss快速搭建hexo博客图床"></a>Typora+picgo+oss快速搭建hexo博客图床</h2><h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><blockquote>
+<p>准备工作</p>
+<ul>
+<li>Picgo下载</li>
+<li>OSS对象储存服务开通</li>
+</ul>
+<p>图床配置</p>
+<ul>
+<li>Typora配置</li>
+<li>Picgo配置</li>
+</ul>
+<p>测试上传情况</p>
+</blockquote>
+<p>很长一段时间没有更新博客了，听说Typora收费了，幸好我的版本从来没更新过哈哈哈哈</p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007091008965.png" alt="image-20221007091008965"></p>
+<hr>
+<p>但是呢，这次又遇到了一个问题，之前搭建的smms图床不能用了，怎么调试都没办法，之前崩了之后只要更新下API  key 就行了，这次怎么更新都没有用，可能是smms也开始收费了。</p>
+<p>当你上传时候出现这个问题的时候，那就说明你的图床崩了。</p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007085519282.png" alt="image-20221007085519282"></p>
+<p>打开<code>文件</code>—<code>偏好设置</code>-<code>图片</code>，我们会看到这个选项。</p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007090126052.png" alt="image-20221007090126052"></p>
+<p>点击<code>验证个图片上传选项</code>，验证一下图片上传。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[PicGo INFO]: Before transform</span><br><span class="line">[PicGo INFO]: Transforming...</span><br><span class="line">[PicGo INFO]: Before upload</span><br><span class="line">[PicGo INFO]: Uploading...</span><br><span class="line">[PicGo WARN]: failed</span><br><span class="line">[PicGo ERROR]: RequestError: Error: connect ECONNREFUSED 104.21.83.45:443</span><br></pre></td></tr></table></figure>
+
+<p>恩。。确实是崩了。</p>
+<p>接下来我们就利用picgo+oss搭建一个图床供typora使用。</p>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><h4 id="picgo下载"><a href="#picgo下载" class="headerlink" title="picgo下载"></a>picgo下载</h4><p>首先我们前往Github主页下载picgo最新版本  </p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007095328317.png" alt="image-20221007095328317"></p>
+<p>如果不会科学上网的这里还有一个腾讯COS的下载链接</p>
+<p>下载好之后执行以下指令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod a+x PicGo-2.3.1-beta.6.AppImage   #权限</span><br><span class="line">sudo mv PicGo-2.3.1-beta.6.AppImage picgo#重命名</span><br><span class="line">sudo mv picgo /usr/bin #该目录已包含于环境变量，可直接通过picgo指令打开</span><br></pre></td></tr></table></figure>
+
+<p>打开之后它是这样的</p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007100331876.png" alt="image-20221007100331876"></p>
+<p>你得右键打开主界面</p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007100221791.png" alt="image-20221007100221791"></p>
+<h4 id="OSS云对象储存服务"><a href="#OSS云对象储存服务" class="headerlink" title="OSS云对象储存服务"></a>OSS云对象储存服务</h4><p><strong>打开阿里云</strong> </p>
+<p><strong>搜索对象储存oss</strong></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007100618294.png" alt="image-20221007100618294"></p>
+<p><strong>切换至概况一栏</strong></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007100709399.png" alt="image-20221007100709399"></p>
+<p><strong>点击建立bucket</strong></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007100814359.png" alt="image-20221007100814359"></p>
+<p><strong># 上图源自CSDN，本人懒</strong></p>
+<p><strong>切换至bucket概览，记录下你的地域节点</strong> </p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007101239343.png" alt="image-20221007101239343"></p>
+<p>我这里是广州，所以是<code>oss-cn-guangzhou</code></p>
+<p><strong>右上角点击你的头像选择AccessKey管理</strong></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007101355792.png" alt="image-20221007101355792"></p>
+<p>这个不用管他，继续使用</p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007101544965.png" alt="image-20221007101544965"></p>
+<p><strong>创建一个新的Access key，然后记住你的ID和Secret</strong></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007101612928.png" alt="image-20221007101612928"></p>
+<p>到这里oss服务就配置完成了，接下来我们就可以开始在本级搭建图床了。</p>
+<h3 id="图床配置"><a href="#图床配置" class="headerlink" title="图床配置"></a>图床配置</h3><h4 id="Picgo配置"><a href="#Picgo配置" class="headerlink" title="Picgo配置"></a>Picgo配置</h4><p><strong>打开picgo主界面，点击<code>图床设置 </code>- <code>阿里云oss</code></strong></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007102114993.png" alt="image-20221007102114993"></p>
+<p>这里的keyID和keySecret填写刚才我们建立AccessKey时候得到的两串代码，Bucket填写你建立的bucket名字，储存区域就填写刚才的地域节点，储存路径这个，随便写一个就行了。</p>
+<h4 id="Typora配置"><a href="#Typora配置" class="headerlink" title="Typora配置"></a>Typora配置</h4><p>同样，打开<code>文件</code>-<code>偏好设置</code>-<code>图片</code></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007102515260.png" alt="image-20221007102515260"></p>
+<p>将上传服务由Picgo-commandline改为Picgo-app，而后Picgo路径填写我们刚刚移动Picgo</p>
+<p>到达的位置<code>/usr/bin/picgo</code></p>
+<h3 id="测试上传情况"><a href="#测试上传情况" class="headerlink" title="测试上传情况"></a>测试上传情况</h3><p>点击验证图片上传情况</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;success&quot;:true,&quot;result&quot;:[&quot;https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/typora-icon2.png&quot;,&quot;https://xxx.oss-cn-guangzhou.aliyuncs.com/image/typora-icon.png&quot;]&#125;</span><br></pre></td></tr></table></figure>
+
+<p>成功。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://rigelJ.github.io">清川</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://rigelj.github.io/2022/10/07/Typora-picgo-oss%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A/">http://rigelj.github.io/2022/10/07/Typora-picgo-oss%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://rigelJ.github.io" target="_blank">清川的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/">踩过的坑</a><a class="post-meta__tags" href="/tags/typora/">typora</a><a class="post-meta__tags" href="/tags/picgo/">picgo</a><a class="post-meta__tags" href="/tags/oss/">oss</a></div><div class="post_share"><div class="social-share" data-image="/img/cover.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/10/06/Linux%E9%AB%98%E7%BA%A7%E6%93%8D%E4%BD%9C%E4%B8%8E%E7%AE%A1%E7%90%86/"><img class="next-cover" src="/img/cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Linux高级操作与管理</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/ava.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">清川</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/rigelJ" target="_blank" title=""><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Typora-picgo-oss%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A"><span class="toc-number">1.</span> <span class="toc-text">Typora+picgo+oss快速搭建hexo博客图床</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-number">1.0.1.</span> <span class="toc-text">目录</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.1.</span> <span class="toc-text">准备工作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#picgo%E4%B8%8B%E8%BD%BD"><span class="toc-number">1.1.1.</span> <span class="toc-text">picgo下载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#OSS%E4%BA%91%E5%AF%B9%E8%B1%A1%E5%82%A8%E5%AD%98%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.1.2.</span> <span class="toc-text">OSS云对象储存服务</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%BA%8A%E9%85%8D%E7%BD%AE"><span class="toc-number">1.2.</span> <span class="toc-text">图床配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Picgo%E9%85%8D%E7%BD%AE"><span class="toc-number">1.2.1.</span> <span class="toc-text">Picgo配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Typora%E9%85%8D%E7%BD%AE"><span class="toc-number">1.2.2.</span> <span class="toc-text">Typora配置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E4%B8%8A%E4%BC%A0%E6%83%85%E5%86%B5"><span class="toc-number">1.3.</span> <span class="toc-text">测试上传情况</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/07/Typora-picgo-oss%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A/" title="Typora+picgo+oss快速搭建hexo博客图床"><img src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Typora+picgo+oss快速搭建hexo博客图床"/></a><div class="content"><a class="title" href="/2022/10/07/Typora-picgo-oss%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A/" title="Typora+picgo+oss快速搭建hexo博客图床">Typora+picgo+oss快速搭建hexo博客图床</a><time datetime="2022-10-07T00:41:43.000Z" title="发表于 2022-10-07 08:41:43">2022-10-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/06/Linux%E9%AB%98%E7%BA%A7%E6%93%8D%E4%BD%9C%E4%B8%8E%E7%AE%A1%E7%90%86/" title="Linux高级操作与管理"><img src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux高级操作与管理"/></a><div class="content"><a class="title" href="/2022/10/06/Linux%E9%AB%98%E7%BA%A7%E6%93%8D%E4%BD%9C%E4%B8%8E%E7%AE%A1%E7%90%86/" title="Linux高级操作与管理">Linux高级操作与管理</a><time datetime="2022-10-06T11:54:49.000Z" title="发表于 2022-10-06 19:54:49">2022-10-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/05/Missing-Semaster-%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%8E%E8%84%9A%E6%9C%AC/" title="Missing_Semaster-命令行与脚本"><img src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Missing_Semaster-命令行与脚本"/></a><div class="content"><a class="title" href="/2022/10/05/Missing-Semaster-%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%8E%E8%84%9A%E6%9C%AC/" title="Missing_Semaster-命令行与脚本">Missing_Semaster-命令行与脚本</a><time datetime="2022-10-05T12:45:18.000Z" title="发表于 2022-10-05 20:45:18">2022-10-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/05/Linux%E6%93%8D%E4%BD%9C%E4%B8%8E%E4%BD%BF%E7%94%A8/" title="Linux操作与使用"><img src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux操作与使用"/></a><div class="content"><a class="title" href="/2022/10/05/Linux%E6%93%8D%E4%BD%9C%E4%B8%8E%E4%BD%BF%E7%94%A8/" title="Linux操作与使用">Linux操作与使用</a><time datetime="2022-10-05T12:06:11.000Z" title="发表于 2022-10-05 20:06:11">2022-10-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/05/Missing-Semaster-%E7%BB%BC%E8%BF%B0/" title="Missing_Semaster-综述"><img src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Missing_Semaster-综述"/></a><div class="content"><a class="title" href="/2022/10/05/Missing-Semaster-%E7%BB%BC%E8%BF%B0/" title="Missing_Semaster-综述">Missing_Semaster-综述</a><time datetime="2022-10-05T11:58:35.000Z" title="发表于 2022-10-05 19:58:35">2022-10-05</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 清川</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

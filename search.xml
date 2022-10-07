@@ -2074,6 +2074,7 @@
 <h4 id="Linux-Kernel"><a href="#Linux-Kernel" class="headerlink" title="Linux Kernel"></a>Linux Kernel</h4><blockquote>
 <p>从Linux kernel 3.0开始，已经舍弃奇数、偶数的核心版本规划，新的规划使用主线版本(MainLine) 为依据，并提供长期支持版本 (longterm)来加强某些功能的持续维护。</p>
 </blockquote>
+<p><img src="../../../../.config/Typora/typora-user-images/image-20221006202056582.png" alt="image-20221006202056582"></p>
 ]]></content>
       <categories>
         <category>Linux</category>
@@ -2107,6 +2108,85 @@
         <tag>Linux</tag>
         <tag>操作系统</tag>
         <tag>命令行</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Typora+picgo+oss快速搭建hexo博客图床</title>
+    <url>/2022/10/07/Typora-picgo-oss%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A/</url>
+    <content><![CDATA[<h2 id="Typora-picgo-oss快速搭建hexo博客图床"><a href="#Typora-picgo-oss快速搭建hexo博客图床" class="headerlink" title="Typora+picgo+oss快速搭建hexo博客图床"></a>Typora+picgo+oss快速搭建hexo博客图床</h2><h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><blockquote>
+<p>准备工作</p>
+<ul>
+<li>Picgo下载</li>
+<li>OSS对象储存服务开通</li>
+</ul>
+<p>图床配置</p>
+<ul>
+<li>Typora配置</li>
+<li>Picgo配置</li>
+</ul>
+<p>测试上传情况</p>
+</blockquote>
+<p>很长一段时间没有更新博客了，听说Typora收费了，幸好我的版本从来没更新过哈哈哈哈</p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007091008965.png" alt="image-20221007091008965"></p>
+<hr>
+<p>但是呢，这次又遇到了一个问题，之前搭建的smms图床不能用了，怎么调试都没办法，之前崩了之后只要更新下API  key 就行了，这次怎么更新都没有用，可能是smms也开始收费了。</p>
+<p>当你上传时候出现这个问题的时候，那就说明你的图床崩了。</p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007085519282.png" alt="image-20221007085519282"></p>
+<p>打开<code>文件</code>—<code>偏好设置</code>-<code>图片</code>，我们会看到这个选项。</p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007090126052.png" alt="image-20221007090126052"></p>
+<p>点击<code>验证个图片上传选项</code>，验证一下图片上传。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[PicGo INFO]: Before transform</span><br><span class="line">[PicGo INFO]: Transforming...</span><br><span class="line">[PicGo INFO]: Before upload</span><br><span class="line">[PicGo INFO]: Uploading...</span><br><span class="line">[PicGo WARN]: failed</span><br><span class="line">[PicGo ERROR]: RequestError: Error: connect ECONNREFUSED 104.21.83.45:443</span><br></pre></td></tr></table></figure>
+
+<p>恩。。确实是崩了。</p>
+<p>接下来我们就利用picgo+oss搭建一个图床供typora使用。</p>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><h4 id="picgo下载"><a href="#picgo下载" class="headerlink" title="picgo下载"></a>picgo下载</h4><p>首先我们前往Github主页下载picgo最新版本  </p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007095328317.png" alt="image-20221007095328317"></p>
+<p>如果不会科学上网的这里还有一个腾讯COS的下载链接</p>
+<p>下载好之后执行以下指令</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo chmod a+x PicGo-2.3.1-beta.6.AppImage   #权限</span><br><span class="line">sudo mv PicGo-2.3.1-beta.6.AppImage picgo#重命名</span><br><span class="line">sudo mv picgo /usr/bin #该目录已包含于环境变量，可直接通过picgo指令打开</span><br></pre></td></tr></table></figure>
+
+<p>打开之后它是这样的</p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007100331876.png" alt="image-20221007100331876"></p>
+<p>你得右键打开主界面</p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007100221791.png" alt="image-20221007100221791"></p>
+<h4 id="OSS云对象储存服务"><a href="#OSS云对象储存服务" class="headerlink" title="OSS云对象储存服务"></a>OSS云对象储存服务</h4><p><strong>打开阿里云</strong> </p>
+<p><strong>搜索对象储存oss</strong></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007100618294.png" alt="image-20221007100618294"></p>
+<p><strong>切换至概况一栏</strong></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007100709399.png" alt="image-20221007100709399"></p>
+<p><strong>点击建立bucket</strong></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007100814359.png" alt="image-20221007100814359"></p>
+<p><strong># 上图源自CSDN，本人懒</strong></p>
+<p><strong>切换至bucket概览，记录下你的地域节点</strong> </p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007101239343.png" alt="image-20221007101239343"></p>
+<p>我这里是广州，所以是<code>oss-cn-guangzhou</code></p>
+<p><strong>右上角点击你的头像选择AccessKey管理</strong></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007101355792.png" alt="image-20221007101355792"></p>
+<p>这个不用管他，继续使用</p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007101544965.png" alt="image-20221007101544965"></p>
+<p><strong>创建一个新的Access key，然后记住你的ID和Secret</strong></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007101612928.png" alt="image-20221007101612928"></p>
+<p>到这里oss服务就配置完成了，接下来我们就可以开始在本级搭建图床了。</p>
+<h3 id="图床配置"><a href="#图床配置" class="headerlink" title="图床配置"></a>图床配置</h3><h4 id="Picgo配置"><a href="#Picgo配置" class="headerlink" title="Picgo配置"></a>Picgo配置</h4><p><strong>打开picgo主界面，点击<code>图床设置 </code>- <code>阿里云oss</code></strong></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007102114993.png" alt="image-20221007102114993"></p>
+<p>这里的keyID和keySecret填写刚才我们建立AccessKey时候得到的两串代码，Bucket填写你建立的bucket名字，储存区域就填写刚才的地域节点，储存路径这个，随便写一个就行了。</p>
+<h4 id="Typora配置"><a href="#Typora配置" class="headerlink" title="Typora配置"></a>Typora配置</h4><p>同样，打开<code>文件</code>-<code>偏好设置</code>-<code>图片</code></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007102515260.png" alt="image-20221007102515260"></p>
+<p>将上传服务由Picgo-commandline改为Picgo-app，而后Picgo路径填写我们刚刚移动Picgo</p>
+<p>到达的位置<code>/usr/bin/picgo</code></p>
+<h3 id="测试上传情况"><a href="#测试上传情况" class="headerlink" title="测试上传情况"></a>测试上传情况</h3><p>点击验证图片上传情况</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">&#123;&quot;success&quot;:true,&quot;result&quot;:[&quot;https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/typora-icon2.png&quot;,&quot;https://xxx.oss-cn-guangzhou.aliyuncs.com/image/typora-icon.png&quot;]&#125;</span><br></pre></td></tr></table></figure>
+
+<p>成功。</p>
+]]></content>
+      <categories>
+        <category>hole</category>
+      </categories>
+      <tags>
+        <tag>踩过的坑</tag>
+        <tag>typora</tag>
+        <tag>picgo</tag>
+        <tag>oss</tag>
       </tags>
   </entry>
 </search>
