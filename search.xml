@@ -2083,31 +2083,29 @@
 <p>主机规划一定要按照自己的需求来进行使用。</p>
 </blockquote>
 <h4 id="装置文件名"><a href="#装置文件名" class="headerlink" title="装置文件名"></a>装置文件名</h4><blockquote>
-<p>磁盘装置文件名通常分为两种，实际SATA/USB装置文件名为/dev/sd[a-p], 而虚拟机的装置可能为/dev/vd[a-p]，其他的装置文件名如下。</p>
+<p>磁盘装置文件名通常分为两种，实际SATA/USB装置文件名为/dev/sd[a-p], 而虚拟机的装置可能为/dev/vd[a-p]</p>
 </blockquote>
-<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007160514628.png" alt="image-20221007160514628"></p>
 <h4 id="MBR分区"><a href="#MBR分区" class="headerlink" title="MBR分区"></a>MBR分区</h4><blockquote>
 <p>磁盘的第一个扇区 主要记录了两个重要的信息，一是要启动记录区(Master Boot Record, MBR):可以安装开机管理程序的地方,有446 bytes ，二是分区表(artition table):记录整颗硬盘分区的状态，有64 bytes;</p>
 <p>磁盘的MBR分区方式中，主要与延伸分区最多可以有四个，所以逻辑分区的装置文件名号码，一定是由从5号开始。</p>
 </blockquote>
-<img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007160625872.png" alt="image-20221007160625872" style="zoom:80%;" />
-
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007192837574.png" alt="image-20221007192837574"></p>
 <blockquote>
 <p>如果采用逻辑分区，那么磁盘的规划会变成这样</p>
 </blockquote>
-<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007160706160.png" alt="image-20221007160705939"></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007192922041.png" alt="image-20221007192922041"></p>
 <h4 id="GPT分区"><a href="#GPT分区" class="headerlink" title="GPT分区"></a>GPT分区</h4><blockquote>
 <p>如果磁盘容量大于2TB以上时，系统会自动使用GPT分区方式来处理磁盘分区。</p>
 <p>GPT分区已经没有延伸与逻辑分区槽的概念，你可以想象成所有的分区都是主分区.</p>
 <p>某些操作系统要使用GPT分区时，必须要搭配UEFI的新型BIOS 格式才可安装使用。</p>
 </blockquote>
-<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007161410808.png" alt="image-20221007161410808"></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007192955934.png" alt="image-20221007192955934"></p>
 <h4 id="开机的流程"><a href="#开机的流程" class="headerlink" title="开机的流程"></a>开机的流程</h4><blockquote>
 <p>开机的流程由: BIOS–&gt;MBR–&gt;boot loader–&gt;核心文件。</p>
 <p>boot loader的功能主要有:提供选单、加载核心、转交控制权给其他loader。</p>
 <p>boot loader可以安装的地点有两个，分别是MBR与boot sector,这个特色造就了多重引导功能。</p>
 </blockquote>
-<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007161545230.png" alt="image-20221007161545230"></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007193014623.png" alt="image-20221007193014623"></p>
 <h4 id="目录树"><a href="#目录树" class="headerlink" title="目录树"></a>目录树</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Linux 操作系统的文件使用目录树系统，与磁盘的对应需要有[挂载」的动作才行;</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007161907887.png" alt="image-20221007161907887"></p>
@@ -2162,7 +2160,7 @@
 <p>man指令是一个自带的帮助系统，可以查询指令以及系统文件的作用，例如，<code>man ls</code>以及<code>man issue</code></p>
 <p>man page说明后面的数字中， 1代表一般账号可用指令，8代表系统管理员常用指令，5代表系统配置文件格式</p>
 </blockquote>
-<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007165929219.png" alt="image-20221007165929219"></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007193137847.png" alt="image-20221007193137847"></p>
 <blockquote>
 <p>info指令也是一个帮助系统，可以采用浏览器的方式进行点击跳转，可将一份说明文件拆成多个节点(node)显示，并具有类似超链接的功能，增加易读性;</p>
 </blockquote>
@@ -2181,7 +2179,7 @@
 <p>Linux的每个文件中，可分别给予使用者、群组与其他人三种身份个别的rwx权限;</p>
 <p>利用<code>ls -l</code>显示的文件属性中，第一个字段是文件的权限，共有十个位，第一个位是文件类型，接下来三个为一组共三组，为使用者、群组、其他人的权限，权限有r,w,x三种;</p>
 </blockquote>
-<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007124617472.png" alt="image-20221007124617472"></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007170605114.png" alt="image-20221007170605114"></p>
 <blockquote>
 <p>对于文件来说</p>
 <blockquote>
@@ -2210,7 +2208,7 @@
 <blockquote>
 <p>文件的类型有以下几种</p>
 </blockquote>
-<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007170507932.png"></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007193427772.png" alt="image-20221007193427772"></p>
 <h4 id="隐藏文件"><a href="#隐藏文件" class="headerlink" title="隐藏文件"></a>隐藏文件</h4><blockquote>
 <p>如果档名之前多一一个<code>.</code>，则代表这个文件为隐藏文件，隐藏文件需要使用<code>ls -a</code>查看</p>
 </blockquote>
@@ -2228,7 +2226,7 @@
 <p><code>chmod +rx xx.py</code></p>
 </blockquote>
 </blockquote>
-<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007170802190.png" alt="image-20221007170802190"></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007193514337.png" alt="image-20221007193514337"></p>
 <blockquote>
 <blockquote>
 <p>数字法</p>
@@ -2296,7 +2294,216 @@
 <p>od指令使用</p>
 </blockquote>
 <p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007173838377.png" alt="image-20221007173838377"></p>
-<h4 id="修改文件参数"><a href="#修改文件参数" class="headerlink" title="修改文件参数"></a>修改文件参数</h4>]]></content>
+<h4 id="修改文件参数"><a href="#修改文件参数" class="headerlink" title="修改文件参数"></a>修改文件参数</h4><blockquote>
+<p>touch的目的在修改文件的时间参数，但亦可用来建立空文件;</p>
+<p>一个文件记录的时间参数有三种，分别是access time(aime), status time (ctime), mdification time(mtime)</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007193936078.png" alt="image-20221007193936078"></p>
+<h4 id="文件的预设权限"><a href="#文件的预设权限" class="headerlink" title="文件的预设权限"></a>文件的预设权限</h4><blockquote>
+<p>新建文件/目录时，新文件的预设权限使用umask来规范，其预设权限如下</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007194522691.png" alt="image-20221007194522691"></p>
+<blockquote>
+<p>利用umask更改预设权限，更改后</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007194649352.png" alt="image-20221007194649352"></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007194853337.png" alt="image-20221007194853337"></p>
+<h4 id="文件的隐藏属性"><a href="#文件的隐藏属性" class="headerlink" title="文件的隐藏属性"></a>文件的隐藏属性</h4><blockquote>
+<p>除了传统的rwx权限之外，在Ex2/Ext3/Ext4/xfs文件系统中，还存在隐藏属性，以下是所有隐藏属性，最常见的隐藏属性为+i和+a</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007195304005.png" alt="image-20221007195304005"></p>
+<blockquote>
+<p>使用chattr 给文件配置隐藏属性</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007195612867.png" alt="image-20221007195612867"></p>
+<blockquote>
+<p>使用lsattr显示文件隐藏属性</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007195741048.png" alt="image-20221007195741048"></p>
+<h4 id="文件的特殊权限"><a href="#文件的特殊权限" class="headerlink" title="文件的特殊权限"></a>文件的特殊权限</h4><blockquote>
+<p>文件具有SUID的特殊权限时,代表当用户执行此binary程序时，在执行过程中用户会暂时具有程序拥有者的权限</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007195959605.png" alt="image-20221007195959605"></p>
+<blockquote>
+<p>用一张漫画来说明这个权限的使用过程</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007200217090.png" alt="image-20221007200217090"></p>
+<blockquote>
+<p>目录具有SGID的特殊权限时，代表用户在这个目录底下新建的文件之群组都会与该目录的组名相同。</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007200631139.png" alt="image-20221007200631139"></p>
+<blockquote>
+<p>目录具有SBIT的特殊权限时，代表在该目录下用户建立的文件只有自己与root能够删除</p>
+</blockquote>
+<img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007200730676.png" alt="image-20221007200730676" style="zoom:80%;" />
+
+<blockquote>
+<p>给文件或目录加上SUID，SGID，SBIT权限，只需要在chmod 使用数字授权时候在标准数字之前加上代表三个权限的数字，SUID为4,  SGID为2,  SBIT为1</p>
+</blockquote>
+<img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007201026907.png" alt="image-20221007201026907" style="zoom:80%;" />
+
+
+
+<h4 id="观察文件类型"><a href="#观察文件类型" class="headerlink" title="观察文件类型"></a>观察文件类型</h4><blockquote>
+<p>使用file指令观察文件类型</p>
+</blockquote>
+<img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007201131838.png" alt="image-20221007201131838"  />
+
+
+
+<h4 id="指令与文件的查找"><a href="#指令与文件的查找" class="headerlink" title="指令与文件的查找"></a>指令与文件的查找</h4><blockquote>
+<p>搜寻指令的完整文件名可用which 或type ，这两个指令都是透过PATH变量来搜寻文件名;</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007201449046.png" alt="image-20221007201449046"></p>
+<blockquote>
+<p>搜寻文件的完整档名可以使用whereis 找特定目录或locate 到数据库去搜寻，而不实际搜寻文件系统;</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007201507176.png" alt="image-20221007201507176"></p>
+<blockquote>
+<p>用find可以加入许多选项来直接查询文件系统，以获得自己想要知道的档名，find指令复杂多变。具体可以参考</p>
+<p><code>man find</code></p>
+</blockquote>
+<h4 id="权限和指令之间的关系（整合）"><a href="#权限和指令之间的关系（整合）" class="headerlink" title="权限和指令之间的关系（整合）"></a>权限和指令之间的关系（整合）</h4><p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007201747868.png" alt="image-20221007201747868"></p>
+<h3 id="磁盘划分和目录挂载"><a href="#磁盘划分和目录挂载" class="headerlink" title="磁盘划分和目录挂载"></a>磁盘划分和目录挂载</h3><h4 id="MBR和GPT"><a href="#MBR和GPT" class="headerlink" title="MBR和GPT"></a>MBR和GPT</h4><p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007215146933.png" alt="image-20221007215146933"></p>
+<h4 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h4><p><strong>Ext文件系统</strong></p>
+<blockquote>
+<p>基本上Linux 的传统文件系统为ExI2，该文件系统内的信息主要有:</p>
+<p>superblock: 记录此filesystem 的整体信息，包括inode/block的总量、使用量、剩余量， 以及文件系统的格式与相关信息等;</p>
+<p>inode:记录文件的属性，一个 文件占用-一个inode,同时记录此文件的数据所在的block 号码;</p>
+<p>block:实际记录文件的内容，若文件太大时，会占用多个block.</p>
+<p>这种数据存取的方式我们称为索引式文件系统</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007215534068.png" alt="image-20221007215534068"></p>
+<blockquote>
+<p>相比起来FAT格式的读取方式是这样的</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007215712073.png" alt="image-20221007215712073"></p>
+<blockquote>
+<p>Ext2文件系统主要有: boot sector, superblock, inode bitmap, block bitmap, inode table, data block等六大部分。</p>
+<p>Ext2文件系统的示意图如下.</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007215921814.png" alt="image-20221007215921814"></p>
+<blockquote>
+<p>data block是用来放置文件内容数据地方，在Ext2 文件系统中所支持的block 大小有1K,2K 及4K</p>
+</blockquote>
+<blockquote>
+<p>inode 记录文件的属性/权限等数据，其他重要项目为:每个 inode大小均为固定，128/256bytes 两种基本容量。</p>
+<p>每个文件都仅会占用一个inode而已，因此文件系统能够建立的文件数量与inode 的数量有关;</p>
+<p>文件的block 在记录文件的实际数据，目录的block 则在记录该目录底下文件名与其inode 号码的对照表;</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007220501891.png" alt="image-20221007220501891"></p>
+<blockquote>
+<p>superblock记录整个filesystem的信息，主要记录inode和block的总量，未使用和已使用的inode和block，大小等。</p>
+</blockquote>
+<blockquote>
+<p>使用dump2fs查询ext家族superblock的指令</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007221002782.png" alt="image-20221007221002782"></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007221040698.png" alt="image-20221007221040698"></p>
+<p><strong>xfs文件系统</strong></p>
+<blockquote>
+<p>xfs文件系统主要分为三个部分，资料区，文件系统活动登录区，和实时运作区</p>
+</blockquote>
+<h4 id="文件系统的操作"><a href="#文件系统的操作" class="headerlink" title="文件系统的操作"></a>文件系统的操作</h4><p><strong>查看文件系统磁盘使用量</strong></p>
+<blockquote>
+<p>查看文件系统的磁盘使用量使用指令df和du</p>
+</blockquote>
+<blockquote>
+<p>df列出文件系统的整体磁盘使用量</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007221859758.png" alt="image-20221007221859758"></p>
+<blockquote>
+<p>du 评估文件系统各个文件的磁盘使用量</p>
+</blockquote>
+<img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007221934486.png" alt="image-20221007221934486"  />
+
+
+
+<p><strong>创建链接</strong></p>
+<blockquote>
+<p>创建链接有两种类型，分别是实体链接与符号链接的建立</p>
+</blockquote>
+<blockquote>
+<p>实体链接的建立，是在某个目录下新增一个链接到某inode号码的关联记录，这两个档名链接到同一个inode，无论你删除哪一个文档，文件的inode和block都是存在的，从另一个都可以访问到对应的文件。</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007222352413.png" alt="image-20221007222352413"></p>
+<blockquote>
+<p>其链接模式如图所示</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007222821931.png" alt="image-20221007222821931"></p>
+<blockquote>
+<p>符号链接的建立是在建立一个独立的文件，而这个文件会让数据读取指向link的文件，所以当被链接的原文件被删除后，符号链接也作废了，有点像windows的快捷方式。</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007223057831.png" alt="image-20221007223057831"></p>
+<blockquote>
+<p>其链接模式如图所示</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007223128721.png" alt="image-20221007223128721"></p>
+<h4 id="磁盘的分区，格式化与挂载"><a href="#磁盘的分区，格式化与挂载" class="headerlink" title="磁盘的分区，格式化与挂载"></a>磁盘的分区，格式化与挂载</h4><p><strong>观察磁盘分区状态</strong> </p>
+<blockquote>
+<p>使用lsblk指令列出系统上所有磁盘列表</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007223351460.png" alt="image-20221007223351460"></p>
+<blockquote>
+<p>使用blkid列出装置的UUID，文件系统格式，等参数</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007223558635.png" alt="image-20221007223558635"></p>
+<blockquote>
+<p>使用parted列出磁盘的分区表类型与分区信息</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007223638672.png" alt="image-20221007223638672"></p>
+<p><strong>进行磁盘分区</strong></p>
+<blockquote>
+<p>磁盘分区中，使用GPT格式的磁盘使用gdisk指令，使用MBR格式的磁盘使用fdisk指令</p>
+<p>先要透过lsblk和blkid找到磁盘，然后利用part查看分区表类型，最后再确定使用的指令</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007223815647.png" alt="image-20221007223815647"></p>
+<blockquote>
+<p>gdisk中，p为查看分区情况，n为增加一个分区，d为删除一个分区，q为不保存退出，w为保存退出</p>
+<p>其中增加分区的n，在LastSector这里使用+500M或+2G这样的描述划分存储量</p>
+<p>分区后w保存，而后使用partprobe -s  更新分区表信息</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007224251998.png" alt="image-20221007224251998"></p>
+<p><strong>磁盘格式化</strong></p>
+<blockquote>
+<p>使用mkfs.xxx指令对不同的文件系统进行格式化，例如将分区格式化为xfs格式，使用mkfs.xfs指令进行</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007224433502.png" alt="image-20221007224433502"></p>
+<p><strong>文件系统检验</strong></p>
+<blockquote>
+<p>使用xfs_repair ，fsck.ext4 对错乱的文件系统进行整理修复</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007224625761.png" alt="image-20221007224625761"></p>
+<p> <strong>文件系统挂载</strong></p>
+<blockquote>
+<p>使用mount进行挂载.</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007224832732.png" alt="image-20221007224832732"></p>
+<blockquote>
+<p>挂载CD或者DVD时，同样，一般将之挂在到根目录下的 /mnt目录查看</p>
+</blockquote>
+<blockquote>
+<p>重新挂载使用指令<code>mount -o remouont,rw,auto</code></p>
+</blockquote>
+<blockquote>
+<p>将某个目录挂载到另一个目录使用指令<code>mount --bind /var /data/var</code></p>
+</blockquote>
+<blockquote>
+<p>使用unmount指令卸出</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007225559098.png" alt="image-20221007225559098"></p>
+<blockquote>
+<p>使用xfs_admin和tune2fs修改labelname和UUID</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007225756390.png" alt="image-20221007225756390"></p>
+<blockquote>
+<p>设定开机挂载 ，将记录写入etc/fstab，格式模仿上面的就是了</p>
+</blockquote>
+<blockquote>
+<p>可以使用dd制作空的大文件再挂载到某个目录下当分区用</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007230208670.png" alt="image-20221007230208670"></p>
+]]></content>
       <categories>
         <category>Linux</category>
       </categories>
