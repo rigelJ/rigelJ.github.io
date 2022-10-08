@@ -2503,6 +2503,109 @@
 <p>可以使用dd制作空的大文件再挂载到某个目录下当分区用</p>
 </blockquote>
 <p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007230208670.png" alt="image-20221007230208670"></p>
+<blockquote>
+<p>建立swap分区，可以通过增加分区进行，<code>swapon</code>，也通过空大文件挂载进行</p>
+</blockquote>
+<blockquote>
+<p>挂载操作也可以使用parted实现，具体操作和gdisk相差不大</p>
+</blockquote>
+<h3 id="文件压缩和备份"><a href="#文件压缩和备份" class="headerlink" title="文件压缩和备份"></a>文件压缩和备份</h3><h4 id="常见的压缩指令"><a href="#常见的压缩指令" class="headerlink" title="常见的压缩指令"></a>常见的压缩指令</h4><blockquote>
+<p>压缩指令为透过一些运算方法去将原本的文件进行压缩，以减少文件所占用的磁盘容量。压缩前与压缩后的文件所占用的磁盘容量比值，就可以被称为是[压缩比」</p>
+</blockquote>
+<blockquote>
+<p>常见的压缩指令有gzip，bzip2和xz三种，他们的用法都差不多，zcat，bzcat和xzcat也是用于查看压缩文件内容，其使用方法也大多相同</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221008221342368.png" alt="image-20221008221342368"></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221008221751871.png" alt="image-20221008221751871"></p>
+<h4 id="打包指令"><a href="#打包指令" class="headerlink" title="打包指令"></a>打包指令</h4><blockquote>
+<p>使用tar指令对文件进行打包，tar指令的常用选项如下</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221008221926526.png" alt="image-20221008221926526"></p>
+<blockquote>
+<p>简而言之可以归纳为如下的指令 </p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221008221935274.png" alt="image-20221008221935274"></p>
+<blockquote>
+<p>tar指令还可以对目录进行备份，加上-p参数保留原有权限，加上-v参数会显示作用中的文件名，-J参数会花更多时间。</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221008222243419.png" alt="image-20221008222243419"></p>
+<blockquote>
+<p>解压时候，如果只需要解压单一文件，可以使用grep指令</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221008222408951.png" alt="image-20221008222408951"></p>
+<blockquote>
+<p>如果想排除某些文件可以使用exclude参数</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221008222540399.png" alt="image-20221008222540399"></p>
+<blockquote>
+<p>只备份比某个时间新的文件可以使用–newer-time参数</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221008222708221.png" alt="image-20221008222708221"></p>
+<h4 id="文件系统备份"><a href="#文件系统备份" class="headerlink" title="文件系统备份"></a>文件系统备份</h4><blockquote>
+<p>xfs系统的备份可以使用xfs_dump指令进行，使用xfsrestore指令复原</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221008223119606.png" alt="image-20221008223119606"></p>
+<blockquote>
+<p>还可以 进行差异备份 </p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221008223533596.png" alt="image-20221008223533596"></p>
+<blockquote>
+<p>可以使用xfstore -I指令进行查看备份的数据内容以及label</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221008223642483.png" alt="image-20221008223642483"></p>
+<blockquote>
+<p>复原的时候也可以分部进行，按照label进行定位复原</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221008223718524.png" alt="image-20221008223718524"></p>
+<blockquote>
+<p>使用-i参数进入互动备份界面</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221008223902471.png" alt="image-20221008223902471"></p>
+<h4 id="光盘写入工具"><a href="#光盘写入工具" class="headerlink" title="光盘写入工具"></a>光盘写入工具</h4><blockquote>
+<p>使用mkisofs指令建立映像档，储存需要的数据。</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221008224235226.png" alt="image-20221008224235226"></p>
+<blockquote>
+<p>这样操作会导致文件的混乱，所以我们使用-graft-point参数进行划分</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221008231311733.png" alt="image-20221008231311733"></p>
+<p><strong>制作可开机光盘映像</strong></p>
+<blockquote>
+<p>取得iso映像之后，使用isoinfo指令对iso文件进行查看</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221008231624761.png" alt="image-20221008231624761"></p>
+<blockquote>
+<p>将iso镜像挂载到/mnt目录，而后将所有数据完整到/srv/newed里面，使用rsync指令完整复制所有权限属性等数据，这样在/srv/newed里面就有了完整的映像档内容。</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221008231957898.png" alt="image-20221008231957898"></p>
+<blockquote>
+<p>按照需要对iso镜像进行修改后恢复其为iso镜像即可。</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221008232147990.png" alt="image-20221008232147990"></p>
+<blockquote>
+<p>进行光盘刻录操作，centos是wdim指令，自己去查询自己所在的distribution中的光盘刻录指令，这里以wdim为例子</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221008232320530.png" alt="image-20221008232320530"></p>
+<blockquote>
+<p>先得找到刻录机的位置，一般都是/dev/sr0这样的文件名，QEMU是虚拟机的虚拟光驱，而ASUS是真实光驱</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221008232451568.png" alt="image-20221008232451568"></p>
+<blockquote>
+<p>最后使用iso进行刻录操作</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221008232622911.png" alt="image-20221008232622911"></p>
+<blockquote>
+<p>最后测试挂载一下，检验内容</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221008232714078.png" alt="image-20221008232714078"></p>
+<h4 id="其他指令"><a href="#其他指令" class="headerlink" title="其他指令"></a>其他指令</h4><blockquote>
+<p>我们上面建立空的大文件使用的dd指令也可以进行备份操作，其中有一个重要操作就是将刚才的刻录后的光盘进行一个备份</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221008232844977.png" alt="image-20221008232844977"></p>
+<blockquote>
+<p>同样，这里也介绍了如何将iso镜像刻录到usb磁盘作为安装盘</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221008233105343.png" alt="image-20221008233105343"></p>
 ]]></content>
       <categories>
         <category>Linux</category>
