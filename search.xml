@@ -2606,7 +2606,54 @@
 <p>同样，这里也介绍了如何将iso镜像刻录到usb磁盘作为安装盘</p>
 </blockquote>
 <p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221008233105343.png" alt="image-20221008233105343"></p>
-]]></content>
+<blockquote>
+<p>cpio指令也是一个备份指令，可以备份任何东西，但是要和find这类查询指令配合一起使用。使用&gt;&lt;进行数据流重定向，从而进行备份和还原。</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221009220206332.png" alt="image-20221009220206332"></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221009220535972.png" alt="image-20221009220535972"></p>
+<h3 id="Vim程序编辑器"><a href="#Vim程序编辑器" class="headerlink" title="Vim程序编辑器"></a>Vim程序编辑器</h3><h4 id="Vim的三种模式"><a href="#Vim的三种模式" class="headerlink" title="Vim的三种模式"></a>Vim的三种模式</h4><blockquote>
+<p>vi有三种模式，- -般指令模式可变换到编辑与指令列模式，但编辑模式与指令列模式不能互换;一般模式切换编辑模式，可以通过i，a，o等指令，按下<code>ESC</code>键切换到一般模式，一般模式切换到指令列模式输入：，/，？切换，同样按下<code>ESC</code>键回到一般模式。</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221009222419976.png" alt="image-20221009222419976"></p>
+<h4 id="切换指令列模式"><a href="#切换指令列模式" class="headerlink" title="切换指令列模式"></a>切换指令列模式</h4><blockquote>
+<p>使用<code>:</code>切换至指令列模式，可以在此基础上进行退出<code>q</code>，储存<code>w</code>，读取<code>r</code>，临时跳出等操作<code>！</code></p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221009224809443.png" alt="image-20221009224809443"></p>
+<h4 id="移动指令"><a href="#移动指令" class="headerlink" title="移动指令"></a>移动指令</h4><blockquote>
+<p>按下<code>hjkl</code>四个键可以上下左右移动，同样移动到行首<code>0</code>，行尾<code>$</code>,文件头<code>gg</code>，文件末尾<code>G</code>，某一列<code>nG</code>，向下移动几列<code>5j</code>，都可以使用不同的指令进行，其他具体指令参考如下。</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221009222725370.png" alt="image-20221009222725370"></p>
+<p>​       </p>
+<h4 id="搜索与替代指令"><a href="#搜索与替代指令" class="headerlink" title="搜索与替代指令"></a>搜索与替代指令</h4><blockquote>
+<p><strong>搜索，</strong>使用<code>/word</code>和<code>？word</code>进行搜索，前者向下搜索，后者向上搜索，使用<code>n</code>和<code>N</code>指令移动到下一个匹配位置，</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221009223303496.png" alt="image-20221009223303496"></p>
+<blockquote>
+<p><strong>替代，</strong>使用<code>：n1,n2s/word1/word2/g</code>将匹配到的字符进行替换，其他使用方式如下</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221009223454878.png" alt="image-20221009223454878"></p>
+<h4 id="删除和复制指令"><a href="#删除和复制指令" class="headerlink" title="删除和复制指令"></a>删除和复制指令</h4><blockquote>
+<p><strong>删除</strong>，使用<code>x</code>删除光标位置字符，使用<code>dd</code>删除本行，使用<code>d1G</code>删除本行到文件末尾，其他使用如下</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221009223740393.png" alt="image-20221009223740393"></p>
+<blockquote>
+<p><strong>复制，</strong>使用yy复制本行，使用<code>y1G</code>复制本行到文件末尾，其他相似使用如下</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221009223916781.png" alt="image-20221009223916781"></p>
+<blockquote>
+<p>粘贴，使用p和P将复制的数据贴在光标所指向的上一列或下一列</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221009224055037.png" alt="image-20221009224055037"></p>
+<blockquote>
+<p><strong>结合，</strong>使用<code>J</code>指令合并上下列</p>
+<p>使用<code>c</code>重复删除多个指令，这个实际上和<code>ndd</code>差不多</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221009224324625.png" alt="image-20221009224324625"></p>
+<blockquote>
+<p><strong>重复，</strong>使用<code>u</code>指令和<code>ctrl+r</code>指令，复原和重做上一个动作，使用.重复上一个操作</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221009224516362.png" alt="image-20221009224516362"></p>
+<h4 id="多文件编辑和多窗口"><a href="#多文件编辑和多窗口" class="headerlink" title="多文件编辑和多窗口"></a>多文件编辑和多窗口</h4>]]></content>
       <categories>
         <category>Linux</category>
       </categories>
