@@ -2101,23 +2101,17 @@
 </blockquote>
 <p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007192955934.png" alt="image-20221007192955934"></p>
 <h4 id="开机的流程"><a href="#开机的流程" class="headerlink" title="开机的流程"></a>开机的流程</h4><blockquote>
-<p>开机的流程由: BIOS–&gt;MBR–&gt;boot loader–&gt;核心文件。</p>
+<p>开机的流程由: BIOS—&gt;MBR—&gt;boot loader—&gt;核心文件。</p>
 <p>boot loader的功能主要有:提供选单、加载核心、转交控制权给其他loader。</p>
 <p>boot loader可以安装的地点有两个，分别是MBR与boot sector,这个特色造就了多重引导功能。</p>
 </blockquote>
 <p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007193014623.png" alt="image-20221007193014623"></p>
 <h4 id="目录树"><a href="#目录树" class="headerlink" title="目录树"></a>目录树</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Linux 操作系统的文件使用目录树系统，与磁盘的对应需要有[挂载」的动作才行;</span><br></pre></td></tr></table></figure>
-
 <p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007161907887.png" alt="image-20221007161907887"></p>
 <blockquote>
 <p>挂载示意如下：</p>
 </blockquote>
-<img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007162003856.png" alt="image-20221007162003856" style="zoom:80%;" />
-
-
-
-
-
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007162003856.png" alt="image-20221007162003856" style="zoom:80%;" /></p>
 <h3 id="CentOS安装"><a href="#CentOS安装" class="headerlink" title="CentOS安装"></a>CentOS安装</h3><h4 id="安装模式"><a href="#安装模式" class="headerlink" title="安装模式"></a>安装模式</h4><blockquote>
 <p>安装CentOS 7.x的模式至少有两种，分别是图形接口与文字接口;</p>
 </blockquote>
@@ -2166,7 +2160,7 @@
 </blockquote>
 <p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007170037728.png" alt="image-20221007170037728"></p>
 <blockquote>
-<p>此外可使用的帮助系统还有/usr/share/doc   –help  以及<code>tldr</code>，后者需要自行安装。</p>
+<p>此外可使用的帮助系统还有/usr/share/doc   —help  以及<code>tldr</code>，后者需要自行安装。</p>
 </blockquote>
 <h4 id="文本编辑器nano"><a href="#文本编辑器nano" class="headerlink" title="文本编辑器nano"></a>文本编辑器nano</h4><p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007170237461.png" alt="image-20221007170237461"></p>
 <h4 id="关机与注销"><a href="#关机与注销" class="headerlink" title="关机与注销"></a>关机与注销</h4><blockquote>
@@ -2184,23 +2178,13 @@
 <p>对于文件来说</p>
 <blockquote>
 <p>r：可读取此一文件的实际内容，如读取文本文件的文字内容等</p>
-</blockquote>
-<blockquote>
 <p>w：可以编辑、新增或者是修改该文件的内容(但不含删除该文件);</p>
-</blockquote>
-<blockquote>
 <p>x：该文件具有可以被系统执行的权限。</p>
 </blockquote>
-</blockquote>
-<blockquote>
 <p>对于目录来说</p>
 <blockquote>
 <p>r ：浏览目录内容</p>
-</blockquote>
-<blockquote>
 <p>w ：增加或删除目录内容</p>
-</blockquote>
-<blockquote>
 <p>x ：切换进入目录，使得目录成为工作目录</p>
 </blockquote>
 </blockquote>
@@ -2217,12 +2201,8 @@
 <p>若需要root的权限时，可以使用<code>su-</code>这个指令来切换身份。处理完毕则使用exit 离开su的指令环境。</p>
 <p>更改文件的群组支持可用<code>chgrp</code>,修改文件的拥有者可用<code>chown</code>,修改文件的权限可用<code>chmod</code></p>
 <p><code>chmod</code>修改权限的方法有两种，分别是符号法与数字法，数字法中r,w,x分数为4.2.1;</p>
-</blockquote>
-<blockquote>
 <blockquote>
 <p>符号法</p>
-</blockquote>
-<blockquote>
 <p><code>chmod +rx xx.py</code></p>
 </blockquote>
 </blockquote>
@@ -2230,8 +2210,6 @@
 <blockquote>
 <blockquote>
 <p>数字法</p>
-</blockquote>
-<blockquote>
 <p><code>chmod 770 xx.py</code></p>
 </blockquote>
 </blockquote>
@@ -2335,22 +2313,15 @@
 <blockquote>
 <p>目录具有SBIT的特殊权限时，代表在该目录下用户建立的文件只有自己与root能够删除</p>
 </blockquote>
-<img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007200730676.png" alt="image-20221007200730676" style="zoom:80%;" />
-
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007200730676.png" alt="image-20221007200730676" style="zoom:80%;" /></p>
 <blockquote>
 <p>给文件或目录加上SUID，SGID，SBIT权限，只需要在chmod 使用数字授权时候在标准数字之前加上代表三个权限的数字，SUID为4,  SGID为2,  SBIT为1</p>
 </blockquote>
-<img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007201026907.png" alt="image-20221007201026907" style="zoom:80%;" />
-
-
-
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007201026907.png" alt="image-20221007201026907" style="zoom:80%;" /></p>
 <h4 id="观察文件类型"><a href="#观察文件类型" class="headerlink" title="观察文件类型"></a>观察文件类型</h4><blockquote>
 <p>使用file指令观察文件类型</p>
 </blockquote>
-<img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007201131838.png" alt="image-20221007201131838"  />
-
-
-
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007201131838.png" alt="image-20221007201131838"  /></p>
 <h4 id="指令与文件的查找"><a href="#指令与文件的查找" class="headerlink" title="指令与文件的查找"></a>指令与文件的查找</h4><blockquote>
 <p>搜寻指令的完整文件名可用which 或type ，这两个指令都是透过PATH变量来搜寻文件名;</p>
 </blockquote>
@@ -2385,8 +2356,6 @@
 <p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007215921814.png" alt="image-20221007215921814"></p>
 <blockquote>
 <p>data block是用来放置文件内容数据地方，在Ext2 文件系统中所支持的block 大小有1K,2K 及4K</p>
-</blockquote>
-<blockquote>
 <p>inode 记录文件的属性/权限等数据，其他重要项目为:每个 inode大小均为固定，128/256bytes 两种基本容量。</p>
 <p>每个文件都仅会占用一个inode而已，因此文件系统能够建立的文件数量与inode 的数量有关;</p>
 <p>文件的block 在记录文件的实际数据，目录的block 则在记录该目录底下文件名与其inode 号码的对照表;</p>
@@ -2394,8 +2363,6 @@
 <p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007220501891.png" alt="image-20221007220501891"></p>
 <blockquote>
 <p>superblock记录整个filesystem的信息，主要记录inode和block的总量，未使用和已使用的inode和block，大小等。</p>
-</blockquote>
-<blockquote>
 <p>使用dump2fs查询ext家族superblock的指令</p>
 </blockquote>
 <p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007221002782.png" alt="image-20221007221002782"></p>
@@ -2407,23 +2374,16 @@
 <h4 id="文件系统的操作"><a href="#文件系统的操作" class="headerlink" title="文件系统的操作"></a>文件系统的操作</h4><p><strong>查看文件系统磁盘使用量</strong></p>
 <blockquote>
 <p>查看文件系统的磁盘使用量使用指令df和du</p>
-</blockquote>
-<blockquote>
 <p>df列出文件系统的整体磁盘使用量</p>
 </blockquote>
 <p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007221859758.png" alt="image-20221007221859758"></p>
 <blockquote>
 <p>du 评估文件系统各个文件的磁盘使用量</p>
 </blockquote>
-<img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007221934486.png" alt="image-20221007221934486"  />
-
-
-
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007221934486.png" alt="image-20221007221934486"  /></p>
 <p><strong>创建链接</strong></p>
 <blockquote>
 <p>创建链接有两种类型，分别是实体链接与符号链接的建立</p>
-</blockquote>
-<blockquote>
 <p>实体链接的建立，是在某个目录下新增一个链接到某inode号码的关联记录，这两个档名链接到同一个inode，无论你删除哪一个文档，文件的inode和block都是存在的，从另一个都可以访问到对应的文件。</p>
 </blockquote>
 <p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007222352413.png" alt="image-20221007222352413"></p>
@@ -2481,14 +2441,8 @@
 <p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007224832732.png" alt="image-20221007224832732"></p>
 <blockquote>
 <p>挂载CD或者DVD时，同样，一般将之挂在到根目录下的 /mnt目录查看</p>
-</blockquote>
-<blockquote>
 <p>重新挂载使用指令<code>mount -o remouont,rw,auto</code></p>
-</blockquote>
-<blockquote>
 <p>将某个目录挂载到另一个目录使用指令<code>mount --bind /var /data/var</code></p>
-</blockquote>
-<blockquote>
 <p>使用unmount指令卸出</p>
 </blockquote>
 <p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007225559098.png" alt="image-20221007225559098"></p>
@@ -2498,21 +2452,15 @@
 <p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007225756390.png" alt="image-20221007225756390"></p>
 <blockquote>
 <p>设定开机挂载 ，将记录写入etc/fstab，格式模仿上面的就是了</p>
-</blockquote>
-<blockquote>
 <p>可以使用dd制作空的大文件再挂载到某个目录下当分区用</p>
 </blockquote>
 <p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007230208670.png" alt="image-20221007230208670"></p>
 <blockquote>
 <p>建立swap分区，可以通过增加分区进行，<code>swapon</code>，也通过空大文件挂载进行</p>
-</blockquote>
-<blockquote>
 <p>挂载操作也可以使用parted实现，具体操作和gdisk相差不大</p>
 </blockquote>
 <h3 id="文件压缩和备份"><a href="#文件压缩和备份" class="headerlink" title="文件压缩和备份"></a>文件压缩和备份</h3><h4 id="常见的压缩指令"><a href="#常见的压缩指令" class="headerlink" title="常见的压缩指令"></a>常见的压缩指令</h4><blockquote>
 <p>压缩指令为透过一些运算方法去将原本的文件进行压缩，以减少文件所占用的磁盘容量。压缩前与压缩后的文件所占用的磁盘容量比值，就可以被称为是[压缩比」</p>
-</blockquote>
-<blockquote>
 <p>常见的压缩指令有gzip，bzip2和xz三种，他们的用法都差不多，zcat，bzcat和xzcat也是用于查看压缩文件内容，其使用方法也大多相同</p>
 </blockquote>
 <p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221008221342368.png" alt="image-20221008221342368"></p>
@@ -2538,7 +2486,7 @@
 </blockquote>
 <p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221008222540399.png" alt="image-20221008222540399"></p>
 <blockquote>
-<p>只备份比某个时间新的文件可以使用–newer-time参数</p>
+<p>只备份比某个时间新的文件可以使用—newer-time参数</p>
 </blockquote>
 <p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221008222708221.png" alt="image-20221008222708221"></p>
 <h4 id="文件系统备份"><a href="#文件系统备份" class="headerlink" title="文件系统备份"></a>文件系统备份</h4><blockquote>
@@ -2653,7 +2601,36 @@
 <p><strong>重复，</strong>使用<code>u</code>指令和<code>ctrl+r</code>指令，复原和重做上一个动作，使用.重复上一个操作</p>
 </blockquote>
 <p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221009224516362.png" alt="image-20221009224516362"></p>
-<h4 id="多文件编辑和多窗口"><a href="#多文件编辑和多窗口" class="headerlink" title="多文件编辑和多窗口"></a>多文件编辑和多窗口</h4>]]></content>
+<h4 id="暂存与救援，警告"><a href="#暂存与救援，警告" class="headerlink" title="暂存与救援，警告"></a>暂存与救援，警告</h4><blockquote>
+<p>不正常中断Vim后，再打开文件会有六个可用按钮分别对应不同的还原模式</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221010220335279.png" alt="image-20221010220335279"></p>
+<h4 id="区块选择"><a href="#区块选择" class="headerlink" title="区块选择"></a>区块选择</h4><blockquote>
+<p>在一般模式下，长按v再左右上下移动，可以选中周边的区块，选中后可以使用不同的指令进行操作。</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221010220618713.png" alt="image-20221010220618713"></p>
+<h4 id="多文件和多窗口"><a href="#多文件和多窗口" class="headerlink" title="多文件和多窗口"></a>多文件和多窗口</h4><blockquote>
+<p>在打开文件时候，可以同时打开多个文件，这样进行操作的时候就可以使用不同的指令进行切换，例如使用<code>vim hosts /etc/hosts</code>开启两个文件后就可以使用，<code>n</code>和<code>N</code>指令进行上下切换。</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221010220854275.png" alt="image-20221010220854275"></p>
+<blockquote>
+<p>在打开一个文件的时候，可以使用<code>:sp file.txt</code>打开另一个窗口，并启动另一个文件<code>file.txt</code></p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221010222456818.png" alt="image-20221010222456818"></p>
+<blockquote>
+<p>使用<code>w+j</code>向上切换，同理向下切换</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221010222553234.png" alt="image-20221010222553234"></p>
+<h4 id="环境设定与记录"><a href="#环境设定与记录" class="headerlink" title="环境设定与记录"></a>环境设定与记录</h4><blockquote>
+<p>vim的环境设定参数能够提供vim启动的预设环境，常用的环境设定参数如下</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221010223135939.png" alt=""></p>
+<blockquote>
+<p>当然，可以在进入vim编辑之后再设定，但是每次设定多少有点麻烦，vim的设定值放置在 ～/vimrc这个文件中，如果没有可以自己手动建立，而后将所希望的设定值写入。</p>
+</blockquote>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221010223413285.png" alt="image-20221010223413285"></p>
+<h4 id="一张图总结Vim"><a href="#一张图总结Vim" class="headerlink" title="一张图总结Vim"></a>一张图总结Vim</h4><p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221010224003091.png" alt="image-20221010224003091"></p>
+<h3 id="操作环境Bash"><a href="#操作环境Bash" class="headerlink" title="操作环境Bash"></a>操作环境Bash</h3>]]></content>
       <categories>
         <category>Linux</category>
       </categories>
@@ -2669,9 +2646,9 @@
     <content><![CDATA[<h2 id="Linux高级操作与管理"><a href="#Linux高级操作与管理" class="headerlink" title="Linux高级操作与管理"></a>Linux高级操作与管理</h2><h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><blockquote>
 <p>帐号管理与ACL权限设定</p>
 <p>磁盘配额与文件系统</p>
-<p>例行与工作任务</p>
+<p>例行与工作排程</p>
 <p>进程管理与SELinux</p>
-<p>系统服务管理</p>
+<p>系统服务相关管理</p>
 <p>登录档分析</p>
 <p>模块管理与Loader</p>
 <p>基础设定与备份策略</p>
