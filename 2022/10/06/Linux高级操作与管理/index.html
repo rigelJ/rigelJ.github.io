@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Linux高级操作与管理 | 清川的博客</title><meta name="keywords" content="Linux,操作系统,命令行"><meta name="author" content="清川"><meta name="copyright" content="清川"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Linux高级操作与管理目录 操作环境bash 正规表示与文件格式化 shell脚本撰写与执行 帐号管理与ACL权限设定 磁盘配额与文件系统 例行与工作排程 进程管理与SELinux 系统服务相关管理 登录档分析 模块管理与Loader 基础设定与备份策略 软件安装与Talball 核心编译与管理  操作环境Bash正规表示与文件格式化shell脚本撰写与执行账户管理与ACL权限 GID与UID">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Linux高级操作与管理 | 清川的博客</title><meta name="keywords" content="Linux,操作系统,命令行"><meta name="author" content="清川"><meta name="copyright" content="清川"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Linux高级操作与管理目录 操作环境bash 正规表示与文件格式化 shell脚本撰写与执行 帐号管理与ACL权限设定 磁盘配额与文件系统 例行与工作排程 进程管理与SELinux 系统服务相关管理 登录档分析 模块管理与Loader 基础设定与备份策略 软件安装与Talball 核心编译与管理  转为Effia记录模式 操作环境Bash正规表示与文件格式化shell脚本撰写与执行账户管理与AC">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux高级操作与管理">
 <meta property="og:url" content="http://rigelj.github.io/2022/10/06/Linux%E9%AB%98%E7%BA%A7%E6%93%8D%E4%BD%9C%E4%B8%8E%E7%AE%A1%E7%90%86/index.html">
 <meta property="og:site_name" content="清川的博客">
-<meta property="og:description" content="Linux高级操作与管理目录 操作环境bash 正规表示与文件格式化 shell脚本撰写与执行 帐号管理与ACL权限设定 磁盘配额与文件系统 例行与工作排程 进程管理与SELinux 系统服务相关管理 登录档分析 模块管理与Loader 基础设定与备份策略 软件安装与Talball 核心编译与管理  操作环境Bash正规表示与文件格式化shell脚本撰写与执行账户管理与ACL权限 GID与UID">
+<meta property="og:description" content="Linux高级操作与管理目录 操作环境bash 正规表示与文件格式化 shell脚本撰写与执行 帐号管理与ACL权限设定 磁盘配额与文件系统 例行与工作排程 进程管理与SELinux 系统服务相关管理 登录档分析 模块管理与Loader 基础设定与备份策略 软件安装与Talball 核心编译与管理  转为Effia记录模式 操作环境Bash正规表示与文件格式化shell脚本撰写与执行账户管理与AC">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://rigelj.github.io/img/cover.jpg">
 <meta property="article:published_time" content="2022-10-06T11:54:49.000Z">
-<meta property="article:modified_time" content="2022-10-22T11:39:39.786Z">
+<meta property="article:modified_time" content="2022-10-22T11:49:53.842Z">
 <meta property="article:author" content="清川">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="操作系统">
@@ -55,7 +55,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2022-10-22 19:39:39'
+  postUpdate: '2022-10-22 19:49:53'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -145,7 +145,7 @@
     }
     detectApple()
     })(window)</script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="清川的博客" type="application/atom+xml">
-</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/ava.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/About/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/cover.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">清川的博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/About/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Linux高级操作与管理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-10-06T11:54:49.000Z" title="发表于 2022-10-06 19:54:49">2022-10-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-10-22T11:39:39.786Z" title="更新于 2022-10-22 19:39:39">2022-10-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Linux/">Linux</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Linux高级操作与管理"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="Linux高级操作与管理"><a href="#Linux高级操作与管理" class="headerlink" title="Linux高级操作与管理"></a>Linux高级操作与管理</h2><h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><blockquote>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/ava.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/About/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/cover.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">清川的博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/About/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Linux高级操作与管理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-10-06T11:54:49.000Z" title="发表于 2022-10-06 19:54:49">2022-10-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-10-22T11:49:53.842Z" title="更新于 2022-10-22 19:49:53">2022-10-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Linux/">Linux</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Linux高级操作与管理"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="Linux高级操作与管理"><a href="#Linux高级操作与管理" class="headerlink" title="Linux高级操作与管理"></a>Linux高级操作与管理</h2><h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><blockquote>
 <p>操作环境bash</p>
 <p>正规表示与文件格式化</p>
 <p>shell脚本撰写与执行</p>
@@ -160,20 +160,27 @@
 <p>软件安装与Talball</p>
 <p>核心编译与管理</p>
 </blockquote>
+<p><em><strong>转为Effia记录模式</strong></em></p>
 <h3 id="操作环境Bash"><a href="#操作环境Bash" class="headerlink" title="操作环境Bash"></a>操作环境Bash</h3><h3 id="正规表示与文件格式化"><a href="#正规表示与文件格式化" class="headerlink" title="正规表示与文件格式化"></a>正规表示与文件格式化</h3><h3 id="shell脚本撰写与执行"><a href="#shell脚本撰写与执行" class="headerlink" title="shell脚本撰写与执行"></a>shell脚本撰写与执行</h3><h3 id="账户管理与ACL权限"><a href="#账户管理与ACL权限" class="headerlink" title="账户管理与ACL权限"></a>账户管理与ACL权限</h3><ul>
-<li><strong>GID与UID</strong><ul>
-<li> <strong>Linux 操作系统上面，关于账号与群组，其实记录的是UID/GID 的数字而已</strong></li>
-<li><strong>使用者的账号/群组与UID/GID的对应，参考/et/passwd 及/etc/group 两个文件</strong><ul>
-<li> <img src="6e078dd6ea2844959336f60b81d1a049.jpg"></li>
+<li><p><strong>GID与UID</strong></p>
+<ul>
+<li><p><strong>Linux 操作系统上面，关于账号与群组，其实记录的是UID/GID 的数字而已</strong></p>
+</li>
+<li><p><strong>使用者的账号/群组与UID/GID的对应，参考/et/passwd 及/etc/group 两个文件</strong></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221022194809193.png" alt="image-20221022194809193"></p>
+</li>
+<li><p><strong>/etc/passwd文件结构以冒号隔开,共分为七个字段，分别是[账号名称、密码、UID、GID、全名、家目录、shell」</strong></p>
+</li>
+<li><p>**账号的密码已经移动到/etc/shadow 文件中，该文件权限为仅有root 可以更动。该文件分为九个字段，内容为「账号名称、加密密码、密码更动日期、密码最小可变动日期、密码最大需变动日期、密码过期前警告日数、密码失效天数、账 号失效日、保留未使用」 **</p>
+</li>
+<li><p>**uId 只有0与非为0两种，非为0则为一般账号。一般账号又分为系统账号 (1-999) 及可登入者账号(大于1000) **</p>
+</li>
+<li><p> **使用者可以支持多个群组，其中在新建文件时会影响新文件群组者，为有效群组。而写入/etc/passwd 的第四个字段者，称为初始群组。 **</p>
+</li>
 </ul>
 </li>
-<li> <strong>/etc/passwd文件结构以冒号隔开,共分为七个字段，分别是[账号名称、密码、UID、GID、全名、家目录、shell」</strong></li>
-<li> **账号的密码已经移动到/etc/shadow 文件中，该文件权限为仅有root 可以更动。该文件分为九个字段，内容为「账号名称、加密密码、密码更动日期、密码最小可变动日期、密码最大需变动日期、密码过期前警告日数、密码失效天数、账 号失效日、保留未使用」 **</li>
-<li> **uId 只有0与非为0两种，非为0则为一般账号。一般账号又分为系统账号 (1-999) 及可登入者账号(大于1000) **</li>
-<li> **使用者可以支持多个群组，其中在新建文件时会影响新文件群组者，为有效群组。而写入/etc/passwd 的第四个字段者，称为初始群组。 **</li>
-</ul>
-</li>
-<li><strong>建立，更改与删除账号和群组</strong><ul>
+<li><p><strong>建立，更改与删除账号和群组</strong></p>
+<ul>
 <li>**与使用者建立、更改参数、删除有关的指令为: useradd, usermod, userdel等，密码建立则为passwd;与群组建立、修改、删除有关的指令为: groupadd, groupmod, groupdel等; **<ul>
 <li>User add  <ul>
 <li> -d   home dir</li>
@@ -205,7 +212,8 @@
 </li>
 </ul>
 </li>
-<li><strong>ACL权限管理</strong><ul>
+<li><p><strong>ACL权限管理</strong></p>
+<ul>
 <li> <strong>ACL的功能需要文件系统有支持，CentOS7 预设的XFS确实有支持ACL功能</strong></li>
 <li> **ACL可进行单一个人或群组的权限管理，但ACL的启动需要有文件系统的支持; **</li>
 <li>**ACL的设定可使用setfacl ，查阅则使用getfacl ; **<ul>

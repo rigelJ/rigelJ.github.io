@@ -2707,20 +2707,27 @@
 <p>软件安装与Talball</p>
 <p>核心编译与管理</p>
 </blockquote>
+<p><em><strong>转为Effia记录模式</strong></em></p>
 <h3 id="操作环境Bash"><a href="#操作环境Bash" class="headerlink" title="操作环境Bash"></a>操作环境Bash</h3><h3 id="正规表示与文件格式化"><a href="#正规表示与文件格式化" class="headerlink" title="正规表示与文件格式化"></a>正规表示与文件格式化</h3><h3 id="shell脚本撰写与执行"><a href="#shell脚本撰写与执行" class="headerlink" title="shell脚本撰写与执行"></a>shell脚本撰写与执行</h3><h3 id="账户管理与ACL权限"><a href="#账户管理与ACL权限" class="headerlink" title="账户管理与ACL权限"></a>账户管理与ACL权限</h3><ul>
-<li><strong>GID与UID</strong><ul>
-<li> <strong>Linux 操作系统上面，关于账号与群组，其实记录的是UID/GID 的数字而已</strong></li>
-<li><strong>使用者的账号/群组与UID/GID的对应，参考/et/passwd 及/etc/group 两个文件</strong><ul>
-<li> <img src="6e078dd6ea2844959336f60b81d1a049.jpg"></li>
+<li><p><strong>GID与UID</strong></p>
+<ul>
+<li><p><strong>Linux 操作系统上面，关于账号与群组，其实记录的是UID/GID 的数字而已</strong></p>
+</li>
+<li><p><strong>使用者的账号/群组与UID/GID的对应，参考/et/passwd 及/etc/group 两个文件</strong></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221022194809193.png" alt="image-20221022194809193"></p>
+</li>
+<li><p><strong>/etc/passwd文件结构以冒号隔开,共分为七个字段，分别是[账号名称、密码、UID、GID、全名、家目录、shell」</strong></p>
+</li>
+<li><p>**账号的密码已经移动到/etc/shadow 文件中，该文件权限为仅有root 可以更动。该文件分为九个字段，内容为「账号名称、加密密码、密码更动日期、密码最小可变动日期、密码最大需变动日期、密码过期前警告日数、密码失效天数、账 号失效日、保留未使用」 **</p>
+</li>
+<li><p>**uId 只有0与非为0两种，非为0则为一般账号。一般账号又分为系统账号 (1-999) 及可登入者账号(大于1000) **</p>
+</li>
+<li><p> **使用者可以支持多个群组，其中在新建文件时会影响新文件群组者，为有效群组。而写入/etc/passwd 的第四个字段者，称为初始群组。 **</p>
+</li>
 </ul>
 </li>
-<li> <strong>/etc/passwd文件结构以冒号隔开,共分为七个字段，分别是[账号名称、密码、UID、GID、全名、家目录、shell」</strong></li>
-<li> **账号的密码已经移动到/etc/shadow 文件中，该文件权限为仅有root 可以更动。该文件分为九个字段，内容为「账号名称、加密密码、密码更动日期、密码最小可变动日期、密码最大需变动日期、密码过期前警告日数、密码失效天数、账 号失效日、保留未使用」 **</li>
-<li> **uId 只有0与非为0两种，非为0则为一般账号。一般账号又分为系统账号 (1-999) 及可登入者账号(大于1000) **</li>
-<li> **使用者可以支持多个群组，其中在新建文件时会影响新文件群组者，为有效群组。而写入/etc/passwd 的第四个字段者，称为初始群组。 **</li>
-</ul>
-</li>
-<li><strong>建立，更改与删除账号和群组</strong><ul>
+<li><p><strong>建立，更改与删除账号和群组</strong></p>
+<ul>
 <li>**与使用者建立、更改参数、删除有关的指令为: useradd, usermod, userdel等，密码建立则为passwd;与群组建立、修改、删除有关的指令为: groupadd, groupmod, groupdel等; **<ul>
 <li>User add  <ul>
 <li> -d   home dir</li>
@@ -2752,7 +2759,8 @@
 </li>
 </ul>
 </li>
-<li><strong>ACL权限管理</strong><ul>
+<li><p><strong>ACL权限管理</strong></p>
+<ul>
 <li> <strong>ACL的功能需要文件系统有支持，CentOS7 预设的XFS确实有支持ACL功能</strong></li>
 <li> **ACL可进行单一个人或群组的权限管理，但ACL的启动需要有文件系统的支持; **</li>
 <li>**ACL的设定可使用setfacl ，查阅则使用getfacl ; **<ul>
