@@ -5,7 +5,7 @@ tags:
 - 学习路线
 - 计算机课程
 categories:
-- 考研之路
+- Learn
 cover: /myimage/grade/cslearn_cover.png
 ---
 

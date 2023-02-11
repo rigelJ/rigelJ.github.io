@@ -6,7 +6,7 @@ tags:
 - CS61
 - CS61A
 categories:
-- CS61
+- Learn
 cover: /myimage/cs61/cs61a_all_cover.png
 ---
 

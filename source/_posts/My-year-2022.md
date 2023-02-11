@@ -4,7 +4,7 @@ date: 2021-09-03 12:40:02
 tags:
 - Years
 categories: 
-- My year
+- Years
 cover: /myimage/my_year/My_Year_2022_cover.jpg
 sticky: 1
 ---

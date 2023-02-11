@@ -4,7 +4,7 @@ date: 2021-04-11 10:31:39
 tags:
 - Markdown
 categories:
-- 软件文档
+- Other
 mathjax: true
 cover: /myimage/doc/markdown_cover.png
 ---

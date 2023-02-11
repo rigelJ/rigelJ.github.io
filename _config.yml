@@ -1,10 +1,10 @@
-# Hexo Configuration
+# Hexo Configuration add
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Life is a voyage
-subtitle: 剃刀锋利，越之不易，智者有云，得道弥艰。
+title: 清川的博客
+subtitle: 当愚昧成为主流，清醒便是原罪。
 description: 
 keywords: "Python,GOLang，C++，爬虫，软件安全"
 author: 清川
@@ -99,7 +99,6 @@ ignore:
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
-plugins: hexo-generate-feed
 ## Themes: https://hexo.io/themes/
 theme: butterfly
 

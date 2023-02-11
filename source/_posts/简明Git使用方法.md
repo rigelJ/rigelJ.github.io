@@ -4,7 +4,7 @@ date: 2021-05-27 15:37:40
 tags: 
 - Git
 categories: 
-- 软件文档
+- Git
 cover: /myimage/doc/git_cover.png
 ---
 

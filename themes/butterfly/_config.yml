@@ -37,7 +37,6 @@ formal:
    icon: link || the description
 social:
   fab fa-github: https://github.com/rigelJ
-  
   # fas fa-envelope: mailto:xxxxxx@gmail.com || Email
 
 # search (搜索)
@@ -631,7 +630,7 @@ aside:
       enable: true
       icon: fab fa-github
       text: Follow Me
-      link: https://github.com/rigelj
+      link: https://github.com/xxxxxx
   card_announcement:
     enable: true
     content: Welcome to my Blog

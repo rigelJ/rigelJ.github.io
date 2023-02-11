@@ -1,0 +1,34 @@
+- class_name: 友情鏈接
+  class_desc: 值得推荐的博客
+  link_list:
+    - name: 阮一峰
+      link: https://www.ruanyifeng.com/
+      avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
+      descr: 阮一峰的个人博客
+    - name: 静觅
+      link: https://cuiqingcai.com/
+      avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
+      descr: 崔庆才的个人博客
+    - name: riusksk
+      link: http://riusksk.me/
+      avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
+      descr: 林桠泉的个人博客
+      
+     
+    
+
+- class_name: 学习强国2.0
+  class_desc: 我觉得你还不够了解你的电脑
+  link_list:
+    - name: Nand2Tetris
+      link: https://www.nand2tetris.org/
+      avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
+      descr: 计算机组成与结构
+    - name: MIT S081
+      link: https://pdos.csail.mit.edu/6.828/2020/index.html
+      avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
+      descr: 操作系统导论
+    - name: CS 144
+      link: https://cs144.github.io/
+      avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
+      descr: 计算机网络
