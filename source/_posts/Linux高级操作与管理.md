@@ -6,7 +6,7 @@ tags:
 - 操作系统
 - 命令行
 categories:
-- Linux
+- Linux/Unix
 ---
 
 ## Linux高级操作与管理

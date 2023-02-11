@@ -7,7 +7,7 @@ tags:
 - picgo
 - oss
 categories:
-- hole
+- Tutorial/Error/Fix
 ---
 
 

@@ -1,6 +1,4 @@
 ---
-
-
 title: CS61A-数据抽象
 date: 2021-06-28 11:25:57
 tags:
@@ -8,7 +6,7 @@ tags:
 - CS61
 - CS61A
 categories:
-- Learn
+- Learning Record
 cover: /myimage/cs61/cs61a_status_cover.png
 ---
 

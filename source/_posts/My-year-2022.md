@@ -4,12 +4,12 @@ date: 2021-09-03 12:40:02
 tags:
 - Years
 categories: 
-- Years
+- Article
 cover: /myimage/my_year/My_Year_2022_cover.jpg
 sticky: 1
 ---
 
-就这样，二十三了...
+就这样，二十三了了
 
 这个生日过的很草率，但并不是无奈之举。
 

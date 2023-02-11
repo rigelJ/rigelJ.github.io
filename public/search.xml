@@ -169,7 +169,7 @@
 <p>[1] : <a href="http://www.google.com/">http://www.google.com</a></p>
 ]]></content>
       <categories>
-        <category>Other</category>
+        <category>Guide</category>
       </categories>
       <tags>
         <tag>Markdown</tag>
@@ -282,7 +282,7 @@
 </ol>
 ]]></content>
       <categories>
-        <category>Learn</category>
+        <category>Learning Record</category>
       </categories>
       <tags>
         <tag>学习路线</tag>
@@ -556,7 +556,7 @@
 <p>3.<a href="https://git-scm.com/">Git官方网站</a></p>
 ]]></content>
       <categories>
-        <category>Git</category>
+        <category>Guide</category>
       </categories>
       <tags>
         <tag>Git</tag>
@@ -789,7 +789,7 @@
 <p>这个结构的原理是这样的，fact(3)首先等于<code>(lambda f:f(3,f))</code>，然而由于后i面还有一个<code>(lambda n,f:1 if n==1 else n*f(n-1,f))</code>因此f函数的值被填充为匿名函数，成为f(3,f) 其中 <code>f(n,f)=(lambda n,f:1 if n==1 else n*f(n-1,f))</code>。</p>
 ]]></content>
       <categories>
-        <category>Learn</category>
+        <category>Learning Record</category>
       </categories>
       <tags>
         <tag>程序结构</tag>
@@ -810,7 +810,7 @@
 <p>从20年接触计算机开始到现在，我开始慢慢感觉到整个计算机科学的构建就是不断的抽象和封装，尤其在读了Nand2Teris后，这种感受更加深刻了，Nand门的相互组合构建了16门，而16门的相互组合构建起了ROM，RAM和ALU，PC，再通过封装将这些模块组合起来，就构建成了计算机的硬件部分。软件也是一样，具体数值抽象成了变量，变量与数据结构共同作用构成了函数，函数与变量共同作用构成了类与对象。在不同类之间游走，就构建了计算机程序。</p>
 ]]></content>
       <categories>
-        <category>Learn</category>
+        <category>Learning Record</category>
       </categories>
       <tags>
         <tag>程序结构</tag>
@@ -972,7 +972,7 @@
 <p>再复杂一点可以这样使用生成器：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">natural</span>():</span></span><br><span class="line">    x=<span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">yield</span> x</span><br><span class="line">        x+<span class="number">1</span></span><br><span class="line">&gt;&gt;&gt;ns1,ns2=natural(),natural()</span><br><span class="line">&gt;&gt;&gt;[<span class="built_in">next</span>(ns1)*<span class="built_in">next</span>(ns2) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>)]</span><br><span class="line">[<span class="number">0</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">16</span>]</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>Learn</category>
+        <category>Learning Record</category>
       </categories>
       <tags>
         <tag>程序结构</tag>
@@ -1255,7 +1255,7 @@
 <p>至此，整个解释器就写完了，再加上内置的自循环函数，一个可以运行Scheme程序的python解释器就大功告成了。在61A 的Scheme项目中，还有如宏和流这种复杂的过程，大家可以自行学习，不过本质还是和内置过程的评估相差不大。学习这个项目的目的不是真的要完成一个解释器，而是要让你学会和理解解释器是如何”翻译“一种语言的，这样你才能更好的去理解各种编程范式，例如函数式编程，面向对象编程.</p>
 ]]></content>
       <categories>
-        <category>Learn</category>
+        <category>Learning Record</category>
       </categories>
       <tags>
         <tag>程序结构</tag>
@@ -1430,7 +1430,7 @@
 <p>总的来说，利用类实现的树ADT具有可变的特点，因此使用起来要比函数式的ADT更加便捷。</p>
 ]]></content>
       <categories>
-        <category>Learn</category>
+        <category>Learning Record</category>
       </categories>
       <tags>
         <tag>程序结构</tag>
@@ -1439,320 +1439,9 @@
       </tags>
   </entry>
   <entry>
-    <title>CS61B-Java</title>
-    <url>/2021/09/04/CS61B-Java/</url>
-    <content><![CDATA[<h2 id="CS61B-Java"><a href="#CS61B-Java" class="headerlink" title="CS61B Java"></a>CS61B Java</h2><h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><blockquote>
-<p>Java基础</p>
-<ul>
-<li><p>Hello world</p>
-</li>
-<li><p>类与实例</p>
-</li>
-<li><p>方法与域</p>
-</li>
-<li><p>静态static</p>
-</li>
-<li><p>作用范围</p>
-</li>
-<li><p>内存里的数据表示</p>
-</li>
-<li><p>流程控制</p>
-</li>
-<li><p>构造方法与方法重载</p>
-</li>
-</ul>
-<p>Java高级语法</p>
-<ul>
-<li>继承与多态</li>
-<li>抽象类与接口</li>
-<li>Java核心类</li>
-</ul>
-<p>Java链表</p>
-<ul>
-<li>List（IntList 最直白的链表）</li>
-<li>SLList（单向链表  哨兵节点）</li>
-<li>DLList（循环链表 双哨兵节点）</li>
-<li>Arrays（数组）</li>
-<li>AList（数组链表）</li>
-</ul>
-</blockquote>
-<p>在61B课程的第一部分，讲解了Java语言的基础用法，主要从面向对象的角度全面讲解Java语法特性。</p>
-<h3 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h3><h4 id="HelloWorld"><a href="#HelloWorld" class="headerlink" title="HelloWorld"></a>HelloWorld</h4><p>学任何一门语言都要从如何运行开始，关于如何配置Java环境在这就不赘述了，首先我们来看一个简单的Java程序</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello world!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>我们在Python语言中学过面向对象的编程方式，在Python中，面向对象只是编程的一种方式，而相比于python语言，java的所有代码都运行在一个类中，执行 Java 程序有两个步骤，一是对java程序进行编译，二是运行编译后的java程序，具体我们使用以下代码运行。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">$ javac HelloWorld.java</span><br><span class="line">$ java HelloWorld</span><br><span class="line">Hello World! </span><br></pre></td></tr></table></figure>
-
-<p>这样我们就运行了一段java代码。</p>
-<h4 id="类与实例"><a href="#类与实例" class="headerlink" title="类与实例"></a>类与实例</h4><p>我们在CS61A当中学过，类只有被实例化之后才能作为一个独立的对象进行操作，在java中，对象的实例化使用new进行创建</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 可以用来自动创建文档的注释</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> num;</span><br><span class="line">    </span><br><span class="line">    &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Hello</span><span class="params">(String name,<span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        num++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 向屏幕输出文本:</span></span><br><span class="line">        System.out.println(<span class="string">&quot;Hello, world!&quot;</span>);&#125;</span><br><span class="line">        <span class="comment">/* 多行注释开始</span></span><br><span class="line"><span class="comment">        注释内容</span></span><br><span class="line"><span class="comment">        注释结束 */</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.age;</span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getNum</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">&#125; <span class="comment">// class</span></span><br></pre></td></tr></table></figure>
-
-<p>不带返回参数类型的方法在Java类中用作构造方法，构造方法的名称必须和类名相同，这里的<code>public Hello</code>方法就是<code>Hello</code>类的构造方法，而后我们采用new创建Hello类的实例nh。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt; Hello nh = <span class="keyword">new</span> Hello(<span class="string">&quot;David&quot;</span>,<span class="number">15</span>);</span><br><span class="line">&gt;&gt;&gt; nh.getName()</span><br><span class="line">David</span><br></pre></td></tr></table></figure>
-
-<p>Java调用方法的方式与Python相同。</p>
-<h4 id="方法与域"><a href="#方法与域" class="headerlink" title="方法与域"></a>方法与域</h4><p>一个Java类中有方法和域，例如有一个类Student</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> String name;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> grade;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name,<span class="keyword">int</span> age,<span class="keyword">int</span> grade)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        <span class="keyword">this</span>.grade = grade;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.age;</span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getGrade</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.grade;</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>我们看到在这个类当中有<code>name</code>，<code>age</code>，<code>grade</code>三个域和<code>getName</code>，<code>getAge</code>和<code>getGrade</code>三个方法。</p>
-<p>域是对象的属性，方法是对象的操作手段。</p>
-<p>比如Student这个类就有名称，年龄和年级三个属性，实例化的每个对象都有自己不同的属性值，而他们都可以调用<code>getName</code>，<code>getAge</code>等方法。</p>
-<h4 id="静态static"><a href="#静态static" class="headerlink" title="静态static"></a>静态static</h4><p>如果我们想给所有的学生增加school这个域，并且令所有学生的School域都为“MingHai”，那么我们该怎么办呢？</p>
-<p>最常规的做法是增加一个域。并且在创建的时候给域赋值。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> String name;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">int</span> age;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">int</span> grade;</span><br><span class="line"><span class="keyword">public</span> String school    </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name,<span class="keyword">int</span> age,<span class="keyword">int</span> grade，String school)</span></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.grade = grade;</span><br><span class="line">    <span class="keyword">this</span>.school = school;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>于是我们在创建每个对象的时候引入school域的值。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Student David = <span class="keyword">new</span> Student(<span class="string">&quot;David&quot;</span>,<span class="number">15</span>,<span class="number">3</span>,<span class="string">&quot;MingHai&quot;</span>);</span><br><span class="line">Student Lee = <span class="keyword">new</span> Student(<span class="string">&quot;Lee&quot;</span>,<span class="number">15</span>,<span class="number">3</span>,<span class="string">&quot;MingHai&quot;</span>);</span><br><span class="line">Student Jane = <span class="keyword">new</span> Student(<span class="string">&quot;Jane&quot;</span>,<span class="number">15</span>,<span class="number">3</span>,<span class="string">&quot;MingHai&quot;</span>);</span><br><span class="line">Student Bob = <span class="keyword">new</span> Student(<span class="string">&quot;Bob&quot;</span>,<span class="number">15</span>,<span class="number">3</span>,<span class="string">&quot;MingHai&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>我们会发现这样定义真的很麻烦….</p>
-<p>于是我们就有了另一种方式，那就是利用static创建一个静态域。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> String name;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> grade;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String school=<span class="string">&quot;MingHai&quot;</span>;    </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name,<span class="keyword">int</span> age,<span class="keyword">int</span> grade)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        <span class="keyword">this</span>.grade = grade;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>我们将被static修饰的域称作静态域，没有static修饰的称作实例域，静态域在所有实例化的对象中都具有相同值，当在其中一个实例中修改静态域后，所有实例中的静态域都会发生改变，我们常常利用这个特性来进行计数。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> String name;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> grade;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String school=<span class="string">&quot;MingHai&quot;</span>;    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> num=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name,<span class="keyword">int</span> age,<span class="keyword">int</span> grade)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        <span class="keyword">this</span>.grade = grade;</span><br><span class="line">        num++;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>static静态除了可以用来修饰域，还可以用来修饰方法，被static修饰的方法只能由类进行调用，实例不可调用静态方法。</p>
-<p>我们给Student增加一个可以获取<code>num</code>域的静态方法。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getNum</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这样我们就可以通过类来调用getNum方法了</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt; Student.getNum();</span><br><span class="line">xx</span><br></pre></td></tr></table></figure>
-
-<p>此外，static还可以修饰类，被static所修饰的类称为静态类，如果一个类要声明为静态类，只有一种情况，那就是静态内部类，如果在外部声明为静态类，无法通过编译。</p>
-<p>静态内部类的相关知识，有看到再补充。</p>
-<h4 id="作用范围"><a href="#作用范围" class="headerlink" title="作用范围"></a>作用范围</h4><p>Java的作用范围主要有public，private和protected三种，延伸的还有pakage等，暂且不介绍。</p>
-<p>作用范围修饰可以用于域，方法和类。</p>
-<blockquote>
-<p>public所修饰的域，方法可以在类外被调用。</p>
-<p>private所修饰的域，方法只能在类内部被调用。</p>
-<p>protected所修饰的域，方法只能在继承类被调用。</p>
-</blockquote>
-<h5 id="关于域"><a href="#关于域" class="headerlink" title="关于域"></a>关于域</h5><p>为了确保安全，我们一般将关键域设置为private，然后利用JavaBean的方式创建getXX和setXX进行设置和访问，基于这个思想我们对Student类进行修改。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> grade;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name,<span class="keyword">int</span> age,<span class="keyword">int</span> grade)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        <span class="keyword">this</span>.grade = grade;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.age;</span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getGrade</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.grade;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> aAge)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(age&gt;<span class="number">15</span>)</span><br><span class="line">        &#123;</span><br><span class="line">           <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">this</span>.age = aAge;</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>我们可以看到利用JavaBean的方式，可以在设置的时候对用户输入进行过滤，防止用户输入恶意代码对数据进行篡改。</p>
-<p>protected一般用作修饰被继承类的域，这样就可以继承类中调用被继承类的域。</p>
-<h5 id="关于方法"><a href="#关于方法" class="headerlink" title="关于方法"></a>关于方法</h5><p>private修饰的方法一般是方法中的方法，该方法不能被外部调用篡改，只能在内部使用，比如</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> String InitOut = <span class="string">&quot;Hello&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> InitName(<span class="string">&quot;Hi,&quot;</span>) + name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> String <span class="title">InitName</span><span class="params">(String a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    InitOut = a;</span><br><span class="line">    <span class="keyword">return</span> InitName;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>我们需要得到用户的名字，并输出<code>Hello，xx</code>，如果将InitName设置为public，那么用户就可以修改InitName,造成安全隐患。</p>
-<h4 id="数据在内存中表示"><a href="#数据在内存中表示" class="headerlink" title="数据在内存中表示"></a>数据在内存中表示</h4><p>Java的数据类型分为基本类型和引用类型两种。</p>
-<p>基本数据类型是CPU可以直接进行运算的类型。Java定义了以下几种基本数据类型：</p>
-<blockquote>
-<p>整数类型：byte，short，int，long</p>
-<p>浮点数类型：float，double</p>
-<p>字符类型：char</p>
-<p>布尔类型：boolean</p>
-</blockquote>
-<p>对于基本类型，计算机会直接开辟相应的区域供基本类型存储。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> x;</span><br><span class="line"><span class="keyword">double</span> y;</span><br></pre></td></tr></table></figure>
-
-<p>其在 内存中的表示如图所示：</p>
-<p><img src="https://i.loli.net/2021/09/19/ukH3RUtGZOBLNb7.png" alt="image-20210919153239683"></p>
-<p>而对于引用类型，计算机会开辟一块区域来存储首地址，什么意思呢。我们以一个类为例，来看一看引用类型在内存中的存储。</p>
-<p>当我们使用new（如狗、海象、行星）对对象进行实例化时，Java 首先为该类的每个实例变量分配一个框，并用默认值填充它们。然后，构造器通常用其他值填充每个框。</p>
-<p>假设我们有一个Walrus类</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Walrus</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> weight;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">double</span> tuskSize;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Walrus</span><span class="params">(<span class="keyword">int</span> w, <span class="keyword">double</span> ts)</span> </span>&#123;</span><br><span class="line">          weight = w;</span><br><span class="line">          tuskSize = ts;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>我们实例化一个对象</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">new Walrus(1000, 8.3);</span><br></pre></td></tr></table></figure>
-
-<p>我们来看看这个实例化后的对象在内存中是什么样的。</p>
-<p><img src="https://i.loli.net/2021/09/19/X6tWORdAGxfCsj7.png" alt="image-20210919154637430"></p>
-<p>我们发现，实例化后的对象占据了内存中的一块区域，那么我们该怎么确定对象在内存中的位置呢？</p>
-<p>当我们声明任何参考类型的变量（海象、狗、行星、阵列等）时，Java 会分配一个 64 位的框，无论对象类型如何。乍一看，这似乎会导致悖论，因为仅仅weight这一个数据就占据了64位的区域，然而有一种办法可以解决这个问题，那就是将实例对象存放的首地址赋给变量。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Walrus wl = <span class="keyword">new</span> Walrus(<span class="number">100</span>,<span class="number">8.3</span>);</span><br></pre></td></tr></table></figure>
-
-<p>具体表示如下</p>
-<p><img src="https://i.loli.net/2021/09/19/FOpgal2w3i6MhNQ.png" alt="image-20210919155302354"></p>
-<p><img src="https://i.loli.net/2021/09/19/TuXL1AKhSRvkjVm.png" alt="image-20210919155229244"></p>
-<p>我们将walrus实例在内存中的首地址赋给引用类型的变量wl，这样就可以通过首地址来查找到实例的位置。</p>
-<p>我们用箭头简化表示这个过程</p>
-<p><img src="https://i.loli.net/2021/09/19/dQtsVjSJzpAflOK.png" alt="image-20210919155602729"></p>
-<p>接下来我们通过一个例子来巩固一下这个概念。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Walrus a = <span class="keyword">new</span> Walrus(<span class="number">1000</span>, <span class="number">8.3</span>);</span><br><span class="line">Walrus b;</span><br><span class="line">b = a;</span><br></pre></td></tr></table></figure>
-
-<p>执行第一行后，我们有：</p>
-<p><img src="https://i.loli.net/2021/09/19/2ZtFUu83IJHySiQ.png" alt="image-20210919155843381"></p>
-<p>执行第二行后，我们有：</p>
-<p><img src="https://i.loli.net/2021/09/19/DdIbyVSieUYLAl2.png" alt="image-20210919155857043"></p>
-<p>请注意，上面 b 是未定义的，不是空的。</p>
-<p>最后a行只需将盒子中的位复制到b框中。或者就我们的视觉隐喻而言，这意味着 b 将完全复制箭头，现在显示指向同一对象的箭头。</p>
-<p><img src="https://i.loli.net/2021/09/19/z517cWYAl3OQM6a.png" alt="image-20210919155945022"></p>
-<p>这就是对象引用的方法。</p>
-<h5 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h5><p>引用类型和基本类型在内存中的这种表示，影响最大的就是参数的传递，在Java中，所有的参数传递都是复制位，而非引用地址，我们把这种传参方式称作按值引用。</p>
-<p>例如，请考虑以下功能：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">average</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (a + b) / <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>假设我们调用此函数（如下图所示）</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> x = <span class="number">5.5</span>;</span><br><span class="line">    <span class="keyword">double</span> y = <span class="number">10.5</span>;</span><br><span class="line">    <span class="keyword">double</span> avg = average(x, y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>执行此功能的前两行后，主要方法将具有两个标记为x和y的框，其中包含以下值：</p>
-<p><img src="https://i.loli.net/2021/09/19/CjOWkQte3hKn64F.png" alt="image-20210919160930033"></p>
-<p>调用该函数时，average函数具有自己的范围，其中两个新框标记为a和b并且位只是复制。当我们说”按值传递”时，我们指的是这些位的复制。</p>
-<p><img src="https://i.loli.net/2021/09/19/MTF9gI8XYAyJ2ah.png" alt="image-20210919160943966"></p>
-<p>如果average函数要更改a，x将会保持不变。</p>
-<p>那么。如果将传入的参数改为引用类型呢？</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PassByValueFigure</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">           Walrus walrus = <span class="keyword">new</span> Walrus(<span class="number">3500</span>, <span class="number">10.5</span>);</span><br><span class="line">           <span class="keyword">int</span> x = <span class="number">9</span>;</span><br><span class="line"></span><br><span class="line">           doStuff(walrus, x);</span><br><span class="line">           System.out.println(walrus);</span><br><span class="line">           System.out.println(x);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">doStuff</span><span class="params">(Walrus W, <span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">           W.weight = W.weight - <span class="number">100</span>;</span><br><span class="line">           x = x - <span class="number">5</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>我们会发现，调用doStuff方法，weight被更改了，而x却没有变化，因为我们传入引用类型的参数，是将首地址复制给另一个引用类型的变量W，无论是walrus.weight还是W.weight指向的都是同一块内存区域。</p>
-<h4 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h4><p>Java的流程控制和Python没什么区别，if，else，for，while，for each.</p>
-<p>唯一有些变化的就是for each循环</p>
-<p>for循环经常用来遍历数组，因为通过计数器可以根据索引来访问数组的每个元素：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] ns = &#123; <span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span> &#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;ns.length; i++) &#123;</span><br><span class="line">    System.out.println(ns[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>但是，很多时候，我们实际上真正想要访问的是数组每个元素的值。Java还提供了另一种for each循环，它可以更简单地遍历数组：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] ns = &#123; <span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span> &#125;;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> n : ns) &#123;</span><br><span class="line">            System.out.println(n);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>和for循环相比，for each循环的变量n不再是计数器，而是直接对应到数组的每个元素。for each循环的写法也更简洁。但是，for each循环无法指定遍历顺序，也无法获取数组的索引。</p>
-<p>除了数组外，for each循环能够遍历所有“可迭代”的数据类型，包括后面会介绍的List、Map等。</p>
-<h4 id="构造方法与方法重载"><a href="#构造方法与方法重载" class="headerlink" title="构造方法与方法重载"></a>构造方法与方法重载</h4><p>创建实例的时候，我们经常需要同时初始化这个实例的字段，例如：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Person ming = <span class="keyword">new</span> Person();</span><br><span class="line">ming.setName(<span class="string">&quot;小明&quot;</span>);</span><br><span class="line">ming.setAge(<span class="number">12</span>);</span><br></pre></td></tr></table></figure>
-
-<p>初始化对象实例需要3行代码，而且，如果忘了调用setName()或者setAge()，这个实例内部的状态就是不正确的。</p>
-<p>能否在创建对象实例时就把内部字段全部初始化为合适的值？</p>
-<p>完全可以。</p>
-<p>这时，我们就需要构造方法。</p>
-<p>创建实例的时候，实际上是通过构造方法来初始化实例的。我们先来定义一个构造方法，能在创建Person实例的时候，一次性传入name和age，完成初始化：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.name = name;</span><br><span class="line">       <span class="keyword">this</span>.age = age;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">this</span>.age;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">由于构造方法是如此特殊，所以构造方法的名称就是类名。构造方法的参数没有限制，在方法内部，也可以编写任意语句。但是，和普通方法相比，构造方法没有返回值（也没有<span class="keyword">void</span>），调用构造方法，必须用<span class="keyword">new</span>操作符。</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="默认构造方法"><a href="#默认构造方法" class="headerlink" title="默认构造方法"></a>默认构造方法</h5><p>是不是任何class都有构造方法？是的。</p>
-<p>那前面我们并没有为Person类编写构造方法，为什么可以调用new Person()？</p>
-<p>原因是如果一个类没有定义构造方法，编译器会自动为我们生成一个默认构造方法，它没有参数，也没有执行语句，类似这样：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>要特别注意的是，如果我们自定义了一个构造方法，那么，编译器就不再自动创建默认构造方法：</p>
-<p>如果既要能使用带参数的构造方法，又想保留不带参数的构造方法，那么只能把两个构造方法都定义出来：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.name = name;</span><br><span class="line">       <span class="keyword">this</span>.age = age;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">this</span>.age;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在Java中，创建对象实例的时候，按照如下顺序进行初始化：</p>
-<p>先初始化字段，例如，int age = 10;表示字段初始化为10，double salary;表示字段默认初始化为0，String name;表示引用类型字段默认初始化为null；</p>
-<p>执行构造方法的代码进行初始化。</p>
-<p>因此，构造方法的代码由于后运行，所以，new Person(“Xiao Ming”, 12)的字段值最终由构造方法的代码确定。</p>
-<h5 id="多构造方法"><a href="#多构造方法" class="headerlink" title="多构造方法"></a>多构造方法</h5><p>可以定义多个构造方法，在通过new操作符调用的时候，编译器通过构造方法的参数数量、位置和类型自动区分：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.name = name;</span><br><span class="line">       <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">          <span class="keyword">this</span>.name = name;</span><br><span class="line">          <span class="keyword">this</span>.age = <span class="number">12</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>如果调用new Person(“Xiao Ming”, 20);，会自动匹配到构造方法public Person(String, int)。</p>
-<p>如果调用new Person(“Xiao Ming”);，会自动匹配到构造方法public Person(String)。</p>
-<p>如果调用new Person();，会自动匹配到构造方法public Person()。</p>
-</blockquote>
-<p>一个构造方法可以调用其他构造方法，这样做的目的是便于代码复用。调用其他构造方法的语法是this(…)：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.name = name;</span><br><span class="line">      <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>(name, <span class="number">18</span>); <span class="comment">// 调用另一个构造方法Person(String, int)</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>(<span class="string">&quot;Unnamed&quot;</span>); <span class="comment">// 调用另一个构造方法Person(String)</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h5 id="方法重载"><a href="#方法重载" class="headerlink" title="方法重载"></a>方法重载</h5><p>上文我们说到，可以通过定义不同的构造方法来实现不同传入参数的对象构造，那么普通方法是否也可以传入不同参数呢？</p>
-<p>当然可以，这就是方法重载。</p>
-<p>在一个类中，我们可以定义多个方法。如果有一系列方法，它们的功能都是类似的，只有参数有所不同，那么，可以把这一组方法名做成同名方法。例如，在Hello类中，定义多个hello()方法：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Hello</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello, world!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hello</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello, &quot;</span> + name + <span class="string">&quot;!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hello</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (age &lt; <span class="number">18</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Hi, &quot;</span> + name + <span class="string">&quot;!&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Hello, &quot;</span> + name + <span class="string">&quot;!&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这种方法名相同，但各自的参数不同，称为方法重载（Overload）。</p>
-<p>注意：方法重载的返回值类型通常都是相同的。</p>
-<h3 id="Java高级语法"><a href="#Java高级语法" class="headerlink" title="Java高级语法"></a>Java高级语法</h3><h4 id="继承与多态"><a href="#继承与多态" class="headerlink" title="继承与多态"></a>继承与多态</h4><p>在之前我们已经定义了Student类，现在我们想要定义一个HighStudent来表示大学生，添加其所选择的课程，我们可以选择这样定义</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HighStudent</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> grade;</span><br><span class="line">    <span class="keyword">private</span> String[] subject;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name,<span class="keyword">int</span> age,<span class="keyword">int</span> grade)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        <span class="keyword">this</span>.grade = grade;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.age;</span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getGrade</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.grade;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> aAge)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(age&gt;<span class="number">15</span>)</span><br><span class="line">        &#123;</span><br><span class="line">           <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">this</span>.age = aAge;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;   </span><br></pre></td></tr></table></figure>
-
-<p>我们发现Student类和HighStudent类几乎完全一样，除了增加了一个新域，于是我们考虑简化代码。</p>
-<p>我们使用继承语法来简化代码，简化后的代码如下：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HighStudent</span> <span class="keyword">extends</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> String[] subject=&#123;&#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> HighStudent &#123;</span><br><span class="line">        <span class="keyword">super</span>(String name,<span class="keyword">int</span> age,<span class="keyword">int</span> grade);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在Java中，我们使用extends表示继承，继承的类会继承父类的所有方法，并且通过super语法可以继承父类的构造方法。</p>
-<p>在OOP的术语中，我们把Student称为超类（super class），父类（parent class），基类（base class），把HighStudent称为子类（subclass），扩展类（extended class）。</p>
-<h5 id="protected"><a href="#protected" class="headerlink" title="protected"></a>protected</h5><p>继承有个特点，就是子类无法访问父类的private字段或者private方法。例如，Student类就无法访问Person类的name和age字段，因此我们要在父类中把private修饰的域改为protected修饰。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">protected</span> String name;</span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">int</span> age;</span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">int</span> grade;</span><br></pre></td></tr></table></figure>
-
-<h5 id="super"><a href="#super" class="headerlink" title="super"></a>super</h5><p>我们通过super来引用父类的方法和域，刚才我们在讲解继承的时候已经使用super引用 了父类的构造方法，正常来说，子类会自动继承父类的所有方法，但是有一个例外，子类可能对父类的方法进行重写</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public int getAge()&#123;</span><br><span class="line">        return this.age + 1;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>如果我们在HighStudent中改写了getAge方法，而我们需要调用父类原有的方法，就需要使用super</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">HighStudent hs &#x3D; new HighStudent(&quot;David&quot;,18,2);</span><br><span class="line">hs.super.getAge();</span><br></pre></td></tr></table></figure>
-
-<p>这个功能更多运用在子类方法重写。</p>
-<h5 id="阻止与限制继承"><a href="#阻止与限制继承" class="headerlink" title="阻止与限制继承"></a>阻止与限制继承</h5><p>在Java中，我们使用permit限制继承，如果我们要限制一个类的继承</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> sealed <span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="title">permits</span> <span class="title">HighStudent</span>,<span class="title">PrimStudent</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这样我们就限制了只有两个类能够继承Student类</p>
-<p>如果我们要阻止该类的所有继承，我们使用final修饰该类</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="转型"><a href="#转型" class="headerlink" title="转型"></a>转型</h5><p>如果一个引用变量的类型是HighStudent，那么它可以指向一个HighStudent类型的实例：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">HighStudent s = <span class="keyword">new</span> HighStudent();</span><br></pre></td></tr></table></figure>
-
-<p>如果一个引用类型的变量是Student，那么它可以指向一个Student类型的实例：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Student p = <span class="keyword">new</span> Student();</span><br></pre></td></tr></table></figure>
-
-<p>现在问题来了：如果HighStudent是从Student继承下来的，那么，一个引用类型为Student的变量，能否指向HighStudent类型的实例？</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Student p = <span class="keyword">new</span> HighStudent(); 测试一下就可以发现，这种指向是允许的。</span><br></pre></td></tr></table></figure>
-
-<p>这是因为HighStudent继承自Student，因此，它拥有Student的全部功能。Student类型的变量，如果指向HighStudent类型的实例，对它进行操作，是没有问题的！</p>
-<p>这种把一个子类类型安全地变为父类类型的赋值，被称为向上转型（upcasting）。</p>
-<p>向上转型实际上是把一个子类型安全地变为更加抽象的父类型。</p>
-]]></content>
-      <categories>
-        <category>Learn</category>
-      </categories>
-      <tags>
-        <tag>CS61</tag>
-        <tag>Java</tag>
-        <tag>CS61B</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CS61B-综述</title>
-    <url>/2021/09/04/CS61B-%E7%BB%BC%E8%BF%B0/</url>
-    <content><![CDATA[<h2 id="CS61B-综述"><a href="#CS61B-综述" class="headerlink" title="CS61B 综述"></a>CS61B 综述</h2><h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><h5 id="CS61B-Java"><a href="#CS61B-Java" class="headerlink" title="CS61B-Java"></a>CS61B-Java</h5><blockquote>
-<p>Java基础</p>
-<ul>
-<li>Hello world（java语法风格）</li>
-<li>变量与函数（变量与函数的定义方式）</li>
-<li>数据类型（八大基本数据类型和对象引用类型）</li>
-<li>内存中的数据（基本类型和引用类型是怎么储存的）</li>
-<li>流程控制（if/while/for/for each）</li>
-<li>数组与类（数组的类型  = 基本数据数组 +对象数组  /类与数组的创建方式/异同）</li>
-<li>测试（junit测试  时序测试  随机测试 ）</li>
-</ul>
-<p>Java面向对象</p>
-<ul>
-<li><p>类与对象（对象实例化）</p>
-</li>
-<li><p>静态（类方法与实例方法，静态域与实例域，局部变量）</p>
-</li>
-<li><p>构造方法（构造方法，不同参数的构造方法）</p>
-</li>
-<li><p>作用域（public  private  protected）</p>
-</li>
-</ul>
-<p>Java列表与数组</p>
-<ul>
-<li>List（IntList 最直白的链表）</li>
-<li>SLList（单向链表  哨兵节点）</li>
-<li>DLList（循环链表 双哨兵节点）</li>
-<li>Arrays（数组）</li>
-<li>AList（数组链表）</li>
-</ul>
-<p>Java继承与多态</p>
-<ul>
-<li>接口与继承（Comparator）</li>
-<li>扩展与转换</li>
-<li>多态</li>
-</ul>
-<p>Java异常处理</p>
-<p>Java高性能编程</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Learn</category>
-      </categories>
-      <tags>
-        <tag>程序结构</tag>
-        <tag>CS61</tag>
-        <tag>CS61B</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>My year 2022</title>
     <url>/2021/09/03/My-year-2022/</url>
-    <content><![CDATA[<p>就这样，二十三了…</p>
+    <content><![CDATA[<p>就这样，二十三了了</p>
 <p>这个生日过的很草率，但并不是无奈之举。</p>
 <p>我故意的。</p>
 <p>我也可以热热闹闹的叫上一大帮人，觥筹交错，贺词不断，但我觉得太俗套，我就想看看，一个人买蛋糕，点蜡烛，许愿，是种什么感觉。</p>
@@ -1772,7 +1461,7 @@
 <p><img src="https://s2.loli.net/2022/05/29/V23ceFhztY6Njg8.jpg"></p>
 ]]></content>
       <categories>
-        <category>Years</category>
+        <category>Article</category>
       </categories>
       <tags>
         <tag>Years</tag>
@@ -1912,133 +1601,6 @@
       <tags>
         <tag>故事</tag>
         <tag>文章</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Missing_Semaster-命令行与脚本</title>
-    <url>/2022/10/05/Missing-Semaster-%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%8E%E8%84%9A%E6%9C%AC/</url>
-    <content><![CDATA[<h2 id="Missing-Semaster-命令行与脚本"><a href="#Missing-Semaster-命令行与脚本" class="headerlink" title="Missing_Semaster-命令行与脚本"></a>Missing_Semaster-命令行与脚本</h2><p>这部分课程内容，介绍了使用 bash 作为脚本语言的一些基础知识，以及许多 shell 工具，这些工具涵盖了您将在命令行中不断执行的几个最常见的任务。</p>
-<p>以下是课程所包含的内容</p>
-<h3 id="理解shell的界面，参数和环境变量-PATH"><a href="#理解shell的界面，参数和环境变量-PATH" class="headerlink" title="理解shell的界面，参数和环境变量$PATH"></a>理解shell的界面，参数和环境变量$PATH</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">missing:~$ </span><br><span class="line">missing:~$ date</span><br><span class="line">Fri 10 Jan 2020 11:49:31 AM EST</span><br><span class="line">missing:~$ </span><br><span class="line">missing:~$ echo hello</span><br><span class="line">hello</span><br><span class="line">missing:~$ echo $PATH</span><br><span class="line">/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin</span><br><span class="line">missing:~$ which echo</span><br><span class="line">/bin/echo</span><br><span class="line">missing:~$ /bin/echo $PATH</span><br><span class="line">/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin</span><br></pre></td></tr></table></figure>
-<h3 id="使用cd切换路径，使用pwd查看当前路径"><a href="#使用cd切换路径，使用pwd查看当前路径" class="headerlink" title="使用cd切换路径，使用pwd查看当前路径"></a>使用cd切换路径，使用pwd查看当前路径</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">missing:~$ pwd</span><br><span class="line">/home/missing</span><br><span class="line">missing:~$ cd /home</span><br><span class="line">missing:/home$ pwd</span><br><span class="line">/home</span><br><span class="line">missing:/home$ cd ..</span><br><span class="line">missing:/$ pwd</span><br><span class="line">/</span><br><span class="line">missing:/$ cd ./home</span><br><span class="line">missing:/home$ pwd</span><br><span class="line">/home</span><br><span class="line">missing:/home$ cd missing</span><br><span class="line">missing:~$ pwd</span><br><span class="line">/home/missing</span><br><span class="line">missing:~$ ../../bin/echo hello</span><br><span class="line">hello</span><br></pre></td></tr></table></figure>
-<h3 id="使用ls查看给定目录中的内容，了解附带参数如-l-a-的分别含义"><a href="#使用ls查看给定目录中的内容，了解附带参数如-l-a-的分别含义" class="headerlink" title="使用ls查看给定目录中的内容，了解附带参数如-l,-a 的分别含义"></a>使用ls查看给定目录中的内容，了解附带参数如-l,-a 的分别含义</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">missing:~$ ls</span><br><span class="line">missing:~$ cd ..</span><br><span class="line">missing:/home$ ls</span><br><span class="line">missing</span><br><span class="line">missing:/home$ cd ..</span><br><span class="line">missing:/$ ls</span><br><span class="line">bin</span><br><span class="line">boot</span><br><span class="line">dev</span><br><span class="line">etc</span><br><span class="line">home</span><br><span class="line">...</span><br><span class="line">missing:~$ ls -l /home</span><br><span class="line">drwxr-xr-x 1 missing  users  4096 Jun 15  2019 missing</span><br></pre></td></tr></table></figure>
-<h3 id="使用echo，cat，tail，head指令对输出进行控制，理解重定向符号-lt-gt-和管道符号-的意义"><a href="#使用echo，cat，tail，head指令对输出进行控制，理解重定向符号-lt-gt-和管道符号-的意义" class="headerlink" title="使用echo，cat，tail，head指令对输出进行控制，理解重定向符号&lt;&gt;和管道符号|的意义"></a>使用echo，cat，tail，head指令对输出进行控制，理解重定向符号&lt;&gt;和管道符号|的意义</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">missing:~$ echo hello &gt; hello.txt</span><br><span class="line">missing:~$ cat hello.txt</span><br><span class="line">hello</span><br><span class="line">missing:~$ cat &lt; hello.txt</span><br><span class="line">hello</span><br><span class="line">missing:~$ cat &lt; hello.txt &gt; hello2.txt</span><br><span class="line">missing:~$ cat hello2.txt</span><br><span class="line">hello</span><br><span class="line">missing:~$ ls -l / | tail -n1</span><br><span class="line">drwxr-xr-x 1 root  root  4096 Jun 20  2019 var</span><br></pre></td></tr></table></figure>
-<h3 id="了解超级用户root的权限，掌握切换和使用root账户的指令，利用tee指令传递权限"><a href="#了解超级用户root的权限，掌握切换和使用root账户的指令，利用tee指令传递权限" class="headerlink" title="了解超级用户root的权限，掌握切换和使用root账户的指令，利用tee指令传递权限"></a>了解超级用户root的权限，掌握切换和使用root账户的指令，利用tee指令传递权限</h3><blockquote>
-<h4 id="以下是一个tee指令使用的实例"><a href="#以下是一个tee指令使用的实例" class="headerlink" title="以下是一个tee指令使用的实例"></a>以下是一个tee指令使用的实例</h4><p>例如，笔记本电脑屏幕的亮度通过以下调用的文件公开brightness</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;&#x2F;sys&#x2F;class&#x2F;backlight</span><br></pre></td></tr></table></figure>
-<p>通过将值写入该文件，我们可以更改屏幕亮度。你的第一反应可能是做这样的事情：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">$ sudo find -L /sys/class/backlight -maxdepth 2 -name <span class="string">&#x27;*brightness*&#x27;</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">/sys/class/backlight/thinkpad_screen/brightness</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">$ <span class="built_in">cd</span> /sys/class/backlight/thinkpad_screen</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">$ sudo <span class="built_in">echo</span> 3 &gt; brightness</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">An error occurred <span class="keyword">while</span> redirecting file <span class="string">&#x27;brightness&#x27;</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">open: Permission denied</span></span><br></pre></td></tr></table></figure>
-<p>在上面的例子中，shell（就像你的用户一样进行身份验证）在将其设置输出之前，会尝试打开亮度文件进行写入，但由于 shell 不以 root 身份运行，因此无法执行此操作。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">$ <span class="built_in">echo</span> 3 | sudo tee brightness</span></span><br></pre></td></tr></table></figure>
-<p>由于该程序是打开文件进行写入的程序，并且它以 运行方式运行，因此权限全部解决。</p>
-</blockquote>
-<h3 id="掌握shell中变量赋值的两种形式，了解“”与’‘的区别，掌握其他特殊变量的用法"><a href="#掌握shell中变量赋值的两种形式，了解“”与’‘的区别，掌握其他特殊变量的用法" class="headerlink" title="掌握shell中变量赋值的两种形式，了解“”与’‘的区别，掌握其他特殊变量的用法"></a>掌握shell中变量赋值的两种形式，了解“”与’‘的区别，掌握其他特殊变量的用法</h3><blockquote>
-<h4 id="变量赋值与访问"><a href="#变量赋值与访问" class="headerlink" title="变量赋值与访问"></a>变量赋值与访问</h4><p><strong>普通赋值</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">foo=bar</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$foo</span>&quot;</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># prints bar</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="built_in">echo</span> <span class="string">&#x27;$foo&#x27;</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># prints $foo</span></span></span><br></pre></td></tr></table></figure>
-<p><strong>将指令执行结果赋值给变量</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">foo=$(<span class="built_in">pwd</span>)</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="built_in">echo</span> <span class="variable">$foo</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># /home/donnie</span></span></span><br></pre></td></tr></table></figure>
-<h4 id="特殊变量"><a href="#特殊变量" class="headerlink" title="特殊变量"></a>特殊变量</h4><blockquote>
-<p>$0- 当前脚本名称</p>
-<p>$1 - 到9 当前脚本的第n个参数</p>
-<p>$@ -  当前脚本所有参数的集合 </p>
-<p>$# -  当前脚本参数的数量</p>
-<p>$? -  上一个命令的返回代码</p>
-<p>$$ - 当前脚本的进程标识号 （PID）</p>
-<p>!!  -   上一命令，包括参数。</p>
-</blockquote>
-</blockquote>
-<h3 id="掌握逻辑运算符和通配符以及大括号的使用"><a href="#掌握逻辑运算符和通配符以及大括号的使用" class="headerlink" title="掌握逻辑运算符和通配符以及大括号的使用"></a>掌握逻辑运算符和通配符以及大括号的使用</h3><blockquote>
-<h4 id="逻辑运算符-amp-amp"><a href="#逻辑运算符-amp-amp" class="headerlink" title="逻辑运算符 &amp;&amp; ||  ;"></a>逻辑运算符 &amp;&amp; ||  ;</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="literal">false</span> || <span class="built_in">echo</span> <span class="string">&quot;Oops, fail&quot;</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># Oops, fail</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="literal">true</span> || <span class="built_in">echo</span> <span class="string">&quot;Will not be printed&quot;</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment">#</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="literal">true</span> &amp;&amp; <span class="built_in">echo</span> <span class="string">&quot;Things went well&quot;</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># Things went well</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="literal">false</span> &amp;&amp; <span class="built_in">echo</span> <span class="string">&quot;Will not be printed&quot;</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment">#</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="literal">true</span> ; <span class="built_in">echo</span> <span class="string">&quot;This will always run&quot;</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># This will always run</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="literal">false</span> ; <span class="built_in">echo</span> <span class="string">&quot;This will always run&quot;</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># This will always run</span></span></span><br></pre></td></tr></table></figure>
-<h4 id="通配符-和"><a href="#通配符-和" class="headerlink" title="通配符 * ?  和 { }"></a>通配符 * ?  和 { }</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">convert image.&#123;png,jpg&#125;</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># Will expand to</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">convert image.png image.jpg</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">cp /path/to/project/&#123;foo,bar,baz&#125;.sh /newpath</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># Will expand to</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">cp /path/to/project/foo.sh /path/to/project/bar.sh /path/to/project/baz.sh /newpath</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># Globbing techniques can also be combined</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">mv *&#123;.py,.sh&#125; folder</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># Will move all *.py and *.sh files</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">mkdir foo bar</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># This creates files foo/a, foo/b, ... foo/h, bar/a, bar/b, ... bar/h</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">touch &#123;foo,bar&#125;/&#123;a..h&#125;</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">touch foo/x bar/y</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># Show differences between files in foo and bar</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">diff &lt;(ls foo) &lt;(ls bar)</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># Outputs</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># &lt; x</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># ---</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># &gt; y</span></span></span><br></pre></td></tr></table></figure>
-</blockquote>
-<h3 id="了解shell函数和脚本之间的关系和差异，掌握两者的使用方法"><a href="#了解shell函数和脚本之间的关系和差异，掌握两者的使用方法" class="headerlink" title="了解shell函数和脚本之间的关系和差异，掌握两者的使用方法"></a>了解shell函数和脚本之间的关系和差异，掌握两者的使用方法</h3><blockquote>
-<h4 id="shell函数"><a href="#shell函数" class="headerlink" title="shell函数"></a>shell函数</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt;<span class="comment"># mcd.sh</span></span><br><span class="line"></span><br><span class="line">&gt;<span class="function"><span class="title">mcd</span></span> () &#123;</span><br><span class="line">   mkdir -p <span class="string">&quot;<span class="variable">$1</span>&quot;</span></span><br><span class="line">   <span class="built_in">cd</span> <span class="string">&quot;<span class="variable">$1</span>&quot;</span></span><br><span class="line">&gt;&#125;</span><br></pre></td></tr></table></figure>
-<p>将函数载入环境</p>
-<p><code>source mcd.sh</code></p>
-<h4 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h4><p><em>bash脚本*</em></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="meta">#!/bin/bash</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="built_in">echo</span> <span class="string">&quot;Starting program at <span class="subst">$(date)</span>&quot;</span> <span class="comment"># Date will be substituted</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="built_in">echo</span> <span class="string">&quot;Running program <span class="variable">$0</span> with <span class="variable">$#</span> arguments with pid $$&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="keyword">for</span> file <span class="keyword">in</span> <span class="string">&quot;<span class="variable">$@</span>&quot;</span>; <span class="keyword">do</span></span></span><br><span class="line">   grep foobar &quot;$file&quot; &gt; /dev/null 2&gt; /dev/null</span><br><span class="line"><span class="meta">   #</span><span class="bash"> When pattern is not found, grep has <span class="built_in">exit</span> status 1</span></span><br><span class="line"><span class="meta">   #</span><span class="bash"> We redirect STDOUT and STDERR to a null register since we <span class="keyword">do</span> not care about them</span></span><br><span class="line">   if [[ $? -ne 0 ]]; then</span><br><span class="line">       echo &quot;File $file does not have any foobar, adding one&quot;</span><br><span class="line">       echo &quot;# foobar&quot; &gt;&gt; &quot;$file&quot;</span><br><span class="line">   fi</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="keyword">done</span></span></span><br></pre></td></tr></table></figure>
-<p><strong>python脚本</strong> </p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="meta">#!/usr/local/bin/python</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">import sys</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="keyword">for</span> arg <span class="keyword">in</span> reversed(sys.argv[1:]):</span></span><br><span class="line">   print(arg)</span><br></pre></td></tr></table></figure>
-</blockquote>
-<h3 id="掌握find，fd，help和man等文件查找指令，grep，rg等模式匹配指令"><a href="#掌握find，fd，help和man等文件查找指令，grep，rg等模式匹配指令" class="headerlink" title="掌握find，fd，help和man等文件查找指令，grep，rg等模式匹配指令"></a>掌握find，fd，help和man等文件查找指令，grep，rg等模式匹配指令</h3><blockquote>
-<h4 id="find"><a href="#find" class="headerlink" title="find"></a>find</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># Find all directories named src</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">find . -name src -<span class="built_in">type</span> d</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># Find all python files that have a folder named test in their path</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">find . -path <span class="string">&#x27;*/test/*.py&#x27;</span> -<span class="built_in">type</span> f</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># Find all files modified in the last day</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">find . -mtime -1</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"><span class="comment"># Find all zip files with size in range 500k to 10M</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">find . -size +500k -size -10M -name <span class="string">&#x27;*.tar.gz&#x27;</span></span></span><br></pre></td></tr></table></figure>
-<h4 id="man"><a href="#man" class="headerlink" title="man"></a>man</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">missing:~$ man l</span></span><br></pre></td></tr></table></figure>
-</blockquote>
-<p><strong>以上是所有shell课程中的重点内容，以为到这就结束了？远不止如此。</strong></p>
-<p><strong>以下是我认为课程需要我们额外去学习的内容</strong></p>
-<p>[Linux操作与使用]:<br>[Bash编程与管理]: </p>
-]]></content>
-      <categories>
-        <category>Learn</category>
-      </categories>
-      <tags>
-        <tag>MIT</tag>
-        <tag>MissingSemaster</tag>
-        <tag>编程素养</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Missing_Semaster-综述</title>
-    <url>/2022/10/05/Missing-Semaster-%E7%BB%BC%E8%BF%B0/</url>
-    <content><![CDATA[<h2 id="MissingSemaster-综述"><a href="#MissingSemaster-综述" class="headerlink" title="MissingSemaster-综述"></a>MissingSemaster-综述</h2><h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><blockquote>
-<ul>
-<li>命令行与脚本</li>
-</ul>
-<blockquote>
-<p><em>使用别名、脚本和生成系统自动执行常见和重复性任务。</em></p>
-</blockquote>
-<ul>
-<li>版本控制</li>
-</ul>
-<blockquote>
-<p><em>正确使用版本控制，并利用它来避免灾难，与他人协作，并快速查找和隔离有问题的更改。</em></p>
-</blockquote>
-<ul>
-<li>文本编辑</li>
-</ul>
-<blockquote>
-<p><em>利用命令行（本地和远程）高效编辑文件，并利用高级编辑器功能。</em></p>
-</blockquote>
-<ul>
-<li>远程登录</li>
-</ul>
-<blockquote>
-<p>使用 SSH 密钥和终端多路复用使用远程计算机。</p>
-</blockquote>
-<ul>
-<li>文件查找与整理</li>
-</ul>
-<blockquote>
-<p>快速找到您要查找的文件,直接从命令行快速轻松地修改、查看、解析、打印和计算数据和文件。</p>
-</blockquote>
-<ul>
-<li>虚拟机隔离</li>
-</ul>
-<blockquote>
-<p>使用虚拟机来试用新的操作系统，隔离不相关的项目，并保持主机干净整洁。</p>
-</blockquote>
-<ul>
-<li>计算机安全</li>
-</ul>
-<blockquote>
-<p>在互联网中漫游时不泄漏自身信息。</p>
-</blockquote>
-</blockquote>
-<p>在传统的计算机科学教育中，大家很可能会参加大量的课程，这些课程教学CS中的高级主题，从操作系统到编程语言再到机器学习。但在许多机构中，有一个基本主题很少被涵盖，而是留给学生自己学习：计算生态系统素养。</p>
-<p>这些主题不是作为大学课程的一部分教授的：学生从未被展示如何使用这些工具，或者至少没有如何有效地使用它们，从而在应该简单的任务上浪费时间和精力。标准的CS课程缺少有关计算生态系统的关键主题，这些主题可以使学生的生活更加轻松。</p>
-<p>MIT的这门课补齐了大学课堂没有教学的东西，例如命令行操作和脚本编程，文本编辑器VIM的使用，ssh远程登录，git版本控制与github的使用。</p>
-<p>非常优秀的一门课。</p>
-<p>当然，光是听课是不够的，课程只能告诉你要学什么，该怎么学，怎么拓展还是看个人，不是说把上课那几个指令用会了就算ok了，而是要举一反三，看出课程究竟要求我们掌握哪些知识，例如，第一课的命令行与脚本，就需要你学习linux基础操作，从常见指令，文件系统结构，到硬盘分区和挂载，甚至是学习如何编译核心，还需要你学习bash脚本编程，利用bash脚本跟踪登录情况，检测日志更新，定时清理磁盘等等一些linux运维的知识。</p>
-<p>但是我不打算把每一步都写的跟视频一样详尽，那这样还不如去看视频，我认为一个优秀的黑客首先需要具备信息搜索的能力。</p>
-<p>我在后面的课程内容中，只会把重点需要掌握的内容记录下来，一来是为了不懂的时候及时翻看和回忆，二来如果有人偶然翻到文章，也可以迅速找到解决问题的方法。</p>
-]]></content>
-      <categories>
-        <category>Learn</category>
-      </categories>
-      <tags>
-        <tag>MIT</tag>
-        <tag>MissingSemaster</tag>
-        <tag>编程素养</tag>
       </tags>
   </entry>
   <entry>
@@ -2681,7 +2243,7 @@
 <h4 id="一张图总结Vim"><a href="#一张图总结Vim" class="headerlink" title="一张图总结Vim"></a>一张图总结Vim</h4><p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221012223355695.png" alt="image-20221012223355695"></p>
 ]]></content>
       <categories>
-        <category>Linux</category>
+        <category>Linux/Unix</category>
       </categories>
       <tags>
         <tag>Linux</tag>
@@ -2835,7 +2397,7 @@
 </ul>
 ]]></content>
       <categories>
-        <category>Linux</category>
+        <category>Linux/Unix</category>
       </categories>
       <tags>
         <tag>Linux</tag>
@@ -2916,13 +2478,43 @@
 <p>成功。</p>
 ]]></content>
       <categories>
-        <category>hole</category>
+        <category>Tutorial/Error/Fix</category>
       </categories>
       <tags>
         <tag>踩过的坑</tag>
         <tag>typora</tag>
         <tag>picgo</tag>
         <tag>oss</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《国境以南，太阳以西》人海茫茫，哪来那么多的不期而遇</title>
+    <url>/2023/02/11/%E3%80%8A%E5%9B%BD%E5%A2%83%E4%BB%A5%E5%8D%97%EF%BC%8C%E5%A4%AA%E9%98%B3%E4%BB%A5%E8%A5%BF%E3%80%8B%E4%BA%BA%E6%B5%B7%E8%8C%AB%E8%8C%AB%EF%BC%8C%E5%93%AA%E6%9D%A5%E9%82%A3%E4%B9%88%E5%A4%9A%E7%9A%84%E4%B8%8D%E6%9C%9F%E8%80%8C%E9%81%87/</url>
+    <content><![CDATA[<p>“追求得到之日即其终止之时，寻觅的过程亦即失却的过程。”</p>
+<p>每个男人心中都有一个岛本，可大多数男人終其一生也没有拥她入怀的机会，故事终究是故事，现实中一个人离开，如果不再联系，就真的再也不见了。</p>
+<p>人海茫茫，哪来那么多不期而遇。</p>
+<p>情窦初开之时，最怕沉溺，你蜷缩在黑暗中，瑟瑟发抖时，有一束光照在你的身上，你就会记一辈子。</p>
+<p>你追逐那束光，跑完了整个青春，回头一看，整个青春都是自己一人的兵荒马乱。</p>
+<p>当光芒散去，你呆呆的停留在原地，感觉心中空落落的，怅然若失，你不知道失去了什么，但却感觉整个世界都丢了。</p>
+<p>她再也没出现过。</p>
+<p>后来你遇见了很多人，也经历了几段感情，但总感觉缺了什么，你觉得你的生命，有一种残缺感。</p>
+<p>你遇见心仪的女孩，你们相谈甚欢，一步一步靠近，就在你们即将灵魂交融的一刻，你突然停住了脚步，就这样静静的站立，女孩开始变得着急，但碍于面子，她也不愿迈出最后一步，你们就这样静静的站在相距十步的路口，时间的车流从你们的眼前缓缓穿过，最后，女孩转身走了。</p>
+<p>“然而我无法拥抱这百分之百的幸福感。自己好比一座失去台基的塔，越是想登高远眺，心越是剧烈地摇摆不已。 ”</p>
+<p>后来，你终于跨过了那道坎，但你不断的恋爱又分手，恋爱又分手，伤害了很多人。你还记得最后一个女孩，她临走时甩下一句话，“如果不爱我，你当初为什么要告白。”</p>
+<p>你也不知道，或许你只是想证明，她的离开不是你的过错，你终究还是拥有被选择的能力，你是不服，你也是对自己的无力感到悲哀。</p>
+<p>你们相互交融，似乎相爱的唯一愿景就是将自己的身体融入对方，无论汗水，泪水还是其他混杂的液体，你不断暗示自己，我是爱她的，可心却始终静寂。</p>
+<p>“但我那时还不懂，不懂自己可能迟早要伤害一个人，给她以无法愈合的重创。在某种情况下，一个人的存在本身就要伤害另一个人。”</p>
+<p>你不断追求自己的理想，把自己打造的越来越优秀，向着梦想阔步前行，但是却不愿意参与身边人的团体，你觉得他们都太幸福了，只有你一人活在浑浑噩噩的虚无中。</p>
+<p>“然而最终我想我哪里也未能抵达，无论如何我只能是我。我怀有的缺憾无论如何都依然如故。无论周围景物怎样变化，无论人们搭话的声音怎样不同，我也只能是一个不完整的人。我身上存在着永远一成不变的致命的缺憾，那缺憾带给我强烈的饥饿和干渴。”</p>
+<p>仅一夜之间，我的心判若两人，她自人山人海中来，原来只为我一场空欢喜，你来时携风带雨，我无处可避，你走时乱了四季，我久病难医。</p>
+<p>我不知道会不会在二十七岁的街头碰见穿着红衣的你，我只知道，如果还能再重新遇见你，我一定会像害了“西伯利亚癔病”一样，朝着太阳以西追逐你，直到倒地死去。</p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/guojingyinan_cover.jpg" alt="guojingyinan_cover"></p>
+]]></content>
+      <categories>
+        <category>Read</category>
+      </categories>
+      <tags>
+        <tag>村上春树</tag>
       </tags>
   </entry>
 </search>

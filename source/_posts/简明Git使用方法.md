@@ -4,7 +4,7 @@ date: 2021-05-27 15:37:40
 tags: 
 - Git
 categories: 
-- Git
+- Guide
 cover: /myimage/doc/git_cover.png
 ---
 

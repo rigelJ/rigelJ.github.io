@@ -6,7 +6,7 @@ tags:
 - CS61
 - CS61A
 categories:
-- Learn
+- Learning Record
 cover: /myimage/cs61/cs61a_language_cover.png
 ---
 
