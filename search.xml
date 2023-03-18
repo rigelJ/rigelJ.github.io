@@ -2517,4 +2517,27 @@
         <tag>村上春树</tag>
       </tags>
   </entry>
+  <entry>
+    <title>MIT-MissingSemester</title>
+    <url>/2023/03/18/MIT-MissingSemester/</url>
+    <content><![CDATA[<h1 id="MIT-MissingSemester"><a href="#MIT-MissingSemester" class="headerlink" title="MIT-MissingSemester"></a>MIT-MissingSemester</h1><p><strong>“对于计算机教育来说，从操作系统到机器学习，这些高大上课程和主题已经非常多了。然而有一个至关重要的主题却很少被专门讲授，而是留给学生们自己去探索。 这部分内容就是：精通工具。在这个系列课程中，我们会帮助您精通命令行、使用强大的文本编辑器、使用版本控制系统提供的多种特性等等。”</strong></p>
+<p>​                                                                                        <strong>——【MIT】The Missing Semester</strong></p>
+<hr>
+<p>Name：MIT-MissingSemester</p>
+<p>Type：</p>
+<p>Time：20h</p>
+<p>Tips：Bash  |  Script  |  Vim  |  Data-Wrangling |  Git |  Debuging |  Security</p>
+<p>Project：<a href="https://github.com/rigelJ/Learning-CS-fromScratch/tree/develop/missing_semester">https://github.com/rigelJ/Learning-CS-fromScratch/tree/develop/missing_semester</a></p>
+<hr>
+]]></content>
+      <categories>
+        <category>Learning Record</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+        <tag>MIT</tag>
+        <tag>Vim</tag>
+        <tag>Bash</tag>
+      </tags>
+  </entry>
 </search>
