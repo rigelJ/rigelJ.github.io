@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>清川的博客</title>
   
-  <subtitle>当愚昧成为主流，清醒便是原罪。</subtitle>
+  <subtitle>现实是一片丰饶之海，我是海上的孤舟。</subtitle>
   <link href="http://rigelj.github.io/atom.xml" rel="self"/>
   
   <link href="http://rigelj.github.io/"/>
-  <updated>2023-02-11T12:07:08.327Z</updated>
+  <updated>2023-03-18T11:35:21.068Z</updated>
   <id>http://rigelj.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MIT-MissingSemester</title>
+    <link href="http://rigelj.github.io/2023/03/18/MIT-MissingSemester/"/>
+    <id>http://rigelj.github.io/2023/03/18/MIT-MissingSemester/</id>
+    <published>2023-03-18T10:33:16.000Z</published>
+    <updated>2023-03-18T11:35:21.068Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="MIT-MissingSemester"><a href="#MIT-MissingSemester" class="headerlink" title="MIT-MissingSemester"></a>MIT-MissingSemester</h1><p><strong>“对于计算机教育来说，从操作系统到机器学习，这些高大上课程和主题已经非常多了。然而有一个至关重要的主题却很少被专门讲授，而是留给学生们自己去探索。 这部分内容就是：精通工具。在这个系列课程中，我们会帮助您精通命令行、使用强大的文本编辑器、使用版本控制系统提供的多种特性等等。”</strong></p><p>​                                                                                        <strong>——【MIT】The Missing Semester</strong></p><hr><p>Name：MIT-MissingSemester</p><p>Type：</p><p>Time：20h</p><p>Tips：Bash  |  Script  |  Vim  |  Data-Wrangling |  Git |  Debuging |  Security</p><p>Project：<a href="https://github.com/rigelJ/Learning-CS-fromScratch/tree/develop/missing_semester">https://github.com/rigelJ/Learning-CS-fromScratch/tree/develop/missing_semester</a></p><hr>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;MIT-MissingSemester&quot;&gt;&lt;a href=&quot;#MIT-MissingSemester&quot; class=&quot;headerlink&quot; title=&quot;MIT-MissingSemester&quot;&gt;&lt;/a&gt;MIT-MissingSemester&lt;/h1&gt;&lt;p&gt;&lt;s</summary>
+      
+    
+    
+    
+    <category term="Learning Record" scheme="http://rigelj.github.io/categories/Learning-Record/"/>
+    
+    
+    <category term="Git" scheme="http://rigelj.github.io/tags/Git/"/>
+    
+    <category term="MIT" scheme="http://rigelj.github.io/tags/MIT/"/>
+    
+    <category term="Vim" scheme="http://rigelj.github.io/tags/Vim/"/>
+    
+    <category term="Bash" scheme="http://rigelj.github.io/tags/Bash/"/>
+    
+  </entry>
   
   <entry>
     <title>《国境以南，太阳以西》人海茫茫，哪来那么多的不期而遇</title>
