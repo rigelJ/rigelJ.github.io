@@ -11,7 +11,7 @@ date: 2021-04-11 20:34:12
 
 
 
-<center><font face="微软雅黑" color=gray size=5>以我为名的小说，是隽永还是深刻。</font></center>
+<center><font face="微软雅黑" color=gray size=5>以我为名的小说，是隽永或是深刻。</font></center>
 
 <center><font color=red face="微软雅黑" size=5>ME</font></center>
 
