@@ -2530,22 +2530,19 @@
 <li><p>echo  </p>
 <ul>
 <li><p>echo “hello world”</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">missing:~$ <span class="built_in">echo</span> hello</span><br><span class="line">hello</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">missing:~$ <span class="built_in">echo</span> hello</span><br><span class="line">hello</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><p>$PATH</p>
 <ul>
 <li><p>shell通过$PATH的值来寻找echo cd这类执行程序的位置，当我们执行 echo 命令时，shell 了解到需要执行 echo 这个程序，随后它便会在 $PATH 中搜索由 : 所分割的一系列目录，基于名字搜索该程序。当找到该程序时便执行</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">missing:~$ <span class="built_in">echo</span> <span class="variable">$PATH</span></span><br><span class="line">/usr/<span class="built_in">local</span>/sbin:/usr/<span class="built_in">local</span>/bin:/usr/sbin:/usr/bin:/sbin:/bin</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">missing:~$ <span class="built_in">echo</span> <span class="variable">$PATH</span></span><br><span class="line">/usr/<span class="built_in">local</span>/sbin:/usr/<span class="built_in">local</span>/bin:/usr/sbin:/usr/bin:/sbin:/bin</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><p>which </p>
 <ul>
 <li><p>判断该程序是在哪个目录被打开的 </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">missing:~$ <span class="built_in">which</span> <span class="built_in">echo</span></span><br><span class="line">/bin/<span class="built_in">echo</span></span><br><span class="line">missing:~$ /bin/<span class="built_in">echo</span> <span class="variable">$PATH</span></span><br><span class="line">/usr/<span class="built_in">local</span>/sbin:/usr/<span class="built_in">local</span>/bin:/usr/sbin:/usr/bin:/sbin:/bin</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">missing:~$ <span class="built_in">which</span> <span class="built_in">echo</span></span><br><span class="line">/bin/<span class="built_in">echo</span></span><br><span class="line">missing:~$ /bin/<span class="built_in">echo</span> <span class="variable">$PATH</span></span><br><span class="line">/usr/<span class="built_in">local</span>/sbin:/usr/<span class="built_in">local</span>/bin:/usr/sbin:/usr/bin:/sbin:/bin</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 </ul>
@@ -2568,8 +2565,7 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">missing:~$ <span class="built_in">pwd</span></span><br><span class="line">/home/missing</span><br><span class="line">missing:~$ <span class="built_in">cd</span> /home</span><br><span class="line">missing:/home$ <span class="built_in">pwd</span></span><br><span class="line">/home</span><br><span class="line">missing:/home$ <span class="built_in">cd</span> ..</span><br><span class="line">missing:/$ <span class="built_in">pwd</span></span><br><span class="line">/</span><br><span class="line">missing:/$ <span class="built_in">cd</span> ./home</span><br><span class="line">missing:/home$ <span class="built_in">pwd</span></span><br><span class="line">/home</span><br><span class="line">missing:/home$ <span class="built_in">cd</span> missing</span><br><span class="line">missing:~$ <span class="built_in">pwd</span></span><br><span class="line">/home/missing</span><br><span class="line">missing:~$ ../../bin/<span class="built_in">echo</span> hello</span><br><span class="line">hello</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">missing:~$ <span class="built_in">pwd</span></span><br><span class="line">/home/missing</span><br><span class="line">missing:~$ <span class="built_in">cd</span> /home</span><br><span class="line">missing:/home$ <span class="built_in">pwd</span></span><br><span class="line">/home</span><br><span class="line">missing:/home$ <span class="built_in">cd</span> ..</span><br><span class="line">missing:/$ <span class="built_in">pwd</span></span><br><span class="line">/</span><br><span class="line">missing:/$ <span class="built_in">cd</span> ./home</span><br><span class="line">missing:/home$ <span class="built_in">pwd</span></span><br><span class="line">/home</span><br><span class="line">missing:/home$ <span class="built_in">cd</span> missing</span><br><span class="line">missing:~$ <span class="built_in">pwd</span></span><br><span class="line">/home/missing</span><br><span class="line">missing:~$ ../../bin/<span class="built_in">echo</span> hello</span><br><span class="line">hello</span><br></pre></td></tr></table></figure></li>
 <li><p>cd   </p>
 <ul>
 <li>切换目录</li>
@@ -2598,8 +2594,7 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">missing:~$ ls</span><br><span class="line">missing:~$ <span class="built_in">cd</span> ..</span><br><span class="line">missing:/home$ ls</span><br><span class="line">missing</span><br><span class="line">missing:/home$ <span class="built_in">cd</span> ..</span><br><span class="line">missing:/$ ls</span><br><span class="line">bin</span><br><span class="line">boot</span><br><span class="line">dev</span><br><span class="line">etc</span><br><span class="line">home</span><br><span class="line">...</span><br><span class="line">missing:~$ ls -l /home</span><br><span class="line">drwxr-xr-x 1 missing  users  4096 Jun 15  2019 missing</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">missing:~$ ls</span><br><span class="line">missing:~$ <span class="built_in">cd</span> ..</span><br><span class="line">missing:/home$ ls</span><br><span class="line">missing</span><br><span class="line">missing:/home$ <span class="built_in">cd</span> ..</span><br><span class="line">missing:/$ ls</span><br><span class="line">bin</span><br><span class="line">boot</span><br><span class="line">dev</span><br><span class="line">etc</span><br><span class="line">home</span><br><span class="line">...</span><br><span class="line">missing:~$ ls -l /home</span><br><span class="line">drwxr-xr-x 1 missing  users  4096 Jun 15  2019 missing</span><br></pre></td></tr></table></figure></li>
 <li><p>mv  </p>
 <ul>
 <li>重命名或移动文件</li>
@@ -2626,17 +2621,17 @@
 <li><p>创建程序间的链接</p>
 <ul>
 <li><p>重定向输出流</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span>  hello &gt; hello.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span>  hello &gt; hello.txt</span><br></pre></td></tr></table></figure></li>
+<li><p> 重定向输入流</p>
 </li>
-<li><p>重定向输入流</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cat &lt; hello.txt</span><br></pre></td></tr></table></figure>
-</li>
+</ul>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cat &lt; hello.txt</span><br></pre></td></tr></table></figure>
+
+<ul>
 <li><p>追加</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> hello &gt;&gt; hello.txt</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> hello &gt;&gt; hello.txt</span><br></pre></td></tr></table></figure></li>
 <li><p>|  管道符号,  允许我们将一个程序的输出和另外一个程序的输入连接起来：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ls | tail  -n1</span><br><span class="line">curl --head --silent google.com | grep -i content-length </span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ls | tail  -n1</span><br><span class="line">curl --head --silent google.com | grep -i content-length </span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><p>root权限</p>
@@ -2654,13 +2649,16 @@
 <ul>
 <li><p>变量赋值</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">foo=bar</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$foo</span>&quot;</span></span><br><span class="line"><span class="comment"># 打印 bar</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;$foo&#x27;</span></span><br><span class="line"><span class="comment"># 打印 $foo</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><p>定义字符串</p>
 <pre><code>  - Bash中的字符串通过&#39; 和 &quot;分隔符来定义
   - 双引号解析，单引号不解析
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>函数操作</p>
    <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">mcd</span></span> () &#123;</span><br><span class="line">    mkdir -p <span class="string">&quot;<span class="variable">$1</span>&quot;</span></span><br><span class="line">    <span class="built_in">cd</span> <span class="string">&quot;<span class="variable">$1</span>&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <pre><code>  - bash使用了很多特殊的变量，来表示参数、错误代码和相关变量
 
     &gt;   - $0 是脚本名
@@ -2672,7 +2670,8 @@
     &gt;   - $\* 是以一个单字符串显示所有向脚本传递的参数，与位置变量不同，参数可超过9
     &gt;   - $$ 是脚本运行的当前进程ID号
     &gt;   - !! 上一次输入的指令
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>输入输出流判断</p>
 <pre><code>  - 命令通常使用 STDOUT来返回输出值，使用STDERR 来返回错误及错误码，便于脚本以更加友好的方式报告错误。
 
@@ -2685,7 +2684,8 @@
   - 另一个常见的模式是以变量的形式获取一个命令的输出
 
     <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Starting program at <span class="subst">$(date)</span>&quot;</span> <span class="comment"># date会被替换成日期和时间</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Running program <span class="variable">$0</span> with <span class="variable">$#</span> arguments with pid $$&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> <span class="string">&quot;<span class="variable">$@</span>&quot;</span>; <span class="keyword">do</span></span><br><span class="line">    grep foobar <span class="string">&quot;<span class="variable">$file</span>&quot;</span> &gt; /dev/null 2&gt; /dev/null</span><br><span class="line">    <span class="comment"># 如果模式没有找到，则grep退出状态为 1</span></span><br><span class="line">    <span class="comment"># 我们将标准输出流和标准错误流重定向到Null，因为我们并不关心这些信息</span></span><br><span class="line">    <span class="keyword">if</span> [[ $? -ne 0 ]]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;File <span class="variable">$file</span> does not have any foobar, adding one&quot;</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;# foobar&quot;</span> &gt;&gt; <span class="string">&quot;<span class="variable">$file</span>&quot;</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>shell的通配</p>
 <pre><code>  - bash使我们可以轻松的实现通配，它可以基于文件扩展名展开表达式。
 
@@ -2694,70 +2694,73 @@
   - 当你有一系列的指令，其中包含一段公共子串时，可以用花括号来自动展开这些命令。
 
     <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">convert image.&#123;png,jpg&#125;</span><br><span class="line"><span class="comment"># 会展开为</span></span><br><span class="line">convert image.png image.jpg</span><br><span class="line"></span><br><span class="line">cp /path/to/project/&#123;foo,bar,baz&#125;.sh /newpath</span><br><span class="line"><span class="comment"># 会展开为</span></span><br><span class="line">cp /path/to/project/foo.sh /path/to/project/bar.sh /path/to/project/baz.sh /newpath</span><br><span class="line"></span><br><span class="line"><span class="comment"># 也可以结合通配使用</span></span><br><span class="line">mv *&#123;.py,.sh&#125; folder</span><br><span class="line"><span class="comment"># 会移动所有 *.py 和 *.sh 文件</span></span><br><span class="line"></span><br><span class="line">mkdir foo bar</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下面命令会创建foo/a, foo/b, ... foo/h, bar/a, bar/b, ... bar/h这些文件</span></span><br><span class="line">touch &#123;foo,bar&#125;/&#123;a..h&#125;</span><br><span class="line">touch foo/x bar/y</span><br><span class="line"><span class="comment"># 比较文件夹 foo 和 bar 中包含文件的不同</span></span><br><span class="line">diff &lt;(ls foo) &lt;(ls bar)</span><br><span class="line"><span class="comment"># 输出</span></span><br><span class="line"><span class="comment"># &lt; x</span></span><br><span class="line"><span class="comment"># ---</span></span><br><span class="line"><span class="comment"># &gt; y</span></span><br></pre></td></tr></table></figure>
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>在shell中使用其他语言</p>
    <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/local/bin/python</span></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">for</span> arg <span class="keyword">in</span> <span class="built_in">reversed</span>(sys.argv[<span class="number">1</span>:]):</span><br><span class="line">    <span class="built_in">print</span>(arg)</span><br></pre></td></tr></table></figure>
+
 <pre><code>  - 内核知道去用 python 解释器而不是 shell 命令来运行这段脚本，是因为脚本的开头第一行的 shebang
   - 在 shebang 行中使用 env 命令会利用环境变量中的程序来解析脚本
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>shellcheck测试</p>
 <pre><code>  - 查找bash脚本的错误
-</code></pre></li>
+</code></pre>
+</li>
 </ul>
-<ul>
+</li>
 <li><p>shell工具</p>
-<pre><code> - 帮助类工具
+<pre><code>  - 帮助类工具
 
-         - -h / -help
-         - man  
-         - tldr  
+          - -h / -help
+          - man  
+          - tldr  
 
- - 查询类工具
+  - 查询类工具
 
-         - 查找文件
+          - 查找文件
 
-                 - find
+                  - find
 
-                      - -type  类型
-                      - -path  路径模式
-                      - -name 名称
-                      - -print/print0/printf  输出模式
+                       - -type  类型
+                       - -path  路径模式
+                       - -name 名称
+                       - -print/print0/printf  输出模式
 
-                   <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查找所有名称为src的文件夹</span></span><br><span class="line">find . -name src -<span class="built_in">type</span> d</span><br><span class="line"><span class="comment"># 查找所有文件夹路径中包含test的python文件</span></span><br><span class="line">find . -path <span class="string">&#x27;*/test/*.py&#x27;</span> -<span class="built_in">type</span> f</span><br><span class="line"><span class="comment"># 查找前一天修改的所有文件</span></span><br><span class="line">find . -mtime -1</span><br><span class="line"><span class="comment"># 查找所有大小在500k至10M的tar.gz文件</span></span><br><span class="line">find . -size +500k -size -10M -name <span class="string">&#x27;*.tar.gz&#x27;</span></span><br><span class="line"><span class="comment"># 删除全部扩展名为.tmp 的文件</span></span><br><span class="line">find . -name <span class="string">&#x27;*.tmp&#x27;</span> -<span class="built_in">exec</span> rm &#123;&#125; \;</span><br><span class="line"><span class="comment"># 查找全部的 PNG 文件并将其转换为 JPG</span></span><br><span class="line">find . -name <span class="string">&#x27;*.png&#x27;</span> -<span class="built_in">exec</span> convert &#123;&#125; &#123;&#125;.jpg \;</span><br></pre></td></tr></table></figure>
+                    <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查找所有名称为src的文件夹</span></span><br><span class="line">find . -name src -<span class="built_in">type</span> d</span><br><span class="line"><span class="comment"># 查找所有文件夹路径中包含test的python文件</span></span><br><span class="line">find . -path <span class="string">&#x27;*/test/*.py&#x27;</span> -<span class="built_in">type</span> f</span><br><span class="line"><span class="comment"># 查找前一天修改的所有文件</span></span><br><span class="line">find . -mtime -1</span><br><span class="line"><span class="comment"># 查找所有大小在500k至10M的tar.gz文件</span></span><br><span class="line">find . -size +500k -size -10M -name <span class="string">&#x27;*.tar.gz&#x27;</span></span><br><span class="line"><span class="comment"># 删除全部扩展名为.tmp 的文件</span></span><br><span class="line">find . -name <span class="string">&#x27;*.tmp&#x27;</span> -<span class="built_in">exec</span> rm &#123;&#125; \;</span><br><span class="line"><span class="comment"># 查找全部的 PNG 文件并将其转换为 JPG</span></span><br><span class="line">find . -name <span class="string">&#x27;*.png&#x27;</span> -<span class="built_in">exec</span> convert &#123;&#125; &#123;&#125;.jpg \;</span><br></pre></td></tr></table></figure>
 
-                 - fd  精简的find
-                 - locate
+                  - fd  精简的find
+                  - locate
 
-         - 查找内容
-              - grep  查找文件
-                   - grep  foobar mcd.sh  在单个文件中查找foobar
-                   - grep  -R  foobar .   在指定目录的所有文件中查找foobar
-                   - fzf  交互式的grep
-                         - rg
-                - rg &quot;import request&quot; -t py ~  家目录里遍历所有文件，查找有相关表达的文件
-                - -C  5  上下文
-                - -files-without-match &quot;^#\!&quot;
+          - 查找内容
+               - grep  查找文件
+                    - grep  foobar mcd.sh  在单个文件中查找foobar
+                    - grep  -R  foobar .   在指定目录的所有文件中查找foobar
+                    - fzf  交互式的grep
+                               - rg
+                 - rg &quot;import request&quot; -t py ~  家目录里遍历所有文件，查找有相关表达的文件
+                 - -C  5  上下文
+                 - -files-without-match &quot;^#\!&quot;
 
-           <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查找所有使用了 requests 库的文件</span></span><br><span class="line">rg -t py <span class="string">&#x27;import requests&#x27;</span></span><br><span class="line"><span class="comment"># 查找所有没有写 shebang 的文件（包含隐藏文件）</span></span><br><span class="line">rg -u --files-without-match <span class="string">&quot;^#!&quot;</span></span><br><span class="line"><span class="comment"># 查找所有的foo字符串，并打印其之后的5行</span></span><br><span class="line">rg foo -A 5</span><br><span class="line"><span class="comment"># 打印匹配的统计信息（匹配的行和文件的数量）</span></span><br><span class="line">rg --stats PATTERN</span><br></pre></td></tr></table></figure>
+            <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查找所有使用了 requests 库的文件</span></span><br><span class="line">rg -t py <span class="string">&#x27;import requests&#x27;</span></span><br><span class="line"><span class="comment"># 查找所有没有写 shebang 的文件（包含隐藏文件）</span></span><br><span class="line">rg -u --files-without-match <span class="string">&quot;^#!&quot;</span></span><br><span class="line"><span class="comment"># 查找所有的foo字符串，并打印其之后的5行</span></span><br><span class="line">rg foo -A 5</span><br><span class="line"><span class="comment"># 打印匹配的统计信息（匹配的行和文件的数量）</span></span><br><span class="line">rg --stats PATTERN</span><br></pre></td></tr></table></figure>
 
-         - 查找shell命令
+          - 查找shell命令
 
-              - history  搜索历史shell命令
-                   - 快速导航目录
-                          - 你可以修改 shell history 的行为，例如，如果在命令的开头加上一个空格，它就不会被加进shell记录中。
-                     -  为此你需要在.bashrc中添加HISTCONTROL=ignorespace
-                     - 或者向.zshrc 添加 setopt HIST_IGNORE_SPACE。 
+               - history  搜索历史shell命令
+                    - 快速导航目录
+                               - 你可以修改 shell history 的行为，例如，如果在命令的开头加上一个空格，它就不会被加进shell记录中。
+                      -  为此你需要在.bashrc中添加HISTCONTROL=ignorespace
+                      - 或者向.zshrc 添加 setopt HIST_IGNORE_SPACE。 
 
-         - 文件夹导航
+          - 文件夹导航
 
-              - fasd
-                   - fasd使用命令 z 帮助我们快速切换到最常访问的目录
-                   - 经常访问/home/user/files/cool_project 目录，那么可以直接使用 z cool 跳转到该目录。
-              - autojump
-              - tree
-                   - broot  交互式的tree
-</code></pre></li>
-</ul>
+               - fasd
+                    - fasd使用命令 z 帮助我们快速切换到最常访问的目录
+                    - 经常访问/home/user/files/cool_project 目录，那么可以直接使用 z cool 跳转到该目录。
+               - autojump
+               - tree
+                    - broot  交互式的tree
+</code></pre>
 </li>
 </ul>
 </li>
@@ -2851,31 +2854,36 @@
 </li>
 <li><p>：q  结束 </p>
 <ul>
-<li>：qa  结束多个</li>
+<li> ：qa  结束多个</li>
 </ul>
 </li>
-<li>：w  保存文件</li>
-<li>:  e  打开文件并编辑</li>
-<li>: help 帮助</li>
+<li><p>：w  保存文件</p>
+</li>
+<li><p>:  e  打开文件并编辑</p>
+</li>
+<li><p>: help 帮助</p>
+</li>
 <li><p>: sp  切分同一文件</p>
 <ul>
 <li>Ctrl + w + hjkl  切换文件</li>
 </ul>
 </li>
-<li>：！ls   指令</li>
+<li><p>：！ls   指令</p>
+</li>
 <li><p>：r   读取文件并粘贴</p>
 <ul>
 <li>: r !ls   可以把命令输出的内容粘贴到当前光标所在处</li>
 </ul>
 </li>
-<li>/ 搜索<ul>
+<li><p>/ 搜索</p>
+<ul>
 <li>/word   在文档中搜索word</li>
 <li>n  下一个匹配</li>
 <li>. 重复之前的行动</li>
 </ul>
 </li>
-<li>: %s 替换<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">%s/foo/bar/gc  替换所有foo为bar,并确认</span><br><span class="line"></span><br><span class="line"><span class="number">5</span>,<span class="number">12</span>s/foo/bar/g 将第 <span class="number">5</span> 行到第 <span class="number">12</span> 行（含）的所有行的每个“foo”更改为“bar”。</span><br></pre></td></tr></table></figure>
-</li>
+<li><p>: %s 替换</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">%s/foo/bar/gc  替换所有foo为bar,并确认</span><br><span class="line"></span><br><span class="line"><span class="number">5</span>,<span class="number">12</span>s/foo/bar/g 将第 <span class="number">5</span> 行到第 <span class="number">12</span> 行（含）的所有行的每个“foo”更改为“bar”。</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 </ul>
@@ -2892,18 +2900,21 @@
 </li>
 <li><p>vim插件 </p>
 <ul>
-<li>插件管理器<ul>
+<li><p>插件管理器</p>
+<ul>
 <li>vundle 旧</li>
 <li>vim plug  新</li>
 </ul>
 </li>
-<li>nerdtree  文件浏览器</li>
-<li>CTRLp  文件浏览</li>
+<li><p>nerdtree  文件浏览器</p>
+</li>
+<li><p>CTRLp  文件浏览</p>
+</li>
 <li><p>colorscheme  主题切换</p>
 </li>
 <li><p>更多插件</p>
 <ul>
-<li>[Vim Awesome]:<a href="https://vimawesome.com">https://vimawesome.com</a></li>
+<li>[Vim Awesome]:<a href="https://vimawesome.com/">https://vimawesome.com</a></li>
 </ul>
 </li>
 </ul>
@@ -2920,21 +2931,19 @@
 </li>
 </ul>
 </li>
+<li><p>其他</p>
+<ul>
+<li><p>Vim 的网页浏览快捷键 browsers</p>
+</li>
+<li><p>Google Chrome 的 Vimium </p>
+</li>
+<li><p> Firefox 的 Tridactyl</p>
+</li>
+<li><p>其他支持vim键位绑定的软件</p>
+<ul>
+<li>[参考]: <a href="https://reversed.top/2016-08-13/big-list-of-vim-like-software">https://reversed.top/2016-08-13/big-list-of-vim-like-software</a></li>
 </ul>
 </li>
-</ul>
-<pre><code>- 其他
-
-  - Vim 的网页浏览快捷键 browsers
-
-  - Google Chrome 的 Vimium 
-
-  -  Firefox 的 Tridactyl
-
-  - 其他支持vim键位绑定的软件
-
-    - [参考]: https://reversed.top/2016-08-13/big-list-of-vim-like-software
-</code></pre><ul>
 <li><p>vim的拓展学习资料</p>
 <ul>
 <li><p>vimtutor  直接在终端键入，这个是最好的教程</p>
@@ -2942,6 +2951,10 @@
 <li><p>[wiki]: <a href="http://vim.wikia.com/wiki/Vim_Tips_Wiki">http://vim.wikia.com/wiki/Vim_Tips_Wiki</a></p>
 </li>
 <li><p>[vim Adventures]: <a href="https://vim-adventures.com/">https://vim-adventures.com/</a></p>
+</li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -2955,14 +2968,14 @@
 <ul>
 <li>awk<ul>
 <li>example<ul>
-<li><code>&#39;&#123;print $2&#125;&#39;</code>  选择第二列</li>
-<li><code>&#39;$1==1 &amp;&amp; $2 ~  /^c.*e$/&#39; &#123;print $0&#125;*</code>   第一列是1  第二列符合c开头e结尾的模式</li>
-<li><code>‘BEGIN &#123; rows = 0 &#125;  $1==1 $2 ~ /^c.*e$/&#123;rows+=1&#125; END &#123;print rows&#125;’*</code>   每当匹配到合适的行则row+1 ，最后输出row的值</li>
+<li><code>&#39;&#123;print $2&#125;&#39; </code>  选择第二列</li>
+<li><code>&#39;$1==1 &amp;&amp; $2 ~  /^c.*e$/&#39; &#123;print $0&#125;*  </code>   第一列是1  第二列符合c开头e结尾的模式</li>
+<li><code>‘BEGIN &#123; rows = 0 &#125;  $1==1 $2 ~ /^c.*e$/&#123;rows+=1&#125; END &#123;print rows&#125;’* </code>   每当匹配到合适的行则row+1 ，最后输出row的值</li>
 </ul>
 </li>
 <li>awk<ul>
 <li>将每一行进行分割按照模块进行操作,awk读取一行，分割后操作，然后下一行，以此类推</li>
-<li>格式  awk 【选项】【操作或模式】</li>
+<li> 格式  awk 【选项】【操作或模式】</li>
 <li>-F 指定分割字符</li>
 <li>内建变量<ul>
 <li>NF    当前处理的行的字段个数（就是：有多少列）</li>
@@ -2994,10 +3007,10 @@
 </li>
 <li>sed <ul>
 <li>example<ul>
-<li><code>cat ssh.log | sed &#39;s/.*Dissconnected from//&#39; *</code>将以某个模式结尾的部分替换为空</li>
-<li><code>echo &quot;bba&quot;  | sed ‘s/[ab]//g’</code>匹配a或者b</li>
-<li><code>echo “abcaba” | sed -E &#39;s/(ab)*//g)&#39;*</code>匹配ab</li>
-<li><code>echo &quot;abcababc&quot; | sed -E &#39;s/(ab|bc)//g)&#39;</code>匹配ab或bc</li>
+<li><code>cat ssh.log | sed &#39;s/.*Dissconnected from//&#39; * </code>将以某个模式结尾的部分替换为空</li>
+<li><code>echo &quot;bba&quot;  | sed ‘s/[ab]//g’  </code>匹配a或者b</li>
+<li><code>echo “abcaba” | sed -E &#39;s/(ab)*//g)&#39;* </code>匹配ab</li>
+<li><code>echo &quot;abcababc&quot; | sed -E &#39;s/(ab|bc)//g)&#39;  </code>匹配ab或bc</li>
 <li><code>&#39;s/^.*？Dissconnected from (invalid | authenticating)?  user  (.*)  [0-9.]+ port [0-9]+ (\[preauth\]?$)/ \2/g&#39;</code><ul>
 <li>^$ 开头与结尾</li>
 <li>? 0/1次  + 1∞次  . 0∞次  [0-9] 范围  </li>
@@ -3039,7 +3052,7 @@
 </ul>
 </li>
 <li>w  另存为文件<ul>
-<li>sed ‘/the/w out.file’</li>
+<li> sed ‘/the/w out.file’</li>
 </ul>
 </li>
 </ul>
@@ -3106,10 +3119,10 @@
 </ul>
 </li>
 <li>uniq -c  去掉重复的数据 统计数目</li>
-<li>tail -n10  从最后算起的10行</li>
-<li>paste -sd 改为以tab分割的行</li>
+<li>tail -n 10  从最后算起的10行</li>
+<li>paste -sd  改为以tab分割的行</li>
 <li>bc   简易计算器<ul>
-<li><code>echo &quot;1+2&quot; | bc -l</code></li>
+<li><code>echo &quot;1+2&quot; | bc -l    </code></li>
 <li><code>awk &#39;$1 !=1 &#123;print $1&#125;&#39; | paste -sd+ | bc -l</code></li>
 </ul>
 </li>
@@ -3136,7 +3149,7 @@
 </li>
 <li><p>[abc]    Only a, b, or c</p>
 </li>
-<li><p><sup><a href="#fn_abc" id="reffn_abc">abc</a></sup>    Not a, b, nor c</p>
+<li><p>[^abc]    Not a, b, nor c</p>
 </li>
 <li><p>[a-z]    Characters a to z</p>
 </li>
@@ -3150,15 +3163,11 @@
 </li>
 <li><p>{m,n}     m to n Repetitions</p>
 </li>
-<li><ul>
-<li>Zero or more repetitions</li>
-</ul>
+<li><p>.Zero or more repetitions</p>
 </li>
-<li><ul>
-<li>One or more repetitions</li>
-</ul>
+<li><p>+One or more repetitions</p>
 </li>
-<li><p>?     Optional character</p>
+<li><p>?  Optional character</p>
 </li>
 <li><p>\s     Any Whitespace</p>
 </li>
