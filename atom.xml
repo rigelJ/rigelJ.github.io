@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>清川的博客</title>
+  <title>清川</title>
   
-  <subtitle>现实是一片丰饶之海，我是海上的孤舟。</subtitle>
+  <subtitle>以我为名的小说，是隽永或是深刻。</subtitle>
   <link href="http://rigelj.github.io/atom.xml" rel="self"/>
   
   <link href="http://rigelj.github.io/"/>
