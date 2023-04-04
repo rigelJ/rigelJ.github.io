@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>清川</title>
+  <title>Klein Bottle</title>
   
   <subtitle>以我为名的小说，是隽永或是深刻。</subtitle>
   <link href="http://rigelj.github.io/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>http://rigelj.github.io/</id>
   
   <author>
-    <name>清川</name>
+    <name>Klein</name>
     
   </author>
   
