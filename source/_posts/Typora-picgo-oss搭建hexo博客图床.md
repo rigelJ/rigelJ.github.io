@@ -1,13 +1,14 @@
 ---
 title: Typora+picgo+oss快速搭建hexo博客图床
-date: 2022-10-07 08:41:43
 tags:
-- 踩过的坑
-- typora
-- picgo
-- oss
+  - 踩过的坑
+  - typora
+  - picgo
+  - oss
 categories:
-- Tutorial/Error/Fix
+  - Tutorial/Error/Fix
+abbrlink: d9ee7cbb
+date: 2022-10-07 08:41:43
 ---
 
 

@@ -1,13 +1,14 @@
 ---
 title: CS61A-元语言抽象
-date: 2021-08-08 15:56:30
-tags: 
-- 程序结构
-- CS61
-- CS61A
+tags:
+  - 程序结构
+  - CS61
+  - CS61A
 categories:
-- Learning Record
-cover: /myimage/cs61/cs61a_language_cover.png
+  - Learning Record
+cover: img/myimage/cs61/cs61a_language_cover.png
+abbrlink: 4e5dc807
+date: 2021-08-08 15:56:30
 ---
 
 ## CS61A 元语言抽象

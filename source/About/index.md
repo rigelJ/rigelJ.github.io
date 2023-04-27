@@ -15,7 +15,7 @@ date: 2021-04-11 20:34:12
 
 <center><font color=red face="微软雅黑" size=5>ME</font></center>
 
-<center>清川</center>    
+<center>Klein</center>    
 
 <center>INTP-T</center>
 
@@ -25,7 +25,7 @@ date: 2021-04-11 20:34:12
 
 <center>Eyepetizer： 清 川</center>
 
-<center>Wechat:  D0xffe4</center>
+<center>Wechat:  K1elinBt</center>
 
 
 

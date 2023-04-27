@@ -1,13 +1,14 @@
 ---
 title: CS61A-数据抽象
-date: 2021-06-28 11:25:57
 tags:
-- 程序结构
-- CS61
-- CS61A
+  - 程序结构
+  - CS61
+  - CS61A
 categories:
-- Learning Record
-cover: /myimage/cs61/cs61a_status_cover.png
+  - Learning Record
+cover: img/myimage/cs61/cs61a_status_cover.png
+abbrlink: e999557a
+date: 2021-06-28 11:25:57
 ---
 
 ## CS61A 数据抽象

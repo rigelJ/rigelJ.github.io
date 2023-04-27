@@ -1,14 +1,14 @@
 ---
-
 title: CS61A-过程抽象
-date: 2021-06-12 15:15:32
 tags:
-- 程序结构
-- CS61
-- CS61A
+  - 程序结构
+  - CS61
+  - CS61A
 categories:
-- Learning Record
-cover: /myimage/cs61/cs61a_procedure_cover.png
+  - Learning Record
+cover: img/myimage/cs61/cs61a_procedure_cover.png
+abbrlink: d5dca63c
+date: 2021-06-12 15:15:32
 ---
 
 ## CS61A 过程抽象

@@ -1,11 +1,12 @@
 ---
 title: MIT-MissingSemester
-date: 2023-03-19 15:46:59
 tags:
-- MIT
-- tools
+  - MIT
+  - tools
 categories:
-- Learning Record
+  - Learning Record
+abbrlink: '32824600'
+date: 2023-03-19 15:46:59
 ---
 
 

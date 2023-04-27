@@ -1,3 +1,27 @@
-this is a test file
-
-another pc
+douban:
+  id: 228122140
+  builtin: false
+  item_per_page: 10
+  meta_max_line: 4
+  customize_layout: page
+  book:
+    path: books/index.html
+    title: '阅读记录'
+    quote: '剃刀锋利，越之不易;智者有云，得道弥艰。'
+    option:
+  movie:
+    path: movies/index.html
+    title: '观影指南'
+    quote: '懦怯囚禁人的灵魂，希望可以感受自由。强者自救，圣者渡人。'
+    option:
+  game:
+    path: games/index.html
+    title: '第九艺术'
+    quote: '万物皆虚，万事皆允。'
+    option:
+  song:
+    path: songs/index.html
+    title: '不露声色'
+    quote: '淡薄或贪得，愚钝是沉默。'
+    option:
+  timeout: 10000 

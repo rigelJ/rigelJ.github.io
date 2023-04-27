@@ -1,12 +1,13 @@
 ---
 title: My year 2022
-date: 2021-09-03 12:40:02
 tags:
-- Years
-categories: 
-- Article
-cover: /myimage/my_year/My_Year_2022_cover.jpg
+  - Years
+categories:
+  - Article
+cover: img/myimage/my_year/My_Year_2022_cover.jpg
 sticky: 1
+abbrlink: 2a24d052
+date: 2021-09-03 12:40:02
 ---
 
 就这样，二十三了了

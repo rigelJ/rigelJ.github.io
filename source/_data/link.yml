@@ -10,15 +10,14 @@
       avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
       descr: 崔庆才的个人博客
     - name: riusksk
-      link: http://riusksk.me/
+      link: http://riusksk.github.io/
       avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
       descr: 林桠泉的个人博客
       
      
-    
 
 - class_name: 学习强国2.0
-  class_desc: 我觉得你还不够了解你的电脑
+  class_desc: 少年，你渴望力量吗？
   link_list:
     - name: Nand2Tetris
       link: https://www.nand2tetris.org/

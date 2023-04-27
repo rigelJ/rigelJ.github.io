@@ -1,12 +1,13 @@
 ---
 title: CS自学路线与课程推荐
-date: 2021-04-13 20:30:38
 tags:
-- 学习路线
-- 计算机课程
+  - 学习路线
+  - 计算机课程
 categories:
-- Learning Record
-cover: /myimage/grade/cslearn_cover.png
+  - Learning Record
+cover: img/myimage/grade/cslearn_cover.png
+abbrlink: 17f76a70
+date: 2021-04-13 20:30:38
 ---
 
 # CS基础课程自学路线与课程推荐

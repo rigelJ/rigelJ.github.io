@@ -1,13 +1,14 @@
 ---
 title: CS61A-综述
-date: 2021-06-12 15:04:18
 tags:
-- 程序结构
-- CS61
-- CS61A
+  - 程序结构
+  - CS61
+  - CS61A
 categories:
-- Learning Record
-cover: /myimage/cs61/cs61a_all_cover.png
+  - Learning Record
+cover: img/myimage/cs61/cs61a_all_cover.png
+abbrlink: feb1c775
+date: 2021-06-12 15:04:18
 ---
 
 ##  CS61A 综述
