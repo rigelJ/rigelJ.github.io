@@ -6,7 +6,7 @@ tags:
   - picgo
   - oss
 categories:
-  - Tutorial/Error/Fix
+  - Talk
 abbrlink: d9ee7cbb
 date: 2022-10-07 08:41:43
 ---
