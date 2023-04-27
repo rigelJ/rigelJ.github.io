@@ -642,120 +642,6 @@
       </tags>
   </entry>
   <entry>
-    <title>CS自学路线与课程推荐</title>
-    <url>/posts/17f76a70/</url>
-    <content><![CDATA[<h1 id="CS基础课程自学路线与课程推荐"><a href="#CS基础课程自学路线与课程推荐" class="headerlink" title="CS基础课程自学路线与课程推荐"></a>CS基础课程自学路线与课程推荐</h1><p>简单记录我在自学路上所接触和选择的一些优秀课程，供自己回顾，各位同样奋战在CS自学路上的朋友也可以留作参考</p>
-<p>注：本人也在学习中，不是每一门课程都看过，里面每一门课程都需要几个月的时间奋战，我基本都是选择其一学习，不要陷入焦虑，加粗的是我学习的路线。</p>
-<hr>
-<h3 id="计算机入门"><a href="#计算机入门" class="headerlink" title="计算机入门"></a>计算机入门</h3><h5 id="公开课程："><a href="#公开课程：" class="headerlink" title="公开课程："></a>公开课程：</h5><ul>
-<li><strong>哈佛大学 CS50</strong>   </li>
-<li>斯坦福大学 CS101</li>
-<li>麻省理工学院 6.00.1</li>
-</ul>
-<h5 id="书籍推荐："><a href="#书籍推荐：" class="headerlink" title="书籍推荐："></a>书籍推荐：</h5><ul>
-<li>《编码》： 一本讲清编码原理的书</li>
-</ul>
-<hr>
-<h3 id="计算机程序结构与抽象"><a href="#计算机程序结构与抽象" class="headerlink" title="计算机程序结构与抽象"></a>计算机程序结构与抽象</h3><h5 id="公开课程：-1"><a href="#公开课程：-1" class="headerlink" title="公开课程："></a>公开课程：</h5><ul>
-<li><p><strong>加州大学伯克利分校  CS61A</strong></p>
-</li>
-<li><p>斯坦福大学 CS106A  [Python]  </p>
-</li>
-<li><p>卡内基梅隆大学 CMU 15-122</p>
-</li>
-</ul>
-<h5 id="书籍推荐：-1"><a href="#书籍推荐：-1" class="headerlink" title="书籍推荐："></a>书籍推荐：</h5><p>《计算机程序的构造和解释》</p>
-<blockquote>
-<p>SICP 可以教会你编程语言的核心思想，懂得了程序设计和语言构成，你就可以快速掌握一门语言，这对于学习安全或是软件移植都是很关键的。</p>
-</blockquote>
-<hr>
-<h3 id="计算机系统架构与体系"><a href="#计算机系统架构与体系" class="headerlink" title="计算机系统架构与体系"></a>计算机系统架构与体系</h3><p>对于系统架构读过的不太多，网易云课堂上哈工大的计算机体系结构读了很疲惫，转战Nand2Tetris立马就兴奋了，不得不说有些国内讲的基础课程真的讲的太无聊了，听的都能睡着。</p>
-<h5 id="公开课程：-2"><a href="#公开课程：-2" class="headerlink" title="公开课程："></a>公开课程：</h5><ul>
-<li><strong>计算机系统要素  Nand2Tetris</strong></li>
-</ul>
-<blockquote>
-<p>这本书讲的计算机架构自底向上的抽象，从简单的门电路开始讲起，慢慢构造CPU，主存，I&#x2F;O，最后直接实现了一台基本的计算机硬件部分，这些都是纯靠Nand这个逻辑门硬搭建起来的你敢信，我当时就惊了。后半部分需要一些编程基础，但其实也还好，懂一点python的语法就没什么大问题，后半部分主要讲的是编译器和汇编器的实现，在加上构建了一个简单的操作系统。这门课好好学，真的是神课，学完你买一袋Nand门就能组台电脑（滑稽）。</p>
-</blockquote>
-<h5 id="书籍推荐：-2"><a href="#书籍推荐：-2" class="headerlink" title="书籍推荐："></a>书籍推荐：</h5><ul>
-<li>计算机系统要素  Nand2Tetris的原书</li>
-</ul>
-<hr>
-<h3 id="数据结构与算法"><a href="#数据结构与算法" class="headerlink" title="数据结构与算法"></a>数据结构与算法</h3><p>问我为什么要先学数据结构与算法，很简单，考研啊！408的数据结构与算法占了35%，这个分你拿到了，再加上计网的简单部分有个15%，你就拿了5成的分数了，150分你已经拿到了75。</p>
-<h5 id="公开课程：-3"><a href="#公开课程：-3" class="headerlink" title="公开课程："></a>公开课程：</h5><ul>
-<li><strong>加州大学伯克利分校  CS61B</strong></li>
-</ul>
-<blockquote>
-<p>cs61B也是门好课，虽然达不到神课的地步，但是学完了你应该就能刷leetcode了，这个成就还是很显著的，总比你刷C++ prime舒服多了吧。</p>
-</blockquote>
-<ul>
-<li>斯坦福 CS106B</li>
-<li>卡内基梅隆大学 CMU 15-210</li>
-</ul>
-<h5 id="书籍推荐：-3"><a href="#书籍推荐：-3" class="headerlink" title="书籍推荐："></a>书籍推荐：</h5><ul>
-<li>算法导论</li>
-</ul>
-<blockquote>
-<p>老牌的算法大全，厚的能砸死人，但是确实看完能封神，一般都是浅浅看一遍。</p>
-</blockquote>
-<ul>
-<li>大话数据结构</li>
-</ul>
-<blockquote>
-<p>深入浅出的讲解数据结构，作为入门当小说看看挺好的。</p>
-</blockquote>
-<ul>
-<li>算法图解</li>
-</ul>
-<blockquote>
-<p>同样是入门书籍，看看培养兴趣挺好的。</p>
-</blockquote>
-<hr>
-<h3 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h3><p>我的计划里是计网放在CSAPP前面的，因为无论是Linux，Github使用，还是环境架设，都对计算机网络的了解程度要求很高，有的时候你不懂计网，很多时候看不清网络拓扑，思路完全是混乱的，比如你要用Python爬虫，或者是Python利用漏洞攻击软件，你连流量通过什么方式传递到另一台主机都不知道，什么是端口，怎么监听，怎么发送流量到端口，怎么转发端口，这些都不知道，那你会完全手足无措。</p>
-<h5 id="公开课程：-4"><a href="#公开课程：-4" class="headerlink" title="公开课程："></a>公开课程：</h5><ul>
-<li>斯坦福大学 CS144</li>
-<li>网易云课堂 《计算机网络》</li>
-</ul>
-<h5 id="书籍推荐：-4"><a href="#书籍推荐：-4" class="headerlink" title="书籍推荐："></a>书籍推荐：</h5><ul>
-<li><strong>计算机网络自顶而下</strong></li>
-</ul>
-<blockquote>
-<p>好，又是一本神书，如果说Nand2Tetris在架构层面从下到上剖析的清清楚楚，那这本书就是把网络从上往下一点一点拆开讲的清清楚楚，这本书看完，你基本上可以理解大部分网络的连接过程。</p>
-</blockquote>
-<ul>
-<li>计算机网络(谢希仁版)</li>
-</ul>
-<blockquote>
-<p>这本书是我本科时候唯一一本跟计算机沾点边的书，很无奈，整个本科期间什么计算机的课程都不开，讲了一堆废物课程，到最后同年的战友连C都不会敲，JX文化课程的悲哀和瞎掰，回归正题，那时候边上课边翻觉得太复杂了，完全看不懂，这本书最好还是在看完自顶而下有一个完整的概念之后再去深入理解比较好。</p>
-</blockquote>
-<hr>
-<h3 id="计算机系统与运行"><a href="#计算机系统与运行" class="headerlink" title="计算机系统与运行"></a>计算机系统与运行</h3><p>学完了以上，基本上就在应用层编写代码无障碍了，这个能力很关键，无论是未来搞安全还是搞开发，搞研究，快速把想法实现的能力还是很关键的，再加上SICP的程序结构，掌握新语言已经难度不大了，甚至还可以试着读读编译原理看看能不能自己重写编译器。</p>
-<h5 id="公开课程"><a href="#公开课程" class="headerlink" title="公开课程:"></a>公开课程:</h5><ul>
-<li><strong>卡内基梅隆大学 CSAPP 配套课程  （B站有）</strong></li>
-<li>卡内基梅隆大学 CMU 15-213</li>
-<li>加州大学伯克利大学 CS61C</li>
-<li>斯坦福大学 CS107</li>
-</ul>
-<h5 id="书籍推荐：-5"><a href="#书籍推荐：-5" class="headerlink" title="书籍推荐："></a>书籍推荐：</h5><ul>
-<li>深入理解计算机系统 CSAPP</li>
-</ul>
-<blockquote>
-<p>计算机领域的圣经级别书籍，北大的计算机系统导论，南大的计算机系统课程都是基于CSAPP的，这本书把操作系统，计算机组成结构和计算机网络都连接起来，还讲了汇编的一些理论，整合了很多零散内容。</p>
-</blockquote>
-<hr>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ol>
-<li>知乎文章《计算机名校路线课程》</li>
-<li>网易云课堂  顶尖大学中文计算机课程</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Learning Record</category>
-      </categories>
-      <tags>
-        <tag>学习路线</tag>
-        <tag>计算机课程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CS61A-过程抽象</title>
     <url>/posts/d5dca63c/</url>
     <content><![CDATA[<h2 id="CS61A-过程抽象"><a href="#CS61A-过程抽象" class="headerlink" title="CS61A 过程抽象"></a>CS61A 过程抽象</h2><h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><blockquote>
@@ -988,117 +874,6 @@
         <tag>程序结构</tag>
         <tag>CS61</tag>
         <tag>CS61A</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>My year 2022</title>
-    <url>/posts/2a24d052/</url>
-    <content><![CDATA[<p>就这样，二十三了了</p>
-<p>这个生日过的很草率，但并不是无奈之举。</p>
-<p>我故意的。</p>
-<p>我也可以热热闹闹的叫上一大帮人，觥筹交错，贺词不断，但我觉得太俗套，我就想看看，一个人买蛋糕，点蜡烛，许愿，是种什么感觉。</p>
-<p>体验极差。</p>
-<p>我还是高估了我的饭量。</p>
-<p>在连队里，每次生日我都参加了，气氛很热烈，氛围很浓厚，但是总感觉少了点什么。</p>
-<p>后来才发现，少了一个人的独处时光。</p>
-<p>点燃一根蜡烛，静静的思考，这种时刻弥足珍贵，闭上眼，过往历历在目，前路愈加清晰。</p>
-<p>跨越年岁的重大时刻，最该陪伴你的，不是父母，不是好友，也不是情人，而是你自己。</p>
-<p>呼朋引伴，把自己喝的七荤八素，不省人事，这不叫长大一岁，这叫老了一岁。</p>
-<p>我觉得长大是需要思考的，而思考需要安静的环境，独处才能安静。</p>
-<p>贾平凹说，生命是孤独的旅程，林清玄说，孤独是一个人的清欢，周国平说，要有敢于面对孤独的勇气。</p>
-<p>都不如村上说的一句话，人与人之间的沟通和理解几乎是不可能的。任何尝试都可能是徒劳的。</p>
-<p>非常直白，也非常真实，孤独是人生常态，越早理解这个道理，就越早得到自由。</p>
-<p>这就是我二十三岁生日学会的道理。</p>
-<p>祝自己生日快乐，喜怒哀乐一笔勾销，从此开始新的逍遥。</p>
-<p><img src="https://s2.loli.net/2022/05/29/V23ceFhztY6Njg8.jpg"></p>
-]]></content>
-      <categories>
-        <category>Article</category>
-      </categories>
-      <tags>
-        <tag>Years</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Typora+picgo+oss快速搭建hexo博客图床</title>
-    <url>/posts/d9ee7cbb/</url>
-    <content><![CDATA[<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><blockquote>
-<p>准备工作</p>
-<ul>
-<li>Picgo下载</li>
-<li>OSS对象储存服务开通</li>
-</ul>
-<p>图床配置</p>
-<ul>
-<li>Typora配置</li>
-<li>Picgo配置</li>
-</ul>
-<p>测试上传情况</p>
-</blockquote>
-<p>很长一段时间没有更新博客了，听说Typora收费了，幸好我的版本从来没更新过哈哈哈哈</p>
-<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007103457780.png" alt="image-20221007103457780"></p>
-<hr>
-<p>但是呢，这次又遇到了一个问题，之前搭建的smms图床不能用了，怎么调试都没办法，之前崩了之后只要更新下API  key 就行了，这次怎么更新都没有用，可能是smms也开始收费了。</p>
-<p>当你上传时候出现这个问题的时候，那就说明你的图床崩了。</p>
-<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007085519282.png" alt="image-20221007085519282"></p>
-<p>打开<code>文件</code>—<code>偏好设置</code>-<code>图片</code>，我们会看到这个选项。</p>
-<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007090126052.png" alt="image-20221007090126052"></p>
-<p>点击<code>验证个图片上传选项</code>，验证一下图片上传。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[PicGo INFO]: Before transform</span><br><span class="line">[PicGo INFO]: Transforming...</span><br><span class="line">[PicGo INFO]: Before upload</span><br><span class="line">[PicGo INFO]: Uploading...</span><br><span class="line">[PicGo WARN]: failed</span><br><span class="line">[PicGo ERROR]: RequestError: Error: connect ECONNREFUSED 104.21.83.45:443</span><br></pre></td></tr></table></figure>
-
-<p>恩。。确实是崩了。</p>
-<p>接下来我们就利用picgo+oss搭建一个图床供typora使用。</p>
-<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><h4 id="picgo下载"><a href="#picgo下载" class="headerlink" title="picgo下载"></a>picgo下载</h4><p>首先我们前往Github主页下载picgo最新版本  </p>
-<p><a href="https://github.com/Molunerfinn/PicGo/releases">Picgo</a></p>
-<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007104038135.png" alt="image-20221007104038135"></p>
-<p>如果不会科学上网的这里还有一个腾讯COS的下载链接</p>
-<p><a href="https://picgo-1251750343.cos.ap-chengdu.myqcloud.com/2.3.1-beta.6/PicGo-2.3.1-beta.6.AppImage">Picgo-TecentCOS</a></p>
-<p>下载好之后执行以下指令</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo chmod a+x PicGo-2.3.1-beta.6.AppImage   #权限</span><br><span class="line">sudo mv PicGo-2.3.1-beta.6.AppImage picgo#重命名</span><br><span class="line">sudo mv picgo /usr/bin #该目录已包含于环境变量，可直接通过picgo指令打开</span><br></pre></td></tr></table></figure>
-
-
-
-<p>打开之后它是这样的</p>
-<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007104113254.png" alt="image-20221007104113254"></p>
-<p>你得右键打开主界面</p>
-<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007104134513.png" alt="image-20221007104134513"></p>
-<h4 id="OSS云对象储存服务"><a href="#OSS云对象储存服务" class="headerlink" title="OSS云对象储存服务"></a>OSS云对象储存服务</h4><p><strong>打开阿里云</strong> </p>
-<p><strong>搜索对象储存oss</strong></p>
-<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007104246741.png" alt="image-20221007104246741"></p>
-<p><strong>切换至概况一栏</strong></p>
-<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007104334529.png" alt="image-20221007104334529"></p>
-<p><strong>点击建立bucket</strong></p>
-<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007104441930.png" alt="image-20221007104441930"></p>
-<p><strong># 上图源自CSDN，本人懒</strong></p>
-<p><strong>切换至bucket概览，记录下你的地域节点</strong> </p>
-<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007104523311.png" alt="image-20221007104523311">我这里是广州，所以是<code>oss-cn-guangzhou</code></p>
-<p><strong>右上角点击你的头像选择AccessKey管理</strong></p>
-<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007104545235.png" alt="image-20221007104545235"></p>
-<p>这个不用管他，继续使用</p>
-<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007101544965.png" alt="image-20221007101544965"></p>
-<p><strong>创建一个新的Access key，然后记住你的ID和Secret</strong></p>
-<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007101612928.png" alt="image-20221007101612928"></p>
-<p>到这里oss服务就配置完成了，接下来我们就可以开始在本级搭建图床了。</p>
-<h3 id="图床配置"><a href="#图床配置" class="headerlink" title="图床配置"></a>图床配置</h3><h4 id="Picgo配置"><a href="#Picgo配置" class="headerlink" title="Picgo配置"></a>Picgo配置</h4><p><strong>打开picgo主界面，点击<code>图床设置 </code>- <code>阿里云oss</code></strong></p>
-<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007102114993.png" alt="image-20221007102114993"></p>
-<p>这里的keyID和keySecret填写刚才我们建立AccessKey时候得到的两串代码，Bucket填写你建立的bucket名字，储存区域就填写刚才的地域节点，储存路径这个，随便写一个就行了。</p>
-<h4 id="Typora配置"><a href="#Typora配置" class="headerlink" title="Typora配置"></a>Typora配置</h4><p>同样，打开<code>文件</code>-<code>偏好设置</code>-<code>图片</code></p>
-<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007102515260.png" alt="image-20221007102515260"></p>
-<p>将上传服务由Picgo-commandline改为Picgo-app，而后Picgo路径填写我们刚刚移动Picgo</p>
-<p>到达的位置<code>/usr/bin/picgo</code></p>
-<h3 id="测试上传情况"><a href="#测试上传情况" class="headerlink" title="测试上传情况"></a>测试上传情况</h3><p>点击验证图片上传情况</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">&#123;&quot;success&quot;:true,&quot;result&quot;:[&quot;https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/typora-icon2.png&quot;,&quot;https://xxx.oss-cn-guangzhou.aliyuncs.com/image/typora-icon.png&quot;]&#125;</span><br></pre></td></tr></table></figure>
-
-<p>成功。</p>
-]]></content>
-      <categories>
-        <category>Tutorial/Error/Fix</category>
-      </categories>
-      <tags>
-        <tag>踩过的坑</tag>
-        <tag>typora</tag>
-        <tag>picgo</tag>
-        <tag>oss</tag>
       </tags>
   </entry>
   <entry>
@@ -2515,6 +2290,231 @@
       <tags>
         <tag>MIT</tag>
         <tag>tools</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>My year 2022</title>
+    <url>/posts/2a24d052/</url>
+    <content><![CDATA[<p>就这样，二十三了了</p>
+<p>这个生日过的很草率，但并不是无奈之举。</p>
+<p>我故意的。</p>
+<p>我也可以热热闹闹的叫上一大帮人，觥筹交错，贺词不断，但我觉得太俗套，我就想看看，一个人买蛋糕，点蜡烛，许愿，是种什么感觉。</p>
+<p>体验极差。</p>
+<p>我还是高估了我的饭量。</p>
+<p>在连队里，每次生日我都参加了，气氛很热烈，氛围很浓厚，但是总感觉少了点什么。</p>
+<p>后来才发现，少了一个人的独处时光。</p>
+<p>点燃一根蜡烛，静静的思考，这种时刻弥足珍贵，闭上眼，过往历历在目，前路愈加清晰。</p>
+<p>跨越年岁的重大时刻，最该陪伴你的，不是父母，不是好友，也不是情人，而是你自己。</p>
+<p>呼朋引伴，把自己喝的七荤八素，不省人事，这不叫长大一岁，这叫老了一岁。</p>
+<p>我觉得长大是需要思考的，而思考需要安静的环境，独处才能安静。</p>
+<p>贾平凹说，生命是孤独的旅程，林清玄说，孤独是一个人的清欢，周国平说，要有敢于面对孤独的勇气。</p>
+<p>都不如村上说的一句话，人与人之间的沟通和理解几乎是不可能的。任何尝试都可能是徒劳的。</p>
+<p>非常直白，也非常真实，孤独是人生常态，越早理解这个道理，就越早得到自由。</p>
+<p>这就是我二十三岁生日学会的道理。</p>
+<p>祝自己生日快乐，喜怒哀乐一笔勾销，从此开始新的逍遥。</p>
+<p><img src="https://s2.loli.net/2022/05/29/V23ceFhztY6Njg8.jpg"></p>
+]]></content>
+      <categories>
+        <category>Article</category>
+      </categories>
+      <tags>
+        <tag>Years</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CS自学路线与课程推荐</title>
+    <url>/posts/17f76a70/</url>
+    <content><![CDATA[<h1 id="CS基础课程自学路线与课程推荐"><a href="#CS基础课程自学路线与课程推荐" class="headerlink" title="CS基础课程自学路线与课程推荐"></a>CS基础课程自学路线与课程推荐</h1><p>简单记录我在自学路上所接触和选择的一些优秀课程，供自己回顾，各位同样奋战在CS自学路上的朋友也可以留作参考</p>
+<p>注：本人也在学习中，不是每一门课程都看过，里面每一门课程都需要几个月的时间奋战，我基本都是选择其一学习，不要陷入焦虑，加粗的是我学习的路线。</p>
+<hr>
+<h3 id="计算机入门"><a href="#计算机入门" class="headerlink" title="计算机入门"></a>计算机入门</h3><h5 id="公开课程："><a href="#公开课程：" class="headerlink" title="公开课程："></a>公开课程：</h5><ul>
+<li><strong>哈佛大学 CS50</strong>   </li>
+<li>斯坦福大学 CS101</li>
+<li>麻省理工学院 6.00.1</li>
+</ul>
+<h5 id="书籍推荐："><a href="#书籍推荐：" class="headerlink" title="书籍推荐："></a>书籍推荐：</h5><ul>
+<li>《编码》： 一本讲清编码原理的书</li>
+</ul>
+<hr>
+<h3 id="计算机程序结构与抽象"><a href="#计算机程序结构与抽象" class="headerlink" title="计算机程序结构与抽象"></a>计算机程序结构与抽象</h3><h5 id="公开课程：-1"><a href="#公开课程：-1" class="headerlink" title="公开课程："></a>公开课程：</h5><ul>
+<li><p><strong>加州大学伯克利分校  CS61A</strong></p>
+</li>
+<li><p>斯坦福大学 CS106A  [Python]  </p>
+</li>
+<li><p>卡内基梅隆大学 CMU 15-122</p>
+</li>
+</ul>
+<h5 id="书籍推荐：-1"><a href="#书籍推荐：-1" class="headerlink" title="书籍推荐："></a>书籍推荐：</h5><p>《计算机程序的构造和解释》</p>
+<blockquote>
+<p>SICP 可以教会你编程语言的核心思想，懂得了程序设计和语言构成，你就可以快速掌握一门语言，这对于学习安全或是软件移植都是很关键的。</p>
+</blockquote>
+<hr>
+<h3 id="计算机系统架构与体系"><a href="#计算机系统架构与体系" class="headerlink" title="计算机系统架构与体系"></a>计算机系统架构与体系</h3><p>对于系统架构读过的不太多，网易云课堂上哈工大的计算机体系结构读了很疲惫，转战Nand2Tetris立马就兴奋了，不得不说有些国内讲的基础课程真的讲的太无聊了，听的都能睡着。</p>
+<h5 id="公开课程：-2"><a href="#公开课程：-2" class="headerlink" title="公开课程："></a>公开课程：</h5><ul>
+<li><strong>计算机系统要素  Nand2Tetris</strong></li>
+</ul>
+<blockquote>
+<p>这本书讲的计算机架构自底向上的抽象，从简单的门电路开始讲起，慢慢构造CPU，主存，I&#x2F;O，最后直接实现了一台基本的计算机硬件部分，这些都是纯靠Nand这个逻辑门硬搭建起来的你敢信，我当时就惊了。后半部分需要一些编程基础，但其实也还好，懂一点python的语法就没什么大问题，后半部分主要讲的是编译器和汇编器的实现，在加上构建了一个简单的操作系统。这门课好好学，真的是神课，学完你买一袋Nand门就能组台电脑（滑稽）。</p>
+</blockquote>
+<h5 id="书籍推荐：-2"><a href="#书籍推荐：-2" class="headerlink" title="书籍推荐："></a>书籍推荐：</h5><ul>
+<li>计算机系统要素  Nand2Tetris的原书</li>
+</ul>
+<hr>
+<h3 id="数据结构与算法"><a href="#数据结构与算法" class="headerlink" title="数据结构与算法"></a>数据结构与算法</h3><p>问我为什么要先学数据结构与算法，很简单，考研啊！408的数据结构与算法占了35%，这个分你拿到了，再加上计网的简单部分有个15%，你就拿了5成的分数了，150分你已经拿到了75。</p>
+<h5 id="公开课程：-3"><a href="#公开课程：-3" class="headerlink" title="公开课程："></a>公开课程：</h5><ul>
+<li><strong>加州大学伯克利分校  CS61B</strong></li>
+</ul>
+<blockquote>
+<p>cs61B也是门好课，虽然达不到神课的地步，但是学完了你应该就能刷leetcode了，这个成就还是很显著的，总比你刷C++ prime舒服多了吧。</p>
+</blockquote>
+<ul>
+<li>斯坦福 CS106B</li>
+<li>卡内基梅隆大学 CMU 15-210</li>
+</ul>
+<h5 id="书籍推荐：-3"><a href="#书籍推荐：-3" class="headerlink" title="书籍推荐："></a>书籍推荐：</h5><ul>
+<li>算法导论</li>
+</ul>
+<blockquote>
+<p>老牌的算法大全，厚的能砸死人，但是确实看完能封神，一般都是浅浅看一遍。</p>
+</blockquote>
+<ul>
+<li>大话数据结构</li>
+</ul>
+<blockquote>
+<p>深入浅出的讲解数据结构，作为入门当小说看看挺好的。</p>
+</blockquote>
+<ul>
+<li>算法图解</li>
+</ul>
+<blockquote>
+<p>同样是入门书籍，看看培养兴趣挺好的。</p>
+</blockquote>
+<hr>
+<h3 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h3><p>我的计划里是计网放在CSAPP前面的，因为无论是Linux，Github使用，还是环境架设，都对计算机网络的了解程度要求很高，有的时候你不懂计网，很多时候看不清网络拓扑，思路完全是混乱的，比如你要用Python爬虫，或者是Python利用漏洞攻击软件，你连流量通过什么方式传递到另一台主机都不知道，什么是端口，怎么监听，怎么发送流量到端口，怎么转发端口，这些都不知道，那你会完全手足无措。</p>
+<h5 id="公开课程：-4"><a href="#公开课程：-4" class="headerlink" title="公开课程："></a>公开课程：</h5><ul>
+<li>斯坦福大学 CS144</li>
+<li>网易云课堂 《计算机网络》</li>
+</ul>
+<h5 id="书籍推荐：-4"><a href="#书籍推荐：-4" class="headerlink" title="书籍推荐："></a>书籍推荐：</h5><ul>
+<li><strong>计算机网络自顶而下</strong></li>
+</ul>
+<blockquote>
+<p>好，又是一本神书，如果说Nand2Tetris在架构层面从下到上剖析的清清楚楚，那这本书就是把网络从上往下一点一点拆开讲的清清楚楚，这本书看完，你基本上可以理解大部分网络的连接过程。</p>
+</blockquote>
+<ul>
+<li>计算机网络(谢希仁版)</li>
+</ul>
+<blockquote>
+<p>这本书是我本科时候唯一一本跟计算机沾点边的书，很无奈，整个本科期间什么计算机的课程都不开，讲了一堆废物课程，到最后同年的战友连C都不会敲，JX文化课程的悲哀和瞎掰，回归正题，那时候边上课边翻觉得太复杂了，完全看不懂，这本书最好还是在看完自顶而下有一个完整的概念之后再去深入理解比较好。</p>
+</blockquote>
+<hr>
+<h3 id="计算机系统与运行"><a href="#计算机系统与运行" class="headerlink" title="计算机系统与运行"></a>计算机系统与运行</h3><p>学完了以上，基本上就在应用层编写代码无障碍了，这个能力很关键，无论是未来搞安全还是搞开发，搞研究，快速把想法实现的能力还是很关键的，再加上SICP的程序结构，掌握新语言已经难度不大了，甚至还可以试着读读编译原理看看能不能自己重写编译器。</p>
+<h5 id="公开课程"><a href="#公开课程" class="headerlink" title="公开课程:"></a>公开课程:</h5><ul>
+<li><strong>卡内基梅隆大学 CSAPP 配套课程  （B站有）</strong></li>
+<li>卡内基梅隆大学 CMU 15-213</li>
+<li>加州大学伯克利大学 CS61C</li>
+<li>斯坦福大学 CS107</li>
+</ul>
+<h5 id="书籍推荐：-5"><a href="#书籍推荐：-5" class="headerlink" title="书籍推荐："></a>书籍推荐：</h5><ul>
+<li>深入理解计算机系统 CSAPP</li>
+</ul>
+<blockquote>
+<p>计算机领域的圣经级别书籍，北大的计算机系统导论，南大的计算机系统课程都是基于CSAPP的，这本书把操作系统，计算机组成结构和计算机网络都连接起来，还讲了汇编的一些理论，整合了很多零散内容。</p>
+</blockquote>
+<hr>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ol>
+<li>知乎文章《计算机名校路线课程》</li>
+<li>网易云课堂  顶尖大学中文计算机课程</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Learning Record</category>
+      </categories>
+      <tags>
+        <tag>学习路线</tag>
+        <tag>计算机课程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Typora+picgo+oss快速搭建hexo博客图床</title>
+    <url>/posts/d9ee7cbb/</url>
+    <content><![CDATA[<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><blockquote>
+<p>准备工作</p>
+<ul>
+<li>Picgo下载</li>
+<li>OSS对象储存服务开通</li>
+</ul>
+<p>图床配置</p>
+<ul>
+<li>Typora配置</li>
+<li>Picgo配置</li>
+</ul>
+<p>测试上传情况</p>
+</blockquote>
+<p>很长一段时间没有更新博客了，听说Typora收费了，幸好我的版本从来没更新过哈哈哈哈</p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007103457780.png" alt="image-20221007103457780"></p>
+<hr>
+<p>但是呢，这次又遇到了一个问题，之前搭建的smms图床不能用了，怎么调试都没办法，之前崩了之后只要更新下API  key 就行了，这次怎么更新都没有用，可能是smms也开始收费了。</p>
+<p>当你上传时候出现这个问题的时候，那就说明你的图床崩了。</p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007085519282.png" alt="image-20221007085519282"></p>
+<p>打开<code>文件</code>—<code>偏好设置</code>-<code>图片</code>，我们会看到这个选项。</p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007090126052.png" alt="image-20221007090126052"></p>
+<p>点击<code>验证个图片上传选项</code>，验证一下图片上传。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[PicGo INFO]: Before transform</span><br><span class="line">[PicGo INFO]: Transforming...</span><br><span class="line">[PicGo INFO]: Before upload</span><br><span class="line">[PicGo INFO]: Uploading...</span><br><span class="line">[PicGo WARN]: failed</span><br><span class="line">[PicGo ERROR]: RequestError: Error: connect ECONNREFUSED 104.21.83.45:443</span><br></pre></td></tr></table></figure>
+
+<p>恩。。确实是崩了。</p>
+<p>接下来我们就利用picgo+oss搭建一个图床供typora使用。</p>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><h4 id="picgo下载"><a href="#picgo下载" class="headerlink" title="picgo下载"></a>picgo下载</h4><p>首先我们前往Github主页下载picgo最新版本  </p>
+<p><a href="https://github.com/Molunerfinn/PicGo/releases">Picgo</a></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007104038135.png" alt="image-20221007104038135"></p>
+<p>如果不会科学上网的这里还有一个腾讯COS的下载链接</p>
+<p><a href="https://picgo-1251750343.cos.ap-chengdu.myqcloud.com/2.3.1-beta.6/PicGo-2.3.1-beta.6.AppImage">Picgo-TecentCOS</a></p>
+<p>下载好之后执行以下指令</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo chmod a+x PicGo-2.3.1-beta.6.AppImage   #权限</span><br><span class="line">sudo mv PicGo-2.3.1-beta.6.AppImage picgo#重命名</span><br><span class="line">sudo mv picgo /usr/bin #该目录已包含于环境变量，可直接通过picgo指令打开</span><br></pre></td></tr></table></figure>
+
+
+
+<p>打开之后它是这样的</p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007104113254.png" alt="image-20221007104113254"></p>
+<p>你得右键打开主界面</p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007104134513.png" alt="image-20221007104134513"></p>
+<h4 id="OSS云对象储存服务"><a href="#OSS云对象储存服务" class="headerlink" title="OSS云对象储存服务"></a>OSS云对象储存服务</h4><p><strong>打开阿里云</strong> </p>
+<p><strong>搜索对象储存oss</strong></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007104246741.png" alt="image-20221007104246741"></p>
+<p><strong>切换至概况一栏</strong></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007104334529.png" alt="image-20221007104334529"></p>
+<p><strong>点击建立bucket</strong></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007104441930.png" alt="image-20221007104441930"></p>
+<p><strong># 上图源自CSDN，本人懒</strong></p>
+<p><strong>切换至bucket概览，记录下你的地域节点</strong> </p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007104523311.png" alt="image-20221007104523311">我这里是广州，所以是<code>oss-cn-guangzhou</code></p>
+<p><strong>右上角点击你的头像选择AccessKey管理</strong></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007104545235.png" alt="image-20221007104545235"></p>
+<p>这个不用管他，继续使用</p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007101544965.png" alt="image-20221007101544965"></p>
+<p><strong>创建一个新的Access key，然后记住你的ID和Secret</strong></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007101612928.png" alt="image-20221007101612928"></p>
+<p>到这里oss服务就配置完成了，接下来我们就可以开始在本级搭建图床了。</p>
+<h3 id="图床配置"><a href="#图床配置" class="headerlink" title="图床配置"></a>图床配置</h3><h4 id="Picgo配置"><a href="#Picgo配置" class="headerlink" title="Picgo配置"></a>Picgo配置</h4><p><strong>打开picgo主界面，点击<code>图床设置 </code>- <code>阿里云oss</code></strong></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007102114993.png" alt="image-20221007102114993"></p>
+<p>这里的keyID和keySecret填写刚才我们建立AccessKey时候得到的两串代码，Bucket填写你建立的bucket名字，储存区域就填写刚才的地域节点，储存路径这个，随便写一个就行了。</p>
+<h4 id="Typora配置"><a href="#Typora配置" class="headerlink" title="Typora配置"></a>Typora配置</h4><p>同样，打开<code>文件</code>-<code>偏好设置</code>-<code>图片</code></p>
+<p><img src="https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/image-20221007102515260.png" alt="image-20221007102515260"></p>
+<p>将上传服务由Picgo-commandline改为Picgo-app，而后Picgo路径填写我们刚刚移动Picgo</p>
+<p>到达的位置<code>/usr/bin/picgo</code></p>
+<h3 id="测试上传情况"><a href="#测试上传情况" class="headerlink" title="测试上传情况"></a>测试上传情况</h3><p>点击验证图片上传情况</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">&#123;&quot;success&quot;:true,&quot;result&quot;:[&quot;https://blogqc.oss-cn-guangzhou.aliyuncs.com/image/typora-icon2.png&quot;,&quot;https://xxx.oss-cn-guangzhou.aliyuncs.com/image/typora-icon.png&quot;]&#125;</span><br></pre></td></tr></table></figure>
+
+<p>成功。</p>
+]]></content>
+      <categories>
+        <category>Tutorial/Error/Fix</category>
+      </categories>
+      <tags>
+        <tag>踩过的坑</tag>
+        <tag>typora</tag>
+        <tag>picgo</tag>
+        <tag>oss</tag>
       </tags>
   </entry>
 </search>
