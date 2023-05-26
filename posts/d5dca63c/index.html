@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"rigelj.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="CS61A 过程抽象目录 程序设计的基本元素  表达式 变量与环境 复合过程与函数 条件表达式与判定符号 过程作为黑箱抽象  过程产生的计算  线性递归与迭代 树形递归  高阶函数抽象  过程作为参数 过程作为一般性的方法 过程作为返回值 使用匿名函数构造过程   程序设计的基本元素 一个强有力的语言，需要成为一种框架，使我们能够在里面组织自己的计算思想，为了达成这个目的，语言提供了三种机制： 一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CS61A-过程抽象">
+<meta property="og:url" content="http://rigelj.github.io/posts/d5dca63c/index.html">
+<meta property="og:site_name" content="Klein Bottle">
+<meta property="og:description" content="CS61A 过程抽象目录 程序设计的基本元素  表达式 变量与环境 复合过程与函数 条件表达式与判定符号 过程作为黑箱抽象  过程产生的计算  线性递归与迭代 树形递归  高阶函数抽象  过程作为参数 过程作为一般性的方法 过程作为返回值 使用匿名函数构造过程   程序设计的基本元素 一个强有力的语言，需要成为一种框架，使我们能够在里面组织自己的计算思想，为了达成这个目的，语言提供了三种机制： 一">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/06/12/BCrLjKNHeXEtiW3.png">
+<meta property="og:image" content="https://i.loli.net/2021/06/12/u4zixB95rycdopg.png">
+<meta property="og:image" content="https://i.loli.net/2021/06/12/EoGL5rvkQ8ilTzX.png">
+<meta property="og:image" content="https://i.loli.net/2021/06/13/SmeKwilTO8B7Z2t.png">
+<meta property="og:image" content="https://i.loli.net/2021/06/13/X86tKiEOypvATkb.png">
+<meta property="og:image" content="https://i.loli.net/2021/06/13/rLJNnMR8fzq2SBX.png">
+<meta property="og:image" content="https://i.loli.net/2021/06/13/NnIUPVbqSmXe4lB.png">
+<meta property="og:image" content="https://i.loli.net/2021/06/13/BeUAztOT3pEMG9L.png">
+<meta property="article:published_time" content="2021-06-12T07:15:32.000Z">
+<meta property="article:modified_time" content="2023-04-05T02:36:53.671Z">
+<meta property="article:author" content="Klein">
+<meta property="article:tag" content="程序结构">
+<meta property="article:tag" content="CS61">
+<meta property="article:tag" content="CS61A">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/06/12/BCrLjKNHeXEtiW3.png">
+
+<link rel="canonical" href="http://rigelj.github.io/posts/d5dca63c/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>CS61A-过程抽象 | Klein Bottle</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Klein Bottle" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Klein Bottle</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">以我为名的小说，是隽永或是深刻。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://rigelj.github.io/posts/d5dca63c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Klein">
+      <meta itemprop="description" content="Now you see me">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Klein Bottle">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CS61A-过程抽象
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-06-12 15:15:32" itemprop="dateCreated datePublished" datetime="2021-06-12T15:15:32+08:00">2021-06-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-04-05 10:36:53" itemprop="dateModified" datetime="2023-04-05T10:36:53+08:00">2023-04-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learning-Record/" itemprop="url" rel="index"><span itemprop="name">Learning Record</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>9.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>9 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="CS61A-过程抽象"><a href="#CS61A-过程抽象" class="headerlink" title="CS61A 过程抽象"></a>CS61A 过程抽象</h2><h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><blockquote>
+<p>程序设计的基本元素</p>
+<ul>
+<li>表达式</li>
+<li>变量与环境</li>
+<li>复合过程与函数</li>
+<li>条件表达式与判定符号</li>
+<li>过程作为黑箱抽象</li>
+</ul>
+<p>过程产生的计算</p>
+<ul>
+<li>线性递归与迭代</li>
+<li>树形递归</li>
+</ul>
+<p>高阶函数抽象</p>
+<ul>
+<li>过程作为参数</li>
+<li>过程作为一般性的方法</li>
+<li>过程作为返回值</li>
+<li>使用匿名函数构造过程</li>
+</ul>
+</blockquote>
+<h3 id="程序设计的基本元素"><a href="#程序设计的基本元素" class="headerlink" title="程序设计的基本元素"></a>程序设计的基本元素</h3><hr>
+<p>一个强有力的语言，需要成为一种框架，使我们能够在里面组织自己的计算思想，为了达成这个目的，语言提供了三种机制：</p>
+<p>一是基本的表达形式，也就是表达式，在python中，3，‘s’，这些都是表达式，3 + int(‘s’),这叫做复合表达式，表达式是语言最简单的个体。</p>
+<p>二是组合的方法，通过组合，可以将各种表达式结合起来构造出复杂的元素</p>
+<p>三是抽象的方法，通过抽象，我们可以对过程进行命名，并将它们当作单元去使用</p>
+<h4 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h4><p>以python为例，我们先来看一些基本表达式，基本表达式可以是数字，字符，字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;s&#x27;</span>,<span class="number">1</span>,<span class="string">&#x27;hello&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>通过将基本表达式进行组合，我们可以得到组合式</p>
+<blockquote>
+<p>3-1</p>
+<p>‘s’ + ‘e’</p>
+</blockquote>
+<p>组合式表示一个过程，将运算符所刻画的过程，应用有关的实际参数，有些嵌套表达式比较复杂，例如</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">2</span>+(<span class="number">4</span>*<span class="number">6</span>))*(<span class="number">3</span>+<span class="number">5</span>+<span class="number">7</span>)</span><br></pre></td></tr></table></figure>
+
+<p> 对于这个表达式，我们可以采取一棵树的形式来表示，设想运算对象的值向上穿行，而后在越来越高的层次中组合起来，这种计算过程叫做树形积累。</p>
+<p><img src="https://i.loli.net/2021/06/12/BCrLjKNHeXEtiW3.png" alt="image-20210612194156857"></p>
+<h4 id="变量与环境"><a href="#变量与环境" class="headerlink" title="变量与环境"></a>变量与环境</h4><p>我们在设计程序的时候会遇到这样一个问题，假设我们需要计算一个半径为2的圆的面积，我们使用<code>pi*(2**2)</code>进行计算，当我们想要计算的半径变为3时，我们又得写表达<code>pi*(3**2)</code>,为了避免这种情况的出现，我们将值2与名称r关联起来，而后我们只需要使用<code>pi*(r**2)</code>就可以计算半径为r对应值的圆的面积，我们把定义的名称r叫做变量。</p>
+<p>不同语言定义变量的方式不同</p>
+<p>Lisp</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">define</span> r <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<p>Python</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r = <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>C</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> r = <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>变量是语言抽象里最简单的一种方式，进一步思考，我们既然可以将值与符号相关联，这说明解释器必须维持某种储存能力，以保证一对一的关系，这种储存叫做环境。</p>
+<h4 id="复合过程与函数"><a href="#复合过程与函数" class="headerlink" title="复合过程与函数"></a>复合过程与函数</h4><p>由上文可知，数和算数运算是基本的数据和过程，组合式的嵌套提供了一种组织多个操作的方法，而定义是一种受限的抽象手段，仅仅只能对值进行抽象</p>
+<p>那么如果我们要对过程进行抽象该怎么办呢？</p>
+<p>过程定义是一种威力更大的抽象技术，通过它可以为复合过程提供名称，而后便可以利用名称调用所对应的复合过程，这个复合过程在高级语言中被叫做函数，<strong>为了方便大家观看，接下来所有定义的复合过程我们均使用函数这个名称。</strong></p>
+<p>例如，我们要求某个数的平方，因此我们给求平方的过程取一个名字叫做square</p>
+<p>不同语言定义函数&#x2F;复合过程名称的方式不同</p>
+<p><em>Lisp</em></p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">define</span> (<span class="name">square</span> x) (<span class="name">*</span> x x))</span><br></pre></td></tr></table></figure>
+
+<p><em>Python</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">square</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">return</span> x**<span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>定义好之后就可以使用square进行调用</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(sqare <span class="number">21</span>)</span><br><span class="line">square(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<p>我们可以利用已定义好的函数去构建其他过程，以python为例</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">sum_sq</span>(<span class="params">x,y</span>):</span><br><span class="line">    <span class="keyword">return</span> square(x) + square(y)</span><br></pre></td></tr></table></figure>
+
+<p>还可以利用sum_sq去构造其他过程</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">f</span>(<span class="params">a</span>):</span><br><span class="line">    <span class="keyword">return</span> sum_aq(a,a)</span><br></pre></td></tr></table></figure>
+
+<h4 id="条件表达式与符号"><a href="#条件表达式与符号" class="headerlink" title="条件表达式与符号"></a>条件表达式与符号</h4><p>至此我们能定义的函数还是很有限，因为没法去做检测，而后依据结果去进行分支操作，因此我们需要条件表达式</p>
+<p>不同的语言中条件表达式不同</p>
+<p><em>Lisp</em></p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">define</span> (<span class="name">abs</span> x)</span><br><span class="line">     (<span class="name">cond</span>  (<span class="name">&gt;</span> x <span class="number">0</span>)x)</span><br><span class="line">            (<span class="name">=</span> x <span class="number">0</span>)<span class="number">0</span>)</span><br><span class="line">            (<span class="name">&lt;</span> x <span class="number">0</span>)(<span class="name">-x</span>))</span><br><span class="line">     )</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>Python没有switch语句，可以用if..elif…替代</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">abs</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">if</span> x &gt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> x</span><br><span class="line">    <span class="keyword">elif</span> x = <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">else</span> x &lt;<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> -x</span><br></pre></td></tr></table></figure>
+
+<p>if是一种特殊形式，是条件表达式的一种受限形式，适用于分情况分析只有两种情况的情况下。</p>
+<p>除了&gt;&lt;&#x3D;之外，还可以使用and，or，not进行判断，and表达式从左到右依次求值，如果某个值为假则表达式为假，后面不再求值，or表达式如果某个表达式为真，则表达式为真，后面也不在再求值。</p>
+<p>例如Lisp中</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">and</span>(<span class="name">&gt;</span> x <span class="number">5</span>)(<span class="name">&lt;</span> x <span class="number">10</span>))</span><br></pre></td></tr></table></figure>
+
+<h4 id="函数作为黑箱抽象"><a href="#函数作为黑箱抽象" class="headerlink" title="函数作为黑箱抽象"></a>函数作为黑箱抽象</h4><p>sqrt的例子可以自然的分解成若干个子问题，每一个工作都分配给独立的一个过程完成，因此sqrt的实现过程如图，它们直接反映了原问题是如何分解成为子问题并解决的</p>
+<p><img src="https://i.loli.net/2021/06/12/u4zixB95rycdopg.png" alt="image-20210612202953454"></p>
+<p>这一分解的重要性，在于分解中的每个函数都完成了一件可以清楚标明的工作，因此可以进行替换和修改。用户在使用的过程中，不需要知道是如何实现的 。</p>
+<h5 id="内部定义与块结构"><a href="#内部定义与块结构" class="headerlink" title="内部定义与块结构"></a>内部定义与块结构</h5><p>为了突出重点，我们可以把辅助所使用的good-enough，imporve等辅助函数放入sqrt函数中，这种嵌套的定义称为块结构，因为x在sqrt内部是受约束的，而辅助过程都定义在sqrt里面，也就是说辅助过程都可以使用x的值。</p>
+<h3 id="函数产生的计算"><a href="#函数产生的计算" class="headerlink" title="函数产生的计算"></a>函数产生的计算</h3><hr>
+<h4 id="线性递归与迭代"><a href="#线性递归与迭代" class="headerlink" title="线性递归与迭代"></a>线性递归与迭代</h4><p>我们以函数的阶乘为例，讲解函数的递归和迭代。</p>
+<p>首先，我们使用递归来计算阶乘</p>
+<p>考虑阶乘函数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n! = n*(n-<span class="number">1</span>)*(n-<span class="number">2</span>)..<span class="number">.1</span></span><br><span class="line">(n-<span class="number">1</span>)! = (n-<span class="number">1</span>)*(n-<span class="number">2</span>)..<span class="number">.1</span></span><br><span class="line">n! = n*(n-<span class="number">1</span>)! </span><br></pre></td></tr></table></figure>
+
+<p>这样，我们就能通过算出(n-1)!，i进而计算出n！</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">factorial</span>(<span class="params">n</span>):</span><br><span class="line">     <span class="keyword">return</span> n*factorial(n-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<p>但是这就出现了一个问题，这个函数会陷入无限循环，因为没有一个标志告诉函数什么时候停下来，所以我们需要一个base_case去限制递归终止的条件。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">factorial</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> n*factorial(n-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<p>这个过程如图所示</p>
+<p><img src="https://i.loli.net/2021/06/12/EoGL5rvkQ8ilTzX.png" alt="image-20210612215413983"></p>
+<p>于是我们总结出迭代所需要的三个要素：</p>
+<p><em>一是base_case也就是迭代终止条件</em></p>
+<p>*二是可迭代拆分的结构，比如<code>factorial(n)</code>的结果就可以分解成为<code>n * factorial(n-1)</code></p>
+<p><em>三是可以连续传递</em>，验证n与n-1的规则是否通用。</p>
+<p>但是，在设计迭代结构的过程中可能会遇到，由于存在其他规则，使得过程非单一方向，传入的参数无法进行迭代，比如</p>
+<blockquote>
+<p>乒乓序列从 1 开始计数，并且总是向上计数或向下计数。在元素 处k，如果k是 7 的倍数或包含数字 7 ，则方向切换。 下面列出了乒乓序列的前 30 个元素，方向交换在第 7、第 14、第 17、第 21、第 27 处用括号标记，和第 28 个元素：</p>
+<p>1 2 3 4 5 6 [7] 6 5 4 3 2 1 [0] 1 2 [3] 2 1 0 [-1] 0 1 2 3 4 [5] [4] 5 6,</p>
+<p>def pingpong(n): ?</p>
+</blockquote>
+<p>这里的<code>pingpong(n)</code>和<code>pingpong(n-1)</code>无法形成迭代关系，因为每逢7就要切换方向，因此，我们在函数中再定义一个函数itera，利用itera来代替pingpong进行迭代,n仅作为base_case。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">pingpong</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">itera</span>(<span class="params">out,index=<span class="number">1</span>,adder=<span class="number">1</span></span>)</span><br><span class="line">        <span class="keyword">if</span> index == n:</span><br><span class="line">            <span class="keyword">return</span> out</span><br><span class="line">        <span class="keyword">if</span> index%<span class="number">7</span>==<span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> itera(out+adder,index+<span class="number">1</span>,adder=-adder)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> itera(out+adder,index+<span class="number">1</span>,adder=adder)</span><br><span class="line">    out = itera(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> out </span><br><span class="line">            </span><br></pre></td></tr></table></figure>
+
+<p>这样就实现了迭代，这里的迭代只针对内部函数itera，n在itera中相当于一个常数。</p>
+<p>而后，我们再使用迭代对阶乘进行计算：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">factorial</span>(<span class="params">n</span>):</span><br><span class="line">    a = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        a = a*i</span><br><span class="line">    <span class="keyword">return</span> a</span><br></pre></td></tr></table></figure>
+
+<p>由上文可知，迭代的计算并没有重复调用自身，而是在单个函数框架内部控制了一个重复运行的结构，并利用for循环设置停止条件。</p>
+<p>迭代的表示如下：</p>
+<p><img src="https://i.loli.net/2021/06/13/SmeKwilTO8B7Z2t.png" alt="image-20210613110228758"></p>
+<p>迭代和递归是两种最常见的循环过程，其主要不同点在于：</p>
+<p>一是框架，迭代的整个过程都是在函数建立的单个框架内部执行的，而递归由于不断重复调用自身，所以不断的建立新的函数框架，使用Pythontutor可以清晰的看到这两个过程。</p>
+<p>迭代：</p>
+<p><img src="https://i.loli.net/2021/06/13/X86tKiEOypvATkb.png" alt="image-20210613110437725"></p>
+<p>递归：</p>
+<p><img src="https://i.loli.net/2021/06/13/rLJNnMR8fzq2SBX.png" alt="image-20210613110636563"></p>
+<p>二是过程，迭代实际上是一个过程中的一部分，而递归是一个完整的过程，也就是说递归中可能包含迭代，但是迭代中肯定不会包含递归。</p>
+<h4 id="树形递归"><a href="#树形递归" class="headerlink" title="树形递归"></a>树形递归</h4><p>树形递归是一种特殊的递归形式，我们以斐波纳契数列为例，讲解树形递归的实现方式。</p>
+<p>首先我们以递归的思路来考虑</p>
+<p><code>feb(n)</code>和<code>feb(n-1)</code>有什么关系？</p>
+<p>貌似没有关系，但是我们知道<code>feb(n)=feb(n-1)+feb(n-2)</code></p>
+<p>因此我们可以这样设计递归</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">feb</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> n == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> fib(n-<span class="number">1</span>)+fib(n-<span class="number">2</span>)</span><br><span class="line">        </span><br></pre></td></tr></table></figure>
+
+<p>这个过程同时进行了两个方向的递归，这种递归叫做树递归，表示如下：</p>
+<p><img src="https://i.loli.net/2021/06/13/NnIUPVbqSmXe4lB.png" alt="image-20210613112437233"></p>
+<p>树形递归的作用就是同时进行多个方向的递归，有些函数需要多个递归过程相加，例如HW02中的河内塔问题</p>
+<blockquote>
+<p>Q7：河内塔<br>一个名为河内塔的经典谜题是一种游戏，它由三根杆和许多可以滑到任何杆上的不同大小的圆盘组成。谜题开始时，n圆盘在start棒上按尺寸升序排列整齐，最小的在顶部，形成圆锥形状。</p>
+<p><img src="https://i.loli.net/2021/06/13/BeUAztOT3pEMG9L.png" alt="image-20210613154038670"></p>
+<p>拼图的目标是将整个堆栈移动到一根end杆上，遵守以下规则：</p>
+<p>一次只能移动一个磁盘。<br>每次移动都包括从一根棒上取下顶部（最小）圆盘并将其滑到另一根棒上，位于该棒上可能已经存在的其他圆盘的顶部。<br>任何磁盘都不能放置在较小磁盘的顶部。<br>完成 的定义move_stack，它打印出在不违反规则的情况下将n圆盘从start杆移动到杆所需的步骤end。提供的print_move函数将打印出将单个磁盘从给定的移动origin到给定的步骤destination。</p>
+<p>题目给出了两个内置函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">print_move</span>(<span class="params">origin, destination</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Print instructions to move a disk.&quot;&quot;&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Move the top disk from rod&quot;</span>, origin, <span class="string">&quot;to rod&quot;</span>, destination)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">move_stack</span>(<span class="params">n, start, end</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Print the moves required to move n disks on the start pole to the end</span></span><br><span class="line"><span class="string">    pole without violating the rules of Towers of Hanoi.</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>我们仔细思考这个过程，我们知道，如果要把一个三层河内塔从Bar1移动到Bar3，那么我们应该<code>move_stack(3,1,3)</code>,而<code>move_stack(3,1,3)</code>这个过程可以分解为</p>
+<p>一.先将上面两层移动至2,即<code>move_stack(2,1,2)</code></p>
+<p>二.将底层移动到3,即<code>move_stack(1,1,3)</code></p>
+<p>三.将在2的两层移至3,即<code>move_stack(2,2,3)</code></p>
+<p>我们会发现实际上<code>move_stack(n,a,c)</code>可以分解为<code>move_stack(n-1,a,b)</code>，<code>move_stack(1,a,c)</code>,<code>move_stack(n-1,b,c)</code></p>
+<p>因此这个递归函数是一个树递归，三个递归同时在运行，最终合并得出最终结果。</p>
+<p>具体实现如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">move_stack</span>(<span class="params">n,start,end</span>):</span><br><span class="line">        bars = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">        print_move(start,end)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        c=[bar <span class="keyword">for</span> bar <span class="keyword">in</span> bars <span class="keyword">if</span> bar <span class="keyword">not</span> <span class="keyword">in</span> [start,end] ]</span><br><span class="line">        c = c[<span class="number">0</span>]</span><br><span class="line">        a = start</span><br><span class="line">        b = end </span><br><span class="line">        move_stack(n-<span class="number">1</span>,a,c)</span><br><span class="line">        move_stack(<span class="number">1</span>,a,b)</span><br><span class="line">        move_stack(n-<span class="number">1</span>,c,b)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>这里的base_case就是n&#x3D;&#x3D;1。</p>
+<h3 id="高阶函数抽象"><a href="#高阶函数抽象" class="headerlink" title="高阶函数抽象"></a>高阶函数抽象</h3><hr>
+<h4 id="函数作为参数"><a href="#函数作为参数" class="headerlink" title="函数作为参数"></a>函数作为参数</h4><p>思考一下以下两个函数</p>
+<p>第一个 sum_naturals函数计算最大为n的自然数之和</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">sum_naturals</span>(<span class="params">n</span>):</span><br><span class="line">    total, k = <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> k &lt;= n:</span><br><span class="line">        total, k = total + [k], k + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> total</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>第二个sum_pi计算系列中的项的总和</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">pi_sum</span>(<span class="params">n</span>):</span><br><span class="line">    total, k = <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> k &lt;= n:</span><br><span class="line">        total, k = total + [<span class="number">8</span> / ((<span class="number">4</span>*k-<span class="number">3</span>) * (<span class="number">4</span>*k-<span class="number">1</span>))], k + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> total</span><br></pre></td></tr></table></figure>
+
+<p>我们发现，他们实际上都共有一个框架，唯一不同的实际上是一个关于k的函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">xx</span> (n):</span><br><span class="line">    total, k = <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> k &lt;= n:</span><br><span class="line">        total, k = total + &lt;term&gt;(k), k + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> total</span><br></pre></td></tr></table></figure>
+
+<p>因此我们可以将这个关于k的函数作为参数传入主函数，这样就实现了填充同一个模板中的槽来生成每个函数，具体实现如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">sum</span>(<span class="params">n,term</span>):</span><br><span class="line">    total, k = <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> k &lt;= n:</span><br><span class="line">        total, k = total + term(k), k + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> total</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">natural</span>(<span class="params">k</span>):</span><br><span class="line">    <span class="keyword">return</span> k</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">pi</span>(<span class="params">k</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="number">8</span> / ((<span class="number">4</span>*k-<span class="number">3</span>) * (<span class="number">4</span>*k-<span class="number">1</span>))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>这样一来，我们就将整个结构抽象了出来，通过传入不同函数对过程进行控制。</p>
+<h4 id="函数作为一般性方法"><a href="#函数作为一般性方法" class="headerlink" title="函数作为一般性方法"></a>函数作为一般性方法</h4><p>刚才我们说到，函数可以作为参数传递给函数，我们再来看一个例子，这个例子是计算黄金分割率的。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>	<span class="keyword">def</span> <span class="title function_">improve</span>(<span class="params">update, close, guess=<span class="number">1</span></span>):</span><br><span class="line"><span class="number">2</span>	    <span class="keyword">while</span> <span class="keyword">not</span> close(guess):</span><br><span class="line"><span class="number">3</span>	        guess = update(guess)</span><br><span class="line"><span class="number">4</span>	    <span class="keyword">return</span> guess</span><br><span class="line"><span class="number">5</span>	</span><br><span class="line"><span class="number">6</span>	<span class="keyword">def</span> <span class="title function_">golden_update</span>(<span class="params">guess</span>):</span><br><span class="line"><span class="number">7</span>	    <span class="keyword">return</span> <span class="number">1</span>/guess + <span class="number">1</span></span><br><span class="line"><span class="number">8</span>	</span><br><span class="line"><span class="number">9</span>	<span class="keyword">def</span> <span class="title function_">square_close_to_successor</span>(<span class="params">guess</span>):</span><br><span class="line"><span class="number">10</span>	    <span class="keyword">return</span> approx_eq(guess * guess,</span><br><span class="line"><span class="number">11</span>	                     guess + <span class="number">1</span>)</span><br><span class="line"><span class="number">12</span>	</span><br><span class="line"><span class="number">13</span>	<span class="keyword">def</span> <span class="title function_">approx_eq</span>(<span class="params">x, y, tolerance=<span class="number">1e-3</span></span>):</span><br><span class="line"><span class="number">14</span>	    <span class="keyword">return</span> <span class="built_in">abs</span>(x - y) &lt; tolerance</span><br><span class="line"><span class="number">15</span>	</span><br><span class="line"><span class="number">16</span>	phi = improve(golden_update,</span><br><span class="line"><span class="number">17</span>	              square_close_to_successor)</span><br></pre></td></tr></table></figure>
+
+<p>我们会发现，虽然结果没有问题，但是整个函数结构显得很凌乱，为了解决这个问题，我们引入了嵌套定义的概念，为了解决函数结构不整齐的问题，于是上文的函数结构就可以改变为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">improve</span>(<span class="params">guess=<span class="number">1</span></span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">golden_update</span>(<span class="params">guess</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>/guess + <span class="number">1</span></span><br><span class="line">       </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">square_close_to_successor</span>(<span class="params">guess</span>):</span><br><span class="line">           <span class="keyword">return</span> approx_eq(guess * guess,guess + <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">approx_eq</span>(<span class="params">x, y, tolerance=<span class="number">1e-3</span></span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">abs</span>(x - y) &lt; tolerance</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">while</span> <span class="keyword">not</span> square_close_to_successor(guess):</span><br><span class="line">        guess = golden_update(guess)</span><br><span class="line">    <span class="keyword">return</span> guess</span><br><span class="line"></span><br><span class="line">phi = improve()</span><br></pre></td></tr></table></figure>
+
+<p>这样一来整体的函数结构就清晰多了。</p>
+<h4 id="函数作为返回值"><a href="#函数作为返回值" class="headerlink" title="函数作为返回值"></a>函数作为返回值</h4><p>通过创建返回值本身就是函数的函数，我们可以在我们的程序中实现更强大的表达能力。词法作用域编程语言的一个重要特性是本地定义的函数在返回时保持其父环境。以下示例说明了此功能的实用性。</p>
+<p>一旦定义了许多简单的函数，函数组合就是包含在我们的编程语言中的自然组合方法。也就是说，给定两个函数f(x)和g(x)，我们可能想要定义h(x) &#x3D; f(g(x))。我们可以使用现有工具定义函数组合：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">compose1</span>(<span class="params">f, g</span>):</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">h</span>(<span class="params">x</span>):</span><br><span class="line">            <span class="keyword">return</span> f(g(x))</span><br><span class="line">        <span class="keyword">return</span> h</span><br></pre></td></tr></table></figure>
+
+<p>这时候返回的函数就是f(g(x))</p>
+<p>函数作为返回值的一个重要应用就是函数的柯里化，我们可以使用高阶函数将带有多个参数的函数转换为每个带有一个参数的函数链。更具体地说，给定一个函数f(x, y)，我们可以定义一个函数g使得g(x)(y)等价于f(x, y)。这里，g是一个高阶函数，它接受单个参数x并返回另一个接受单个参数y 的函数。这种转换称为柯里化。</p>
+<p>柯里化的具体实现过程如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">curi_pow</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">f</span>(<span class="params">y</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">pow</span>(x,y)</span><br><span class="line">    <span class="keyword">return</span> f</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>当调用<code>curi_pow(2)(3)</code>时，首先计算curi_pow(2),返回的函数实际上就是 <code>lambda  x: pow(2,x)</code>，这个结构可能大家现在还看不懂，不过后面讲到lambda匿名函数的时候就懂了。因此<code>curi_pow(2)（3）</code>实际上是<code>lambda x:pow(2,x)(3)</code>也就是pow(2,3)</p>
+<p>我们可以将柯里化的过程也抽象成一个函数，使得其可以对所有拥有两个参数的函数进行柯里化</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">curi</span>(<span class="params">f</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">g</span>(<span class="params">x</span>):</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">h</span>(<span class="params">y</span>):</span><br><span class="line">            <span class="keyword">return</span> f(x,y)</span><br><span class="line">        <span class="keyword">return</span> h</span><br><span class="line">    <span class="keyword">return</span> g</span><br></pre></td></tr></table></figure>
+
+<p>具体推导过程 如下：</p>
+<p>要使得  s(x)(y) &#x3D; f(x,y)，则s &#x3D; lambda x:lambda y :f(x,y)，将lambda函数转为正常函数即可。</p>
+<p>柯里化也可以反向进行，具体实现过程为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">uncuri</span>(<span class="params">g</span>):</span><br><span class="line">     <span class="keyword">def</span> <span class="title function_">h</span>(<span class="params">x,y</span>):</span><br><span class="line">            <span class="keyword">return</span> g(x)(y)</span><br><span class="line">     <span class="keyword">return</span> h</span><br></pre></td></tr></table></figure>
+
+<p>同理，要使得 f(x,y) &#x3D; g(x)(y)，则 f &#x3D; lambda x,y : g(x)(y)，将lambda函转换为正常函数即可。</p>
+<h4 id="使用匿名函数构造过程"><a href="#使用匿名函数构造过程" class="headerlink" title="使用匿名函数构造过程"></a>使用匿名函数构造过程</h4><p>到目前为止，每次我们想要定义一个新函数时，我们都需要给它一个名字。但是有一种函数不需要命名就可以调用，这种函数被称作匿名函数，在 Python 中，我们可以使用lambda 表达式动态创建函数值，这些表达式的计算结果为未命名的函数。一个 lambda 表达式的计算结果是一个函数，它有一个返回表达式作为它的主体。</p>
+<p>lambda 表达式的结果称为 lambda 函数。它没有内在名称（因此 Python 打印<lambda>作为名称），但除此之外它的行为与任何其他函数一样。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="keyword">lambda</span> x:x*x</span><br><span class="line">s(<span class="number">2</span>) = <span class="number">4</span></span><br></pre></td></tr></table></figure>
+
+<p>这相当于把s这个名称指向一个函数，这个函数是匿名函数lambda。</p>
+<p>一些程序员发现使用来自 lambda 表达式的未命名函数更短、更直接。然而，众所周知，复合lambda表达式难以辨认，尽管它们很简洁。下面的定义是正确的，但是很多程序员很难快速理解它。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compose1=<span class="keyword">lambda</span> f,g:<span class="keyword">lambda</span> x:f(g(x))</span><br></pre></td></tr></table></figure>
+
+<p>匿名函数还可以是带递归的匿名函数，这个结构较为复杂，我们以阶乘为例，来讲解一下这个结构。</p>
+<p>我们知道，使用递归来进行阶乘的计算如下所示：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">factorial</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> n*factorial(n-<span class="number">1</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>那么如果使用匿名函数来进行递归，结构又该是什么样的呢？</p>
+<p>我们先来看一个简单一点的方案。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fact = <span class="keyword">lambda</span> n:<span class="number">1</span> <span class="keyword">if</span> n==<span class="number">1</span> <span class="keyword">else</span> n*fact(n-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<p>这样的话我们只需要使用fact(3)就可以进行调用循环，但是这里有个问题就是，如果我们改变了左侧的名称，这个结构就没法用了，为了能够构建一个更加通用的匿名函数，我们需要将这个函数进一步改造，首先，我们将函数本身作为匿名的参数传入,我们这里将函数命名为f</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">lambda</span> n,f:<span class="number">1</span> <span class="keyword">if</span> n==<span class="number">1</span> <span class="keyword">else</span> n*f(n-<span class="number">1</span>,f) </span><br></pre></td></tr></table></figure>
+
+<p>于是这个函数体就是我们所需要的匿名函数体，问题在于，如果这样构建匿名函数的话，我们需要传入一个参数f，也就是函数体本身，那么又无法通用了，因为如果你令fact&#x3D; lambda n,f:1 if n&#x3D;&#x3D;1 else n*f(n-1,f)，那么你要使用fact(n,fact)进行调用，这样还是无法满足通用性,因为我们要实现的是<random name>(n) 调用。</p>
+<p>解决这个问题的方法是在函数外再套一层函数，将构建的函数f当作参数传入。</p>
+<p>fact &#x3D; lambda n:(lambda g:g(n,f))(lambda n,f:1 if n&#x3D;&#x3D;1 else n*f(n-1,f))</p>
+<p>这个结构的原理是这样的，fact(3)首先等于<code>(lambda f:f(3,f))</code>，然而由于后i面还有一个<code>(lambda n,f:1 if n==1 else n*f(n-1,f))</code>因此f函数的值被填充为匿名函数，成为f(3,f) 其中 <code>f(n,f)=(lambda n,f:1 if n==1 else n*f(n-1,f))</code>。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84/" rel="tag"># 程序结构</a>
+              <a href="/tags/CS61/" rel="tag"># CS61</a>
+              <a href="/tags/CS61A/" rel="tag"># CS61A</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/feb1c775/" rel="prev" title="CS61A-综述">
+      <i class="fa fa-chevron-left"></i> CS61A-综述
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/e999557a/" rel="next" title="CS61A-数据抽象">
+      CS61A-数据抽象 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CS61A-%E8%BF%87%E7%A8%8B%E6%8A%BD%E8%B1%A1"><span class="nav-number">1.</span> <span class="nav-text">CS61A 过程抽象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95"><span class="nav-number">1.0.1.</span> <span class="nav-text">目录</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%85%83%E7%B4%A0"><span class="nav-number">1.1.</span> <span class="nav-text">程序设计的基本元素</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.1.1.</span> <span class="nav-text">表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E4%B8%8E%E7%8E%AF%E5%A2%83"><span class="nav-number">1.1.2.</span> <span class="nav-text">变量与环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%8D%E5%90%88%E8%BF%87%E7%A8%8B%E4%B8%8E%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.3.</span> <span class="nav-text">复合过程与函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%8E%E7%AC%A6%E5%8F%B7"><span class="nav-number">1.1.4.</span> <span class="nav-text">条件表达式与符号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E9%BB%91%E7%AE%B1%E6%8A%BD%E8%B1%A1"><span class="nav-number">1.1.5.</span> <span class="nav-text">函数作为黑箱抽象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%86%85%E9%83%A8%E5%AE%9A%E4%B9%89%E4%B8%8E%E5%9D%97%E7%BB%93%E6%9E%84"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">内部定义与块结构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E4%BA%A7%E7%94%9F%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-number">1.2.</span> <span class="nav-text">函数产生的计算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E9%80%92%E5%BD%92%E4%B8%8E%E8%BF%AD%E4%BB%A3"><span class="nav-number">1.2.1.</span> <span class="nav-text">线性递归与迭代</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%91%E5%BD%A2%E9%80%92%E5%BD%92"><span class="nav-number">1.2.2.</span> <span class="nav-text">树形递归</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0%E6%8A%BD%E8%B1%A1"><span class="nav-number">1.3.</span> <span class="nav-text">高阶函数抽象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E5%8F%82%E6%95%B0"><span class="nav-number">1.3.1.</span> <span class="nav-text">函数作为参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E4%B8%80%E8%88%AC%E6%80%A7%E6%96%B9%E6%B3%95"><span class="nav-number">1.3.2.</span> <span class="nav-text">函数作为一般性方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="nav-number">1.3.3.</span> <span class="nav-text">函数作为返回值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E6%9E%84%E9%80%A0%E8%BF%87%E7%A8%8B"><span class="nav-number">1.3.4.</span> <span class="nav-text">使用匿名函数构造过程</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Klein</p>
+  <div class="site-description" itemprop="description">Now you see me</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Klein</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">100k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:31</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

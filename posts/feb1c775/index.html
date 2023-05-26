@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"rigelj.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="CS61A 综述简单过了一遍课程内容，CS61A这门课程的主要目的是教会我们如何去利用抽象的思想构建繁杂的程序，课程按照讲解内容可以分为过程抽象，数据抽象和语言抽象。 首先，课程通过讲解函数式编程引入过程抽象思想，介绍了表达式，变量，函数等概念，又从函数框架的层面讲解了函数作用域的概念，最后对函数式编程的几种主要方式进行了介绍，引入了递归调用的概念。 而后，课程转入数据抽象，数据抽象是课程中最重要">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CS61A-综述">
+<meta property="og:url" content="http://rigelj.github.io/posts/feb1c775/index.html">
+<meta property="og:site_name" content="Klein Bottle">
+<meta property="og:description" content="CS61A 综述简单过了一遍课程内容，CS61A这门课程的主要目的是教会我们如何去利用抽象的思想构建繁杂的程序，课程按照讲解内容可以分为过程抽象，数据抽象和语言抽象。 首先，课程通过讲解函数式编程引入过程抽象思想，介绍了表达式，变量，函数等概念，又从函数框架的层面讲解了函数作用域的概念，最后对函数式编程的几种主要方式进行了介绍，引入了递归调用的概念。 而后，课程转入数据抽象，数据抽象是课程中最重要">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-06-12T07:04:18.000Z">
+<meta property="article:modified_time" content="2023-04-05T02:36:53.659Z">
+<meta property="article:author" content="Klein">
+<meta property="article:tag" content="程序结构">
+<meta property="article:tag" content="CS61">
+<meta property="article:tag" content="CS61A">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://rigelj.github.io/posts/feb1c775/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>CS61A-综述 | Klein Bottle</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Klein Bottle" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Klein Bottle</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">以我为名的小说，是隽永或是深刻。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://rigelj.github.io/posts/feb1c775/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Klein">
+      <meta itemprop="description" content="Now you see me">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Klein Bottle">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CS61A-综述
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-06-12 15:04:18" itemprop="dateCreated datePublished" datetime="2021-06-12T15:04:18+08:00">2021-06-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-04-05 10:36:53" itemprop="dateModified" datetime="2023-04-05T10:36:53+08:00">2023-04-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learning-Record/" itemprop="url" rel="index"><span itemprop="name">Learning Record</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>948</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="CS61A-综述"><a href="#CS61A-综述" class="headerlink" title="CS61A 综述"></a>CS61A 综述</h2><p>简单过了一遍课程内容，CS61A这门课程的主要目的是教会我们如何去利用抽象的思想构建繁杂的程序，课程按照讲解内容可以分为过程抽象，数据抽象和语言抽象。</p>
+<p>首先，课程通过讲解函数式编程引入过程抽象思想，介绍了表达式，变量，函数等概念，又从函数框架的层面讲解了函数作用域的概念，最后对函数式编程的几种主要方式进行了介绍，引入了递归调用的概念。</p>
+<p>而后，课程转入数据抽象，数据抽象是课程中最重要的部分，其直接的表现形式就是面向对象编程，把一组过程抽象（函数）作为类的方法集中考虑，并加入内部状态（类的变量），就是一个数据抽象，每个数据抽象对外通过一组接口进行调用，这样在调用时就不需要考虑函数内部情况，只需要知道函数实现的功能并进行合理调用即可。</p>
+<p>最后，课程讲述了语言抽象的过程，主要是讲解如何从零开始构建一门语言，定义这门语言的语法，并实现该语言的解释器或编译器，这一部分涉及编译原理，可能需要对编译原理进行拓展阅读。</p>
+<p>本书所使用的教材是经典的SICP，即计算机程序的构造与解释，原书所使用的语言是Lisp，而课程使用了更加广泛应用的python，降低了学习的门槛。</p>
+<p>但是 ，程序设计的思想是通用的，我们要学习的不仅仅只是python语言中程序的构建模式，更要学习程序设计的通用模式，拿到一门语言后如何快速掌握其要点，并利用这门语言进行程序设计，这才是这门课程真正想教给大家的。</p>
+<p>从讲述结构来看，我很明显感觉CS61A更注重的是Python语法的讲解，而SICP更多讲的是一种通用的程序设计模式，所以我会在后面将Python语法作为SICP模式讲解中的一个范例进行阐述，而不是直接讲python语法，毕竟我学61A的初衷不只是学会python，而是掌握程序设计的模式。</p>
+<p>从20年接触计算机开始到现在，我开始慢慢感觉到整个计算机科学的构建就是不断的抽象和封装，尤其在读了Nand2Teris后，这种感受更加深刻了，Nand门的相互组合构建了16门，而16门的相互组合构建起了ROM，RAM和ALU，PC，再通过封装将这些模块组合起来，就构建成了计算机的硬件部分。软件也是一样，具体数值抽象成了变量，变量与数据结构共同作用构成了函数，函数与变量共同作用构成了类与对象。在不同类之间游走，就构建了计算机程序。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84/" rel="tag"># 程序结构</a>
+              <a href="/tags/CS61/" rel="tag"># CS61</a>
+              <a href="/tags/CS61A/" rel="tag"># CS61A</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/17f76a70/" rel="prev" title="CS自学路线与课程推荐">
+      <i class="fa fa-chevron-left"></i> CS自学路线与课程推荐
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/d5dca63c/" rel="next" title="CS61A-过程抽象">
+      CS61A-过程抽象 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CS61A-%E7%BB%BC%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">CS61A 综述</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Klein</p>
+  <div class="site-description" itemprop="description">Now you see me</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Klein</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">100k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:31</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
