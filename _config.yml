@@ -5,7 +5,7 @@
 # Site
 title: Klein Bottle
 subtitle: 以我为名的小说，是隽永或是深刻。
-description: Now you see
+description: Now you see me
 keywords: "Python，C++，爬虫，软件安全"
 author: Klein
 language: zh-CN
@@ -102,7 +102,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: butterfly
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
@@ -113,7 +113,7 @@ deploy:
   branch: master
 
 search:
-  path: search.xml
+  path: search.json
   field: post
   format: html
   limit: 10000
